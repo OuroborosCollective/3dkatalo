@@ -9,7 +9,6 @@ import {
 import { auth } from '../firebase';
 import { BehaviorSubject } from 'rxjs';
 import { DataService } from './data.service';
-import { DemoService } from './demo.service';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +19,6 @@ export class AuthService {
   isAuthReady$ = new BehaviorSubject<boolean>(false);
 
   private dataService = inject(DataService);
-  private demoService = inject(DemoService);
 
   constructor() {
     onAuthStateChanged(auth, (user: User | null) => {
@@ -28,7 +26,6 @@ export class AuthService {
       this.isAuthReady$.next(true);
       if (user) {
         this.dataService.initRealtime();
-        this.demoService.seedData();
       }
     });
   }

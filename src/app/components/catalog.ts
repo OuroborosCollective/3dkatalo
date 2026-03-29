@@ -37,7 +37,7 @@ import { Observable } from 'rxjs';
             <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent opacity-60 z-10"></div>
             <div class="absolute top-4 right-4 z-20">
               <span class="bg-primary/10 text-primary text-[10px] font-label uppercase tracking-widest px-2 py-1 border border-primary/20 backdrop-blur-md">
-                {{ asset.type?.split('/')?.pop()?.toUpperCase() || 'ASSET' }}
+                {{ asset.type ? asset.type.split('/').pop()?.toUpperCase() : 'ASSET' }}
               </span>
             </div>
             <!-- Simuliertes 3D-Vorschau-Bild oder Icon -->
@@ -124,7 +124,7 @@ export class Catalog {
       const upload = { name: file.name, progress: 0 };
       this.uploads.push(upload);
       
-      const path = `assets/${Date.now()}_${file.name}`;
+      const path = \`assets/\${Date.now()}_\${file.name}\`;
       try {
         const url = await this.dataService.uploadFile(file, path, (progress) => {
           upload.progress = progress;
