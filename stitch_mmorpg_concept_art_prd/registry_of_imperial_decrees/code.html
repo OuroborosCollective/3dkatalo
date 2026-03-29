@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Registry of Imperial Decrees | Relic &amp; Rune</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,700;1,400;1,700&amp;family=Space+Grotesk:wght@300;500;700&amp;family=Work+Sans:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container": "#231f1d",
+                        "on-tertiary": "#003739",
+                        "inverse-primary": "#775a19",
+                        "surface-variant": "#393431",
+                        "surface-dim": "#161311",
+                        "on-error": "#690005",
+                        "on-error-container": "#ffdad6",
+                        "secondary-container": "#57472d",
+                        "outline-variant": "#54433a",
+                        "on-primary": "#412d00",
+                        "primary": "#e9c176",
+                        "error": "#ffb4ab",
+                        "inverse-surface": "#eae1dd",
+                        "surface-tint": "#e9c176",
+                        "primary-fixed": "#ffdea5",
+                        "on-secondary-fixed": "#251904",
+                        "on-secondary": "#3c2e16",
+                        "surface-container-lowest": "#110d0c",
+                        "on-primary-container": "#f2c97e",
+                        "surface-bright": "#3d3836",
+                        "background": "#161311",
+                        "tertiary-fixed-dim": "#00dce5",
+                        "secondary-fixed-dim": "#dac3a2",
+                        "tertiary": "#00dce5",
+                        "error-container": "#93000a",
+                        "tertiary-fixed": "#63f7ff",
+                        "tertiary-container": "#006266",
+                        "surface-container-high": "#2e2927",
+                        "on-tertiary-container": "#00e5ee",
+                        "on-primary-fixed": "#261900",
+                        "surface-container-low": "#1f1b19",
+                        "on-secondary-fixed-variant": "#54442b",
+                        "on-secondary-container": "#ccb594",
+                        "inverse-on-surface": "#342f2d",
+                        "surface": "#161311",
+                        "outline": "#a28c81",
+                        "on-surface-variant": "#dac2b6",
+                        "on-background": "#eae1dd",
+                        "secondary-fixed": "#f7dfbc",
+                        "on-tertiary-fixed": "#002021",
+                        "on-surface": "#eae1dd",
+                        "on-primary-fixed-variant": "#5d4201",
+                        "surface-container-highest": "#393431",
+                        "primary-container": "#715313",
+                        "primary-fixed-dim": "#e9c176",
+                        "on-tertiary-fixed-variant": "#004f53",
+                        "secondary": "#dac3a2"
+                    },
+                    fontFamily: {
+                        "headline": ["Newsreader"],
+                        "body": ["Work Sans"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .runic-texture {
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40' fill='%23e9c176' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        .shield-motif {
+            background: radial-gradient(circle at center, rgba(233, 193, 118, 0.05) 0%, transparent 70%);
+        }
+        .tapered-underline {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #e9c176 50%, transparent);
+        }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #161311; }
+        ::-webkit-scrollbar-thumb { background: #393431; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 w-full bg-[#161311]">
+<div class="flex items-center gap-6">
+<span class="text-2xl font-['Newsreader'] italic text-[#e9c176]">Relic &amp; Rune</span>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-headline font-bold tracking-tight text-[#e9c176] border-b-2 border-[#e9c176]" href="#">Grand Ledger</a>
+<a class="font-headline font-bold tracking-tight text-[#eae1dd] opacity-70 hover:bg-[#393431] transition-colors duration-300 px-2 py-1" href="#">Active Rites</a>
+<a class="font-headline font-bold tracking-tight text-[#eae1dd] opacity-70 hover:bg-[#393431] transition-colors duration-300 px-2 py-1" href="#">Historical Records</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<input class="bg-surface-container-lowest border-none text-on-surface font-label text-xs tracking-widest px-4 py-2 w-64 focus:ring-1 focus:ring-primary" placeholder="Search archives..." type="text"/>
+<span class="material-symbols-outlined absolute right-2 top-1.5 text-primary text-sm">search</span>
+</div>
+<span class="material-symbols-outlined text-[#e9c176] cursor-pointer active:scale-95 transition-transform">account_circle</span>
+</div>
+</header>
+<div class="bg-[#231f1d] h-[2px] w-full fixed top-[72px] z-50"></div>
+<!-- SideNavBar Shell -->
+<aside class="fixed left-0 top-0 h-full w-64 bg-[#231f1d] shadow-[10px_0_30px_rgba(0,0,0,0.5)] flex flex-col pt-24 pb-8 z-40 hidden lg:flex">
+<div class="px-6 mb-10">
+<h2 class="text-[#e9c176] font-['Newsreader'] text-xl">Council Archives</h2>
+<p class="font-['Space_Grotesk'] uppercase tracking-widest text-[10px] opacity-60">Custodian of the Eternal Law</p>
+</div>
+<nav class="flex-1 space-y-2">
+<div class="bg-[#393431] text-[#e9c176] border-l-4 border-[#e9c176] pl-4 py-3 flex items-center gap-3 cursor-pointer transition-all active:brightness-125">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+<span class="font-['Space_Grotesk'] uppercase tracking-widest text-xs">Grand Ledger</span>
+</div>
+<div class="text-[#dac3a2] opacity-60 hover:opacity-100 hover:bg-[#393431] hover:text-[#e9c176] pl-4 py-3 flex items-center gap-3 cursor-pointer transition-all active:brightness-125">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-['Space_Grotesk'] uppercase tracking-widest text-xs">Active Rites</span>
+</div>
+<div class="text-[#dac3a2] opacity-60 hover:opacity-100 hover:bg-[#393431] hover:text-[#e9c176] pl-4 py-3 flex items-center gap-3 cursor-pointer transition-all active:brightness-125">
+<span class="material-symbols-outlined">history_edu</span>
+<span class="font-['Space_Grotesk'] uppercase tracking-widest text-xs">Historical Records</span>
+</div>
+</nav>
+<div class="px-4 space-y-1 mt-auto">
+<div class="text-[#dac3a2] opacity-60 hover:opacity-100 hover:bg-[#393431] hover:text-[#e9c176] px-4 py-2 flex items-center gap-3 cursor-pointer transition-all text-xs font-label uppercase tracking-widest">
+<span class="material-symbols-outlined text-sm">settings</span>
+<span>Settings</span>
+</div>
+<div class="text-[#dac3a2] opacity-60 hover:opacity-100 hover:bg-[#393431] hover:text-[#e9c176] px-4 py-2 flex items-center gap-3 cursor-pointer transition-all text-xs font-label uppercase tracking-widest">
+<span class="material-symbols-outlined text-sm">help</span>
+<span>Support</span>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="lg:ml-64 pt-24 min-h-screen runic-texture">
+<div class="max-w-6xl mx-auto px-6 py-8 relative">
+<!-- Shield Motif Decorative Element -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full shield-motif -z-10 pointer-events-none"></div>
+<!-- Page Header -->
+<div class="mb-12">
+<h1 class="font-headline text-4xl md:text-5xl font-bold tracking-tight text-on-surface text-center mb-2">Registry of Imperial Decrees</h1>
+<div class="tapered-underline w-64 mx-auto mb-6"></div>
+<p class="font-label text-xs uppercase tracking-[0.3em] text-primary text-center opacity-80">Codex Scribae • Sanctum of Law</p>
+</div>
+<!-- Filter Controls -->
+<div class="flex flex-col md:flex-row gap-6 items-end justify-between mb-10 bg-surface-container-low p-6">
+<div class="w-full md:w-auto">
+<label class="font-label text-[10px] uppercase tracking-widest text-outline mb-3 block">Filter by Status</label>
+<div class="flex gap-2">
+<button class="px-6 py-2 bg-primary text-on-primary font-label text-xs uppercase tracking-widest font-bold">Active</button>
+<button class="px-6 py-2 bg-surface-container-highest text-on-surface opacity-60 hover:opacity-100 font-label text-xs uppercase tracking-widest transition-all">Historical</button>
+<button class="px-6 py-2 bg-surface-container-highest text-on-surface opacity-60 hover:opacity-100 font-label text-xs uppercase tracking-widest transition-all">Drafts</button>
+</div>
+</div>
+<div class="w-full md:w-96">
+<label class="font-label text-[10px] uppercase tracking-widest text-outline mb-3 block">Search Registry</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border-none py-3 pl-4 pr-12 text-on-surface font-body placeholder:opacity-30 focus:ring-1 focus:ring-primary" placeholder="Entry ID or Keyword..." type="text"/>
+<button class="absolute right-0 top-0 h-full px-4 text-primary hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Decrees Grid/List -->
+<div class="grid grid-cols-1 gap-6">
+<!-- Decree Card 1 -->
+<div class="group relative bg-surface-container border-l-4 border-primary p-8 transition-all hover:bg-surface-container-high cursor-pointer">
+<div class="flex flex-col md:flex-row justify-between items-start gap-4">
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-2">
+<span class="font-label text-[10px] text-primary uppercase tracking-tighter px-2 py-0.5 border border-primary/20">Decree #882-S</span>
+<span class="font-label text-[10px] text-outline uppercase tracking-widest">14 Days Past</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-3 group-hover:text-primary transition-colors">The Edict of Silentium</h3>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed max-w-3xl">
+                                Henceforth, any verbalized incantation within the inner sanctum of the Grand Archive is strictly prohibited. Knowledge must be transcribed in silence to prevent the resonance of ancient runes from fracturing the terrestrial foundation.
+                            </p>
+</div>
+<div class="flex flex-row md:flex-col gap-4 text-right">
+<div class="flex items-center gap-2 justify-end">
+<span class="material-symbols-outlined text-tertiary text-lg" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label text-[10px] uppercase text-tertiary">Ratified</span>
+</div>
+<button class="font-label text-[10px] uppercase tracking-[0.2em] text-primary hover:underline">View Transcript</button>
+</div>
+</div>
+<div class="mt-6 pt-6 border-t border-outline-variant/10 flex flex-wrap gap-4">
+<div class="flex items-center gap-1.5 font-label text-[10px] uppercase text-outline">
+<span class="material-symbols-outlined text-xs">category</span>
+<span>Arcane Safety</span>
+</div>
+<div class="flex items-center gap-1.5 font-label text-[10px] uppercase text-outline">
+<span class="material-symbols-outlined text-xs">person</span>
+<span>Arch-Scribe Valerius</span>
+</div>
+</div>
+</div>
+<!-- Decree Card 2 -->
+<div class="group relative bg-surface-container border-l-4 border-outline-variant p-8 transition-all hover:bg-surface-container-high cursor-pointer">
+<div class="flex flex-col md:flex-row justify-between items-start gap-4">
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-2">
+<span class="font-label text-[10px] text-primary uppercase tracking-tighter px-2 py-0.5 border border-primary/20">Decree #912-A</span>
+<span class="font-label text-[10px] text-outline uppercase tracking-widest">3 Days Past</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-3 group-hover:text-primary transition-colors">The Taxation of Soul-Dust</h3>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed max-w-3xl">
+                                All practitioners of alchemy within the lower districts must surrender 5% of their residual soul-dust to the Imperial Forge. Failure to comply will result in the immediate forfeiture of transmutation licenses.
+                            </p>
+</div>
+<div class="flex flex-row md:flex-col gap-4 text-right">
+<div class="flex items-center gap-2 justify-end">
+<span class="material-symbols-outlined text-primary text-lg">pending</span>
+<span class="font-label text-[10px] uppercase text-primary">Pending Council Seal</span>
+</div>
+<button class="font-label text-[10px] uppercase tracking-[0.2em] text-primary hover:underline">View Transcript</button>
+</div>
+</div>
+<div class="mt-6 pt-6 border-t border-outline-variant/10 flex flex-wrap gap-4">
+<div class="flex items-center gap-1.5 font-label text-[10px] uppercase text-outline">
+<span class="material-symbols-outlined text-xs">category</span>
+<span>Economy</span>
+</div>
+<div class="flex items-center gap-1.5 font-label text-[10px] uppercase text-outline">
+<span class="material-symbols-outlined text-xs">person</span>
+<span>High Overseer Thorne</span>
+</div>
+</div>
+</div>
+<!-- Decree Card 3 -->
+<div class="group relative bg-surface-container border-l-4 border-primary p-8 transition-all hover:bg-surface-container-high cursor-pointer">
+<div class="flex flex-col md:flex-row justify-between items-start gap-4">
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-2">
+<span class="font-label text-[10px] text-primary uppercase tracking-tighter px-2 py-0.5 border border-primary/20">Decree #741-K</span>
+<span class="font-label text-[10px] text-outline uppercase tracking-widest">Yesterday</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-3 group-hover:text-primary transition-colors">Rite of the Lunar Eclipse</h3>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed max-w-3xl">
+                                During the upcoming alignment, all runic laws concerning shadow-binding are suspended for the duration of the celestial shadow. Specialized units are authorized to harness residual energy for wall-reinforcement.
+                            </p>
+</div>
+<div class="flex flex-row md:flex-col gap-4 text-right">
+<div class="flex items-center gap-2 justify-end">
+<span class="material-symbols-outlined text-tertiary text-lg" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label text-[10px] uppercase text-tertiary">Ratified</span>
+</div>
+<button class="font-label text-[10px] uppercase tracking-[0.2em] text-primary hover:underline">View Transcript</button>
+</div>
+</div>
+<div class="mt-6 pt-6 border-t border-outline-variant/10 flex flex-wrap gap-4">
+<div class="flex items-center gap-1.5 font-label text-[10px] uppercase text-outline">
+<span class="material-symbols-outlined text-xs">category</span>
+<span>Runic Law</span>
+</div>
+<div class="flex items-center gap-1.5 font-label text-[10px] uppercase text-outline">
+<span class="material-symbols-outlined text-xs">person</span>
+<span>Lunar Oracle</span>
+</div>
+</div>
+</div>
+<!-- Decree Card 4 (Draft) -->
+<div class="group relative bg-surface-container-low border-l-4 border-outline-variant/30 p-8 transition-all hover:bg-surface-container cursor-pointer opacity-70">
+<div class="flex flex-col md:flex-row justify-between items-start gap-4">
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-2">
+<span class="font-label text-[10px] text-outline uppercase tracking-tighter px-2 py-0.5 border border-outline-variant/20">Draft #99-X</span>
+<span class="font-label text-[10px] text-outline uppercase tracking-widest">In Progress</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-3 group-hover:text-primary transition-colors italic">Expedition to the Hollow Peaks</h3>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed max-w-3xl">
+                                [Restricted Access] Proposed mandate for the reclamation of the Sunken Spire. Initial drafts suggest a mandatory draft of 300 able-bodied mages for the vanguard...
+                            </p>
+</div>
+<div class="flex flex-row md:flex-col gap-4 text-right">
+<div class="flex items-center gap-2 justify-end">
+<span class="material-symbols-outlined text-outline text-lg">edit_note</span>
+<span class="font-label text-[10px] uppercase text-outline">Drafting</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Pagination / Load More -->
+<div class="mt-16 flex flex-col items-center gap-4">
+<button class="group flex items-center gap-4 px-12 py-4 bg-surface-container border border-outline-variant/20 hover:border-primary transition-all">
+<span class="font-label text-xs uppercase tracking-[0.4em] text-primary">Summon Older Decrees</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-y-1 transition-transform">keyboard_double_arrow_down</span>
+</button>
+<p class="font-label text-[10px] text-outline uppercase tracking-widest mt-4">Showing 4 of 1,248 recorded edicts</p>
+</div>
+</div>
+</main>
+<!-- Decorative Corner Elements -->
+<div class="fixed bottom-0 right-0 w-32 h-32 pointer-events-none opacity-20 lg:opacity-40">
+<svg class="w-full h-full fill-primary" viewbox="0 0 100 100">
+<path d="M100 0 L100 100 L0 100 Q 50 50 100 0 Z"></path>
+</svg>
+</div>
+</body></html>

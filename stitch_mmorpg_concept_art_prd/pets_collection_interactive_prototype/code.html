@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Relic &amp; Rune Hub | Pets &amp; Companions</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Work+Sans:wght@300;400;500;600&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background-color: #161311;
+            color: #eae1dd;
+        }
+        .font-newsreader { font-family: 'Newsreader', serif; }
+        .font-space-grotesk { font-family: 'Space Grotesk', sans-serif; }
+        
+        /* Custom scrollbar for the grit aesthetic */
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: #161311; }
+        ::-webkit-scrollbar-thumb { background: #393431; }
+        ::-webkit-scrollbar-thumb:hover { background: #e9c176; }
+
+        /* Tapered Underline for Runic Header */
+        .runic-underline {
+            position: relative;
+        }
+        .runic-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, #e9c176 0%, rgba(233, 193, 118, 0) 100%);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "surface-container": "#231f1d",
+                "surface": "#161311",
+                "tertiary-container": "#006266",
+                "on-secondary-container": "#ccb594",
+                "on-primary": "#412d00",
+                "on-surface-variant": "#dac2b6",
+                "surface-container-high": "#2e2927",
+                "secondary-fixed": "#f7dfbc",
+                "on-primary-fixed": "#261900",
+                "secondary-fixed-dim": "#dac3a2",
+                "secondary": "#dac3a2",
+                "on-background": "#eae1dd",
+                "background": "#161311",
+                "tertiary-fixed": "#63f7ff",
+                "surface-container-lowest": "#110d0c",
+                "primary-fixed-dim": "#e9c176",
+                "outline-variant": "#54433a",
+                "primary": "#e9c176",
+                "on-primary-fixed-variant": "#5d4201",
+                "on-tertiary": "#003739",
+                "error": "#ffb4ab",
+                "surface-bright": "#3d3836",
+                "tertiary-fixed-dim": "#00dce5",
+                "surface-variant": "#393431",
+                "on-tertiary-fixed": "#002021",
+                "error-container": "#93000a",
+                "on-secondary-fixed": "#251904",
+                "inverse-primary": "#775a19",
+                "surface-container-low": "#1f1b19",
+                "surface-container-highest": "#393431",
+                "on-tertiary-fixed-variant": "#004f53",
+                "on-error-container": "#ffdad6",
+                "on-primary-container": "#f2c97e",
+                "on-tertiary-container": "#00e5ee",
+                "tertiary": "#00dce5",
+                "on-error": "#690005",
+                "surface-dim": "#161311",
+                "on-secondary-fixed-variant": "#54442b",
+                "on-secondary": "#3c2e16",
+                "inverse-surface": "#eae1dd",
+                "surface-tint": "#e9c176",
+                "secondary-container": "#57472d",
+                "primary-fixed": "#ffdea5",
+                "on-surface": "#eae1dd",
+                "outline": "#a28c81",
+                "inverse-on-surface": "#342f2d",
+                "primary-container": "#715313"
+              },
+              fontFamily: {
+                "headline": ["Newsreader"],
+                "body": ["Work Sans"],
+                "label": ["Space Grotesk"]
+              },
+              borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary selection:text-on-primary">
+<!-- SideNavBar Shell -->
+<aside class="fixed left-0 top-0 h-full w-64 border-r-0 bg-[#161311] flex flex-col py-8 px-4 z-50">
+<div class="mb-10 px-2">
+<div class="flex items-center gap-3 mb-1">
+<div class="w-10 h-10 bg-surface-container-highest flex items-center justify-center border border-primary/20">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+</div>
+<div>
+<h1 class="font-newsreader text-[#e9c176] text-xl font-bold italic leading-tight">The Master's Ledger</h1>
+<p class="text-[10px] font-label uppercase tracking-widest text-secondary/60">Catalog Archive</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<!-- Nav Item: Catalog -->
+<a class="flex items-center gap-3 px-3 py-3 text-[#dac3a2] opacity-60 font-['Space_Grotesk'] text-sm uppercase tracking-wider hover:bg-[#231f1d] hover:text-[#00dce5] transition-all cursor-pointer" href="{{DATA:SCREEN:SCREEN_21}}">
+<span class="material-symbols-outlined text-lg">inventory_2</span>
+<span>Catalog</span>
+</a>
+<!-- Nav Item: Häuser & Gebäude -->
+<a class="flex items-center gap-3 px-3 py-3 text-[#dac3a2] opacity-60 font-['Space_Grotesk'] text-sm uppercase tracking-wider hover:bg-[#231f1d] hover:text-[#00dce5] transition-all cursor-pointer" href="{{DATA:SCREEN:SCREEN_27}}">
+<span class="material-symbols-outlined text-lg">castle</span>
+<span>Häuser &amp; Gebäude</span>
+</a>
+<!-- Nav Item: Pets (ACTIVE) -->
+<a class="flex items-center gap-3 px-3 py-3 bg-[#393431] text-[#e9c176] border-l-4 border-[#e9c176] font-['Space_Grotesk'] text-sm uppercase tracking-wider active:translate-x-1 transition-transform cursor-pointer" href="{{DATA:SCREEN:SCREEN_20}}">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">pets</span>
+<span>Pets</span>
+</a>
+<!-- Nav Item: Runes -->
+<a class="flex items-center gap-3 px-3 py-3 text-[#dac3a2] opacity-60 font-['Space_Grotesk'] text-sm uppercase tracking-wider hover:bg-[#231f1d] hover:text-[#00dce5] transition-all cursor-pointer" href="#">
+<span class="material-symbols-outlined text-lg">auto_awesome</span>
+<span>Runes</span>
+</a>
+<!-- Nav Item: NPCs -->
+<a class="flex items-center gap-3 px-3 py-3 text-[#dac3a2] opacity-60 font-['Space_Grotesk'] text-sm uppercase tracking-wider hover:bg-[#231f1d] hover:text-[#00dce5] transition-all cursor-pointer" href="{{DATA:SCREEN:SCREEN_17}}">
+<span class="material-symbols-outlined text-lg">groups</span>
+<span>NPCs</span>
+</a>
+<!-- Nav Item: Vault -->
+<a class="flex items-center gap-3 px-3 py-3 text-[#dac3a2] opacity-60 font-['Space_Grotesk'] text-sm uppercase tracking-wider hover:bg-[#231f1d] hover:text-[#00dce5] transition-all cursor-pointer" href="#">
+<span class="material-symbols-outlined text-lg">account_balance</span>
+<span>Vault</span>
+</a>
+</nav>
+<div class="mt-auto px-2">
+<button class="w-full bg-primary-container text-on-primary-container font-label text-xs font-bold py-3 uppercase tracking-widest hover:brightness-110 active:scale-95 transition-all flex items-center justify-center gap-2 shadow-lg shadow-black/20 cursor-pointer">
+<span class="material-symbols-outlined text-sm">add</span>
+                New Entry
+            </button>
+</div>
+</aside>
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 right-0 left-0 h-20 bg-[#161311] backdrop-blur-xl flex justify-between items-center px-6 ml-64 z-40">
+<div class="flex items-center gap-8">
+<div class="font-['Newsreader'] text-2xl font-bold text-[#e9c176] uppercase tracking-widest leading-none">Relic &amp; Rune Hub</div>
+<nav class="hidden lg:flex items-center gap-6">
+<a class="font-space-grotesk uppercase tracking-widest text-xs text-[#e9c176] border-b-2 border-[#e9c176] pb-1 cursor-pointer" href="#">Mammals</a>
+<a class="font-space-grotesk uppercase tracking-widest text-xs text-[#dac3a2] opacity-70 hover:text-[#00dce5] hover:drop-shadow-[0_0_8px_rgba(0,220,229,0.4)] transition-all cursor-pointer" href="#">Avian</a>
+<a class="font-space-grotesk uppercase tracking-widest text-xs text-[#dac3a2] opacity-70 hover:text-[#00dce5] hover:drop-shadow-[0_0_8px_rgba(0,220,229,0.4)] transition-all cursor-pointer" href="#">Constructs</a>
+<a class="font-space-grotesk uppercase tracking-widest text-xs text-[#dac3a2] opacity-70 hover:text-[#00dce5] hover:drop-shadow-[0_0_8px_rgba(0,220,229,0.4)] transition-all cursor-pointer" href="{{DATA:SCREEN:SCREEN_27}}">Häuser &amp; Gebäude</a>
+<a class="font-space-grotesk uppercase tracking-widest text-xs text-[#dac3a2] opacity-70 hover:text-[#00dce5] hover:drop-shadow-[0_0_8px_rgba(0,220,229,0.4)] transition-all cursor-pointer" href="{{DATA:SCREEN:SCREEN_17}}">NPCs</a>
+<a class="font-space-grotesk uppercase tracking-widest text-xs text-[#dac3a2] opacity-70 hover:text-[#00dce5] hover:drop-shadow-[0_0_8px_rgba(0,220,229,0.4)] transition-all cursor-pointer" href="#">Rare Beasts</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative group">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-secondary/40 text-sm">search</span>
+<input class="bg-surface-container-lowest border-none text-xs font-label tracking-widest py-2 pl-10 pr-4 w-48 focus:ring-1 focus:ring-primary/50 text-on-surface" placeholder="FIND COMPANION..." type="text"/>
+</div>
+<button class="text-secondary/60 hover:text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<button class="bg-primary text-on-primary font-label text-xs font-bold px-6 py-2 uppercase tracking-widest hover:brightness-110 active:scale-95 transition-all cursor-pointer">
+                Upload
+            </button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-24 p-8 min-h-screen">
+<!-- Header Section -->
+<div class="mb-10 flex justify-between items-end">
+<div>
+<h2 class="font-newsreader text-4xl text-on-surface font-light tracking-tight runic-underline inline-block mb-2">Pets &amp; Companions</h2>
+<p class="text-secondary/50 font-label text-xs tracking-[0.2em] uppercase">Beastiary Section 04: Domesticated &amp; Wild Entities</p>
+</div>
+<div class="flex gap-4">
+<button class="flex items-center gap-2 text-[10px] font-label uppercase tracking-widest px-4 py-2 bg-surface-container-high border border-outline-variant/30 hover:bg-surface-container-highest transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+                    Sort by Power
+                </button>
+</div>
+</div>
+<!-- Grid Container -->
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+<!-- Item 1: Armored Wolf -->
+<div class="group relative bg-surface-container border border-outline-variant/10 aspect-[3/4.2] flex flex-col overflow-hidden hover:border-primary/30 transition-all duration-300 cursor-pointer">
+<div class="flex-1 relative overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover mix-blend-luminosity group-hover:mix-blend-normal transition-all duration-500 scale-105 group-hover:scale-100 opacity-60 group-hover:opacity-100" data-alt="concept art of a massive armored wolf with glowing runes on its iron plate barding, dark foggy forest background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDu5yCGVlyGCsz52dTODX9AAydoOaAm8tLNfTmVxUnYCdxwCTjrYLEx_8IGwjx1rpErum88loa0no42tTTiFpIFvm_Rtopqww9QJKcvRbVRmv7HVuCS8rsykRAEuV2s7mKJX9TOHIJtxkX1VlQXg68-eBsX0hKmMzxJxtOQMxuNMqtwpOmrRRqI2cOuxY-SBVM9W6q0i5RqSr0Oc-Pi3MkAz-hFwqjRIuVeC0ENUXLRNZnJDBqB91C5exeTIoso8RbXJaBESH4BDbM"/>
+<div class="absolute top-2 right-2 flex flex-col gap-1">
+<span class="bg-primary/20 text-primary text-[8px] font-label px-1 py-0.5 border border-primary/30">ELITE</span>
+</div>
+</div>
+<div class="p-4 bg-surface-container-high relative">
+<div class="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary/50 to-transparent"></div>
+<h3 class="font-newsreader text-lg text-primary leading-tight mb-1">Iron-Hide Stalker</h3>
+<p class="font-label text-[10px] text-secondary/40 uppercase tracking-widest mb-4">Mammal • Combat Class</p>
+<div class="flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<button class="w-full bg-[#393431] border border-primary/30 text-primary text-[9px] font-label uppercase py-1.5 hover:bg-primary hover:text-on-primary transition-all flex items-center justify-center gap-2 cursor-pointer">
+<span class="material-symbols-outlined text-xs">view_in_ar</span>
+                            View 3D Model
+                        </button>
+<div class="flex gap-2">
+<button class="flex-1 bg-surface-container-highest border border-outline-variant/30 text-on-surface text-[9px] font-label uppercase py-1.5 hover:text-primary transition-colors cursor-pointer">Edit</button>
+<button class="flex-1 bg-surface-container-highest border border-outline-variant/30 text-on-surface text-[9px] font-label uppercase py-1.5 hover:text-tertiary transition-colors cursor-pointer">Export</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 2: Mystical Owl -->
+<div class="group relative bg-surface-container border border-outline-variant/10 aspect-[3/4.2] flex flex-col overflow-hidden hover:border-primary/30 transition-all cursor-pointer">
+<div class="flex-1 relative bg-surface-container-low">
+<img class="w-full h-full object-cover mix-blend-luminosity group-hover:mix-blend-normal transition-all duration-500 opacity-60 group-hover:opacity-100" data-alt="ethereal barn owl with glowing blue eyes and smoke-like feathers, perched on a withered branch, nocturnal gothic atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3psb_QFX0VhqaCn4gU2qUZNIO_-IF2VOXbtLIEiRafY0oK24TI2si9wQvfNZ__f9mS8N6_QKWCWTcNoME2b0CLDnnzK-ATUsf5nKlWA0CZR-H08N4UR0QbZkGD016miHbiY9cP-McPYPDcef424kOTWyWDmmSGJLZi7_Yps_pUNqDztMuTX3Z1M3wLSASFXl030kVmntYdN6yn00z-PQgoHElcK8dsVuofa-4Hv9aTUqgscVE0kHVAytrGJcDK0N59PmrcqXbpGE"/>
+<div class="absolute top-2 right-2">
+<span class="bg-tertiary/20 text-tertiary text-[8px] font-label px-1 py-0.5 border border-tertiary/30">MYSTIC</span>
+</div>
+</div>
+<div class="p-4 bg-surface-container-high relative">
+<h3 class="font-newsreader text-lg text-primary leading-tight mb-1">Soul-Gazer Strigid</h3>
+<p class="font-label text-[10px] text-secondary/40 uppercase tracking-widest mb-4">Avian • Scout Class</p>
+<div class="flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="w-full bg-[#393431] border border-primary/30 text-primary text-[9px] font-label uppercase py-1.5 hover:bg-primary hover:text-on-primary transition-all flex items-center justify-center gap-2 cursor-pointer">
+<span class="material-symbols-outlined text-xs">view_in_ar</span>
+                            View 3D Model
+                        </button>
+<div class="flex gap-2">
+<button class="flex-1 bg-surface-container-highest border border-outline-variant/30 text-on-surface text-[9px] font-label uppercase py-1.5 hover:text-primary transition-colors cursor-pointer">Edit</button>
+<button class="flex-1 bg-surface-container-highest border border-outline-variant/30 text-on-surface text-[9px] font-label uppercase py-1.5 hover:text-tertiary transition-colors cursor-pointer">Export</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 3: Clockwork Spider -->
+<div class="group relative bg-surface-container border border-outline-variant/10 aspect-[3/4.2] flex flex-col overflow-hidden hover:border-primary/30 transition-all cursor-pointer">
+<div class="flex-1 relative bg-surface-container-low">
+<img class="w-full h-full object-cover mix-blend-luminosity group-hover:mix-blend-normal opacity-60 group-hover:opacity-100 transition-all" data-alt="macro photo of a mechanical spider made of brass and copper gears with red glowing lens eyes, dark workshop setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1JfK5hkpdyF93O4hrGHZz_ESQcRMcBRSWPuZHcz6ps-pFQRoHGwVrEI1UUNkGWEXtzgMTD30S7vmBzB5E-zgi1fFFceBjuoxj-UZrq_EPkN-ynT45HDuiXd7BuevsE0LQCg-Truz6CuW2oCBGeNyZHJTvGIRqXxxQ6PpnMss4fGMGqsbdpa0WWI-J3NXgTgsgEOgaKETLIFXMKPqnPnwOVv5rG9ysTz3GNIMxN6XJdm_k1x07Vzt3qQbYHeEi896GrZK6DXkP5VA"/>
+</div>
+<div class="p-4 bg-surface-container-high">
+<h3 class="font-newsreader text-lg text-primary leading-tight mb-1">Brass-Leg Weaver</h3>
+<p class="font-label text-[10px] text-secondary/40 uppercase tracking-widest mb-4">Construct • Utility</p>
+<div class="flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="w-full bg-[#393431] border border-primary/30 text-primary text-[9px] font-label uppercase py-1.5 hover:bg-primary hover:text-on-primary transition-all flex items-center justify-center gap-2 cursor-pointer">
+<span class="material-symbols-outlined text-xs">view_in_ar</span>
+                            View 3D Model
+                        </button>
+<div class="flex gap-2">
+<button class="flex-1 bg-surface-container-highest border border-outline-variant/30 text-on-surface text-[9px] font-label uppercase py-1.5 hover:text-primary transition-colors cursor-pointer">Edit</button>
+<button class="flex-1 bg-surface-container-highest border border-outline-variant/30 text-on-surface text-[9px] font-label uppercase py-1.5 hover:text-tertiary transition-colors cursor-pointer">Export</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 4: Bone Hound -->
+<div class="group relative bg-surface-container border border-outline-variant/10 aspect-[3/4.2] flex flex-col overflow-hidden hover:border-primary/30 transition-all cursor-pointer">
+<div class="flex-1 relative bg-surface-container-low">
+<img class="w-full h-full object-cover mix-blend-luminosity group-hover:mix-blend-normal opacity-60 group-hover:opacity-100 transition-all" data-alt="skeleton of a skeletal hound with decaying leather patches and glowing orange embers in its chest cavity, dark crypt background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD79uuDpcrrS_OQc-a1hhd3nRIAaRS66VWELgx74EPv1z-oRduP8XeOI-wwWCL_JFGW4O0BHaWWx_cu2wy1wkCptMYsHwt3msPmZFl5g6dRkVeUly0kIEc2GNUoeFS5Jt-X4M_AQEN5CAewfkf2uf7gO7sK5ChBHs-Ttbr3ebehcmh10QcU85a8Fr9kQ39PRcwvlVhzo_4OY-BIcgi38E6Fa-cT1pZZmPEH6Xlhyehwc_X_5oONpRxgnuUT_En-baN1JEvVWxIMH-4"/>
+</div>
+<div class="p-4 bg-surface-container-high">
+<h3 class="font-newsreader text-lg text-primary leading-tight mb-1">Marrow-Thief</h3>
+<p class="font-label text-[10px] text-secondary/40 uppercase tracking-widest mb-4">Undead • Guardian</p>
+<div class="flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="w-full bg-[#393431] border border-primary/30 text-primary text-[9px] font-label uppercase py-1.5 hover:bg-primary hover:text-on-primary transition-all flex items-center justify-center gap-2 cursor-pointer">
+<span class="material-symbols-outlined text-xs">view_in_ar</span>
+                            View 3D Model
+                        </button>
+<div class="flex gap-2">
+<button class="flex-1 bg-surface-container-highest border border-outline-variant/30 text-on-surface text-[9px] font-label uppercase py-1.5 hover:text-primary transition-colors cursor-pointer">Edit</button>
+<button class="flex-1 bg-surface-container-highest border border-outline-variant/30 text-on-surface text-[9px] font-label uppercase py-1.5 hover:text-tertiary transition-colors cursor-pointer">Export</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 5: Ethereal Spirit -->
+<div class="group relative bg-surface-container border border-outline-variant/10 aspect-[3/4.2] flex flex-col overflow-hidden hover:border-primary/30 transition-all cursor-pointer">
+<div class="flex-1 relative bg-surface-container-low">
+<img class="w-full h-full object-cover mix-blend-luminosity group-hover:mix-blend-normal opacity-60 group-hover:opacity-100 transition-all" data-alt="ghostly wisp shaped like a fox, glowing white light with trailing particle effects, misty moor at twilight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEjdUZgJJSTPt_3Jzs-EGlW2DdW8jMt2i6nQ8jHVjiABtxCYu7jUbPIvQ6p2yIr8teizeO6nfE-MTdMZGcDwixVFf-y29CcL9_lVCxX3naUHSs6nvjCN4OfGVZ1O0hDGQ8z6_w0AA5lyHbsYUEvWNvU75JgJftTryhVktjykmbJrPgzewKvUmjrNAAkIqLYVNO3gNg6NwY1qJs1mriJ5dt_COY8EhAnrcCh2HBPHEJhqnbighzysh7kYy4PjH4sICx9Zdfel-b2G8"/>
+<div class="absolute top-2 right-2">
+<span class="bg-tertiary/20 text-tertiary text-[8px] font-label px-1 py-0.5 border border-tertiary/30">RARE</span>
+</div>
+</div>
+<div class="p-4 bg-surface-container-high">
+<h3 class="font-newsreader text-lg text-primary leading-tight mb-1">Wisp-Tail Spirit</h3>
+<p class="font-label text-[10px] text-secondary/40 uppercase tracking-widest mb-4">Spirit • Support</p>
+<div class="flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="w-full bg-[#393431] border border-primary/30 text-primary text-[9px] font-label uppercase py-1.5 hover:bg-primary hover:text-on-primary transition-all flex items-center justify-center gap-2 cursor-pointer">
+<span class="material-symbols-outlined text-xs">view_in_ar</span>
+                            View 3D Model
+                        </button>
+<div class="flex gap-2">
+<button class="flex-1 bg-surface-container-highest border border-outline-variant/30 text-on-surface text-[9px] font-label uppercase py-1.5 hover:text-primary transition-colors cursor-pointer">Edit</button>
+<button class="flex-1 bg-surface-container-highest border border-outline-variant/30 text-on-surface text-[9px] font-label uppercase py-1.5 hover:text-tertiary transition-colors cursor-pointer">Export</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 6: Mountain Breaker -->
+<div class="group relative bg-surface-container border border-outline-variant/10 aspect-[3/4.2] flex flex-col overflow-hidden hover:border-primary/30 transition-all cursor-pointer">
+<div class="flex-1 bg-surface-container-lowest flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover opacity-40 group-hover:opacity-100 transition-opacity" data-alt="armored bear concept art with heavy plate armor and leather straps, dark forest backdrop, cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6fB93SoU4NQXO24gttes63ay95_OyG4qvIIXdFg4Dclf35yYrj820pw12C75lfjnY8stWmvTFjqCRBhEmqXOuWjKvLFwJRilddP9UpWk3wNB2A-SbOVwdRBDXjMKANoeigACjjgTfTibHZHx3F1kRTh-u0bPno2zUH1iP8LfXc8yNNNEjLlYOitqpuIUVmiKvUqEojvsqmTF8iXAAmqCgNE1XcZ764CSFEJnLtuIOOIVm3PlbREMySG3pf_GpYx7M03YPEV4_yr8"/>
+</div>
+<div class="p-4 bg-surface-container-high">
+<h3 class="font-newsreader text-lg text-primary leading-tight mb-1">Mountain Breaker</h3>
+<p class="font-label text-[10px] text-secondary/40 uppercase tracking-widest mb-4">Mammal • Tank</p>
+<div class="flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="w-full bg-[#393431] border border-primary/30 text-primary text-[9px] font-label uppercase py-1.5 hover:bg-primary hover:text-on-primary transition-all flex items-center justify-center gap-2 cursor-pointer">
+<span class="material-symbols-outlined text-xs">view_in_ar</span>
+                            View 3D Model
+                        </button>
+<div class="flex gap-2">
+<button class="flex-1 bg-surface-container-highest border border-outline-variant/30 text-on-surface text-[9px] font-label uppercase py-1.5 hover:text-primary transition-colors cursor-pointer">Edit</button>
+<button class="flex-1 bg-surface-container-highest border border-outline-variant/30 text-on-surface text-[9px] font-label uppercase py-1.5 hover:text-tertiary transition-colors cursor-pointer">Export</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Repeating placeholders to reach visual count -->
+<div class="bg-surface-container-lowest border border-outline-variant/5 aspect-[3/4.2] flex flex-col opacity-30 cursor-pointer"></div>
+<div class="bg-surface-container-lowest border border-outline-variant/5 aspect-[3/4.2] flex flex-col opacity-30 cursor-pointer"></div>
+<div class="bg-surface-container-lowest border border-outline-variant/5 aspect-[3/4.2] flex flex-col opacity-30 cursor-pointer"></div>
+<div class="bg-surface-container-lowest border border-outline-variant/5 aspect-[3/4.2] flex flex-col opacity-30 cursor-pointer"></div>
+<div class="bg-surface-container-lowest border border-outline-variant/5 aspect-[3/4.2] flex flex-col opacity-30 cursor-pointer"></div>
+<div class="bg-surface-container-lowest border border-outline-variant/5 aspect-[3/4.2] flex flex-col opacity-30 cursor-pointer"></div>
+<div class="bg-surface-container-lowest border border-outline-variant/5 aspect-[3/4.2] flex flex-col opacity-30 cursor-pointer"></div>
+<div class="bg-surface-container-lowest border border-outline-variant/5 aspect-[3/4.2] flex flex-col opacity-30 cursor-pointer"></div>
+<!-- Final Item: Upload New Concept Action -->
+<button class="group relative bg-surface-container-lowest border-2 border-dashed border-outline-variant/30 aspect-[3/4.2] flex flex-col items-center justify-center hover:border-primary/50 transition-all cursor-pointer">
+<span class="material-symbols-outlined text-4xl text-outline-variant group-hover:text-primary mb-4 transition-colors">upload_file</span>
+<span class="font-label text-xs uppercase tracking-widest text-secondary/40 group-hover:text-on-surface">Upload New Concept</span>
+</button>
+</div>
+</main>
+<!-- Contextual FAB -->
+<div class="fixed bottom-8 right-8 flex flex-col gap-4">
+<button class="w-16 h-16 bg-primary text-on-primary shadow-2xl shadow-black/60 flex items-center justify-center hover:scale-105 active:scale-95 transition-all cursor-pointer">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">add</span>
+</button>
+</div>
+</body></html>

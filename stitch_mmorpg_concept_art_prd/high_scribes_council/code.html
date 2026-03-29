@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Council of Scribes - High Council Chamber</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Work+Sans:wght@300;400;500;600&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-high": "#2e2927",
+                        "on-error": "#690005",
+                        "background": "#161311",
+                        "on-tertiary": "#003739",
+                        "on-primary-fixed": "#261900",
+                        "primary": "#e9c176",
+                        "surface-variant": "#393431",
+                        "on-secondary": "#3c2e16",
+                        "error-container": "#93000a",
+                        "secondary-container": "#57472d",
+                        "on-primary-container": "#f2c97e",
+                        "on-tertiary-container": "#00e5ee",
+                        "on-background": "#eae1dd",
+                        "primary-fixed-dim": "#e9c176",
+                        "on-error-container": "#ffdad6",
+                        "surface-tint": "#e9c176",
+                        "secondary": "#dac3a2",
+                        "inverse-primary": "#775a19",
+                        "error": "#ffb4ab",
+                        "primary-container": "#715313",
+                        "outline-variant": "#54433a",
+                        "primary-fixed": "#ffdea5",
+                        "on-surface-variant": "#dac2b6",
+                        "surface-container-highest": "#393431",
+                        "secondary-fixed": "#f7dfbc",
+                        "inverse-on-surface": "#342f2d",
+                        "tertiary-fixed-dim": "#00dce5",
+                        "surface-container": "#231f1d",
+                        "on-secondary-container": "#ccb594",
+                        "surface-container-lowest": "#110d0c",
+                        "surface": "#161311",
+                        "secondary-fixed-dim": "#dac3a2",
+                        "outline": "#a28c81",
+                        "tertiary": "#00dce5",
+                        "on-surface": "#eae1dd",
+                        "surface-bright": "#3d3836",
+                        "tertiary-container": "#006266",
+                        "on-primary": "#412d00",
+                        "on-secondary-fixed": "#251904",
+                        "tertiary-fixed": "#63f7ff",
+                        "on-tertiary-fixed-variant": "#004f53",
+                        "inverse-surface": "#eae1dd",
+                        "on-tertiary-fixed": "#002021",
+                        "on-secondary-fixed-variant": "#54442b",
+                        "surface-dim": "#161311",
+                        "surface-container-low": "#1f1b19",
+                        "on-primary-fixed-variant": "#5d4201"
+                    },
+                    fontFamily: {
+                        "headline": ["Newsreader"],
+                        "body": ["Work Sans"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+        }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #161311; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #715313; }
+        .taper-line {
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, #e9c176 50%, transparent 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="bg-stone-950 flex justify-between items-center w-full px-6 py-4 max-w-none fixed top-0 z-50 shadow-2xl shadow-black">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-serif italic text-amber-400">Council of Scribes</span>
+<nav class="hidden md:flex items-center gap-6">
+<a class="font-serif font-bold uppercase tracking-widest text-stone-400 hover:text-amber-200 hover:bg-stone-900/50 transition-colors duration-300" href="#">Archives</a>
+<a class="font-serif font-bold uppercase tracking-widest text-stone-400 hover:text-amber-200 hover:bg-stone-900/50 transition-colors duration-300" href="#">Decrees</a>
+<a class="font-serif font-bold uppercase tracking-widest text-stone-400 hover:text-amber-200 hover:bg-stone-900/50 transition-colors duration-300" href="#">The Vault</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-amber-200 hover:text-amber-400 transition-colors">
+<span class="material-symbols-outlined" data-icon="gavel">gavel</span>
+</button>
+<button class="text-amber-200 hover:text-amber-400 transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<div class="w-10 h-10 border border-amber-900/50 p-0.5">
+<img alt="High Scribe Portrait" class="w-full h-full object-cover" data-alt="Close-up portrait of an elderly scholar with a weathered face and wise eyes in dramatic candlelight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCOWf-uQjSNPH1RqT_9pr42uFObN1O-2F96KGV60LrZS1XLzwTBMiYkeddgEh1jLv1Ptp-G5g3l_Ho69ck-DuHTjO7d8HMtjVGfh4qQCdNu41kMf4efla-Hw3gum-mjms0wJmozK5sFxeVcCjW8Z9J1XRGFop3zzp_n9vAlgVEWqW64j1XzJbpPA5jCr8VO7NB5YCOF8w4iwhm71hJ7nkdi9MZEcVglQaGjDl4_L-JjV9stvarL74x36aX4XoLYoR4K7cxRxv5N1g"/>
+</div>
+</div>
+<div class="bg-gradient-to-r from-transparent via-amber-900/30 to-transparent h-[1px] w-full absolute bottom-0 left-0"></div>
+</header>
+<!-- SideNavBar -->
+<aside class="hidden lg:flex flex-col h-screen fixed left-0 top-0 z-40 bg-stone-950 w-72 pt-24 shadow-[10px_0_30px_-15px_rgba(0,0,0,0.9)]">
+<div class="px-6 mb-8">
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-amber-500 text-3xl" data-icon="verified_user">verified_user</span>
+<div>
+<h2 class="font-serif font-black text-amber-500 leading-none">The High Council</h2>
+<p class="text-[10px] uppercase tracking-tighter text-stone-500 font-label">Custodian of the Eternal Flame</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-4 text-stone-500 hover:text-stone-300 px-6 py-3 transition-all font-serif hover:bg-stone-900/40" href="#">
+<span class="material-symbols-outlined" data-icon="book_2">book_2</span>
+<span class="tracking-tight">Grand Ledger</span>
+</a>
+<a class="flex items-center gap-4 bg-stone-900 text-amber-300 font-bold border-l-2 border-amber-600 px-6 py-3 transition-all font-serif translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="tracking-tight">Active Rites</span>
+</a>
+<a class="flex items-center gap-4 text-stone-500 hover:text-stone-300 px-6 py-3 transition-all font-serif hover:bg-stone-900/40" href="#">
+<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+<span class="tracking-tight">Council Seals</span>
+</a>
+<a class="flex items-center gap-4 text-stone-500 hover:text-stone-300 px-6 py-3 transition-all font-serif hover:bg-stone-900/40" href="#">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+<span class="tracking-tight">Historical Records</span>
+</a>
+<div class="mt-auto pb-8">
+<a class="flex items-center gap-4 text-stone-500 hover:text-stone-300 px-6 py-3 transition-all font-serif hover:bg-stone-900/40" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="tracking-tight">Settings</span>
+</a>
+</div>
+</nav>
+</aside>
+<!-- Main Canvas -->
+<main class="lg:ml-72 pt-24 min-h-screen bg-surface px-6 pb-12 relative overflow-hidden">
+<!-- Subtle Background Motif -->
+<div class="absolute inset-0 opacity-5 pointer-events-none flex items-center justify-center">
+<span class="material-symbols-outlined text-[40rem]" data-icon="shield">shield</span>
+</div>
+<div class="max-w-6xl mx-auto relative z-10">
+<!-- Runic Header -->
+<div class="mb-12 text-center md:text-left">
+<h1 class="font-headline text-5xl md:text-6xl text-on-background italic mb-2">High Council of Scribes</h1>
+<div class="taper-line w-full md:w-2/3 mb-4"></div>
+<p class="font-label text-primary tracking-[0.3em] uppercase text-xs">Registry of the Eternal Chamber • Anno Domini MCCX</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+<!-- Left Column: The Council Members (Asymmetric Layout) -->
+<div class="md:col-span-8 space-y-12">
+<section>
+<div class="flex items-baseline gap-4 mb-6">
+<h3 class="font-headline text-2xl text-secondary italic">Presiding Luminaries</h3>
+<div class="flex-grow border-b border-outline-variant opacity-20"></div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<!-- High Archivist Card -->
+<div class="bg-surface-container border border-outline-variant/10 p-6 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-30 transition-opacity">
+<span class="material-symbols-outlined text-6xl" data-icon="menu_book">menu_book</span>
+</div>
+<p class="font-label text-primary text-[10px] tracking-widest uppercase mb-1">High Archivist</p>
+<h4 class="font-headline text-2xl text-on-background mb-4">Elder Valerius Thorne</h4>
+<p class="text-sm text-on-surface-variant font-body leading-relaxed mb-6">
+                                    Overseer of the Forbidden Repositories and master of the ink-well. Responsible for the preservation of original scripts.
+                                </p>
+<div class="flex justify-between items-center">
+<span class="font-label text-[10px] text-stone-500 uppercase">Status: Vigilant</span>
+<button class="text-primary font-label text-[11px] uppercase tracking-wider flex items-center gap-1 hover:text-tertiary transition-colors">
+                                        View Dossier <span class="material-symbols-outlined text-sm" data-icon="arrow_right_alt">arrow_right_alt</span>
+</button>
+</div>
+</div>
+<!-- Master of Seals Card -->
+<div class="bg-surface-container border border-outline-variant/10 p-6 relative overflow-hidden group mt-4 sm:mt-8">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-30 transition-opacity">
+<span class="material-symbols-outlined text-6xl" data-icon="workspace_premium">workspace_premium</span>
+</div>
+<p class="font-label text-primary text-[10px] tracking-widest uppercase mb-1">Master of Seals</p>
+<h4 class="font-headline text-2xl text-on-background mb-4">Lady Elara Vane</h4>
+<p class="text-sm text-on-surface-variant font-body leading-relaxed mb-6">
+                                    Custodian of the Imperial Signet and the wax of truth. Her word validates the laws of the realm.
+                                </p>
+<div class="flex justify-between items-center">
+<span class="font-label text-[10px] text-stone-500 uppercase">Status: Presiding</span>
+<button class="text-primary font-label text-[11px] uppercase tracking-wider flex items-center gap-1 hover:text-tertiary transition-colors">
+                                        View Dossier <span class="material-symbols-outlined text-sm" data-icon="arrow_right_alt">arrow_right_alt</span>
+</button>
+</div>
+</div>
+<!-- Chronicler of Runes Card -->
+<div class="bg-surface-container border border-outline-variant/10 p-6 relative overflow-hidden group sm:col-span-2">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-30 transition-opacity">
+<span class="material-symbols-outlined text-6xl" data-icon="auto_stories">auto_stories</span>
+</div>
+<div class="flex flex-col md:flex-row gap-8">
+<div class="flex-shrink-0 w-full md:w-32 h-40 bg-surface-container-high border border-outline-variant/20">
+<img alt="Chronicler Silhouette" class="w-full h-full object-cover grayscale opacity-60" data-alt="Mysterious figure in heavy dark robes sitting at a desk with an ancient scroll and glowing runes in the background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfEosJM-Cd3lwq-r_QZtYVCmV6PyFrNrWkHHk-LhQHY4uily0L88HS7kkb0OZzKw1HmbZGTfSddFIAOxnzVag3ZGKNu2_qG9RqGf97tjIYI_EPoJQ1cbdSxg5V8x_uYAgidGIDxnAVb_rQQembe3PWWSbENIYLdEAc9iNrKOX1kvpGj270RpUTBlAcetCWQqxjY2U7TyiiOF6cZQMl0rVP1245lK7Bnd82lWz051vtngulu5txV7lI7UCHi9FusL40lEETn9814Cs"/>
+</div>
+<div class="flex-grow">
+<p class="font-label text-primary text-[10px] tracking-widest uppercase mb-1">Chronicler of Runes</p>
+<h4 class="font-headline text-2xl text-on-background mb-4">Aethelred the Silent</h4>
+<p class="text-sm text-on-surface-variant font-body leading-relaxed mb-4 max-w-xl">
+                                            The only council member permitted to handle the Living Parchment. He transcribes the murmurs of the ley lines into readable decree.
+                                        </p>
+<div class="flex items-center gap-4">
+<span class="px-2 py-0.5 border border-tertiary/30 text-tertiary text-[9px] uppercase font-label">Magically Attuned</span>
+<span class="px-2 py-0.5 border border-outline-variant/30 text-stone-500 text-[9px] uppercase font-label">Term: Perpetual</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Decrees & Interpretations Section -->
+<section class="bg-surface-container-low border border-outline-variant/10 p-8 shadow-inner relative">
+<!-- Glassmorphism overlay for focus -->
+<div class="absolute inset-0 bg-surface-container-high/20 backdrop-blur-[2px] pointer-events-none"></div>
+<div class="relative z-10">
+<div class="flex items-center justify-between mb-8">
+<h3 class="font-headline text-3xl text-primary italic">Decrees &amp; Interpretations</h3>
+<span class="material-symbols-outlined text-primary/50" data-icon="history_edu">history_edu</span>
+</div>
+<div class="space-y-6">
+<div class="group cursor-pointer">
+<div class="flex items-start gap-4">
+<div class="pt-1">
+<div class="w-2 h-2 bg-tertiary rounded-full shadow-[0_0_8px_#00dce5]"></div>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-center mb-1">
+<h5 class="font-headline text-xl text-on-background group-hover:text-primary transition-colors">The Third Edict of Silentium</h5>
+<span class="font-label text-[10px] text-stone-500">14 Days Past</span>
+</div>
+<p class="text-sm text-on-surface-variant font-body line-clamp-2">
+                                                Henceforth, all magical artifacts retrieved from the Sunken Spires must be registered with the Master of Seals within one lunar cycle. Failure to comply results in permanent banishment...
+                                            </p>
+</div>
+</div>
+<div class="ml-6 mt-4 h-[1px] bg-gradient-to-r from-outline-variant/30 to-transparent"></div>
+</div>
+<div class="group cursor-pointer">
+<div class="flex items-start gap-4">
+<div class="pt-1">
+<div class="w-2 h-2 bg-primary/40 rounded-full"></div>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-center mb-1">
+<h5 class="font-headline text-xl text-on-background group-hover:text-primary transition-colors">The Reinterpretation of Soul-Binding</h5>
+<span class="font-label text-[10px] text-stone-500">22 Days Past</span>
+</div>
+<p class="text-sm text-on-surface-variant font-body line-clamp-2">
+                                                Clarification on Article IV: Soul-binding of inanimate objects for the purpose of domestic labor is now restricted to licensed magi of the third circle or higher...
+                                            </p>
+</div>
+</div>
+<div class="ml-6 mt-4 h-[1px] bg-gradient-to-r from-outline-variant/30 to-transparent"></div>
+</div>
+<div class="text-center pt-4">
+<button class="px-8 py-3 bg-primary-container text-on-primary font-label text-xs uppercase tracking-[0.2em] hover:bg-primary transition-all active:scale-[0.98]">
+                                        Explore Full Codex
+                                    </button>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Stats & Current Agendas -->
+<div class="md:col-span-4 space-y-8">
+<!-- Chamber Status -->
+<div class="bg-surface-container-high p-6 border-l-2 border-primary">
+<h4 class="font-label text-[10px] uppercase tracking-widest text-primary mb-4">Council Registry</h4>
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<span class="text-sm text-on-surface-variant font-body">Active Members</span>
+<span class="text-lg font-headline text-on-background">03 / 05</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-sm text-on-surface-variant font-body">Pending Rulings</span>
+<span class="text-lg font-headline text-on-background">12</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-sm text-on-surface-variant font-body">Chamber Temperate</span>
+<span class="text-lg font-headline text-tertiary">Mystical</span>
+</div>
+</div>
+<div class="mt-6 pt-6 border-t border-outline-variant/20">
+<p class="text-[11px] text-stone-500 font-label italic">"In Truth, We Scribe. In Silence, We Rule."</p>
+</div>
+</div>
+<!-- Current Agenda -->
+<div class="bg-surface-container-lowest p-6 border border-outline-variant/10">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="pending_actions">pending_actions</span>
+<h4 class="font-headline text-xl text-on-background">Current Agenda</h4>
+</div>
+<ul class="space-y-6">
+<li class="flex gap-4">
+<span class="font-label text-primary font-bold">01</span>
+<div>
+<p class="text-sm font-headline text-on-background">Taxation of Void-Crystals</p>
+<p class="text-[10px] text-stone-500 uppercase font-label">Status: In Debate</p>
+</div>
+</li>
+<li class="flex gap-4">
+<span class="font-label text-primary font-bold">02</span>
+<div>
+<p class="text-sm font-headline text-on-background">The Shadow-Mark Protocol</p>
+<p class="text-[10px] text-stone-500 uppercase font-label">Status: Urgent Review</p>
+</div>
+</li>
+<li class="flex gap-4">
+<span class="font-label text-primary font-bold">03</span>
+<div>
+<p class="text-sm font-headline text-on-background">Renewal of Ancient Oaths</p>
+<p class="text-[10px] text-stone-500 uppercase font-label">Status: Scheduled</p>
+</div>
+</li>
+</ul>
+<button class="w-full mt-8 py-2 border border-outline-variant hover:border-primary text-on-surface-variant hover:text-primary transition-all font-label text-[10px] uppercase tracking-widest">
+                            Request Audience
+                        </button>
+</div>
+<!-- Decorative Seal Image -->
+<div class="opacity-40 hover:opacity-100 transition-opacity grayscale hover:grayscale-0 duration-700">
+<img alt="Official Wax Seal" class="w-full h-48 object-cover" data-alt="A macro shot of a deep red wax seal on old parchment with a complex heraldic eagle crest and golden thread" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUvPqRxWmoDchLdioRY4VWXSvSwI8U8cgm_4XWlRRNRh1_qRk4OE5Sv0FI_WHcKwgZLMveoS7dCGsWoPZz5Qflk3OcYJCMqhHzEC0ledgMHiDfZDxnI0HgDvyUU5Q0CUiRzPF-v3tPP-ppw0HPgASdIfX5QQmDnEvU0UqPmOE9F3lSA35BOx3a7_alNxLUtyuyqe2VAAuUOVgIZ9F1TDRIuTyfGD0V1PDJSZOnKGLh9AOCn7SyftTNAbIC3d26TpNlLYodto4yrHg"/>
+<p class="text-center text-[9px] font-label text-stone-600 mt-2 uppercase tracking-widest">Seal of Eternal Authenticity</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

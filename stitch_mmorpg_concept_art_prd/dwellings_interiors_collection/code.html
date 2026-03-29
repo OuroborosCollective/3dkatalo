@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dwellings &amp; Interiors | Relics of Rune &amp; Iron</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;0,700;1,400;1,600&amp;family=Work+Sans:wght@300;400;500&amp;family=Space+Grotesk:wght@300;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-container": "#57472d",
+                        "on-primary-fixed-variant": "#5d4201",
+                        "on-error": "#690005",
+                        "secondary-fixed": "#f7dfbc",
+                        "tertiary-fixed-dim": "#00dce5",
+                        "primary-fixed-dim": "#e9c176",
+                        "background": "#161311",
+                        "on-secondary-container": "#ccb594",
+                        "on-tertiary-fixed": "#002021",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-fixed": "#261900",
+                        "tertiary-container": "#006266",
+                        "surface-bright": "#3d3836",
+                        "tertiary-fixed": "#63f7ff",
+                        "inverse-surface": "#eae1dd",
+                        "on-secondary-fixed-variant": "#54442b",
+                        "error-container": "#93000a",
+                        "surface-tint": "#e9c176",
+                        "primary-container": "#715313",
+                        "on-primary": "#412d00",
+                        "secondary": "#dac3a2",
+                        "surface-container-high": "#2e2927",
+                        "on-surface": "#eae1dd",
+                        "on-background": "#eae1dd",
+                        "inverse-on-surface": "#342f2d",
+                        "surface": "#161311",
+                        "surface-container-lowest": "#110d0c",
+                        "on-tertiary-fixed-variant": "#004f53",
+                        "on-tertiary": "#003739",
+                        "on-surface-variant": "#dac2b6",
+                        "primary": "#e9c176",
+                        "secondary-fixed-dim": "#dac3a2",
+                        "surface-variant": "#393431",
+                        "outline-variant": "#54433a",
+                        "error": "#ffb4ab",
+                        "surface-dim": "#161311",
+                        "surface-container-low": "#1f1b19",
+                        "primary-fixed": "#ffdea5",
+                        "outline": "#a28c81",
+                        "surface-container-highest": "#393431",
+                        "on-primary-container": "#f2c97e",
+                        "on-secondary": "#3c2e16",
+                        "on-tertiary-container": "#00e5ee",
+                        "inverse-primary": "#775a19",
+                        "surface-container": "#231f1d",
+                        "tertiary": "#00dce5",
+                        "on-secondary-fixed": "#251904"
+                    },
+                    fontFamily: {
+                        "headline": ["Newsreader"],
+                        "body": ["Work Sans"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .runic-glow {
+            text-shadow: 0 0 8px rgba(0, 220, 229, 0.4);
+        }
+        .metallic-sheen {
+            background: linear-gradient(135deg, #e9c176 0%, #715313 100%);
+        }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #161311; }
+        ::-webkit-scrollbar-thumb { background: #393431; }
+        .asymmetric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary/30">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-[#161311] text-[#e9c176] border-b border-[#54433a]/15 shadow-none">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-semibold text-[#e9c176] italic font-['Newsreader'] tracking-wide">Dwellings &amp; Interiors</span>
+<nav class="hidden md:flex gap-6 font-label uppercase tracking-widest text-[10px]">
+<a class="text-[#e9c176] border-b-2 border-[#e9c176] hover:text-[#00dce5] transition-colors duration-300" href="#">Catalog</a>
+<a class="text-[#eae1dd]/60 hover:text-[#00dce5] transition-colors duration-300" href="#">Materials</a>
+<a class="text-[#eae1dd]/60 hover:text-[#00dce5] transition-colors duration-300" href="#">Blueprints</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="bg-surface-container-low px-3 py-1 flex items-center gap-2 border border-outline-variant/10">
+<span class="material-symbols-outlined text-sm opacity-50">search</span>
+<input class="bg-transparent border-none focus:ring-0 font-label text-[10px] w-32 placeholder:text-outline/40" placeholder="SEARCH ENTRIES..." type="text"/>
+</div>
+<button class="material-symbols-outlined hover:text-[#00dce5] transition-colors duration-300 Active:scale-95 duration-150">settings</button>
+</div>
+</header>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-16 h-[calc(100vh-4rem)] flex flex-col pt-8 bg-[#231f1d] text-[#e9c176] font-['Space_Grotesk'] uppercase tracking-widest text-xs w-64 shadow-[4px_0_24px_rgba(0,0,0,0.5)] z-40">
+<div class="px-6 mb-8">
+<h2 class="text-[#e9c176] font-bold text-sm tracking-[0.2em]">The Ledger</h2>
+<p class="text-[9px] text-secondary/50 font-label italic tracking-normal lowercase">Interior Manifest v.4.02</p>
+</div>
+<div class="flex flex-col gap-1">
+<a class="bg-[#393431] text-[#e9c176] border-l-4 border-[#e9c176] px-6 py-4 flex items-center gap-3 hover:bg-[#393431] hover:text-[#00dce5] transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">castle</span>
+<span>Grand Halls</span>
+</a>
+<a class="text-[#dac3a2]/70 px-6 py-4 flex items-center gap-3 hover:bg-[#393431] hover:text-[#00dce5] transition-all" href="#">
+<span class="material-symbols-outlined">science</span>
+<span>Alchemist Labs</span>
+</a>
+<a class="text-[#dac3a2]/70 px-6 py-4 flex items-center gap-3 hover:bg-[#393431] hover:text-[#00dce5] transition-all" href="#">
+<span class="material-symbols-outlined">bed</span>
+<span>Quarters</span>
+</a>
+<a class="text-[#dac3a2]/70 px-6 py-4 flex items-center gap-3 hover:bg-[#393431] hover:text-[#00dce5] transition-all" href="#">
+<span class="material-symbols-outlined">fireplace</span>
+<span>Kitchens</span>
+</a>
+<a class="text-[#dac3a2]/70 px-6 py-4 flex items-center gap-3 hover:bg-[#393431] hover:text-[#00dce5] transition-all" href="#">
+<span class="material-symbols-outlined">lock</span>
+<span>Vaults</span>
+</a>
+</div>
+<!-- Machine Readout -->
+<div class="mt-auto p-6 bg-surface-container-lowest/50 border-t border-outline-variant/10">
+<h3 class="font-label text-[10px] text-primary mb-3">SYSTEM DIAGNOSTICS</h3>
+<div class="space-y-2 font-mono text-[9px] text-secondary/40 normal-case tracking-tighter">
+<div class="flex justify-between"><span>VRAM USAGE</span><span class="text-tertiary">4.2GB</span></div>
+<div class="flex justify-between"><span>LOD BIAS</span><span class="text-on-surface">ULTRA</span></div>
+<div class="flex justify-between"><span>BUFFER STATE</span><span class="text-tertiary">STABLE</span></div>
+<div class="mt-4 h-1 bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-primary w-2/3"></div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-24 px-8 pb-12">
+<!-- Page Header -->
+<div class="mb-12 max-w-4xl">
+<h1 class="font-headline italic text-5xl text-on-surface mb-2">Interior Concepts</h1>
+<div class="h-px w-32 bg-gradient-to-r from-primary to-transparent mb-6"></div>
+<p class="text-secondary max-w-2xl leading-relaxed text-sm">
+                A definitive collection of architectural presets and furniture ensembles from the Iron Age of the Rune Empires. Every layout is rendered with volumetric shadows and soul-fire illumination for high-fidelity world-building.
+            </p>
+</div>
+<!-- Gallery Grid -->
+<div class="asymmetric-grid">
+<!-- Loop Simulation: 30 Cards Start -->
+<!-- Card 1: Obsidian Throne Room -->
+<article class="bg-surface-container-low flex flex-col group border border-outline-variant/5 hover:border-primary/20 transition-all duration-500">
+<div class="relative aspect-video overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="dramatic wide shot of a gothic throne room with black marble floors, towering obsidian pillars, and warm golden candle light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5nhJs--_N-fYPptazb8TfdTmzZeLXyIRsGsozqB26UyK8nJTdVcoVxJT62XunXvISteYmldrnlwWgZLVOcXjc8hkQZMCpwMg7oW4jFFSZQnpQRrjBdf5CXtOkyVJkUN4-0H4-NAl9CFb9PFbY1exj2HNPrWizmnI1pF-B3lVSufqj9-bFEln1ewRjk8hmW87IF6BrDnbzcltSG_vK3ISOtYvNNXtlK-1fLNQTaJNLKhCxXZxXRRTHq9JQWodBxe8Ha112DaFjR2A"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent"></div>
+<div class="absolute top-4 right-4 flex gap-1">
+<span class="px-2 py-0.5 bg-tertiary-container text-on-tertiary-container font-label text-[9px]">LEGENDARY</span>
+</div>
+</div>
+<div class="p-5 flex flex-col gap-4">
+<div>
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline text-lg font-bold text-on-surface leading-tight">Obsidian Throne Hall</h3>
+<span class="font-label text-[10px] text-secondary/40">#ARC-001</span>
+</div>
+<p class="text-xs text-secondary/70 italic font-headline">The seat of the Iron Sovereign, carved from volcanic glass.</p>
+</div>
+<!-- LOD Interface -->
+<div class="flex items-center justify-between bg-surface-container-lowest p-2">
+<span class="font-label text-[9px] text-primary/60">LOD LEVEL</span>
+<div class="flex gap-1">
+<button class="px-2 py-0.5 bg-primary text-on-primary font-label text-[9px] font-bold">HI</button>
+<button class="px-2 py-0.5 bg-surface-container-high text-secondary/60 font-label text-[9px] hover:text-on-surface transition-colors">MD</button>
+<button class="px-2 py-0.5 bg-surface-container-high text-secondary/60 font-label text-[9px] hover:text-on-surface transition-colors">LO</button>
+</div>
+</div>
+<!-- Export Actions -->
+<div class="grid grid-cols-4 gap-1">
+<button class="bg-surface-container-highest py-2 text-[9px] font-label hover:bg-primary hover:text-on-primary transition-all">GLB</button>
+<button class="bg-surface-container-highest py-2 text-[9px] font-label hover:bg-primary hover:text-on-primary transition-all">FBX</button>
+<button class="bg-surface-container-highest py-2 text-[9px] font-label hover:bg-primary hover:text-on-primary transition-all">USD</button>
+<button class="bg-surface-container-highest py-2 text-[9px] font-label hover:bg-primary hover:text-on-primary transition-all">UNITY</button>
+</div>
+</div>
+</article>
+<!-- Card 2: Alchemist's Den -->
+<article class="bg-surface-container-low flex flex-col group border border-outline-variant/5 hover:border-primary/20 transition-all duration-500">
+<div class="relative aspect-video overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="cluttered alchemist laboratory with bubbling glass beakers, glowing blue liquid in jars, and ancient parchment scrolls" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBxWLmkgJcl6xxX9Sf7OVJr6WLjeZVx2ss45woekOuN_GiY_KkzTyntCoawohOSy8L9Z3zt8ENJypKqOXDMGZc3jY_V9IdsusasmbWnPEcCwf2M0HsycqnaT4gkfoo4d3b5BAsfNUlcDpBPyuO3wPD8KSEC2_40mzFLnFe07Iq3XH1f3vwP5H2BKSt8qMBEXcXWkJ0cBWXl3OoYPedyt40ZvESBjpL6o_XNvXsTUFQu-J67JChKidYOEw4kkkqQ8kbXaJapfbWSaI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent"></div>
+<div class="absolute top-4 right-4 flex gap-1">
+<span class="px-2 py-0.5 bg-secondary-container text-on-secondary-container font-label text-[9px]">EPIC</span>
+</div>
+</div>
+<div class="p-5 flex flex-col gap-4">
+<div>
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline text-lg font-bold text-on-surface leading-tight">Cinder-Glass Lab</h3>
+<span class="font-label text-[10px] text-secondary/40">#ARC-002</span>
+</div>
+<p class="text-xs text-secondary/70 italic font-headline">Experimental suite for soul-fire stabilization.</p>
+</div>
+<div class="flex items-center justify-between bg-surface-container-lowest p-2">
+<span class="font-label text-[9px] text-primary/60">LOD LEVEL</span>
+<div class="flex gap-1">
+<button class="px-2 py-0.5 bg-surface-container-high text-secondary/60 font-label text-[9px]">HI</button>
+<button class="px-2 py-0.5 bg-primary text-on-primary font-label text-[9px] font-bold">MD</button>
+<button class="px-2 py-0.5 bg-surface-container-high text-secondary/60 font-label text-[9px]">LO</button>
+</div>
+</div>
+<div class="grid grid-cols-4 gap-1">
+<button class="bg-surface-container-highest py-2 text-[9px] font-label hover:bg-primary hover:text-on-primary">GLB</button>
+<button class="bg-surface-container-highest py-2 text-[9px] font-label hover:bg-primary hover:text-on-primary">FBX</button>
+<button class="bg-surface-container-highest py-2 text-[9px] font-label hover:bg-primary hover:text-on-primary">USD</button>
+<button class="bg-surface-container-highest py-2 text-[9px] font-label hover:bg-primary hover:text-on-primary">UNITY</button>
+</div>
+</div>
+</article>
+<!-- Card 3: Deep Vaults -->
+<article class="bg-surface-container-low flex flex-col group border border-outline-variant/5 hover:border-primary/20 transition-all duration-500">
+<div class="relative aspect-video overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="massive underground treasure vault with gold piles, iron chests, and flickering torchlight illuminating stone carvings" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIZmNfoxNflAHJZLoko2tYcURULw33TzPg0M4gfurDvpu67gmFQbkV3gfdFobfqYxXX2T3FHZGj9shAbeox2AeAaxC6fzhB2j4aqHHqA545ST-orrWmmZMB_xABvDPqnuDBCLv3p5YpIBTgKi6Hjh9dRUMvOAREMfY0xoBefV75txu5sErOahQ_oXLGNMzCNRL8UOWA8K0FO3Ou8_804oJ34CKZ-CNw0NqRoymYRvNmeFUJbq4d8xXZbTjFKSBpaZx4c5BrlIfV0I"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent"></div>
+<div class="absolute top-4 right-4 flex gap-1">
+<span class="px-2 py-0.5 bg-tertiary-container text-on-tertiary-container font-label text-[9px]">LEGENDARY</span>
+</div>
+</div>
+<div class="p-5 flex flex-col gap-4">
+<div>
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline text-lg font-bold text-on-surface leading-tight">Iron-Bound Treasury</h3>
+<span class="font-label text-[10px] text-secondary/40">#ARC-003</span>
+</div>
+<p class="text-xs text-secondary/70 italic font-headline">Subterranean storage with high-security runic seals.</p>
+</div>
+<div class="flex items-center justify-between bg-surface-container-lowest p-2">
+<span class="font-label text-[9px] text-primary/60">LOD LEVEL</span>
+<div class="flex gap-1">
+<button class="px-2 py-0.5 bg-primary text-on-primary font-label text-[9px] font-bold">HI</button>
+<button class="px-2 py-0.5 bg-surface-container-high text-secondary/60 font-label text-[9px]">MD</button>
+<button class="px-2 py-0.5 bg-surface-container-high text-secondary/60 font-label text-[9px]">LO</button>
+</div>
+</div>
+<div class="grid grid-cols-4 gap-1">
+<button class="bg-surface-container-highest py-2 text-[9px] font-label hover:bg-primary hover:text-on-primary">GLB</button>
+<button class="bg-surface-container-highest py-2 text-[9px] font-label hover:bg-primary hover:text-on-primary">FBX</button>
+<button class="bg-surface-container-highest py-2 text-[9px] font-label hover:bg-primary hover:text-on-primary">USD</button>
+<button class="bg-surface-container-highest py-2 text-[9px] font-label hover:bg-primary hover:text-on-primary">UNITY</button>
+</div>
+</div>
+</article>
+<!-- Remaining 27 Placeholder Cards for Density (Synthesized) -->
+<!-- Note: Replicating structural density requested by user -->
+<script>
+                const container = document.querySelector('.asymmetric-grid');
+                const placeholders = [
+                    { title: "Heirloom Kitchen", tag: "COMMON", code: "#ARC-004", img: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&q=80&w=800", alt: "rustic medieval kitchen with large stone hearth, hanging copper pots, and sacks of grain on dark wood table" },
+                    { title: "Lunar Bedchamber", tag: "RARE", code: "#ARC-005", img: "https://images.unsplash.com/photo-1505691938895-1758d7eaa511?auto=format&fit=crop&q=80&w=800", alt: "dark bedroom with four poster bed, heavy velvet curtains, and ethereal moonlight streaming through stained glass" },
+                    { title: "Grand Scriptorium", tag: "EPIC", code: "#ARC-006", img: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&q=80&w=800", alt: "vast library with floor-to-ceiling wooden bookshelves, rolling ladders, and flickering lanterns on long desks" }
+                ];
+                
+                // Repeatedly inject to reach 30 count as requested
+                for (let i = 0; i < 9; i++) {
+                    placeholders.forEach(p => {
+                        const article = document.createElement('article');
+                        article.className = "bg-surface-container-low flex flex-col group border border-outline-variant/5 hover:border-primary/20 transition-all duration-500";
+                        article.innerHTML = `
+                            <div class="relative aspect-video overflow-hidden">
+                                <img src="${p.img}" data-alt="${p.alt}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                                <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent"></div>
+                                <div class="absolute top-4 right-4 flex gap-1">
+                                    <span class="px-2 py-0.5 ${p.tag === 'RARE' ? 'bg-primary-container text-on-primary-container' : 'bg-surface-container-high text-secondary'} font-label text-[9px]">${p.tag}</span>
+                                </div>
+                            </div>
+                            <div class="p-5 flex flex-col gap-4">
+                                <div>
+                                    <div class="flex justify-between items-start mb-1">
+                                        <h3 class="font-headline text-lg font-bold text-on-surface leading-tight">${p.title}</h3>
+                                        <span class="font-label text-[10px] text-secondary/40">${p.code}-${i}</span>
+                                    </div>
+                                    <p class="text-xs text-secondary/70 italic font-headline">Concept for high-detail environment immersion.</p>
+                                </div>
+                                <div class="flex items-center justify-between bg-surface-container-lowest p-2">
+                                    <span class="font-label text-[9px] text-primary/60">LOD LEVEL</span>
+                                    <div class="flex gap-1">
+                                        <button class="px-2 py-0.5 bg-surface-container-high text-secondary/60 font-label text-[9px]">HI</button>
+                                        <button class="px-2 py-0.5 bg-primary text-on-primary font-label text-[9px] font-bold">MD</button>
+                                        <button class="px-2 py-0.5 bg-surface-container-high text-secondary/60 font-label text-[9px]">LO</button>
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-4 gap-1">
+                                    <button class="bg-surface-container-highest py-2 text-[9px] font-label hover:bg-primary hover:text-on-primary">GLB</button>
+                                    <button class="bg-surface-container-highest py-2 text-[9px] font-label hover:bg-primary hover:text-on-primary">FBX</button>
+                                    <button class="bg-surface-container-highest py-2 text-[9px] font-label hover:bg-primary hover:text-on-primary">USD</button>
+                                    <button class="bg-surface-container-highest py-2 text-[9px] font-label hover:bg-primary hover:text-on-primary">UNITY</button>
+                                </div>
+                            </div>
+                        `;
+                        container.appendChild(article);
+                    });
+                }
+            </script>
+</div>
+</main>
+<!-- Floating UI Overlay Elements -->
+<div class="fixed bottom-8 right-8 z-50 flex flex-col gap-2">
+<button class="w-14 h-14 bg-primary metallic-sheen text-on-primary flex items-center justify-center shadow-2xl Active:scale-95 duration-150">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+<button class="w-14 h-14 bg-surface-container-highest text-primary flex items-center justify-center border border-primary/20 backdrop-blur-md Active:scale-95 duration-150">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+</div>
+<!-- Status Bar / Footer -->
+<footer class="ml-64 bg-surface-container-lowest border-t border-outline-variant/5 py-3 px-8 flex justify-between items-center">
+<div class="flex gap-6 font-label text-[10px] text-secondary/40">
+<span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span> ENGINE: RUNECORE v9.0</span>
+<span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> ASSET SYNC: ACTIVE</span>
+</div>
+<div class="flex items-center gap-4 text-[10px] font-label text-secondary/40">
+<span>SHOWING 30 / 142 ENTRIES</span>
+<div class="flex border border-outline-variant/20">
+<button class="px-3 py-1 bg-surface-container-high text-on-surface">1</button>
+<button class="px-3 py-1 hover:bg-surface-container-high">2</button>
+<button class="px-3 py-1 hover:bg-surface-container-high">3</button>
+<button class="px-3 py-1 hover:bg-surface-container-high">...</button>
+<button class="px-3 py-1 hover:bg-surface-container-high">5</button>
+</div>
+</div>
+</footer>
+</body></html>

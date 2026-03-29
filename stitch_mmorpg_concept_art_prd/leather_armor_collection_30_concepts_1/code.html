@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Leather Armor Collection - The Master's Ledger</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,700;1,400&amp;family=Work+Sans:wght@300;400;600&amp;family=Space+Grotesk:wght@300;500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-primary": "#412d00",
+                        "surface-container-high": "#2e2927",
+                        "surface-container": "#231f1d",
+                        "surface-container-low": "#1f1b19",
+                        "secondary": "#dac3a2",
+                        "tertiary-container": "#006266",
+                        "primary-container": "#715313",
+                        "outline-variant": "#54433a",
+                        "on-secondary-container": "#ccb594",
+                        "on-primary-container": "#f2c97e",
+                        "surface": "#161311",
+                        "surface-bright": "#3d3836",
+                        "surface-container-lowest": "#110d0c",
+                        "tertiary-fixed": "#63f7ff",
+                        "surface-dim": "#161311",
+                        "on-primary-fixed": "#261900",
+                        "primary-fixed": "#ffdea5",
+                        "on-tertiary-fixed-variant": "#004f53",
+                        "surface-container-highest": "#393431",
+                        "error": "#ffb4ab",
+                        "tertiary-fixed-dim": "#00dce5",
+                        "on-primary-fixed-variant": "#5d4201",
+                        "on-background": "#eae1dd",
+                        "on-secondary-fixed-variant": "#54442b",
+                        "surface-variant": "#393431",
+                        "on-secondary-fixed": "#251904",
+                        "primary": "#e9c176",
+                        "on-error-container": "#ffdad6",
+                        "on-error": "#690005",
+                        "primary-fixed-dim": "#e9c176",
+                        "on-tertiary-container": "#00e5ee",
+                        "surface-tint": "#e9c176",
+                        "secondary-container": "#57472d",
+                        "on-surface-variant": "#dac2b6",
+                        "error-container": "#93000a",
+                        "inverse-primary": "#775a19",
+                        "inverse-on-surface": "#342f2d",
+                        "background": "#161311",
+                        "on-tertiary": "#003739",
+                        "secondary-fixed": "#f7dfbc",
+                        "on-surface": "#eae1dd",
+                        "secondary-fixed-dim": "#dac3a2",
+                        "on-secondary": "#3c2e16",
+                        "outline": "#a28c81",
+                        "on-tertiary-fixed": "#002021",
+                        "inverse-surface": "#eae1dd",
+                        "tertiary": "#00dce5"
+                    },
+                    fontFamily: {
+                        "headline": ["Newsreader"],
+                        "body": ["Work Sans"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: { "DEFAULT": "0rem", "lg": "0rem", "xl": "0rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .runic-border {
+            background: linear-gradient(90deg, #e9c176 0%, transparent 100%);
+            height: 1px;
+            width: 100%;
+        }
+        .canvas-texture {
+            background-image: radial-gradient(#231f1d 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .glass-overlay {
+            background: rgba(57, 52, 49, 0.2);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center w-full px-6 py-4 bg-[#161311]">
+<div class="flex items-center gap-4">
+<span class="font-['Newsreader'] font-bold text-[#e9c176] tracking-tighter text-2xl">Leather Armor Collection</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<nav class="flex gap-6">
+<a class="font-['Newsreader'] uppercase tracking-widest text-lg text-[#e9c176] border-b-2 border-[#e9c176] hover:text-[#00dce5] transition-colors duration-300" href="#">Armory</a>
+<a class="font-['Newsreader'] uppercase tracking-widest text-lg text-[#dac3a2] hover:text-[#00dce5] transition-colors duration-300" href="#">Runes</a>
+<a class="font-['Newsreader'] uppercase tracking-widest text-lg text-[#dac3a2] hover:text-[#00dce5] transition-colors duration-300" href="#">Vault</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="text-[#dac3a2] hover:text-[#00dce5] transition-transform active:scale-95">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-[#dac3a2] hover:text-[#00dce5] transition-transform active:scale-95">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-64 bg-[#231f1d] hidden md:flex flex-col pt-24 z-40 border-r border-[#161311] shadow-[10px_0_15px_-3px_rgba(0,0,0,0.5)]">
+<div class="px-6 mb-8">
+<h2 class="font-['Newsreader'] text-xl text-[#e9c176] italic">The Master's Ledger</h2>
+<p class="font-['Space_Grotesk'] text-[10px] uppercase font-semibold text-[#dac3a2] opacity-50 tracking-widest">Leather Collection v2.4</p>
+</div>
+<nav class="flex-1 px-3 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 bg-[#393431] text-[#e9c176] border-l-4 border-[#e9c176] font-['Space_Grotesk'] text-xs uppercase font-semibold transition-all active:translate-x-1 duration-150" href="#">
+<span class="material-symbols-outlined">shield</span>
+<span>Armory</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#dac3a2] opacity-70 hover:bg-[#393431] hover:text-[#00dce5] font-['Space_Grotesk'] text-xs uppercase font-semibold transition-all active:translate-x-1 duration-150" href="#">
+<span class="material-symbols-outlined">auto_fix_high</span>
+<span>Runes</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#dac3a2] opacity-70 hover:bg-[#393431] hover:text-[#00dce5] font-['Space_Grotesk'] text-xs uppercase font-semibold transition-all active:translate-x-1 duration-150" href="#">
+<span class="material-symbols-outlined">pets</span>
+<span>Pets</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#dac3a2] opacity-70 hover:bg-[#393431] hover:text-[#00dce5] font-['Space_Grotesk'] text-xs uppercase font-semibold transition-all active:translate-x-1 duration-150" href="#">
+<span class="material-symbols-outlined">terminal</span>
+<span>Machine Readout</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#dac3a2] opacity-70 hover:bg-[#393431] hover:text-[#00dce5] font-['Space_Grotesk'] text-xs uppercase font-semibold transition-all active:translate-x-1 duration-150" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span>Vault</span>
+</a>
+</nav>
+<div class="p-6 mt-auto space-y-4">
+<button class="w-full py-3 bg-gradient-to-br from-primary to-primary-container text-on-primary font-label font-bold text-xs uppercase tracking-tighter hover:brightness-110 active:scale-95 transition-all">
+                Unlock Artifact
+            </button>
+<div class="pt-4 border-t border-[#161311] space-y-2">
+<a class="flex items-center gap-3 text-[#dac3a2] opacity-70 hover:text-[#00dce5] font-label text-[10px] uppercase" href="#">
+<span class="material-symbols-outlined text-sm">settings</span> Settings
+                </a>
+<a class="flex items-center gap-3 text-[#dac3a2] opacity-70 hover:text-[#00dce5] font-label text-[10px] uppercase" href="#">
+<span class="material-symbols-outlined text-sm">logout</span> Logout
+                </a>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="md:ml-64 pt-24 pb-12 px-6 min-h-screen canvas-texture">
+<!-- Header Section -->
+<div class="max-w-7xl mx-auto mb-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<h1 class="font-headline text-5xl text-on-surface mb-2 tracking-tight">Concept Gallery</h1>
+<div class="runic-border mb-4"></div>
+<p class="text-secondary max-w-2xl font-body leading-relaxed opacity-80">
+                        A curated ledger of 30 masterwork leather silhouettes. Forged in the embers of the Blacksmith's District, these concepts define the visual weight of the Rogue and Archer castes.
+                    </p>
+</div>
+<div class="flex flex-wrap gap-3">
+<button class="flex items-center gap-2 bg-surface-container-highest px-6 py-3 border-b-2 border-primary text-primary font-label text-sm uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined">upload</span>
+                        Upload New Concept
+                    </button>
+</div>
+</div>
+<!-- Filters -->
+<div class="mt-8 flex flex-wrap items-center gap-4 py-4 bg-surface-container-low border-y border-outline-variant/10 px-4">
+<span class="font-label text-[10px] text-secondary uppercase tracking-widest mr-2">Filter By:</span>
+<button class="px-4 py-1.5 bg-primary/10 text-primary border border-primary/30 font-label text-xs uppercase">All Concepts</button>
+<button class="px-4 py-1.5 bg-surface-container-high text-secondary/60 hover:text-secondary border border-transparent font-label text-xs uppercase transition-colors">Tunics</button>
+<button class="px-4 py-1.5 bg-surface-container-high text-secondary/60 hover:text-secondary border border-transparent font-label text-xs uppercase transition-colors">Hoods</button>
+<button class="px-4 py-1.5 bg-surface-container-high text-secondary/60 hover:text-secondary border border-transparent font-label text-xs uppercase transition-colors">Bracers</button>
+<button class="px-4 py-1.5 bg-surface-container-high text-secondary/60 hover:text-secondary border border-transparent font-label text-xs uppercase transition-colors">Leggings</button>
+<div class="ml-auto flex items-center bg-surface-container-lowest px-3 py-1.5">
+<span class="material-symbols-outlined text-sm text-outline mr-2">search</span>
+<input class="bg-transparent border-none text-xs text-on-surface focus:ring-0 placeholder:text-outline/50 w-48 font-label uppercase" placeholder="Search Archives..." type="text"/>
+</div>
+</div>
+</div>
+<!-- Concept Grid -->
+<div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+<!-- Card 1 -->
+<div class="group relative bg-surface-container border border-outline-variant/10 hover:border-primary/40 transition-all duration-500 overflow-hidden">
+<div class="aspect-[4/5] bg-surface-container-lowest relative overflow-hidden flex items-center justify-center p-4">
+<div class="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity bg-[url('https://www.transparenttextures.com/patterns/dark-leather.png')]"></div>
+<img alt="Leather Tunic" class="w-full h-full object-contain filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)] group-hover:scale-105 transition-transform duration-700" data-alt="Intricately detailed dark brown leather armor tunic with runic engravings on obsidian background, gritty texture, moody cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNQmYFl5HgqVBeNT6gE9nKl58g21pxYfKdnxLQrS9rlW-38Rbj2RGCkWf4Tbycrrh5DCwdNvoOAmb6TDTlv7y_ryVHAWutNTCnPcRTb9lmR6B5A78QDfZadUFQ0COBh32-2L-VSkSFJiVKLPLN6mjemZKBIQpqOjyU3oLtZIPPm0WwtiZ0XnP_fZUvq-cFAJAXwByorY12K55w3LTs6KQWovQ4DERlgnSHS7ycbIQ2rOiTdIzmurkvg_ljCH5eFUpMddknu6CPlR0"/>
+<div class="absolute top-3 left-3 bg-surface-container-highest/80 backdrop-blur-sm px-2 py-1 border-l-2 border-primary">
+<span class="font-label text-[10px] text-primary">#LC-001</span>
+</div>
+<div class="absolute bottom-0 inset-x-0 glass-overlay translate-y-full group-hover:translate-y-0 transition-transform duration-300 p-4 flex justify-between">
+<button class="text-on-surface hover:text-tertiary transition-colors"><span class="material-symbols-outlined">edit</span></button>
+<button class="text-on-surface hover:text-tertiary transition-colors"><span class="material-symbols-outlined">ios_share</span></button>
+<button class="flex items-center gap-1 text-[10px] font-label uppercase text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">view_in_ar</span> 3D Model
+                        </button>
+</div>
+</div>
+<div class="p-4 bg-surface-container-low">
+<h3 class="font-headline text-lg text-secondary group-hover:text-primary transition-colors">Shadow-Stalker Tunic</h3>
+<p class="text-[10px] font-label text-outline uppercase tracking-widest mt-1">Cured Drake-Hide / Tier IV</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group relative bg-surface-container border border-outline-variant/10 hover:border-primary/40 transition-all duration-500 overflow-hidden">
+<div class="aspect-[4/5] bg-surface-container-lowest relative overflow-hidden flex items-center justify-center p-4">
+<div class="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity bg-[url('https://www.transparenttextures.com/patterns/dark-leather.png')]"></div>
+<img alt="Leather Bracers" class="w-full h-full object-contain filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)] group-hover:scale-105 transition-transform duration-700" data-alt="Close up of weathered leather bracers with iron studs and glowing blue runes, set against a dark rustic stone background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuh4wy9L0D8skrnrtTHlYHXXeG2Ii5goDQga6_MGnQH6n80ELSKQ14wa9CUxLtibsGi7LiGAzuli859GZYM0DbESZ6_MdJJV9Q9GGSr2TTfEniBlk9fpAYJmq6LP3ZKOobkHk-F6QBTre0TVv0-Yg7RiAUMunkibTq_dDJIwo1ufz7LyUMlqV0wYlhSuA1SDM3tnW0--dgJaGBzt9hw3vUziVR_CgIIZU8-0uTeFPQM6T8ksYJkLuvGqFY6gRVXRBlUyIPBhhv_p0"/>
+<div class="absolute top-3 left-3 bg-surface-container-highest/80 backdrop-blur-sm px-2 py-1 border-l-2 border-primary">
+<span class="font-label text-[10px] text-primary">#LC-002</span>
+</div>
+<div class="absolute bottom-0 inset-x-0 glass-overlay translate-y-full group-hover:translate-y-0 transition-transform duration-300 p-4 flex justify-between">
+<button class="text-on-surface hover:text-tertiary transition-colors"><span class="material-symbols-outlined">edit</span></button>
+<button class="text-on-surface hover:text-tertiary transition-colors"><span class="material-symbols-outlined">ios_share</span></button>
+<button class="flex items-center gap-1 text-[10px] font-label uppercase text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">view_in_ar</span> 3D Model
+                        </button>
+</div>
+</div>
+<div class="p-4 bg-surface-container-low">
+<h3 class="font-headline text-lg text-secondary group-hover:text-primary transition-colors">Worn Beast-Hide Bracers</h3>
+<p class="text-[10px] font-label text-outline uppercase tracking-widest mt-1">Hardened Sinew / Tier II</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group relative bg-surface-container border border-outline-variant/10 hover:border-primary/40 transition-all duration-500 overflow-hidden">
+<div class="aspect-[4/5] bg-surface-container-lowest relative overflow-hidden flex items-center justify-center p-4">
+<div class="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity bg-[url('https://www.transparenttextures.com/patterns/dark-leather.png')]"></div>
+<img alt="Leather Cowl" class="w-full h-full object-contain filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)] group-hover:scale-105 transition-transform duration-700" data-alt="A hooded leather cowl with silver embroidery and a tattered edge, displayed on a wooden mannequin head in low amber lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAs7cnz5AURwt5fbFmbFMx2lgjXIWr27lnCQOI4FMYlU9yy0yXbmXL65xYcWnbg5IGZi_9GPt34vcNVUfCq5bBBS2qPE57Kcqfc_2_MZIQxXa3MtdzQ19KgqpjGN6VWUKeULVSPQk77iOobK3nfkrwoc6LL6EhoSYdPb4lj-DkPWFvVOO-SIWDWPvm0tLQIC5Z97-t2uSCFot8KeG7kP7-LF7SB1GLVm2BK37JQ001kEkgvB5uai5jBkVdCAIlON4HcMOX9GdE05uc"/>
+<div class="absolute top-3 left-3 bg-surface-container-highest/80 backdrop-blur-sm px-2 py-1 border-l-2 border-primary">
+<span class="font-label text-[10px] text-primary">#LC-003</span>
+</div>
+<div class="absolute bottom-0 inset-x-0 glass-overlay translate-y-full group-hover:translate-y-0 transition-transform duration-300 p-4 flex justify-between">
+<button class="text-on-surface hover:text-tertiary transition-colors"><span class="material-symbols-outlined">edit</span></button>
+<button class="text-on-surface hover:text-tertiary transition-colors"><span class="material-symbols-outlined">ios_share</span></button>
+<button class="flex items-center gap-1 text-[10px] font-label uppercase text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">view_in_ar</span> 3D Model
+                        </button>
+</div>
+</div>
+<div class="p-4 bg-surface-container-low">
+<h3 class="font-headline text-lg text-secondary group-hover:text-primary transition-colors">Runic Archer Cowl</h3>
+<p class="text-[10px] font-label text-outline uppercase tracking-widest mt-1">Stitched Felt / Tier III</p>
+</div>
+</div>
+<!-- Card 4 (Placeholder style for the rest of the 30) -->
+<div class="group relative bg-surface-container border border-outline-variant/10 hover:border-primary/40 transition-all duration-500 overflow-hidden">
+<div class="aspect-[4/5] bg-surface-container-lowest relative overflow-hidden flex items-center justify-center p-4">
+<div class="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity bg-[url('https://www.transparenttextures.com/patterns/dark-leather.png')]"></div>
+<img alt="Leather Leggings" class="w-full h-full object-contain filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)] group-hover:scale-105 transition-transform duration-700" data-alt="Heavy leather reinforced leggings with iron plates and buckles, dark atmospheric studio photography, cinematic fantasy style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmVgTTTHyS6egObTV56IUrzRmfC4gdaNpDXC22T3OQ8SQ9rhjjyKlkG18okEBHNH7suvLtDqHdixvYsMN1dqatlyns2RHo8q211dzBkLc0ZYGv4UDDL3UyoBDZccrsEVr90lMSCL6eaqkZ2diJ2joG0qn2_rqiTss1IzU3nPA1A6-BGFLvv__brFieL4Dfmms-GZhV9ehCtg7iXaqJD_SU-p_ER0d_xnQLbtlC3Huek4wm9r1XyEAgXnWvDA7dG2hABWgmuOvS2gM"/>
+<div class="absolute top-3 left-3 bg-surface-container-highest/80 backdrop-blur-sm px-2 py-1 border-l-2 border-primary">
+<span class="font-label text-[10px] text-primary">#LC-004</span>
+</div>
+<div class="absolute bottom-0 inset-x-0 glass-overlay translate-y-full group-hover:translate-y-0 transition-transform duration-300 p-4 flex justify-between">
+<button class="text-on-surface hover:text-tertiary transition-colors"><span class="material-symbols-outlined">edit</span></button>
+<button class="text-on-surface hover:text-tertiary transition-colors"><span class="material-symbols-outlined">ios_share</span></button>
+<button class="flex items-center gap-1 text-[10px] font-label uppercase text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">view_in_ar</span> 3D Model
+                        </button>
+</div>
+</div>
+<div class="p-4 bg-surface-container-low">
+<h3 class="font-headline text-lg text-secondary group-hover:text-primary transition-colors">Iron-Bound Leggings</h3>
+<p class="text-[10px] font-label text-outline uppercase tracking-widest mt-1">Reinforced Plate / Tier V</p>
+</div>
+</div>
+<!-- Repeated Skeleton for UI visualization of "30 concepts" -->
+<div class="bg-surface-container/40 border border-outline-variant/5 aspect-[4/5] flex flex-col items-center justify-center gap-4 opacity-40">
+<span class="material-symbols-outlined text-4xl text-outline-variant">shield_moon</span>
+<span class="font-label text-[10px] uppercase tracking-[0.2em] text-outline-variant">Concept #LC-005 Loading...</span>
+</div>
+<div class="bg-surface-container/40 border border-outline-variant/5 aspect-[4/5] flex flex-col items-center justify-center gap-4 opacity-40">
+<span class="material-symbols-outlined text-4xl text-outline-variant">shield_moon</span>
+<span class="font-label text-[10px] uppercase tracking-[0.2em] text-outline-variant">Concept #LC-006 Loading...</span>
+</div>
+<div class="bg-surface-container/40 border border-outline-variant/5 aspect-[4/5] flex flex-col items-center justify-center gap-4 opacity-40">
+<span class="material-symbols-outlined text-4xl text-outline-variant">shield_moon</span>
+<span class="font-label text-[10px] uppercase tracking-[0.2em] text-outline-variant">Concept #LC-007 Loading...</span>
+</div>
+<div class="bg-surface-container/40 border border-outline-variant/5 aspect-[4/5] flex flex-col items-center justify-center gap-4 opacity-40">
+<span class="material-symbols-outlined text-4xl text-outline-variant">shield_moon</span>
+<span class="font-label text-[10px] uppercase tracking-[0.2em] text-outline-variant">Concept #LC-008 Loading...</span>
+</div>
+</div>
+<!-- Pagination Footer -->
+<footer class="max-w-7xl mx-auto mt-16 flex items-center justify-between border-t border-outline-variant/10 pt-8">
+<div class="flex items-center gap-4">
+<button class="p-2 border border-outline-variant hover:border-primary transition-colors text-outline-variant hover:text-primary">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<div class="flex gap-2">
+<button class="w-8 h-8 flex items-center justify-center font-label text-xs bg-primary text-on-primary">1</button>
+<button class="w-8 h-8 flex items-center justify-center font-label text-xs text-secondary hover:bg-surface-container-high transition-colors">2</button>
+<button class="w-8 h-8 flex items-center justify-center font-label text-xs text-secondary hover:bg-surface-container-high transition-colors">3</button>
+<span class="text-outline-variant">...</span>
+<button class="w-8 h-8 flex items-center justify-center font-label text-xs text-secondary hover:bg-surface-container-high transition-colors">8</button>
+</div>
+<button class="p-2 border border-outline-variant hover:border-primary transition-colors text-outline-variant hover:text-primary">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+<div class="text-[10px] font-label uppercase tracking-widest text-outline-variant">
+                Showing 8 of 30 concept artifacts
+            </div>
+</footer>
+</main>
+<!-- Bottom Mobile Nav -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-[#161311] px-6 py-3 flex justify-between items-center z-50 border-t border-outline-variant/10">
+<button class="text-[#e9c176] flex flex-col items-center gap-1">
+<span class="material-symbols-outlined">shield</span>
+<span class="text-[8px] font-label uppercase">Armory</span>
+</button>
+<button class="text-[#dac3a2] opacity-70 flex flex-col items-center gap-1">
+<span class="material-symbols-outlined">auto_fix_high</span>
+<span class="text-[8px] font-label uppercase">Runes</span>
+</button>
+<div class="relative -top-6">
+<button class="bg-primary p-4 rounded-full shadow-lg shadow-primary/20 text-on-primary active:scale-90 transition-transform">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<button class="text-[#dac3a2] opacity-70 flex flex-col items-center gap-1">
+<span class="material-symbols-outlined">terminal</span>
+<span class="text-[8px] font-label uppercase">Data</span>
+</button>
+<button class="text-[#dac3a2] opacity-70 flex flex-col items-center gap-1">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-[8px] font-label uppercase">Vault</span>
+</button>
+</nav>
+</body></html>

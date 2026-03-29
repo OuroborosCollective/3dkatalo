@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,700;0,800;1,400;1,800&amp;family=Work+Sans:wght@300;400;500&amp;family=Space+Grotesk:wght@300;400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-high": "#2e2927",
+              "on-tertiary-container": "#00e5ee",
+              "secondary": "#dac3a2",
+              "on-secondary-container": "#ccb594",
+              "on-secondary": "#3c2e16",
+              "on-error-container": "#ffdad6",
+              "surface-container-low": "#1f1b19",
+              "secondary-fixed": "#f7dfbc",
+              "on-primary-fixed": "#261900",
+              "background": "#161311",
+              "surface-container-lowest": "#110d0c",
+              "tertiary": "#00dce5",
+              "on-tertiary-fixed": "#002021",
+              "outline-variant": "#54433a",
+              "surface-bright": "#3d3836",
+              "on-tertiary": "#003739",
+              "surface-tint": "#e9c176",
+              "surface-container-highest": "#393431",
+              "on-surface-variant": "#dac2b6",
+              "surface-container": "#231f1d",
+              "primary-fixed-dim": "#e9c176",
+              "surface": "#161311",
+              "error-container": "#93000a",
+              "error": "#ffb4ab",
+              "surface-variant": "#393431",
+              "on-primary": "#412d00",
+              "on-tertiary-fixed-variant": "#004f53",
+              "inverse-on-surface": "#342f2d",
+              "secondary-fixed-dim": "#dac3a2",
+              "primary-fixed": "#ffdea5",
+              "secondary-container": "#57472d",
+              "on-primary-fixed-variant": "#5d4201",
+              "on-surface": "#eae1dd",
+              "surface-dim": "#161311",
+              "on-background": "#eae1dd",
+              "on-secondary-fixed-variant": "#54442b",
+              "inverse-primary": "#775a19",
+              "primary-container": "#715313",
+              "on-error": "#690005",
+              "inverse-surface": "#eae1dd",
+              "on-secondary-fixed": "#251904",
+              "on-primary-container": "#f2c97e",
+              "tertiary-fixed-dim": "#00dce5",
+              "tertiary-fixed": "#63f7ff",
+              "tertiary-container": "#006266",
+              "primary": "#e9c176",
+              "outline": "#a28c81"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Work Sans"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        input[type="range"]::-webkit-slider-runnable-track {
+            background: #2e2927;
+            height: 4px;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            background: #e9c176;
+            height: 16px;
+            width: 8px;
+            margin-top: -6px;
+            border-radius: 0px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar Shell -->
+<header class="flex justify-between items-center w-full px-6 py-4 bg-[#161311] fixed top-0 z-50">
+<div class="flex items-center gap-8">
+<h1 class="text-2xl font-black text-[#e9c176] italic font-headline uppercase tracking-widest">Relic &amp; Rune</h1>
+<nav class="hidden md:flex gap-6 items-center">
+<a class="font-headline font-bold text-lg uppercase tracking-widest text-[#dac3a2] opacity-70 hover:text-[#00dce5] transition-colors duration-300" href="#">Catalog</a>
+<a class="font-headline font-bold text-lg uppercase tracking-widest text-[#dac3a2] opacity-70 hover:text-[#00dce5] transition-colors duration-300" href="#">Archives</a>
+<a class="font-headline font-bold text-lg uppercase tracking-widest text-[#dac3a2] opacity-70 hover:text-[#00dce5] transition-colors duration-300" href="#">Armory</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#e9c176] cursor-pointer hover:text-[#00dce5] transition-colors">help_outline</span>
+<span class="material-symbols-outlined text-[#e9c176] cursor-pointer hover:text-[#00dce5] transition-colors">settings</span>
+<div class="w-10 h-10 border border-outline-variant bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover grayscale brightness-75" data-alt="portrait of an elderly bearded master archivist with intense eyes and weathered skin in a dimly lit library" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJOUWtR2VxWpSaReEQLAsYhCYeS2DGkRd-BAr0PWzCmJ5Le7c3jVd6_PNkDCiLOlRiPhxSmyHDZZ5WOR3oVjSfCLBzgVnKYbmCTkZp8taFaPD-mxsjPJx2C3FVNWoHJRZLmXRKa5yiTMtkmZcWuC4lCrn2wIahFMtfEm7OCS1TThnmT-RLU4a_gDBz_1SPr4qPRpp24GiNTYO-YnSac975r43IMuC1FhwQC1NvGkO0bOay259Bgq0UoopRWLxH5BQ76ZSGn7oZm30"/>
+</div>
+</div>
+<div class="absolute bottom-0 left-0 bg-[#231f1d] h-px w-full opacity-20"></div>
+</header>
+<!-- SideNavBar Shell -->
+<aside class="fixed left-0 top-0 h-full flex flex-col pt-24 pb-8 z-40 bg-[#231f1d] w-64 shadow-[4px_0px_24px_rgba(0,0,0,0.5)]">
+<div class="px-6 mb-8">
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">shield</span>
+<div>
+<h2 class="font-headline font-bold text-primary tracking-tight">System Ledger</h2>
+<p class="font-label text-[10px] uppercase text-secondary opacity-50 tracking-tighter">V.1.0.4-Alpha</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 flex flex-col">
+<a class="text-[#dac3a2] opacity-50 px-6 py-3 flex items-center gap-3 font-label uppercase text-xs tracking-tighter hover:bg-[#393431] hover:text-[#00dce5] transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span> Visuals
+            </a>
+<a class="text-[#dac3a2] opacity-50 px-6 py-3 flex items-center gap-3 font-label uppercase text-xs tracking-tighter hover:bg-[#393431] hover:text-[#00dce5] transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="light_mode">light_mode</span> Lighting
+            </a>
+<a class="text-[#dac3a2] opacity-50 px-6 py-3 flex items-center gap-3 font-label uppercase text-xs tracking-tighter hover:bg-[#393431] hover:text-[#00dce5] transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="landscape">landscape</span> Environment
+            </a>
+<a class="text-[#dac3a2] opacity-50 px-6 py-3 flex items-center gap-3 font-label uppercase text-xs tracking-tighter hover:bg-[#393431] hover:text-[#00dce5] transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="screenshot_monitor">screenshot_monitor</span> Resolution
+            </a>
+<!-- Active State for Advanced/Configuration -->
+<a class="bg-[#393431] text-[#e9c176] border-l-4 border-[#e9c176] px-6 py-3 flex items-center gap-3 font-label uppercase text-xs tracking-tighter transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="settings_input_component">settings_input_component</span> Advanced
+            </a>
+</nav>
+<div class="px-6 mt-auto">
+<button class="w-full text-center font-label text-[10px] tracking-widest text-secondary border border-outline-variant py-2 hover:bg-surface-container-highest hover:text-primary transition-all duration-300 mb-6">
+                Reset to Default
+            </button>
+<a class="text-[#dac3a2] opacity-50 flex items-center gap-3 font-label uppercase text-xs tracking-tighter hover:text-error transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="logout">logout</span> Exit
+            </a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-24 min-h-screen px-12 pb-12 bg-background">
+<!-- Header Section -->
+<header class="max-w-6xl mx-auto mb-12">
+<h2 class="font-headline text-5xl font-black text-primary tracking-tighter mb-2 italic">3D Preview Configuration</h2>
+<div class="h-1 w-48 bg-gradient-to-r from-primary to-transparent"></div>
+<p class="font-body text-secondary mt-4 max-w-2xl opacity-80 leading-relaxed italic">
+                Tune the ethereal projection of your relics. Adjust the resonance of the arcane engine to balance visual fidelity against performance stability.
+            </p>
+</header>
+<!-- Bento Layout for Configuration -->
+<div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+<!-- Left Column: Visual Preview & Environments -->
+<div class="md:col-span-7 space-y-8">
+<!-- 3D Preview Placeholder -->
+<div class="relative aspect-video bg-surface-container overflow-hidden group">
+<img class="w-full h-full object-cover opacity-60 mix-blend-luminosity group-hover:scale-105 transition-transform duration-1000" data-alt="cinematic close up of a floating ancient iron gauntlet surrounded by glowing blue runes and embers in a dark void" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCmsQ6VT2YxDzjXaGJUoGI_TYV0lxPmpYe_gcIpQQrz0aky7MDyQqgIHdB1nsHbnCewQEChYEwiB7LXGV_egdbT5P_HdDnDp0yY0N0YIupkK2fb65Wg1jJ9pkW5xqvQy4snIW_pvTeIrqtbDFId9aC34x03_d5LlDZs2gagX6sWi3-8zz1kUAzRdhFdRbeC3NQDfk9XYTRnOic81c7q9HF8A-gkFSIHt6QyMM0TQgl5o6YQ52AjrRD04wW1vBG90k1JFyYcNmobuY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute top-4 left-4 flex items-center gap-2 bg-surface-container-highest/80 backdrop-blur-md px-3 py-1">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+<span class="font-label text-[10px] text-tertiary uppercase tracking-tighter">Live Preview Active</span>
+</div>
+</div>
+<!-- Environment Selection -->
+<section class="space-y-4">
+<label class="font-label text-xs uppercase text-secondary tracking-widest opacity-60">Environment Selection</label>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="cursor-pointer border border-primary bg-surface-container-highest p-1 group">
+<div class="aspect-square bg-surface-container relative overflow-hidden">
+<img class="w-full h-full object-cover grayscale contrast-125 brightness-50 group-hover:grayscale-0 transition-all duration-500" data-alt="dark forge interior with glowing molten iron and heavy anvil silhouettes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnMotjduaUkDR6mQFrYW4ztBlemxFUnCeA27a2wo055ILNtnLf7Im1cIiHckZXbX03X-sieeaLRhCGAr3-Sk01LrVR1Xp-3r3LryI8K-D1gwTAiOWai8eYcHxvkUffxdHREHdvbN3-JfvJFHsuJT47tma3mp_MKq5cT73h_D2-Dx_rWo5X9243LFxdOHxKGCIPhg5vzFmDvX4qD2cDiNk_zT2ErLvwaVb47tUatMP3Z6OnEw0oGMTjvhYrDa6tAAq8Ij6DLogh4T4"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="font-headline text-xs text-primary font-bold tracking-widest bg-background/80 px-2 py-1">The Workshop</span>
+</div>
+</div>
+</div>
+<div class="cursor-pointer border border-outline-variant bg-surface-container p-1 group hover:border-secondary transition-colors">
+<div class="aspect-square bg-surface-container relative overflow-hidden">
+<img class="w-full h-full object-cover grayscale contrast-125 brightness-50 group-hover:grayscale-0 transition-all duration-500" data-alt="vast gothic library with towering shelves and soft candle light reflecting off dark wood" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDi5QJm9abH5aiZEETcFr-y5JUgJkrTGGMggXOS7qNFS9zXyI0BTfvJIWBhM4NgRLcMTaZgemnAhJKBfANf5vqxIsjYqS7ExpC_X5bfBuKZLg1ahqjyarBRQDuO2jkEZ4eztdYUyi9af-3H2MS7jbRf6KwPsWXuyUlZOjkFqk631lD4tF1pFNDxCt6asmon1Ett5PVXpC0HwHCkxOdBAzVoBElg7_mpAKBIGCYKdEQCKHIIV1TyDi6PISLA7BRpjqfTUdaye6H-ccA"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="font-headline text-xs text-on-surface font-bold tracking-widest bg-background/80 px-2 py-1">The Great Library</span>
+</div>
+</div>
+</div>
+<div class="cursor-pointer border border-outline-variant bg-surface-container p-1 group hover:border-secondary transition-colors">
+<div class="aspect-square bg-surface-container relative overflow-hidden">
+<img class="w-full h-full object-cover grayscale contrast-125 brightness-50 group-hover:grayscale-0 transition-all duration-500" data-alt="underground royal vault with gold coins and stone sarcophagus in shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZLNtyWbZzFfjJ5c5AyGnm6u2XUfQEBPinXZujFbZLs0JVloaE6Y3RDZgWahUqqmGI63z7zP3tZHhWWpuyYmNVhk-XL27gCFiqiDybqVD_X7dMceA1Mf1tntNZeDGhJoDMpK0L-X2cVAsdf0iqfdJen84csKBUrw-KcvpwOG1cyc-XD9C7AqTnxosF88InLomMql1HjMe7Le4mLOjnutxdK6EoWKb4Qsp2Z2PFS4JYy9mt6qATuM-BdKNkqrwdX5jBQO41_2JPCYc"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="font-headline text-xs text-on-surface font-bold tracking-widest bg-background/80 px-2 py-1">The Royal Vault</span>
+</div>
+</div>
+</div>
+<div class="cursor-pointer border border-outline-variant bg-surface-container p-1 group hover:border-secondary transition-colors">
+<div class="aspect-square bg-surface-container relative overflow-hidden">
+<img class="w-full h-full object-cover grayscale contrast-125 brightness-50 group-hover:grayscale-0 transition-all duration-500" data-alt="cosmic void with nebula swirls of dark purple and blue arcane energy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2GtqTc-iBe-h74rB9Qf6leoI5k9v0RCCMIMR1XrdTIWXLOIDpQRBP7fj1FFQUDr9uGGceE2EQu9zq3O34AQ8bJ7hclA5XYE5aT2G1QYnWhZr9QP3YaOQZIxJ4_Oiz2kBjatVXY3Yqte1nkY7vY_ScJAR9pIhPxXb4nUNaphtCyfzUAkBV23XFpta6fBvRf-9_RH-q6m1qv2d4csAlDhGUjgtzrLjB3t2S2xQfFkzDZo58iuK7u4pNxeMhXvB6k0Esk0GyN4yHt9Q"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="font-headline text-xs text-on-surface font-bold tracking-widest bg-background/80 px-2 py-1">The Void Chamber</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Settings Controls -->
+<div class="md:col-span-5 space-y-10 bg-surface-container p-8 border-l border-outline-variant/20">
+<!-- Resolution Settings -->
+<div class="space-y-4">
+<label class="font-label text-xs uppercase text-primary tracking-widest">Resolution Settings</label>
+<div class="flex bg-surface-container-lowest p-1 border border-outline-variant">
+<button class="flex-1 py-3 text-center font-label text-[10px] tracking-tighter uppercase text-secondary opacity-50 hover:bg-surface-container-high hover:text-on-surface transition-all">Low</button>
+<button class="flex-1 py-3 text-center font-label text-[10px] tracking-tighter uppercase text-secondary opacity-50 hover:bg-surface-container-high hover:text-on-surface transition-all">Medium</button>
+<button class="flex-1 py-3 text-center font-label text-[10px] tracking-tighter uppercase bg-primary text-on-primary font-bold">High Fidelity</button>
+</div>
+</div>
+<!-- Atmospheric Lighting -->
+<div class="space-y-4">
+<label class="font-label text-xs uppercase text-primary tracking-widest">Atmospheric Lighting</label>
+<div class="relative group">
+<select class="w-full bg-surface-container-lowest border border-outline-variant px-4 py-4 font-body text-sm appearance-none focus:outline-none focus:border-tertiary transition-colors">
+<option selected="">Forge Glow</option>
+<option>Arcane Bloom</option>
+<option>Daylight Study</option>
+<option>Abyssal Shadow</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-primary pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Motion Controls -->
+<div class="space-y-8">
+<div class="space-y-4">
+<div class="flex justify-between items-end">
+<label class="font-label text-xs uppercase text-primary tracking-widest">Rotation Speed</label>
+<span class="font-label text-[10px] text-tertiary">0.45 RAD/S</span>
+</div>
+<input class="w-full h-1 bg-surface-container-lowest rounded-none appearance-none cursor-pointer" type="range"/>
+</div>
+<div class="flex items-center gap-4 group cursor-pointer">
+<div class="w-6 h-6 border-2 border-outline-variant flex items-center justify-center group-hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-primary scale-0 group-hover:scale-100 transition-transform" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label text-xs uppercase text-on-surface tracking-widest">Auto-Orbit System</span>
+<span class="font-body text-[10px] text-secondary opacity-50">Enable passive relic rotation for full examination</span>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="pt-8 flex flex-col gap-4">
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary font-label font-bold uppercase py-4 tracking-widest shadow-[0_4px_12px_rgba(233,193,118,0.2)] hover:brightness-110 active:scale-95 transition-all">
+                        Apply Configuration
+                    </button>
+<button class="w-full bg-transparent border border-outline-variant text-secondary font-label uppercase py-4 tracking-widest hover:bg-surface-container-highest transition-all">
+                        Reset to Default
+                    </button>
+</div>
+<!-- Status Ledger -->
+<div class="mt-8 border-t border-outline-variant pt-6 opacity-40">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-sm">info</span>
+<p class="font-body text-[10px] leading-relaxed italic">
+                            Modified values are stored in the temporary system ledger. High fidelity settings may require additional arcane cooling. 
+                        </p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only Shell) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-[#161311] grid grid-cols-4 px-2 py-3 z-50">
+<a class="flex flex-col items-center gap-1 text-[#dac3a2] opacity-50" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-label text-[8px] uppercase">Archives</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#dac3a2] opacity-50" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-label text-[8px] uppercase">Catalog</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#e9c176]" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings_input_component</span>
+<span class="font-label text-[8px] uppercase">Config</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#dac3a2] opacity-50" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label text-[8px] uppercase">Profile</span>
+</a>
+</nav>
+</body></html>

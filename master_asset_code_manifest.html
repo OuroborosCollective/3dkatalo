@@ -1,0 +1,40 @@
+# Master Asset & Code Manifest: "Relics of Rune & Iron"
+
+## 1. Project Overview
+This manifest serves as the central directory for the MMORPG Concept Art Catalog. It is designed to be handed off to an AI developer or no-code agent to facilitate the creation of a full functional application.
+
+## 2. Core Screens & Data Sources
+Each screen listed below contains high-fidelity HTML/CSS and 2D concept art (transparent backgrounds).
+
+### Management Hubs (Main Navigation)
+- **Plate Armor Management:** {{DATA:SCREEN:SCREEN_39}}
+- **Sword Management:** {{DATA:SCREEN:SCREEN_50}}
+- **NPC Management:** {{DATA:SCREEN:SCREEN_29}}
+- **Pets & Companions Management:** {{DATA:SCREEN:SCREEN_32}}
+- **Architecture (Buildings) Management:** {{DATA:SCREEN:SCREEN_45}}
+
+### Specialized Collections (Tiered 3D Assets)
+- **Heavy Armor (LOD Support):** {{DATA:SCREEN:SCREEN_36}}
+- **Leather Armor:** {{DATA:SCREEN:SCREEN_47}}
+- **Cloth Armor (LOD Support):** {{DATA:SCREEN:SCREEN_27}}
+- **Magic Wands:** {{DATA:SCREEN:SCREEN_33}}
+- **Bows (LOD Support):** {{DATA:SCREEN:SCREEN_6}}
+- **Two-Handed Swords (LOD Support):** {{DATA:SCREEN:SCREEN_16}}
+- **Two-Handed Axes (LOD Support):** {{DATA:SCREEN:SCREEN_42}}
+
+## 3. Global Assets
+- **Design System:** "Runic Iron & Ember" (Theme and Brand Guidelines).
+- **Typography:** Newsreader (Serif), Space Grotesk (Technical), Work Sans (Body).
+- **Color Palette:** #161311 (Onyx), #231f1d (Charcoal), #e9c176 (Gold), #00dce5 (Cyan Accent).
+
+## 4. Handoff Instructions for No-Code Agents
+1. **Scrape Metadata:** Use the `.machine-readout` element on any screen to understand the current batch status and item IDs.
+2. **Implement 3D Viewer:** Replace the static image placeholders in the "View 3D Model" modals with a `<model-viewer>` component.
+3. **Database Mapping:** Map the "LOD HI/MD/LO" toggles to specific file paths in your cloud storage (e.g., `/assets/3d/AXE-001_HI.glb`).
+4. **Navigation:** Use the Sidebar components to link all screens together into a single-page application (SPA) or multi-page app.
+
+## 5. Export Guide
+To extract the raw code for your development environment:
+- Open each screen on the Stitch canvas.
+- Click **"</> View Code"**.
+- Download or copy the generated source code.

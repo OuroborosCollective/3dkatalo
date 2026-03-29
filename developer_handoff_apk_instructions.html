@@ -1,0 +1,36 @@
+# MMORPG Concept Art Catalog: Developer Handoff Guide
+
+## Project Context
+This is a high-fidelity UI/UX prototype for a 3D Asset Management Catalog titled "Relics of Rune & Iron". It is designed to bridge the gap between 2D concept art and a 3D production pipeline.
+
+## Technical Architecture for No-Code Agents
+### 1. Machine Readout Feature
+- **Purpose**: Every management screen includes a "Machine Readout" terminal-style interface.
+- **Implementation**: These are designed as semantic HTML containers that a no-code agent can "scrape" or "read" to understand the current state of the catalog, active batch processes, and pipeline status.
+- **Hook**: Use the CSS class `.machine-readout` or the ID `#active-session-log` to pull real-time metadata into your app logic.
+
+### 2. 3D Asset Management System (LOD Tiers)
+- **Data Model**: Every item (Armor, Sword, etc.) supports three Level of Detail (LOD) states: `HI`, `MD`, and `LO`.
+- **Supported Formats**: `GLB`, `FBX`, `USD`, and `Unity`.
+- **Backend Recommendation**: Use a cloud bucket (like AWS S3 or Google Cloud Storage) to map the item IDs (e.g., `AXE-001`) to the corresponding 3D file paths.
+
+### 3. Navigation & Prototype Flow
+- **Primary Nav**: Sidebar managed via fixed positioning.
+- **Interactive States**: All buttons include `:hover` and `:active` CSS states.
+- **Prototype Connections**:
+    - **Plate Armor**: {{DATA:SCREEN:SCREEN_25}}
+    - **Swords**: {{DATA:SCREEN:SCREEN_21}}
+    - **NPCs**: {{DATA:SCREEN:SCREEN_48}}
+    - **Pets**: {{DATA:SCREEN:SCREEN_50}}
+    - **Magic Wands**: {{DATA:SCREEN:SCREEN_32}}
+
+## How to Export Code
+1. Select any screen on the Stitch canvas.
+2. Click the **"</> View Code"** button in the top toolbar.
+3. Copy the HTML and CSS.
+4. Paste this code into your no-code tool (like Bubble, Webflow, or FlutterFlow) or give it directly to your AI developer agent.
+
+## Next Steps for Production
+- **Database Integration**: Connect the "Manage Assets" buttons to a database to handle file uploads.
+- **3D Viewer**: Integrate a library like `<model-viewer>` to render the .GLB files when the "View 3D Model" button is clicked.
+- **Export Logic**: Map the format buttons (GLB, FBX, etc.) to trigger the download of the correct file from your storage.

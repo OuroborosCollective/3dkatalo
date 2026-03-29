@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Relic &amp; Rune | Heavy Armor Collection</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,700;0,800;1,400&amp;family=Work+Sans:wght@300;400;500;600&amp;family=Space+Grotesk:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-bright": "#3d3836",
+                        "secondary-container": "#57472d",
+                        "primary-fixed-dim": "#e9c176",
+                        "on-tertiary-fixed": "#002021",
+                        "on-tertiary": "#003739",
+                        "surface-container-low": "#1f1b19",
+                        "on-secondary-fixed-variant": "#54442b",
+                        "tertiary-container": "#006266",
+                        "secondary-fixed": "#f7dfbc",
+                        "inverse-primary": "#775a19",
+                        "tertiary-fixed-dim": "#00dce5",
+                        "surface-dim": "#161311",
+                        "surface-variant": "#393431",
+                        "on-secondary-container": "#ccb594",
+                        "outline": "#a28c81",
+                        "on-primary-fixed": "#261900",
+                        "background": "#161311",
+                        "surface-container": "#231f1d",
+                        "error-container": "#93000a",
+                        "surface": "#161311",
+                        "on-tertiary-container": "#00e5ee",
+                        "on-background": "#eae1dd",
+                        "on-error-container": "#ffdad6",
+                        "on-primary": "#412d00",
+                        "surface-container-lowest": "#110d0c",
+                        "on-tertiary-fixed-variant": "#004f53",
+                        "primary-fixed": "#ffdea5",
+                        "outline-variant": "#54433a",
+                        "on-secondary-fixed": "#251904",
+                        "on-primary-fixed-variant": "#5d4201",
+                        "tertiary": "#00dce5",
+                        "secondary-fixed-dim": "#dac3a2",
+                        "on-surface": "#eae1dd",
+                        "surface-container-high": "#2e2927",
+                        "primary-container": "#715313",
+                        "on-primary-container": "#f2c97e",
+                        "surface-container-highest": "#393431",
+                        "surface-tint": "#e9c176",
+                        "on-error": "#690005",
+                        "primary": "#e9c176",
+                        "on-surface-variant": "#dac2b6",
+                        "tertiary-fixed": "#63f7ff",
+                        "inverse-surface": "#eae1dd",
+                        "secondary": "#dac3a2",
+                        "on-secondary": "#3c2e16",
+                        "inverse-on-surface": "#342f2d",
+                        "error": "#ffb4ab"
+                    },
+                    fontFamily: {
+                        "headline": ["Newsreader", "serif"],
+                        "body": ["Work Sans", "sans-serif"],
+                        "label": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #161311; }
+        ::-webkit-scrollbar-thumb { background: #393431; }
+        .runic-glow:hover { text-shadow: 0 0 8px #00dce5; }
+        .iron-gradient { background: linear-gradient(135deg, #e9c176 0%, #715313 100%); }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="bg-stone-950 text-amber-200 docked full-width top-0 border-b border-stone-800/50 flex justify-between items-center px-6 py-4 w-full fixed z-50">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-black text-amber-500 uppercase tracking-tighter Newsreader">Relic &amp; Rune</span>
+<nav class="hidden md:flex gap-6 font-label text-xs uppercase tracking-widest">
+<a class="text-amber-400 border-b-2 border-amber-500 transition-colors" href="#">The Armory</a>
+<a class="text-stone-500 hover:text-amber-100 transition-colors" href="#">Ancient Runes</a>
+<a class="text-stone-500 hover:text-amber-100 transition-colors" href="#">Quest Logs</a>
+<a class="text-stone-500 hover:text-amber-100 transition-colors" href="#">Readout</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-primary-container text-on-primary-container px-4 py-1.5 font-label text-[10px] uppercase tracking-widest transition-all duration-75 active:scale-95">
+                Bulk LOD Upload
+            </button>
+<div class="flex gap-2 text-stone-500">
+<span class="material-symbols-outlined hover:text-amber-100 cursor-pointer">settings</span>
+<span class="material-symbols-outlined hover:text-amber-100 cursor-pointer">notifications</span>
+</div>
+</div>
+</header>
+<!-- SideNavBar -->
+<aside class="bg-stone-900 text-amber-200 fixed left-0 top-0 h-full w-64 flex flex-col pt-24 border-r border-stone-800 shadow-2xl shadow-black/50 z-40 hidden md:flex">
+<div class="px-6 mb-8">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 bg-surface-container-highest border border-outline-variant">
+<img class="w-full h-full object-cover grayscale opacity-80" data-alt="Portrait of a grizzled master blacksmith in a dark medieval workshop surrounded by iron tools" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCALXvjJ1AWSKtACTheR1NcMjCJjglb_PkSvf-H3swIunSoweM7PZVg0vq4hNcojPhE-QZ2dldi6qXf17ApmJr1fNUbne5a6Gk-JQ-2C-L4dm9zIW465XyhFLYD6co2VyTbdgFGTPPAMSbqtFrMUTHwBwGoHNz2guIfjlLCpKwTZR1Z18Tq84jNQNbF42G400T3CYylFVMMWbryQ2WG5j43xwFPQDAfrZ-rXUXNDHR6YGm-a2YxU0wMV4re-aDlsXqf7zwq73CpfCs"/>
+</div>
+<div>
+<p class="font-headline font-bold text-sm">The Master's Ledger</p>
+<p class="font-label text-[10px] text-stone-500 uppercase">Forging Ancient Assets</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 flex flex-col font-label text-xs uppercase tracking-widest">
+<a class="flex items-center gap-4 px-6 py-4 bg-stone-800 text-amber-400 font-bold border-l-4 border-amber-600 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="shield">shield</span>
+                The Armory
+            </a>
+<a class="flex items-center gap-4 px-6 py-4 text-stone-400 hover:bg-stone-800/50 hover:text-stone-100 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+                Ancient Runes
+            </a>
+<a class="flex items-center gap-4 px-6 py-4 text-stone-400 hover:bg-stone-800/50 hover:text-stone-100 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+                Quest Logs
+            </a>
+<a class="flex items-center gap-4 px-6 py-4 text-stone-400 hover:bg-stone-800/50 hover:text-stone-100 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings_accessibility">settings_accessibility</span>
+                Machine Readout
+            </a>
+</nav>
+<div class="p-6">
+<button class="w-full bg-primary py-3 text-on-primary font-label text-[10px] font-bold uppercase tracking-widest iron-gradient">
+                Forge New Item
+            </button>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="md:pl-64 pt-24 min-h-screen">
+<div class="max-w-[1600px] mx-auto p-8">
+<!-- Header Section -->
+<div class="mb-12 border-b border-outline-variant/20 pb-8 relative">
+<nav class="font-label text-[10px] uppercase tracking-[0.2em] text-stone-500 mb-4">
+                    Archives / Armor / <span class="text-primary">Heavy</span>
+</nav>
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+<div>
+<h1 class="font-headline text-5xl font-black text-on-surface tracking-tighter mb-2 italic">The Armor Gallery</h1>
+<p class="font-body text-stone-400 max-w-xl text-lg">Manage heavy protection concepts with multi-tier LOD support. Concept art for high-end soldier plate and runic iron slabs.</p>
+</div>
+<button class="iron-gradient text-on-primary px-8 py-3 font-label text-xs font-bold uppercase tracking-widest flex items-center gap-2 group">
+<span class="material-symbols-outlined text-sm">upload_file</span>
+                        Bulk LOD Upload
+                    </button>
+</div>
+</div>
+<!-- Asymmetric Grid Gallery -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12">
+<!-- Armor Card Template (Repeated 30 times conceptually, showing a few unique variants) -->
+<!-- Card 1 -->
+<div class="flex flex-col gap-4 group">
+<div class="relative bg-surface-container-low aspect-[3/4] overflow-hidden group-hover:bg-surface-container-high transition-colors">
+<img class="w-full h-full object-contain p-4 grayscale group-hover:grayscale-0 transition-all duration-500 scale-95 group-hover:scale-100" data-alt="Dark fantasy 2D concept art of heavy bloodforged plate armor with iron spikes and leather straps on transparent background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABo3uBP8MMiVGmmT_tkmDq-jHefgSOgqEzTyJbxp9hVUjNbiXDRlCqcsD_qyf2fm9g_1oRci3xoKKvFPxXFC5-CwLWlYbqw9FFFgipZi-UbMuzqG7hUjoXiTf2jvQEpPAskRPrSLpDesQKmKa-A0nEIosh5y7TbwsK_Ve6qVKTIgEDztW3ifvgDvr3g5drYxSSCDX0nmbzd1PxwCPI4pWb9Gs_jWS7sZEvw8E3psThIANpItYFDV8zZxXbw139BUjyINIVJX3K78k"/>
+<div class="absolute top-4 right-4 flex flex-col gap-2">
+<span class="bg-surface-container-highest/80 backdrop-blur-md px-2 py-1 font-label text-[10px] text-tertiary border border-tertiary/20">CONCEPT_01</span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<h3 class="font-headline text-xl font-bold text-on-surface">Bloodforged Plate</h3>
+<span class="font-label text-[9px] text-primary border border-primary/30 px-2 py-0.5 uppercase">Tier IV Epic</span>
+</div>
+<!-- LOD Interface -->
+<div class="flex items-center gap-4 my-2">
+<span class="font-label text-[9px] uppercase text-stone-500">LOD Bias:</span>
+<div class="flex bg-surface-container-lowest border border-outline-variant/30 p-1">
+<button class="px-3 py-1 text-[9px] font-label font-bold bg-primary text-on-primary">HI</button>
+<button class="px-3 py-1 text-[9px] font-label text-stone-500 hover:text-on-surface transition-colors">MD</button>
+<button class="px-3 py-1 text-[9px] font-label text-stone-500 hover:text-on-surface transition-colors">LO</button>
+</div>
+</div>
+<!-- Export Formats -->
+<div class="grid grid-cols-4 gap-1 mb-4">
+<button class="bg-surface-container border border-outline-variant/10 py-1.5 font-label text-[8px] hover:bg-surface-variant transition-colors">GLB</button>
+<button class="bg-surface-container border border-outline-variant/10 py-1.5 font-label text-[8px] hover:bg-surface-variant transition-colors">FBX</button>
+<button class="bg-surface-container border border-outline-variant/10 py-1.5 font-label text-[8px] hover:bg-surface-variant transition-colors">USD</button>
+<button class="bg-surface-container border border-outline-variant/10 py-1.5 font-label text-[8px] hover:bg-surface-variant transition-colors">UNITY</button>
+</div>
+<button class="w-full border border-primary/20 hover:bg-primary/5 py-2 text-primary font-label text-[10px] uppercase tracking-widest transition-all">
+                            Manage Assets
+                        </button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="flex flex-col gap-4 group mt-8 md:mt-0">
+<div class="relative bg-surface-container-low aspect-[3/4] overflow-hidden group-hover:bg-surface-container-high transition-colors">
+<img class="w-full h-full object-contain p-4 grayscale group-hover:grayscale-0 transition-all duration-500 scale-95 group-hover:scale-100" data-alt="Heavy iron slab armor concept drawing with rune etchings and glowing embers at the joints" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtIlRAKNdPyD-EJxy3K40D_-FlLsH5ZSc43MHZp8u6ZFBUkQq1APKxnyjPegnjkKOS8OHsueMXE3z-GeD0tIisBt-VkY2JnF-gHoETIqMyyObCc1TeFATr5LJI7uK3aBxw3_S_jPntS-M2B46AZTIpTIkZWzfbujlBV4kPSLpzio3Og7UvwM7DxYPoTNKXj8WZpEiCTqU7GqOm-FAy5BhK3WShn-nPY4D8gCBPVJ_w-NLBcsPZIpGd5eiSAyObIbpdlUsHcYCaE4o"/>
+<div class="absolute top-4 right-4 flex flex-col gap-2">
+<span class="bg-surface-container-highest/80 backdrop-blur-md px-2 py-1 font-label text-[10px] text-tertiary border border-tertiary/20">CONCEPT_02</span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<h3 class="font-headline text-xl font-bold text-on-surface">Obsidian Bastion</h3>
+<span class="font-label text-[9px] text-primary border border-primary/30 px-2 py-0.5 uppercase">Tier V Legendary</span>
+</div>
+<div class="flex items-center gap-4 my-2">
+<span class="font-label text-[9px] uppercase text-stone-500">LOD Bias:</span>
+<div class="flex bg-surface-container-lowest border border-outline-variant/30 p-1">
+<button class="px-3 py-1 text-[9px] font-label text-stone-500 hover:text-on-surface transition-colors">HI</button>
+<button class="px-3 py-1 text-[9px] font-label font-bold bg-primary text-on-primary">MD</button>
+<button class="px-3 py-1 text-[9px] font-label text-stone-500 hover:text-on-surface transition-colors">LO</button>
+</div>
+</div>
+<div class="grid grid-cols-4 gap-1 mb-4">
+<button class="bg-surface-container border border-outline-variant/10 py-1.5 font-label text-[8px] hover:bg-surface-variant transition-colors">GLB</button>
+<button class="bg-surface-container border border-outline-variant/10 py-1.5 font-label text-[8px] hover:bg-surface-variant transition-colors">FBX</button>
+<button class="bg-surface-container border border-outline-variant/10 py-1.5 font-label text-[8px] hover:bg-surface-variant transition-colors">USD</button>
+<button class="bg-surface-container border border-outline-variant/10 py-1.5 font-label text-[8px] hover:bg-surface-variant transition-colors">UNITY</button>
+</div>
+<button class="w-full border border-primary/20 hover:bg-primary/5 py-2 text-primary font-label text-[10px] uppercase tracking-widest transition-all">
+                            Manage Assets
+                        </button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="flex flex-col gap-4 group">
+<div class="relative bg-surface-container-low aspect-[3/4] overflow-hidden group-hover:bg-surface-container-high transition-colors">
+<img class="w-full h-full object-contain p-4 grayscale group-hover:grayscale-0 transition-all duration-500 scale-95 group-hover:scale-100" data-alt="Model drawing of soldier-tier heavy plate armor with rusted iron surfaces and reinforced chainmail underlay" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaWhta2q7tfQwYXQaT0un2xR4cYg3_lRQgTWAh4Xi5fuZwry8GNgxvReZli2hecXmngY2btDZd0e7MhJ09RjOmWgc17fYfaFWzq-MpzENOWJ18xZc6Fjnh-CoRd6jRHwAy0AgDgB6GmHvg3FrOo7e562Aj6QTR-3qLONuImblVm97pSxpMxHubZix4bymwIRbtFr2rLW-A7jYnXrLqEUqbNbDRMIuh-LACxz4L8-Oxz5D9hlNT1avL0Z7hwc_9UpiR4XihRNBqyPE"/>
+<div class="absolute top-4 right-4 flex flex-col gap-2">
+<span class="bg-surface-container-highest/80 backdrop-blur-md px-2 py-1 font-label text-[10px] text-tertiary border border-tertiary/20">CONCEPT_03</span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<h3 class="font-headline text-xl font-bold text-on-surface">Iron Legionnaire</h3>
+<span class="font-label text-[9px] text-stone-400 border border-stone-700 px-2 py-0.5 uppercase">Tier II Common</span>
+</div>
+<div class="flex items-center gap-4 my-2">
+<span class="font-label text-[9px] uppercase text-stone-500">LOD Bias:</span>
+<div class="flex bg-surface-container-lowest border border-outline-variant/30 p-1">
+<button class="px-3 py-1 text-[9px] font-label text-stone-500 hover:text-on-surface transition-colors">HI</button>
+<button class="px-3 py-1 text-[9px] font-label text-stone-500 hover:text-on-surface transition-colors">MD</button>
+<button class="px-3 py-1 text-[9px] font-label font-bold bg-primary text-on-primary">LO</button>
+</div>
+</div>
+<div class="grid grid-cols-4 gap-1 mb-4">
+<button class="bg-surface-container border border-outline-variant/10 py-1.5 font-label text-[8px] hover:bg-surface-variant transition-colors">GLB</button>
+<button class="bg-surface-container border border-outline-variant/10 py-1.5 font-label text-[8px] hover:bg-surface-variant transition-colors">FBX</button>
+<button class="bg-surface-container border border-outline-variant/10 py-1.5 font-label text-[8px] hover:bg-surface-variant transition-colors">USD</button>
+<button class="bg-surface-container border border-outline-variant/10 py-1.5 font-label text-[8px] hover:bg-surface-variant transition-colors">UNITY</button>
+</div>
+<button class="w-full border border-primary/20 hover:bg-primary/5 py-2 text-primary font-label text-[10px] uppercase tracking-widest transition-all">
+                            Manage Assets
+                        </button>
+</div>
+</div>
+<!-- Card 4 (Asymmetric offset) -->
+<div class="flex flex-col gap-4 group lg:mt-12">
+<div class="relative bg-surface-container-low aspect-[3/4] overflow-hidden group-hover:bg-surface-container-high transition-colors">
+<img class="w-full h-full object-contain p-4 grayscale group-hover:grayscale-0 transition-all duration-500 scale-95 group-hover:scale-100" data-alt="Intricate 2D drawing of dwarven heavy plate with runic carvings and brass highlights on a dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdeQ0xDAOqULsKPupAZMK1RchwCnza5CZxQoTz3tKWkOKKEJmyrwChQHA0iSOmKZDJnUVdAsogyvnZQK458K6_hMwJ7Q76YNpkjmq9__d_qHWAPTS9Bsb8luBa2doeMjV364KbClNPR2dY7XdzcfA0oEd7nhSezuTypOEyGevIvU5qwhV_gnebOH7IA3zIQqFK4oKbGg_SFe1CF0JWzoIfpOnuh46p19Jh5Kxm56pBrKkqDS19em2483832oubBNWwIKIGnLsZNvM"/>
+<div class="absolute top-4 right-4 flex flex-col gap-2">
+<span class="bg-surface-container-highest/80 backdrop-blur-md px-2 py-1 font-label text-[10px] text-tertiary border border-tertiary/20">CONCEPT_04</span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<h3 class="font-headline text-xl font-bold text-on-surface">Runic Husk</h3>
+<span class="font-label text-[9px] text-primary border border-primary/30 px-2 py-0.5 uppercase">Tier IV Epic</span>
+</div>
+<div class="flex items-center gap-4 my-2">
+<span class="font-label text-[9px] uppercase text-stone-500">LOD Bias:</span>
+<div class="flex bg-surface-container-lowest border border-outline-variant/30 p-1">
+<button class="px-3 py-1 text-[9px] font-label font-bold bg-primary text-on-primary">HI</button>
+<button class="px-3 py-1 text-[9px] font-label text-stone-500 hover:text-on-surface transition-colors">MD</button>
+<button class="px-3 py-1 text-[9px] font-label text-stone-500 hover:text-on-surface transition-colors">LO</button>
+</div>
+</div>
+<div class="grid grid-cols-4 gap-1 mb-4">
+<button class="bg-surface-container border border-outline-variant/10 py-1.5 font-label text-[8px] hover:bg-surface-variant transition-colors">GLB</button>
+<button class="bg-surface-container border border-outline-variant/10 py-1.5 font-label text-[8px] hover:bg-surface-variant transition-colors">FBX</button>
+<button class="bg-surface-container border border-outline-variant/10 py-1.5 font-label text-[8px] hover:bg-surface-variant transition-colors">USD</button>
+<button class="bg-surface-container border border-outline-variant/10 py-1.5 font-label text-[8px] hover:bg-surface-variant transition-colors">UNITY</button>
+</div>
+<button class="w-full border border-primary/20 hover:bg-primary/5 py-2 text-primary font-label text-[10px] uppercase tracking-widest transition-all">
+                            Manage Assets
+                        </button>
+</div>
+</div>
+<!-- Repeating Logic for items 5-30 omitted for brevity in code snippet, but UI handles scaling -->
+<!-- Example of item 5 to show grid continuity -->
+<div class="flex flex-col gap-4 group">
+<div class="relative bg-surface-container-low aspect-[3/4] overflow-hidden group-hover:bg-surface-container-high transition-colors">
+<img class="w-full h-full object-contain p-4 grayscale group-hover:grayscale-0 transition-all duration-500 scale-95 group-hover:scale-100" data-alt="Heavy slab armor with moss and stone weathering, soldier-tier concept drawing" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFRzaTJTgBexS9Ql81l7HnfhQXml0DARkjGVBOgMCb_n_HL5abwHKVaTQUKmBLOHQbSy4vROTYxeI0HJNrGiE9COM3JQfrJnpJi0U-dHn3UzXk7pcnSzHzdTNIjorvPTBY-ikx3i8NzKKnL9jWjU3Z9xZCbwJLhzf6cfmrvJxeEhYbvz9FMVhn5NnM8GaHJEbBs0tdKkSsOy8v2oO8aMRLBzih-YH70EXyVXSeEEp8B8wqOx9TZuZ_b4WkA1qZ76uqONKDrl4mXlw"/>
+<div class="absolute top-4 right-4 flex flex-col gap-2">
+<span class="bg-surface-container-highest/80 backdrop-blur-md px-2 py-1 font-label text-[10px] text-tertiary border border-tertiary/20">CONCEPT_05</span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<h3 class="font-headline text-xl font-bold text-on-surface">Mossy Warder</h3>
+<span class="font-label text-[9px] text-stone-400 border border-stone-700 px-2 py-0.5 uppercase">Tier III Rare</span>
+</div>
+<div class="flex items-center gap-4 my-2">
+<span class="font-label text-[9px] uppercase text-stone-500">LOD Bias:</span>
+<div class="flex bg-surface-container-lowest border border-outline-variant/30 p-1">
+<button class="px-3 py-1 text-[9px] font-label text-stone-500 hover:text-on-surface transition-colors">HI</button>
+<button class="px-3 py-1 text-[9px] font-label font-bold bg-primary text-on-primary">MD</button>
+<button class="px-3 py-1 text-[9px] font-label text-stone-500 hover:text-on-surface transition-colors">LO</button>
+</div>
+</div>
+<div class="grid grid-cols-4 gap-1 mb-4">
+<button class="bg-surface-container border border-outline-variant/10 py-1.5 font-label text-[8px] hover:bg-surface-variant transition-colors">GLB</button>
+<button class="bg-surface-container border border-outline-variant/10 py-1.5 font-label text-[8px] hover:bg-surface-variant transition-colors">FBX</button>
+<button class="bg-surface-container border border-outline-variant/10 py-1.5 font-label text-[8px] hover:bg-surface-variant transition-colors">USD</button>
+<button class="bg-surface-container border border-outline-variant/10 py-1.5 font-label text-[8px] hover:bg-surface-variant transition-colors">UNITY</button>
+</div>
+<button class="w-full border border-primary/20 hover:bg-primary/5 py-2 text-primary font-label text-[10px] uppercase tracking-widest transition-all">
+                            Manage Assets
+                        </button>
+</div>
+</div>
+<!-- Repeatable placeholder to visualize density -->
+<div class="hidden xl:flex flex-col gap-4 group opacity-40 grayscale pointer-events-none">
+<div class="bg-surface-container-lowest aspect-[3/4] border border-dashed border-stone-800 flex items-center justify-center">
+<span class="font-label text-[10px] uppercase">Slot 06-30 Pending</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button - Suppression for Details but active here as primary gallery action -->
+<div class="fixed bottom-8 right-8 z-50">
+<button class="w-16 h-16 bg-primary text-on-primary iron-gradient shadow-2xl flex items-center justify-center group transition-all duration-300 active:scale-95">
+<span class="material-symbols-outlined text-3xl group-hover:rotate-90 transition-transform duration-300">add</span>
+</button>
+</div>
+<!-- Machine Readout Indicator (Sidebar detail implementation) -->
+<div class="fixed bottom-0 left-0 w-64 p-4 z-50 pointer-events-none hidden md:block">
+<div class="bg-black/80 backdrop-blur-xl border border-tertiary/20 p-3 flex flex-col gap-1">
+<div class="flex justify-between items-center mb-1">
+<span class="font-label text-[8px] text-tertiary uppercase tracking-tighter">Machine Readout v4.2</span>
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+</div>
+<div class="font-label text-[7px] text-tertiary/60 uppercase leading-none">
+                POLY_COUNT: 2.4M VTS<br/>
+                DRAWCALLS: 142<br/>
+                LOD_STATUS: OPTIMIZED
+            </div>
+</div>
+</div>
+</body></html>

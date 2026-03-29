@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Work+Sans:wght@300;400;500;600&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed-dim": "#dac3a2",
+              "on-secondary": "#3c2e16",
+              "outline": "#a28c81",
+              "on-tertiary-fixed": "#002021",
+              "inverse-surface": "#eae1dd",
+              "tertiary": "#00dce5",
+              "on-tertiary": "#003739",
+              "secondary-fixed": "#f7dfbc",
+              "on-surface": "#eae1dd",
+              "secondary-container": "#57472d",
+              "on-surface-variant": "#dac2b6",
+              "error-container": "#93000a",
+              "inverse-primary": "#775a19",
+              "inverse-on-surface": "#342f2d",
+              "background": "#161311",
+              "primary-fixed-dim": "#e9c176",
+              "on-tertiary-container": "#00e5ee",
+              "surface-tint": "#e9c176",
+              "tertiary-fixed-dim": "#00dce5",
+              "on-primary-fixed-variant": "#5d4201",
+              "on-background": "#eae1dd",
+              "on-secondary-fixed-variant": "#54442b",
+              "surface-variant": "#393431",
+              "on-secondary-fixed": "#251904",
+              "primary": "#e9c176",
+              "on-error-container": "#ffdad6",
+              "on-error": "#690005",
+              "surface": "#161311",
+              "surface-bright": "#3d3836",
+              "surface-container-lowest": "#110d0c",
+              "tertiary-fixed": "#63f7ff",
+              "surface-dim": "#161311",
+              "on-primary-fixed": "#261900",
+              "primary-fixed": "#ffdea5",
+              "on-tertiary-fixed-variant": "#004f53",
+              "surface-container-highest": "#393431",
+              "error": "#ffb4ab",
+              "secondary": "#dac3a2",
+              "tertiary-container": "#006266",
+              "primary-container": "#715313",
+              "outline-variant": "#54433a",
+              "on-secondary-container": "#ccb594",
+              "on-primary-container": "#f2c97e",
+              "on-primary": "#412d00",
+              "surface-container-high": "#2e2927",
+              "surface-container": "#231f1d",
+              "surface-container-low": "#1f1b19"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Work Sans"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .runic-underline {
+            position: relative;
+        }
+        .runic-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #e9c176 50%, transparent);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container">
+<div class="flex min-h-screen">
+<!-- SideNavBar Component -->
+<aside class="flex flex-col h-screen w-64 docked left-0 border-r-0 bg-[#161311] border-r border-[#393431]/20 sticky top-0 shrink-0 hidden md:flex">
+<div class="p-6">
+<h1 class="font-['Newsreader'] italic text-[#e9c176] text-2xl tracking-tighter">Relic &amp; Rune</h1>
+<div class="mt-8">
+<h2 class="font-['Space_Grotesk'] uppercase text-xs tracking-widest text-[#e9c176] mb-1">Architectural Concepts</h2>
+<p class="font-['Space_Grotesk'] uppercase text-[10px] tracking-[0.2em] text-[#eae1dd] opacity-40">Häuser &amp; Gebäude</p>
+</div>
+</div>
+<nav class="flex-1 mt-4">
+<ul class="space-y-1">
+<li>
+<a class="flex items-center px-6 py-4 font-['Space_Grotesk'] uppercase text-xs tracking-widest text-[#eae1dd] opacity-60 hover:bg-[#1c1816] hover:text-[#00dce5] transition-all duration-200 group" href="#">
+<span class="material-symbols-outlined mr-4 opacity-70 group-hover:opacity-100" data-icon="fort">fort</span>
+                            Fortresses
+                        </a>
+</li>
+<li>
+<a class="flex items-center px-6 py-4 font-['Space_Grotesk'] uppercase text-xs tracking-widest text-[#eae1dd] opacity-60 hover:bg-[#1c1816] hover:text-[#00dce5] transition-all duration-200 group" href="#">
+<span class="material-symbols-outlined mr-4 opacity-70 group-hover:opacity-100" data-icon="church">church</span>
+                            Cathedrals
+                        </a>
+</li>
+<li>
+<a class="flex items-center px-6 py-4 font-['Space_Grotesk'] uppercase text-xs tracking-widest bg-[#231f1d] text-[#e9c176] border-l-4 border-[#e9c176] Active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined mr-4" data-icon="home">home</span>
+                            Dwellings
+                        </a>
+</li>
+<li>
+<a class="flex items-center px-6 py-4 font-['Space_Grotesk'] uppercase text-xs tracking-widest text-[#eae1dd] opacity-60 hover:bg-[#1c1816] hover:text-[#00dce5] transition-all duration-200 group" href="#">
+<span class="material-symbols-outlined mr-4 opacity-70 group-hover:opacity-100" data-icon="castle">castle</span>
+                            Ruins
+                        </a>
+</li>
+<li>
+<a class="flex items-center px-6 py-4 font-['Space_Grotesk'] uppercase text-xs tracking-widest text-[#eae1dd] opacity-60 hover:bg-[#1c1816] hover:text-[#00dce5] transition-all duration-200 group" href="#">
+<span class="material-symbols-outlined mr-4 opacity-70 group-hover:opacity-100" data-icon="account_balance">account_balance</span>
+                            Monuments
+                        </a>
+</li>
+</ul>
+</nav>
+<div class="p-6 border-t border-[#393431]/20">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#e9c176]" data-icon="account_circle">account_circle</span>
+<span class="font-label text-[10px] tracking-widest text-[#eae1dd] opacity-50 uppercase">Grand Archivist</span>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col min-w-0">
+<!-- TopAppBar Component -->
+<header class="flex justify-between items-center w-full px-6 py-4 bg-[#161311] docked full-width top-0 z-50">
+<div class="flex items-center gap-8">
+<span class="md:hidden font-['Newsreader'] italic text-[#e9c176] text-xl">R&amp;R</span>
+<nav class="hidden lg:flex items-center space-x-8">
+<a class="font-['Newsreader'] tracking-tight text-[#eae1dd] opacity-70 hover:text-[#00dce5] hover:opacity-100 transition-colors duration-300" href="#">Catalog</a>
+<a class="font-['Newsreader'] tracking-tight text-[#e9c176] border-b-2 border-[#e9c176] pb-1 hover:text-[#00dce5] hover:opacity-100 transition-colors duration-300" href="#">Häuser &amp; Gebäude Collection</a>
+<a class="font-['Newsreader'] tracking-tight text-[#eae1dd] opacity-70 hover:text-[#00dce5] hover:opacity-100 transition-colors duration-300" href="#">Blueprints</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#eae1dd] opacity-40 text-sm" data-icon="search">search</span>
+<input class="bg-[#231f1d] border-none text-[10px] uppercase tracking-widest py-2 pl-10 pr-4 w-48 focus:ring-1 focus:ring-[#e9c176] text-[#eae1dd]" placeholder="Search Archives..." type="text"/>
+</div>
+<button class="text-[#eae1dd] opacity-70 hover:text-[#00dce5] transition-colors"><span class="material-symbols-outlined" data-icon="settings">settings</span></button>
+<button class="text-[#eae1dd] opacity-70 hover:text-[#00dce5] transition-colors"><span class="material-symbols-outlined" data-icon="account_circle">account_circle</span></button>
+</div>
+<div class="bg-[#231f1d] h-px w-full absolute bottom-0 left-0"></div>
+</header>
+<!-- Page Content -->
+<div class="p-8 lg:p-12 overflow-y-auto">
+<header class="mb-12 max-w-4xl">
+<div class="flex items-center gap-4 mb-2">
+<div class="h-px bg-primary w-12"></div>
+<span class="font-label text-xs tracking-[0.3em] uppercase text-primary">Master's Ledger</span>
+</div>
+<h2 class="font-headline text-5xl md:text-6xl text-on-surface mb-4 italic runic-underline inline-block">Häuser &amp; Gebäude Collection</h2>
+<p class="font-body text-on-surface-variant max-w-2xl leading-relaxed mt-4">
+                        A curated archive of architectural manifestations from across the scorched realms. These structures serve as the definitive blueprints for reconstructed settlements and strategic strongholds.
+                    </p>
+</header>
+<!-- Architectural Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+<!-- Card 1 -->
+<article class="bg-surface-container group flex flex-col">
+<div class="relative aspect-[4/5] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[0.5] group-hover:grayscale-0" data-alt="dramatic gothic fantasy fortress built into a jagged black mountain peak with ember-glowing windows and sharp metal spires" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnSbGu0TS_CGYOyp8nSKvDJY95GRMfH05OzhZTQV46vLqV8MA0kz_LQQbEm_b027AIdKJMKSMSxS4Iq7thjwGyM9ttHwWZ5t56FqIIY9CNyMksmlWYldSa7DxmQr7XNWgqx1PUt9SL3SRBK8Ny3RjywBgayiK9J35TNfJ2Dcs96iOPGm1UM2ye-pI0tgZxugALBt67HUL8m2r42wjidmpfwdYYFIE-TCIAAW4o5mk17Y7iM-bEHFyDvr11e-rmIsWAA0duCbNVsT8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent opacity-60"></div>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<h3 class="font-headline text-2xl text-primary mb-2 italic">Iron-Fist Bastion</h3>
+<p class="font-body text-sm text-on-surface-variant mb-6 line-clamp-3">A brutalist military fortification forged from volcanic iron and dark basalt. Engineered to withstand the relentless sieges of the Void-touched.</p>
+<div class="mt-auto grid grid-cols-2 gap-2">
+<button class="bg-primary-container text-on-primary-container font-label text-[10px] tracking-widest py-3 uppercase hover:bg-primary hover:text-on-primary transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
+                                    View 3D
+                                </button>
+<button class="border border-outline-variant/30 text-on-surface font-label text-[10px] tracking-widest py-3 uppercase hover:bg-surface-container-highest transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+                                    Export
+                                </button>
+</div>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="bg-surface-container group flex flex-col">
+<div class="relative aspect-[4/5] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[0.5] group-hover:grayscale-0" data-alt="ethereal gothic cathedral with massive stained glass windows glowing with soul-fire blue energy at twilight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEbL7Iwi8R7gZ9H92YZp0zPJpDESFIZCiOi6qTLCmWuCwhPgYiRm9tJ0lsm9ZfPLhvepdPaWBmsQyBaFG72Fhy5rN-ulUMHUo_R3iQ3ytNzOL3Y6J1siM5ym_hl-al4uoWSPT7pOxrM-z45htldRzDQqKI2dDZlHg9xPqI8iA-hdLfo--Lw7PqYSIAPx87StZIHD9H7_hrZJu7OpJv3StOnroNIxwGyFzYQANGluPGdnYKaPJG90aa3Dqc0bf5UeaxSzsQBSxNX3E"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent opacity-60"></div>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<h3 class="font-headline text-2xl text-primary mb-2 italic">Soul-Fire Spire</h3>
+<p class="font-body text-sm text-on-surface-variant mb-6 line-clamp-3">The ancestral seat of the Clerics of the Flame. Its crystalline architecture channels subterranean mana into a protective celestial shield.</p>
+<div class="mt-auto grid grid-cols-2 gap-2">
+<button class="bg-primary-container text-on-primary-container font-label text-[10px] tracking-widest py-3 uppercase hover:bg-primary hover:text-on-primary transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
+                                    View 3D
+                                </button>
+<button class="border border-outline-variant/30 text-on-surface font-label text-[10px] tracking-widest py-3 uppercase hover:bg-surface-container-highest transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+                                    Export
+                                </button>
+</div>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="bg-surface-container group flex flex-col">
+<div class="relative aspect-[4/5] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[0.5] group-hover:grayscale-0" data-alt="gloomy medieval tavern built from dark timber and crooked stones on a foggy dockside with crows perched on the roof" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApf0NGG_qSClvq9rQXD3a2RFyS1LeYt8aJ03K4KNQT-Rr3G1vET6VYRp2F9UJEMYaAAtHXcCruNgIRNyTFd0DqbTlid83zPFJQxg21OyJHJaLWCbeYijC2nPzFGBmG9jUDW9TMdvoaLBQUqtpOgZRCN8arr9xMqHeU5mKdkTAY90mM9-sCVZt1zluIns9zJA5sP6HcIMEJpf8CVbWQ2Fniyoob1maNEBHCf8CE94FE_U_kKFSSH0oolelNf1K4Uv3B_dhLm99_6E4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent opacity-60"></div>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<h3 class="font-headline text-2xl text-primary mb-2 italic">The Crow's Rest</h3>
+<p class="font-body text-sm text-on-surface-variant mb-6 line-clamp-3">A sanctuary for information brokers and weary wanderers alike. Its weathered timbers have heard secrets that could collapse entire kingdoms.</p>
+<div class="mt-auto grid grid-cols-2 gap-2">
+<button class="bg-primary-container text-on-primary-container font-label text-[10px] tracking-widest py-3 uppercase hover:bg-primary hover:text-on-primary transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
+                                    View 3D
+                                </button>
+<button class="border border-outline-variant/30 text-on-surface font-label text-[10px] tracking-widest py-3 uppercase hover:bg-surface-container-highest transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+                                    Export
+                                </button>
+</div>
+</div>
+</article>
+<!-- Card 4 -->
+<article class="bg-surface-container group flex flex-col">
+<div class="relative aspect-[4/5] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[0.5] group-hover:grayscale-0" data-alt="towering ancient library built into a cliffside with stone bridges and hovering magical lanterns in the mist" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCF9aL8rOHZadUrBzJb5x82SFwGQV38pBdXbp76Rz3RFQxbmNibasp5aicWUQeSumqWZ1BLtlZEMmoQZ2rCFbPFwJWC9urgA3Np3oW6QXRQNaH5nWB6IHRqjMqS2jKcGtY4SJNDIjWjYS_uscyAzshwGSjMwa4lXyNp2TOIE6P_nMFxLqbA-uuQIQKPAFJei-SSUu3wNwlqHsYaI9iri9dpG5uLozbXgPe8KaUwfjY8xoksLO31DfFAQgVgW0RPsXeSBBPFZP1yp_I"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent opacity-60"></div>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<h3 class="font-headline text-2xl text-primary mb-2 italic">Aetheric Observatory</h3>
+<p class="font-body text-sm text-on-surface-variant mb-6 line-clamp-3">Perched on the edge of the world, this facility tracks the movement of astral bodies and predicts incoming planar rifts.</p>
+<div class="mt-auto grid grid-cols-2 gap-2">
+<button class="bg-primary-container text-on-primary-container font-label text-[10px] tracking-widest py-3 uppercase hover:bg-primary hover:text-on-primary transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
+                                    View 3D
+                                </button>
+<button class="border border-outline-variant/30 text-on-surface font-label text-[10px] tracking-widest py-3 uppercase hover:bg-surface-container-highest transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+                                    Export
+                                </button>
+</div>
+</div>
+</article>
+<!-- Card 5 -->
+<article class="bg-surface-container group flex flex-col">
+<div class="relative aspect-[4/5] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[0.5] group-hover:grayscale-0" data-alt="underwater elven palace with shimmering pearl-like walls and bioluminescent coral decorations in deep navy water" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCALGgOynjBryV9zYhHWOvyTkMmCydTS1xWXJYAlIG5CfA9ZwR6fVlI0kebFMm7aNSKDWaz5nXdSu8XtGy5jibKulYGkQl5hNWJwnVOShLns6i37gdOjr0nWuTAPx3LxV2g-kytAjtV6kay0FlO76eRzshg3IygupranctLHxkDY2zdh-pGbf_rNKjwQUNz_kuRyxvfI9COCe5h0_6E8vKeW7Kvutx9hl3NjFg058oZ6IWXxZ905JqMmVb7-Dn_r4dJdQGlpNNGFRA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent opacity-60"></div>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<h3 class="font-headline text-2xl text-primary mb-2 italic">Pearl Abyss Sanctum</h3>
+<p class="font-body text-sm text-on-surface-variant mb-6 line-clamp-3">A marvel of arcane engineering, allowing air-breathers to reside comfortably within the crushing depths of the Sunken Sea.</p>
+<div class="mt-auto grid grid-cols-2 gap-2">
+<button class="bg-primary-container text-on-primary-container font-label text-[10px] tracking-widest py-3 uppercase hover:bg-primary hover:text-on-primary transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
+                                    View 3D
+                                </button>
+<button class="border border-outline-variant/30 text-on-surface font-label text-[10px] tracking-widest py-3 uppercase hover:bg-surface-container-highest transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+                                    Export
+                                </button>
+</div>
+</div>
+</article>
+<!-- Card 6 -->
+<article class="bg-surface-container group flex flex-col">
+<div class="relative aspect-[4/5] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[0.5] group-hover:grayscale-0" data-alt="monolithic ancient desert temple half-buried in golden sands with glowing runic inscriptions around the massive stone entrance" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeIQ8YoAJCXPieG9yAeoYE-9-QKiT-g2RD-6J8Yoa0YjpFFmYk2LQvfQZCFxgdGFaykenDPSxd6Cn3mOQFqQ0zC1hGe53B5os7s0DjBOeGKPs9Q255BojEeTit0_s81Zmnas9A4GLvXCYIKnodqg3eMvukFeSRS8rzcc_KJdbUrAmPAd_6uSmfzYc6cfEW8nfZSVtNVtxpNDeaIlPttu-iNgrtY9ylq2tQlJ71MOkk4dVOVQpWqW74zsniBeWWrP4VcUFypHA4sDk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent opacity-60"></div>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<h3 class="font-headline text-2xl text-primary mb-2 italic">Sands of Silence Hall</h3>
+<p class="font-body text-sm text-on-surface-variant mb-6 line-clamp-3">Unearthed from the dunes of the Dead Desert, this structure contains murals detailing the Great Sundering and the birth of the Rune-Lords.</p>
+<div class="mt-auto grid grid-cols-2 gap-2">
+<button class="bg-primary-container text-on-primary-container font-label text-[10px] tracking-widest py-3 uppercase hover:bg-primary hover:text-on-primary transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
+                                    View 3D
+                                </button>
+<button class="border border-outline-variant/30 text-on-surface font-label text-[10px] tracking-widest py-3 uppercase hover:bg-surface-container-highest transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+                                    Export
+                                </button>
+</div>
+</div>
+</article>
+<!-- Card 7 -->
+<article class="bg-surface-container group flex flex-col">
+<div class="relative aspect-[4/5] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[0.5] group-hover:grayscale-0" data-alt="floating city with interconnected spherical dwellings and hanging gardens suspended above a sea of clouds at sunset" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFtdRPu2el7ZcXBXRyUrVByAm1vjUKTa2Up9QDLROMGUedZKBMnLdux0JDf4eut6oWvqf9F842xUUg-LmzADlHCUyRIwOpvN0HR2clMpCA_198MUd0aoK6hxwz70ZcJysFpFr1e9uQUshHEcRaxj9L26nhZuCw2y3oXpOqcWPe3TjPL6xb9rf6Ie61GJLmkNuO7aRw2rWJ_i-uVqMvqr3MDoHqXJIcpysyCgKBl6vxw5m13nFGuyZX1KxxIywZZBJs2zA1qCnHLyY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent opacity-60"></div>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<h3 class="font-headline text-2xl text-primary mb-2 italic">Nimbus Cloud-Villas</h3>
+<p class="font-body text-sm text-on-surface-variant mb-6 line-clamp-3">High-altitude luxury residences designed for the merchant kings of the Aether. Requires continuous gravitational tethering to maintain stability.</p>
+<div class="mt-auto grid grid-cols-2 gap-2">
+<button class="bg-primary-container text-on-primary-container font-label text-[10px] tracking-widest py-3 uppercase hover:bg-primary hover:text-on-primary transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
+                                    View 3D
+                                </button>
+<button class="border border-outline-variant/30 text-on-surface font-label text-[10px] tracking-widest py-3 uppercase hover:bg-surface-container-highest transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+                                    Export
+                                </button>
+</div>
+</div>
+</article>
+<!-- Card 8 -->
+<article class="bg-surface-container group flex flex-col">
+<div class="relative aspect-[4/5] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[0.5] group-hover:grayscale-0" data-alt="steampunk factory with large brass gears, copper pipes emitting steam, and glowing orange furnace lights in a dark industrial district" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFcjwVi1HKmObIqXRtepNA3ZUdN3a1CZZ7YnYHYL3tn_7Fu9BPWTdx5-ovilWSbczbRCdKwh9M0-ATaqd6yhwlSMWUzAaCjW7aH8ULc9_AtBYz-ou_fVVIKWgvk-KLAjNvY3GYNx18yZmrgFLybe_arOqdmwQsU-siZr4L0jw9JI8Ecwpe5ZVaj164m1i0DLHg2kXf8Pu_uiadDBLO35f2nAXnlZLVbE-ftt9HXWDhozXs6w65yqQzV6uwrvIyJOXF4DpBX79u-qY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent opacity-60"></div>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<h3 class="font-headline text-2xl text-primary mb-2 italic">Iron-Works Manufactory</h3>
+<p class="font-body text-sm text-on-surface-variant mb-6 line-clamp-3">The beating heart of the empire's industry. Here, raw obsidian is refined into the runic plates used in the construction of legendary armor.</p>
+<div class="mt-auto grid grid-cols-2 gap-2">
+<button class="bg-primary-container text-on-primary-container font-label text-[10px] tracking-widest py-3 uppercase hover:bg-primary hover:text-on-primary transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
+                                    View 3D
+                                </button>
+<button class="border border-outline-variant/30 text-on-surface font-label text-[10px] tracking-widest py-3 uppercase hover:bg-surface-container-highest transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+                                    Export
+                                </button>
+</div>
+</div>
+</article>
+</div>
+</div>
+<!-- Contextual Footer -->
+<footer class="mt-auto p-8 border-t border-outline-variant/10 bg-surface-container-low flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-label text-[10px] tracking-[0.2em] uppercase text-on-surface-variant opacity-40">© 1244 Era of Ashes - Relic &amp; Rune Architectural Bureau</p>
+<div class="flex gap-6">
+<a class="font-label text-[10px] tracking-widest uppercase text-primary hover:text-tertiary transition-colors" href="#">Manifesto</a>
+<a class="font-label text-[10px] tracking-widest uppercase text-primary hover:text-tertiary transition-colors" href="#">Safety Protocols</a>
+<a class="font-label text-[10px] tracking-widest uppercase text-primary hover:text-tertiary transition-colors" href="#">Vault Access</a>
+</div>
+</footer>
+</main>
+</div>
+<!-- Mobile Navigation (Visible only on small screens) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-surface-container-high border-t border-outline-variant/20 z-50 flex justify-around p-2">
+<button class="flex flex-col items-center p-2 text-primary">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-[8px] uppercase tracking-tighter mt-1">Dwellings</span>
+</button>
+<button class="flex flex-col items-center p-2 text-on-surface opacity-50">
+<span class="material-symbols-outlined" data-icon="fort">fort</span>
+<span class="text-[8px] uppercase tracking-tighter mt-1">Forts</span>
+</button>
+<button class="flex flex-col items-center p-2 text-on-surface opacity-50">
+<span class="material-symbols-outlined" data-icon="church">church</span>
+<span class="text-[8px] uppercase tracking-tighter mt-1">Temples</span>
+</button>
+<button class="flex flex-col items-center p-2 text-on-surface opacity-50">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="text-[8px] uppercase tracking-tighter mt-1">Explore</span>
+</button>
+</nav>
+</body></html>

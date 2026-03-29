@@ -1,0 +1,59 @@
+{
+  "entities": {
+    "Category": {
+      "title": "Category",
+      "description": "A category or subcategory for 3D assets.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "description": "The name of the category." },
+        "parentId": { "type": "string", "description": "The ID of the parent category, or null if it's a root category." },
+        "ownerId": { "type": "string", "description": "The UID of the user who owns this category." }
+      },
+      "required": ["name", "ownerId"]
+    },
+    "Asset": {
+      "title": "Asset",
+      "description": "A 3D game model asset.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "description": "The name of the asset." },
+        "description": { "type": "string", "description": "A detailed description of the asset." },
+        "categoryId": { "type": "string", "description": "The ID of the category this asset belongs to." },
+        "tags": { "type": "array", "items": { "type": "string" }, "description": "A list of tags for the asset." },
+        "status": { "type": "string", "enum": ["draft", "published", "archived"], "description": "The current status of the asset." },
+        "version": { "type": "string", "description": "The version of the asset." },
+        "files": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "url": { "type": "string" },
+              "type": { "type": "string" }
+            }
+          },
+          "description": "A list of files associated with the asset."
+        },
+        "previewUrl": { "type": "string", "description": "The URL of the preview image." },
+        "marketplaceLinks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "platform": { "type": "string" },
+              "url": { "type": "string" }
+            }
+          },
+          "description": "Links to external marketplace listings."
+        },
+        "ownerId": { "type": "string", "description": "The UID of the user who owns this asset." },
+        "createdAt": { "type": "string", "format": "date-time", "description": "The time the asset was created." }
+      },
+      "required": ["name", "categoryId", "ownerId", "status"]
+    }
+  },
+  "firestore": {
+    "/categories/{categoryId}": { "schema": "Category", "description": "Collection of asset categories." },
+    "/assets/{assetId}": { "schema": "Asset", "description": "Collection of 3D assets." }
+  }
+}
