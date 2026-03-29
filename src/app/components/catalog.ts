@@ -32,7 +32,6 @@ import { Observable } from 'rxjs';
     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
       @for (asset of assets$ | async; track asset.id) {
         <div class="group bg-surface-container-low border border-outline-variant/10 hover:border-primary/30 transition-all duration-500 overflow-hidden flex flex-col">
-          <!-- Asset Preview Placeholder -->
           <div class="aspect-square bg-surface-container-lowest relative overflow-hidden">
             <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent opacity-60 z-10"></div>
             <div class="absolute top-4 right-4 z-20">
@@ -40,13 +39,11 @@ import { Observable } from 'rxjs';
                 {{ asset.type ? asset.type.split('/').pop()?.toUpperCase() : 'ASSET' }}
               </span>
             </div>
-            <!-- Simuliertes 3D-Vorschau-Bild oder Icon -->
             <div class="w-full h-full flex items-center justify-center grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110">
                <span class="material-symbols-outlined text-6xl opacity-20">view_in_ar</span>
             </div>
           </div>
 
-          <!-- Asset Info -->
           <div class="p-6 flex-1 flex flex-col">
             <div class="flex justify-between items-start mb-4">
               <div>
@@ -58,7 +55,6 @@ import { Observable } from 'rxjs';
               </div>
             </div>
 
-            <!-- Marketplace Links -->
             <div class="flex flex-wrap gap-2 mb-6">
               @for (link of asset.marketplaceLinks; track link.url; let i = $index) {
                 <div class="flex items-center gap-2 bg-surface-container-highest/30 px-3 py-1.5 border border-outline-variant/20 hover:border-primary/40 transition-colors">
@@ -70,7 +66,6 @@ import { Observable } from 'rxjs';
               }
             </div>
 
-            <!-- Add Link Form -->
             <form [formGroup]="linkForm" (ngSubmit)="addLink(asset.id!)" class="mt-auto pt-4 border-t border-outline-variant/10 flex flex-col gap-3">
               <div class="flex gap-2">
                 <input formControlName="platform" placeholder="Platform" class="flex-1 bg-surface-container-lowest border-none text-[10px] font-label uppercase tracking-widest px-3 py-2 focus:ring-1 focus:ring-primary transition-all placeholder:opacity-20">
@@ -85,7 +80,6 @@ import { Observable } from 'rxjs';
       }
     </div>
 
-    <!-- Upload Progress -->
     @if (uploads.length > 0) {
       <div class="fixed bottom-8 right-8 w-80 bg-surface-container border border-primary/30 p-6 shadow-2xl z-50">
         <h4 class="font-headline text-primary mb-4">Forging in Progress...</h4>
@@ -124,7 +118,7 @@ export class Catalog {
       const upload = { name: file.name, progress: 0 };
       this.uploads.push(upload);
       
-      const path = \`assets/\${Date.now()}_\${file.name}\`;
+      const path = 'assets/' + Date.now() + '_' + file.name;
       try {
         const url = await this.dataService.uploadFile(file, path, (progress) => {
           upload.progress = progress;
