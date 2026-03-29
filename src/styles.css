@@ -1,29 +1,89 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:wght@300;400;600&family=Space+Grotesk:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
-  --font-serif: "Playfair Display", serif;
+  /* Colors from Stitch Design */
+  --color-on-primary-fixed-variant: #5d4201;
+  --color-on-error: #690005;
+  --color-surface: #161311;
+  --color-on-primary-container: #f2c97e;
+  --color-on-background: #eae1dd;
+  --color-primary-container: #715313;
+  --color-error-container: #93000a;
+  --color-tertiary-fixed-dim: #00dce5;
+  --color-surface-container-low: #1f1b19;
+  --color-on-primary: #412d00;
+  --color-on-secondary-container: #ccb594;
+  --color-surface-dim: #161311;
+  --color-outline: #a28c81;
+  --color-background: #161311;
+  --color-on-surface: #eae1dd;
+  --color-on-primary-fixed: #261900;
+  --color-on-tertiary-fixed-variant: #004f53;
+  --color-outline-variant: #54433a;
+  --color-surface-container-lowest: #110d0c;
+  --color-secondary-container: #57472d;
+  --color-error: #ffb4ab;
+  --color-surface-bright: #3d3836;
+  --color-primary: #e9c176;
+  --color-primary-fixed-dim: #e9c176;
+  --color-primary-fixed: #ffdea5;
+  --color-on-tertiary-fixed: #002021;
+  --color-secondary-fixed-dim: #dac3a2;
+  --color-on-surface-variant: #dac2b6;
+  --color-inverse-primary: #775a19;
+  --color-on-tertiary-container: #00e5ee;
+  --color-surface-tint: #e9c176;
+  --color-on-tertiary: #003739;
+  --color-tertiary-fixed: #63f7ff;
+  --color-surface-container-highest: #393431;
+  --color-inverse-surface: #eae1dd;
+  --color-on-secondary-fixed-variant: #54442b;
+  --color-tertiary-container: #006266;
+  --color-surface-variant: #393431;
+  --color-secondary-fixed: #f7dfbc;
+  --color-secondary: #dac3a2;
+  --color-inverse-on-surface: #342f2d;
+  --color-on-secondary-fixed: #251904;
+  --color-tertiary: #00dce5;
+  --color-surface-container-high: #2e2927;
+  --color-on-secondary: #3c2e16;
+  --color-surface-container: #231f1d;
+  --color-on-error-container: #ffdad6;
+
+  /* Fonts */
+  --font-headline: "Newsreader", serif;
+  --font-body: "Work Sans", sans-serif;
+  --font-label: "Space Grotesk", sans-serif;
 }
 
 @layer base {
   body {
-    @apply font-sans text-neutral-900 antialiased;
+    @apply bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary antialiased;
   }
 
-  /* Custom Scrollbar */
-  ::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+}
+
+@layer components {
+  .runic-glow {
+    text-shadow: 0 0 8px rgba(0, 220, 229, 0.6);
+  }
+  
+  .gold-sheen {
+    background: linear-gradient(135deg, #e9c176 0%, #715313 100%);
   }
 
-  ::-webkit-scrollbar-track {
-    @apply bg-transparent;
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
   }
-
-  ::-webkit-scrollbar-thumb {
-    @apply bg-neutral-200 rounded-full hover:bg-neutral-300 transition-colors;
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #110d0c;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #54433a;
   }
 }

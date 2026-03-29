@@ -1,5 +1,62 @@
-<nav class="p-4 bg-gray-100 flex gap-4">
-  <a routerLink="/" class="font-bold">Catalog</a>
-  <a routerLink="/categories" class="font-bold">Categories</a>
-</nav>
-<router-outlet />
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full flex justify-between items-center px-6 py-4 bg-surface border-b border-outline-variant/15 z-50">
+  <div class="flex items-center gap-8">
+    <h1 class="text-2xl font-headline italic text-primary drop-shadow-[0_2px_2px_rgba(233,193,118,0.3)] tracking-tight">Relic & Rune</h1>
+    <nav class="hidden md:flex items-center gap-6">
+      <a routerLink="/" routerLinkActive="text-primary border-b-2 border-primary pb-1" [routerLinkActiveOptions]="{exact: true}" class="font-headline font-bold text-on-background opacity-70 hover:text-primary transition-colors duration-300">Catalog</a>
+      <a routerLink="/categories" routerLinkActive="text-primary border-b-2 border-primary pb-1" class="font-headline font-bold text-on-background opacity-70 hover:text-primary transition-colors duration-300">Categories</a>
+      <a class="font-headline font-bold text-on-background opacity-70 hover:text-primary transition-colors duration-300" href="#">Vault</a>
+    </nav>
+  </div>
+  <div class="flex items-center gap-4">
+    <div class="relative hidden lg:block">
+      <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-sm">search</span>
+      <input class="bg-surface-container-lowest border-none text-sm font-label pl-10 pr-4 py-2 w-64 focus:ring-1 focus:ring-primary transition-all placeholder:opacity-30" placeholder="Search the archives..." type="text"/>
+    </div>
+    <div class="flex items-center gap-3">
+      <button class="p-2 text-primary hover:bg-surface-container transition-all"><span class="material-symbols-outlined">notifications</span></button>
+      <button class="p-2 text-primary hover:bg-surface-container transition-all"><span class="material-symbols-outlined">account_balance_wallet</span></button>
+      <div class="w-8 h-8 bg-surface-container-high overflow-hidden border border-outline-variant/30">
+        <img alt="Scholar's Portrait" class="w-full h-full object-cover grayscale brightness-75" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDl-_2ZKuF_9CRyWj6j6Sxsb6r4k0Zl8A7ZJpGcSmxsnAXWBGCDh62Y4wEaaVE0VqwyVabs0HLU8dW0iOzWYXepVFNebzXZw7pf6GnDKLDOZ7_McIVFwVKNY5UcL3ZoHQmOptoG6ooDr5T-ZQq0LQleQd58QYNnTjRyO5VLgkMpHKcgrWCPb3NbzpBiW9V9tDi_qSGLwu5qFZTpwqvaTRaxzIJwxnWZ5REqnFkVx4YeDciMjL-434HIrAH7TyafSo-t2hzIm57oBNc"/>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-64 flex flex-col pt-24 pb-6 bg-surface-container border-r border-outline-variant/15 shadow-[4px_0_24px_rgba(0,0,0,0.5)] z-40 overflow-y-auto custom-scrollbar">
+  <div class="px-6 mb-8">
+    <h2 class="font-headline text-primary text-xl">The Armory</h2>
+    <p class="font-label text-xs uppercase tracking-widest text-secondary opacity-60">Filter by Steel</p>
+  </div>
+  <nav class="flex-1 space-y-1">
+    <a routerLink="/" class="flex items-center gap-4 px-6 py-3 font-label uppercase tracking-widest text-sm text-secondary opacity-60 hover:bg-surface-variant hover:text-on-background transition-all duration-200">
+      <span class="material-symbols-outlined text-lg">swords</span>
+      <span>All Blades</span>
+    </a>
+    <a routerLink="/categories" class="flex items-center gap-4 px-6 py-3 font-label uppercase tracking-widest text-sm text-secondary opacity-60 hover:bg-surface-variant hover:text-on-background transition-all duration-200">
+      <span class="material-symbols-outlined text-lg">category</span>
+      <span>Categories</span>
+    </a>
+    <a class="flex items-center gap-4 px-6 py-3 font-label uppercase tracking-widest text-sm text-secondary opacity-60 hover:bg-surface-variant hover:text-on-background transition-all duration-200" href="#">
+      <span class="material-symbols-outlined text-lg">auto_awesome</span>
+      <span>Legendary</span>
+    </a>
+  </nav>
+  <div class="mt-auto px-6 pt-6 border-t border-outline-variant/10">
+    <button class="w-full py-3 mb-6 gold-sheen text-on-primary font-label font-bold uppercase tracking-widest text-xs active:scale-95 transition-all">
+      Appraise Relic
+    </button>
+    <div class="space-y-1">
+      <a class="flex items-center gap-3 py-2 text-xs font-label uppercase tracking-widest text-secondary opacity-60 hover:opacity-100 transition-opacity" href="#">
+        <span class="material-symbols-outlined text-sm">settings</span>
+        <span>Settings</span>
+      </a>
+    </div>
+  </div>
+</aside>
+
+<!-- Main Content -->
+<main class="ml-64 pt-24 px-8 pb-12 min-h-screen bg-surface">
+  <router-outlet />
+</main>
