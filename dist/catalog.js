@@ -593,8 +593,15 @@ function submitListing(title) {
   const desc  = document.getElementById('sell-desc')?.value;
   if (!price || parseFloat(price) <= 0) { showToast('⚠ Bitte einen Preis eingeben.', true); return; }
   if (!desc || desc.trim().length < 5)  { showToast('⚠ Bitte eine Beschreibung eingeben.', true); return; }
-  showToast(`✓ "${title}" wurde für €${parseFloat(price).toFixed(2)} gelistet!`);
+  // Zur vollständigen Sell-Seite weiterleiten mit vorausgefüllten Daten via URL-Params
+  const params = new URLSearchParams({
+    name:  title,
+    price: parseFloat(price).toFixed(2),
+    desc:  desc,
+  });
   closeOverlay();
+  window.open(`sell_asset.html?${params.toString()}`, '_blank');
+  showToast(`✓ Sell-Seite für "${title}" geöffnet – Marktplätze auswählen!`);
 }
 
 /* ══════════════════════════════════════════════════════════════
@@ -790,10 +797,23 @@ _style.textContent = `
 `;
 document.head.appendChild(_style);
 
+/* ── URL-Parameter Auto-Fill (sell_asset.html) ───────────────── */
+function autoFillFromUrl() {
+  const p = new URLSearchParams(window.location.search);
+  if (!p.has('name')) return;
+  const setVal = (id, val) => { const el = document.getElementById(id); if (el && val) el.value = val; };
+  setVal('sell-name',  p.get('name'));
+  setVal('sell-price', p.get('price'));
+  setVal('sell-desc',  p.get('desc'));
+  // Trigger live sync if function exists
+  if (typeof liveSync === 'function') liveSync();
+}
+
 /* ── INIT ────────────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
   wireNavigation();
   wireAssetCards();
   wireUploadButton();
   wireBottomNav();
+  autoFillFromUrl();
 });
