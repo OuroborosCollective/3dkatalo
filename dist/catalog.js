@@ -207,16 +207,35 @@ function openEditModal(card) {
           <textarea id="edit-desc" rows="8" style="${inp()}resize:vertical;font-size:.75rem;line-height:1.5;">${asset.desc}</textarea>
 
           <label style="${lbl()}">Preview Image</label>
+
+          <!-- Screenshot-Vorschau -->
           <div id="edit-img-preview" style="
             width:100%;aspect-ratio:1;background:${C.surfHigh2};border:1px dashed ${C.outline};
             display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:.5rem;
+            position:relative;
           ">
             ${asset.imgSrc
-              ? `<img src="${asset.imgSrc}" style="width:100%;height:100%;object-fit:contain;">`
-              : `<span style="color:${C.outline};font-size:2rem;">🖼</span>`}
+              ? `<img id="edit-img-el" src="${asset.imgSrc}" style="width:100%;height:100%;object-fit:contain;">`
+              : `<div id="edit-img-placeholder" style="text-align:center;color:${C.outline};">
+                   <div style="font-size:2rem;">🖼</div>
+                   <div style="font-size:.6rem;font-family:'Space Grotesk',sans-serif;text-transform:uppercase;letter-spacing:.08em;margin-top:.3rem;">Capture from 3D viewer</div>
+                 </div>`}
           </div>
-          <input type="file" id="edit-img-file" accept="image/*"
-            style="${inp()}padding:.4rem;" onchange="handleEditImg(this)"/>
+
+          <!-- Aktions-Buttons für Preview -->
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.4rem;margin-bottom:.25rem;">
+            <button onclick="captureFromViewer()" id="btn-capture-3d" style="${primaryBtn()}font-size:.65rem;padding:.5rem .4rem;display:flex;align-items:center;justify-content:center;gap:4px;">
+              📸 Capture 3D
+            </button>
+            <label style="${cancelBtn()}font-size:.65rem;padding:.5rem .4rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:4px;">
+              🖼 Upload Image
+              <input type="file" id="edit-img-file" accept="image/*"
+                style="display:none;" onchange="handleEditImg(this)"/>
+            </label>
+          </div>
+          <p id="capture-hint" style="color:${C.outline};font-size:.6rem;text-transform:uppercase;letter-spacing:.08em;text-align:center;">
+            Upload a GLB and use Capture 3D to auto-generate preview
+          </p>
         </div>
 
         <!-- Rechte Spalte: LOD-Uploads + 3D-Viewer -->
@@ -343,12 +362,13 @@ function handleLodUpload(lod, input) {
   }
 }
 
-/* ── model-viewer anzeigen ───────────────────────────────────── */
+/* ── model-viewer anzeigen ──────────────────────────────────────────── */
 function showModelViewer(url) {
   const container = document.getElementById('viewer-container');
   if (!container) return;
   container.innerHTML = `
     <model-viewer
+      id="active-model-viewer"
       src="${url}"
       alt="3D Asset Preview"
       camera-controls
@@ -359,6 +379,85 @@ function showModelViewer(url) {
       loading="eager"
     ></model-viewer>
   `;
+
+  // Nach vollständigem Laden: automatisch Screenshot als Preview generieren
+  const mv = container.querySelector('model-viewer');
+  if (mv) {
+    mv.addEventListener('load', () => {
+      // Kurze Pause damit Rendering stabil ist
+      setTimeout(() => _captureModelViewerShot(mv, false), 800);
+    }, { once: true });
+  }
+}
+
+/* ── Screenshot aus model-viewer generieren ─────────────────────── */
+function _captureModelViewerShot(mv, manual = true) {
+  if (!mv) return;
+  try {
+    // model-viewer bietet toDataURL() über seinen internen Canvas
+    // Methode 1: toDataURL() direkt (verfügbar in model-viewer >= 1.x)
+    const dataUrl = mv.toDataURL ? mv.toDataURL('image/png') : null;
+
+    if (dataUrl && dataUrl.length > 100) {
+      _applyPreviewImage(dataUrl, manual);
+      return;
+    }
+
+    // Methode 2: Fallback – canvas aus Shadow DOM extrahieren
+    const canvas = mv.shadowRoot?.querySelector('canvas');
+    if (canvas) {
+      const url = canvas.toDataURL('image/png');
+      _applyPreviewImage(url, manual);
+      return;
+    }
+
+    if (manual) showToast('⚠ 3D-Viewer noch nicht bereit – bitte kurz warten und erneut versuchen.', true);
+  } catch(e) {
+    if (manual) showToast('⚠ Screenshot fehlgeschlagen: ' + e.message, true);
+    console.warn('captureFromViewer error:', e);
+  }
+}
+
+function _applyPreviewImage(dataUrl, manual = true) {
+  const prev = document.getElementById('edit-img-preview');
+  if (prev) {
+    prev.innerHTML = `<img id="edit-img-el" src="${dataUrl}" style="width:100%;height:100%;object-fit:contain;">`;
+  }
+  // In Asset-Store speichern
+  const modal = document.getElementById('edit-modal');
+  if (modal?._card) getAsset(modal._card).imgSrc = dataUrl;
+
+  // Karten-Thumbnail sofort aktualisieren
+  if (modal?._card) {
+    const img = modal._card.querySelector('img');
+    if (img) { img.src = dataUrl; img.style.filter = 'none'; }
+  }
+
+  // Hint-Text anpassen
+  const hint = document.getElementById('capture-hint');
+  if (hint) {
+    hint.textContent = manual
+      ? '✓ Screenshot gespeichert als Preview-Bild'
+      : '✓ Auto-Screenshot generiert – Capture 3D für neuen Shot';
+    hint.style.color = C.tertiary;
+  }
+  if (manual) showToast('📸 Preview-Bild aus 3D-Viewer generiert!');
+}
+
+/* ── Manueller Capture-Button ──────────────────────────────────────── */
+function captureFromViewer() {
+  const mv = document.getElementById('active-model-viewer');
+  if (!mv) {
+    showToast('⚠ Kein 3D-Modell geladen – bitte zuerst eine GLB-Datei hochladen.', true);
+    return;
+  }
+  // Auto-Rotate stoppen für sauberen Screenshot
+  const wasRotating = mv.autoRotate;
+  mv.autoRotate = false;
+  setTimeout(() => {
+    _captureModelViewerShot(mv, true);
+    if (wasRotating) setTimeout(() => { mv.autoRotate = true; }, 200);
+  }, 150);
 }
 
 function preview3D(lod) {
