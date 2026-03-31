@@ -10,6 +10,56 @@ if (!customElements.get('model-viewer')) {
   document.head.appendChild(s);
 }
 
+/* ── Standard-Beschreibung Template ─────────────────────────── */
+const DEFAULT_DESC = `[ASSET_NAME] – [STIL] 3D Model (GLB) | [KATEGORIE] | Game Ready | High/Medium/Low Poly
+
+Das 3D-Modell [ASSET_NAME] ist ein professionell erstelltes, vielseitig einsetzbares Asset für Anwendungen wie [EINSATZZWECK – z. B. Games, Architektur, AR/VR, Produktvisualisierung].
+
+Dieses Modell wurde mit Fokus auf Performance, Qualität und Kompatibilität entwickelt und eignet sich sowohl für Echtzeit-Engines als auch für hochwertige Renderings.
+
+Dank optimierter Geometrie und sauberer Texturierung lässt sich das Asset problemlos in gängige Workflows integrieren, einschließlich [SOFTWARE/ENGINE – z. B. Blender, Unity, Unreal Engine, SketchUp].
+
+🧩 Technische Details
+Dateiformat: GLB (.glb)
+Kategorie: [KATEGORIE]
+Stil: [STIL] (z. B. realistisch, stylized, low poly)
+Polygonanzahl: [POLYCOUNT]
+Maßstab: [MAßSTAB – realistisch / angepasst]
+Einheiten: [EINHEIT]
+Ausrichtung: [Y-Up / Z-Up]
+
+🎨 Texturen & Materialien
+Materialsystem: PBR (Physically Based Rendering)
+Texturauflösung: [1K / 2K / 4K]
+Enthaltene Maps: Albedo / Base Color, Normal, Roughness, Metallic, Ambient Occlusion
+
+⚙️ LOD / Performance
+High Poly – maximale Details für Rendering & Close-Ups
+Medium Poly – ausgewogen für Echtzeit-Anwendungen
+Low Poly – optimiert für Mobile, Web und große Szenen
+
+🎮 Kompatibilität
+Game Engines: Unity, Unreal Engine, Godot
+3D Software: Blender, Maya, 3ds Max, SketchUp
+Plattformen: PC, Mobile, WebGL, VR/AR
+
+🔧 Features
+Game Ready | Sauberes UV-Unwrapping | Optimierte Topologie | Einfach integrierbar
+Rigging: [Ja/Nein] | Animationen: [Ja/Nein] | Collision: [Ja/Nein]
+
+📄 Lizenz
+[LIZENZANGABE – z. B. Royalty Free / Commercial Use Allowed]
+
+🔍 Tags
+[ASSET_NAME], 3D Model, GLB, [KATEGORIE], [STIL], Game Asset, Low Poly, High Poly, PBR, Real-Time, Asset Download`;
+
+function buildDesc(name, category, tier) {
+  return DEFAULT_DESC
+    .replace(/\[ASSET_NAME\]/g, name || 'Asset')
+    .replace(/\[KATEGORIE\]/g, category || 'Game Asset')
+    .replace(/\[STIL\]/g, tier || 'Stylized');
+}
+
 /* ── Farb-Palette ────────────────────────────────────────────── */
 const C = {
   bg:       '#161311',
@@ -38,13 +88,17 @@ function getCardId(card) {
 function getAsset(card) {
   const id = getCardId(card);
   if (!assetStore[id]) {
+    const name = card.querySelector('h3')?.textContent.trim() || 'Asset';
+    const tier = card.querySelector('p')?.textContent.trim()  || 'Common Grade';
+    // Kategorie aus Seitentitel oder URL ableiten
+    const cat  = document.title.replace('Relic & Rune |','').trim() || 'Game Asset';
     assetStore[id] = {
-      name:   card.querySelector('h3')?.textContent.trim() || 'Asset',
-      tier:   card.querySelector('p')?.textContent.trim()  || 'Common Grade',
-      desc:   '',
+      name,
+      tier,
+      desc:   buildDesc(name, cat, tier),  // Standardbeschreibung vorbelegt
       imgSrc: card.querySelector('img')?.src || '',
-      lods:   { HI: null, MD: null, LO: null },  // File-Objekte
-      lodUrls:{ HI: null, MD: null, LO: null },  // Object-URLs
+      lods:   { HI: null, MD: null, LO: null },
+      lodUrls:{ HI: null, MD: null, LO: null },
     };
   }
   return assetStore[id];
@@ -147,8 +201,10 @@ function openEditModal(card) {
               .map(t=>`<option value="${t}" ${t===asset.tier?'selected':''}>${t}</option>`).join('')}
           </select>
 
-          <label style="${lbl()}">Description</label>
-          <textarea id="edit-desc" rows="3" style="${inp()}resize:vertical;" placeholder="Asset description…">${asset.desc}</textarea>
+          <label style="${lbl()}">Description
+            <button onclick="resetDesc()" style="margin-left:.5rem;${smallBtn(C.primary)}">↺ Reset Template</button>
+          </label>
+          <textarea id="edit-desc" rows="8" style="${inp()}resize:vertical;font-size:.75rem;line-height:1.5;">${asset.desc}</textarea>
 
           <label style="${lbl()}">Preview Image</label>
           <div id="edit-img-preview" style="
@@ -229,6 +285,7 @@ function openEditModal(card) {
       <!-- Buttons -->
       <div style="display:flex;gap:.75rem;justify-content:flex-end;margin-top:1.5rem;
                   border-top:1px solid ${C.outline};padding-top:1rem;">
+        <button onclick="deleteAsset()" style="background:none;border:1px solid ${C.error};color:${C.error};cursor:pointer;font-family:'Space Grotesk',sans-serif;font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;padding:.6rem 1.4rem;margin-right:auto;">🗑 Delete Asset</button>
         <button onclick="closeOverlay()" style="${cancelBtn()}">Cancel</button>
         <button onclick="saveEdit()" style="${primaryBtn()}">✓ Save Changes</button>
       </div>
@@ -374,8 +431,120 @@ function saveEdit() {
   closeOverlay();
 }
 
-/* ══════════════════════════════════════════════════════════════
-   EXPORT DIALOG  –  mit echtem Download
+//* ── Beschreibung zurücksetzen ───────────────────────────────── */
+function resetDesc() {
+  const modal = document.getElementById('edit-modal');
+  if (!modal?._card) return;
+  const asset = getAsset(modal._card);
+  const name  = document.getElementById('edit-name')?.value?.trim() || asset.name;
+  const tier  = document.getElementById('edit-tier')?.value || asset.tier;
+  const cat   = document.title.replace('Relic & Rune |','').trim() || 'Game Asset';
+  const ta    = document.getElementById('edit-desc');
+  if (ta) ta.value = buildDesc(name, cat, tier);
+  showToast('↺ Standardbeschreibung eingefügt – Platzhalter ausfüllen!');
+}
+
+/* ── Asset löschen ─────────────────────────────────────────────── */
+function deleteAsset() {
+  const modal = document.getElementById('edit-modal');
+  if (!modal?._card) return;
+  const card  = modal._card;
+  const asset = getAsset(card);
+  const name  = asset.name;
+
+  // Confirm-Dialog im Stil des Catalogs
+  const conf = document.createElement('div');
+  conf.style.cssText = `
+    position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.9);
+    display:flex;align-items:center;justify-content:center;
+  `;
+  conf.innerHTML = `
+    <div style="background:${C.surface};border:1px solid ${C.error};padding:2rem;max-width:380px;text-align:center;font-family:'Space Grotesk',sans-serif;">
+      <div style="font-size:2rem;margin-bottom:.75rem;">🗑</div>
+      <h3 style="color:${C.error};font-size:1rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.75rem;">Delete Asset?</h3>
+      <p style="color:${C.muted};font-size:.8rem;margin-bottom:1.5rem;">&ldquo;${name}&rdquo; wird aus dem Katalog entfernt.</p>
+      <div style="display:flex;gap:.75rem;justify-content:center;">
+        <button onclick="this.closest('div[style]').remove()" style="background:none;border:1px solid ${C.outline};color:${C.muted};cursor:pointer;font-family:'Space Grotesk',sans-serif;font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;padding:.6rem 1.4rem;">Cancel</button>
+        <button id="confirm-delete-btn" style="background:${C.error};border:none;color:#000;cursor:pointer;font-family:'Space Grotesk',sans-serif;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:.6rem 1.4rem;">Delete</button>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(conf);
+
+  conf.querySelector('#confirm-delete-btn').addEventListener('click', () => {
+    // LOD Object-URLs freigeben
+    ['HI','MD','LO'].forEach(l => { if (asset.lodUrls[l]) URL.revokeObjectURL(asset.lodUrls[l]); });
+    // Store-Eintrag entfernen
+    delete assetStore[getCardId(card)];
+    // Karte aus DOM entfernen (mit Animation)
+    card.style.transition = 'opacity .3s, transform .3s';
+    card.style.opacity = '0';
+    card.style.transform = 'scale(.9)';
+    setTimeout(() => card.remove(), 300);
+    conf.remove();
+    closeOverlay();
+    showToast(`🗑 "${name}" gelöscht.`);
+  });
+}
+
+/* ── Neues Asset hinzufügen ─────────────────────────────────────────── */
+function addNewAsset(containerSelector) {
+  // Findet das Asset-Grid auf der aktuellen Seite
+  const grid = document.querySelector(containerSelector || '.grid.grid-cols-2, .grid.grid-cols-3, .grid.grid-cols-1');
+  if (!grid) { showToast('⚠ Kein Asset-Grid gefunden.', true); return; }
+
+  const cat = document.title.replace('Relic & Rune |','').trim() || 'Game Asset';
+  const desc = buildDesc('New Asset', cat, 'Common Grade');
+
+  // Neue Karte im gleichen Stil wie vorhandene Karten erstellen
+  const card = document.createElement('div');
+  card.className = 'group relative bg-[#231f1d] border border-[#54433a]/30 overflow-hidden';
+  card.style.animation = 'fadeInUp .35s ease';
+  card.innerHTML = `
+    <div style="aspect-ratio:1;background:#1f1b19;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
+      <span style="font-size:3rem;color:#54433a;">+</span>
+    </div>
+    <div style="padding:.75rem;">
+      <h3 style="color:#e9c176;font-family:'Newsreader',serif;font-style:italic;font-size:1rem;margin-bottom:.2rem;">New Asset</h3>
+      <p style="color:#dac3a2;font-family:'Space Grotesk',sans-serif;font-size:.65rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.5rem;">Common Grade</p>
+      <div class="grid grid-cols-2" style="display:grid;grid-template-columns:1fr 1fr;gap:.35rem;">
+        <button style="display:flex;align-items:center;justify-content:center;gap:4px;padding:.4rem .5rem;font-size:.6rem;font-family:'Space Grotesk',sans-serif;text-transform:uppercase;letter-spacing:.08em;cursor:pointer;background:#231f1d;border:1px solid #54433a;color:#dac3a2;">
+          <span class="material-symbols-outlined" style="font-size:13px;">edit</span><span>Edit</span>
+        </button>
+        <button style="display:flex;align-items:center;justify-content:center;gap:4px;padding:.4rem .5rem;font-size:.6rem;font-family:'Space Grotesk',sans-serif;text-transform:uppercase;letter-spacing:.08em;cursor:pointer;background:#231f1d;border:1px solid #54433a;color:#dac3a2;">
+          <span class="material-symbols-outlined" style="font-size:13px;">3d_rotation</span><span>Export</span>
+        </button>
+      </div>
+    </div>
+  `;
+  grid.appendChild(card);
+
+  // Beschreibung vorbelegen
+  const id = getCardId(card);
+  assetStore[id] = {
+    name: 'New Asset', tier: 'Common Grade', desc,
+    imgSrc: '', lods: {HI:null,MD:null,LO:null}, lodUrls:{HI:null,MD:null,LO:null},
+  };
+
+  // Buttons verdrahten
+  const btns = card.querySelectorAll('button');
+  btns[0]?.addEventListener('click', e => { e.stopPropagation(); openEditModal(card); });
+  btns[1]?.addEventListener('click', e => { e.stopPropagation(); openExportDialog(card); });
+
+  // Sell-Button
+  const sellBtn = document.createElement('button');
+  sellBtn.innerHTML = `<span class="material-symbols-outlined" style="font-size:13px;">sell</span><span>Sell</span>`;
+  sellBtn.style.cssText = `display:flex;align-items:center;justify-content:center;gap:4px;padding:.4rem .5rem;font-size:.6rem;font-family:'Space Grotesk',sans-serif;text-transform:uppercase;letter-spacing:.08em;cursor:pointer;background:#231f1d;border:1px solid #54433a;color:#dac3a2;margin-top:.35rem;width:100%;`;
+  sellBtn.addEventListener('click', e => { e.stopPropagation(); openSellModal(card); });
+  card.querySelector('.grid.grid-cols-2, [style*="grid-template-columns"]')?.parentElement?.appendChild(sellBtn);
+
+  // Edit-Modal direkt öffnen
+  openEditModal(card);
+  showToast('➕ Neues Asset erstellt – Details ausfüllen!');
+}
+
+/* ════════════════════════════════════════════════════════════
+   EXPORT DIALOG  –  mit echtem Downloadd
    ══════════════════════════════════════════════════════════════ */
 function openExportDialog(card) {
   const asset   = getAsset(card);
@@ -809,6 +978,50 @@ function autoFillFromUrl() {
   if (typeof liveSync === 'function') liveSync();
 }
 
+/* ── Floating Action Buttons einfügen (Add Asset + Manage Categories) ─ */
+function injectFABs() {
+  // Nicht auf sell_asset.html / upload_asset.html / category_manager.html einfügen
+  const skip = ['sell_asset','upload_asset','category_manager'];
+  if (skip.some(s => window.location.pathname.includes(s))) return;
+
+  const fab = document.createElement('div');
+  fab.style.cssText = `
+    position:fixed;bottom:5.5rem;right:1.25rem;z-index:9000;
+    display:flex;flex-direction:column;gap:.5rem;align-items:flex-end;
+  `;
+  fab.innerHTML = `
+    <button id="fab-add-asset"
+      title="Add New Asset"
+      style="
+        background:#e9c176;border:none;color:#261900;cursor:pointer;
+        width:48px;height:48px;border-radius:50%;
+        font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:700;
+        box-shadow:0 4px 16px rgba(0,0,0,.5);
+        display:flex;align-items:center;justify-content:center;
+        transition:filter .2s,transform .2s;
+      ">+</button>
+    <button id="fab-manage-cats"
+      title="Manage Categories"
+      style="
+        background:#2e2927;border:1px solid #54433a;color:#dac3a2;cursor:pointer;
+        width:48px;height:48px;border-radius:50%;
+        font-family:'Space Grotesk',sans-serif;font-size:.9rem;
+        box-shadow:0 4px 16px rgba(0,0,0,.5);
+        display:flex;align-items:center;justify-content:center;
+        transition:filter .2s,transform .2s;
+      ">☰</button>
+  `;
+  document.body.appendChild(fab);
+
+  document.getElementById('fab-add-asset').addEventListener('click', () => addNewAsset());
+  document.getElementById('fab-add-asset').addEventListener('mouseenter', function(){ this.style.filter='brightness(1.15)'; this.style.transform='scale(1.08)'; });
+  document.getElementById('fab-add-asset').addEventListener('mouseleave', function(){ this.style.filter=''; this.style.transform=''; });
+
+  document.getElementById('fab-manage-cats').addEventListener('click', () => window.location.href='category_manager.html');
+  document.getElementById('fab-manage-cats').addEventListener('mouseenter', function(){ this.style.borderColor='#e9c176'; this.style.color='#e9c176'; });
+  document.getElementById('fab-manage-cats').addEventListener('mouseleave', function(){ this.style.borderColor='#54433a'; this.style.color='#dac3a2'; });
+}
+
 /* ── INIT ────────────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
   wireNavigation();
@@ -816,4 +1029,5 @@ document.addEventListener('DOMContentLoaded', () => {
   wireUploadButton();
   wireBottomNav();
   autoFillFromUrl();
+  injectFABs();
 });

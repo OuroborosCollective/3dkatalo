@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Relic &amp; Rune | Category Manager</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:wght@300;400;600&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+tailwind.config={darkMode:"class",theme:{extend:{
+  colors:{"primary":"#e9c176","surface":"#161311","surface-container":"#231f1d",
+    "surface-container-high":"#2e2927","surface-container-highest":"#393431",
+    "on-surface":"#eae1dd","on-surface-variant":"#dac2b6","secondary":"#dac3a2",
+    "tertiary":"#00dce5","outline":"#a28c81","outline-variant":"#54433a",
+    "background":"#161311","error":"#ffb4ab","on-primary":"#412d00"},
+  fontFamily:{"headline":["Newsreader"],"body":["Work Sans"],"label":["Space Grotesk"]},
+  borderRadius:{"DEFAULT":"0px","lg":"0px","xl":"0px","full":"9999px"},
+}}}
+</script>
+<style>
+.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;}
+::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:#110d0c}
+::-webkit-scrollbar-thumb{background:#54433a}::-webkit-scrollbar-thumb:hover{background:#e9c176}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.cat-row{animation:fadeInUp .25s ease;transition:background .15s;}
+.cat-row:hover{background:#2e2927!important;}
+input:focus{outline:none;border-color:#e9c176!important;}
+</style>
+</head>
+<body class="bg-background text-on-surface font-body min-h-screen flex flex-col">
+
+<!-- Header -->
+<header class="bg-[#161311] sticky top-0 z-50 border-b border-[#54433a]/30">
+  <div class="flex justify-between items-center w-full px-6 py-4 max-w-5xl mx-auto">
+    <a href="index.html" class="text-2xl font-bold text-[#e9c176] uppercase tracking-tighter font-headline">Relic &amp; Rune</a>
+    <nav class="hidden md:flex space-x-6 items-center">
+      <a href="index.html"       class="font-label text-xs uppercase tracking-widest text-[#dac3a2] hover:text-[#e9c176] transition-colors">The Armory</a>
+      <a href="upload_asset.html" class="font-label text-xs uppercase tracking-widest text-[#dac3a2] hover:text-[#e9c176] transition-colors">Upload</a>
+      <a href="sell_asset.html"   class="font-label text-xs uppercase tracking-widest text-[#dac3a2] hover:text-[#e9c176] transition-colors">Sell</a>
+      <a href="category_manager.html" class="font-label text-xs uppercase tracking-widest text-[#e9c176] border-b border-[#e9c176] pb-0.5">Categories</a>
+    </nav>
+    <a href="index.html" class="flex items-center gap-2 text-[#dac3a2] hover:text-[#e9c176] transition-colors font-label text-xs uppercase tracking-widest">
+      <span class="material-symbols-outlined text-sm">arrow_back</span> Back
+    </a>
+  </div>
+</header>
+
+<main class="flex-1 max-w-5xl mx-auto w-full px-6 py-10">
+
+  <div class="mb-8">
+    <h1 class="font-headline text-4xl italic text-primary mb-2">Category Manager</h1>
+    <div class="h-px w-24 bg-gradient-to-r from-primary to-transparent mb-3"></div>
+    <p class="text-on-surface-variant font-body italic text-sm">
+      Verwalte alle Kategorien des Katalogs. Kategorien können hinzugefügt, umbenannt und gelöscht werden.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+    <!-- Left: Category List -->
+    <div class="lg:col-span-2">
+      <div class="bg-surface-container border border-[#54433a]/30">
+        <!-- Toolbar -->
+        <div class="flex items-center justify-between px-5 py-3 border-b border-[#54433a]/30">
+          <span class="font-label text-xs uppercase tracking-widest text-on-surface-variant">
+            <span id="cat-count">0</span> Categories
+          </span>
+          <div class="flex gap-2">
+            <input id="search-cat" type="text" placeholder="Filter…"
+              class="bg-[#393431] border border-[#54433a] text-on-surface px-3 py-1.5 font-label text-xs w-36"
+              oninput="filterCategories()"/>
+          </div>
+        </div>
+
+        <!-- List -->
+        <div id="cat-list" class="divide-y divide-[#54433a]/20 max-h-[60vh] overflow-y-auto">
+          <!-- Rows injected by JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Add / Edit Panel -->
+    <div class="space-y-5">
+
+      <!-- Add New Category -->
+      <div class="bg-surface-container border border-[#54433a]/30 p-5">
+        <h2 class="font-label text-xs uppercase tracking-widest text-primary mb-4">Add Category</h2>
+
+        <label class="block font-label text-[10px] uppercase tracking-widest text-on-surface-variant mb-1">Category Name *</label>
+        <input id="new-cat-name" type="text" placeholder="e.g. Shields"
+          class="w-full bg-[#393431] border border-[#54433a] text-on-surface px-3 py-2.5 font-body text-sm mb-3"
+          onkeydown="if(event.key==='Enter')addCategory()"/>
+
+        <label class="block font-label text-[10px] uppercase tracking-widest text-on-surface-variant mb-1">Icon (emoji or text)</label>
+        <input id="new-cat-icon" type="text" placeholder="e.g. 🛡"
+          class="w-full bg-[#393431] border border-[#54433a] text-on-surface px-3 py-2.5 font-body text-sm mb-3"/>
+
+        <label class="block font-label text-[10px] uppercase tracking-widest text-on-surface-variant mb-1">Link to Page</label>
+        <input id="new-cat-link" type="text" placeholder="e.g. shields.html"
+          class="w-full bg-[#393431] border border-[#54433a] text-on-surface px-3 py-2.5 font-body text-sm mb-4"/>
+
+        <button onclick="addCategory()"
+          class="w-full bg-primary text-on-primary font-label font-bold uppercase tracking-widest text-xs py-3 hover:brightness-110 transition-all flex items-center justify-center gap-2">
+          <span class="material-symbols-outlined text-sm">add</span> Add Category
+        </button>
+      </div>
+
+      <!-- Stats -->
+      <div class="bg-surface-container border border-[#54433a]/30 p-5">
+        <h2 class="font-label text-xs uppercase tracking-widest text-on-surface-variant mb-3">Stats</h2>
+        <div class="space-y-2">
+          <div class="flex justify-between font-label text-xs uppercase tracking-widest">
+            <span class="text-on-surface-variant">Total</span>
+            <span id="stat-total" class="text-primary">0</span>
+          </div>
+          <div class="flex justify-between font-label text-xs uppercase tracking-widest">
+            <span class="text-on-surface-variant">With Page</span>
+            <span id="stat-linked" class="text-tertiary">0</span>
+          </div>
+          <div class="flex justify-between font-label text-xs uppercase tracking-widest">
+            <span class="text-on-surface-variant">No Page</span>
+            <span id="stat-unlinked" class="text-[#54433a]">0</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Export -->
+      <div class="bg-surface-container border border-[#54433a]/30 p-5">
+        <h2 class="font-label text-xs uppercase tracking-widest text-on-surface-variant mb-3">Export</h2>
+        <button onclick="exportJSON()"
+          class="w-full border border-[#54433a] text-[#dac3a2] font-label text-xs uppercase tracking-widest py-2.5 hover:border-primary hover:text-primary transition-all flex items-center justify-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-sm">download</span> Export JSON
+        </button>
+        <button onclick="copyNavHTML()"
+          class="w-full border border-[#54433a] text-[#dac3a2] font-label text-xs uppercase tracking-widest py-2.5 hover:border-primary hover:text-primary transition-all flex items-center justify-center gap-2">
+          <span class="material-symbols-outlined text-sm">content_copy</span> Copy Nav HTML
+        </button>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<!-- Edit Modal (inline) -->
+<div id="edit-cat-modal" class="hidden fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4">
+  <div class="bg-[#231f1d] border border-[#54433a] p-6 w-full max-w-sm">
+    <h3 class="font-headline text-xl italic text-primary mb-4">Edit Category</h3>
+    <input type="hidden" id="edit-cat-id"/>
+    <label class="block font-label text-[10px] uppercase tracking-widest text-on-surface-variant mb-1">Name</label>
+    <input id="edit-cat-name-inp" type="text" class="w-full bg-[#393431] border border-[#54433a] text-on-surface px-3 py-2.5 font-body text-sm mb-3"/>
+    <label class="block font-label text-[10px] uppercase tracking-widest text-on-surface-variant mb-1">Icon</label>
+    <input id="edit-cat-icon-inp" type="text" class="w-full bg-[#393431] border border-[#54433a] text-on-surface px-3 py-2.5 font-body text-sm mb-3"/>
+    <label class="block font-label text-[10px] uppercase tracking-widest text-on-surface-variant mb-1">Page Link</label>
+    <input id="edit-cat-link-inp" type="text" class="w-full bg-[#393431] border border-[#54433a] text-on-surface px-3 py-2.5 font-body text-sm mb-5"/>
+    <div class="flex gap-3">
+      <button onclick="closeEditCat()" class="flex-1 border border-[#54433a] text-[#dac3a2] font-label text-xs uppercase tracking-widest py-2.5 hover:border-primary hover:text-primary transition-all">Cancel</button>
+      <button onclick="saveEditCat()" class="flex-1 bg-primary text-on-primary font-label font-bold uppercase tracking-widest text-xs py-2.5 hover:brightness-110 transition-all">Save</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ── Default-Kategorien aus dem Katalog ──────────────────────── */
+const DEFAULT_CATS = [
+  { id:1,  name:'Swords',           icon:'⚔',  link:'sword_management_interactive_prototype.html' },
+  { id:2,  name:'Axes',             icon:'🪓',  link:'axe_management_hub.html' },
+  { id:3,  name:'Plate Armor',      icon:'🛡',  link:'plate_armor_management_hub.html' },
+  { id:4,  name:'Leather Armor',    icon:'🧥',  link:'leather_armor_management_hub.html' },
+  { id:5,  name:'Cloth Armor',      icon:'👘',  link:'cloth_armor_management_hub.html' },
+  { id:6,  name:'Daggers',          icon:'🗡',  link:'dagger_management_hub.html' },
+  { id:7,  name:'Spears',           icon:'🏹',  link:'spear_management_hub.html' },
+  { id:8,  name:'Magic Wands',      icon:'🪄',  link:'magic_wand_management_hub.html' },
+  { id:9,  name:'NPCs',             icon:'🧙',  link:'npc_management_hub.html' },
+  { id:10, name:'Pets & Companions',icon:'🐉',  link:'pet_companion_management_hub.html' },
+  { id:11, name:'Ancient Runes',    icon:'🔮',  link:'ancient_rune_management_hub.html' },
+  { id:12, name:'Quest Logs',       icon:'📜',  link:'quest_log_management_hub.html' },
+  { id:13, name:'The Vault',        icon:'🏛',  link:'the_vault_management_hub.html' },
+  { id:14, name:'Bestiary',         icon:'📖',  link:'bestiary_management_hub.html' },
+];
+
+/* ── State aus localStorage laden ───────────────────────────── */
+let categories = JSON.parse(localStorage.getItem('rr_categories') || 'null') || DEFAULT_CATS.map(c => ({...c}));
+let nextId = Math.max(...categories.map(c=>c.id), 0) + 1;
+
+function save() {
+  localStorage.setItem('rr_categories', JSON.stringify(categories));
+  render();
+}
+
+/* ── Rendern ─────────────────────────────────────────────────── */
+function render(filter='') {
+  const list = document.getElementById('cat-list');
+  const q = filter.toLowerCase();
+  const visible = categories.filter(c => c.name.toLowerCase().includes(q));
+
+  list.innerHTML = visible.length === 0
+    ? `<div class="px-5 py-8 text-center font-label text-xs uppercase tracking-widest text-[#54433a]">No categories found</div>`
+    : visible.map(c => `
+      <div class="cat-row flex items-center gap-3 px-5 py-3 bg-[#231f1d]" data-id="${c.id}">
+        <span class="text-xl w-7 text-center flex-shrink-0">${c.icon || '📁'}</span>
+        <div class="flex-1 min-w-0">
+          <p class="font-label text-xs uppercase tracking-widest text-on-surface truncate">${c.name}</p>
+          <p class="font-body text-[10px] text-[#54433a] truncate">${c.link || '— no page —'}</p>
+        </div>
+        <div class="flex gap-1.5 flex-shrink-0">
+          ${c.link ? `
+          <a href="${c.link}" target="_blank"
+            class="border border-[#54433a] text-[#54433a] hover:border-[#00dce5] hover:text-[#00dce5] transition-colors p-1.5"
+            title="Open Page">
+            <span class="material-symbols-outlined text-sm">open_in_new</span>
+          </a>` : ''}
+          <button onclick="openEditCat(${c.id})"
+            class="border border-[#54433a] text-[#dac3a2] hover:border-primary hover:text-primary transition-colors p-1.5"
+            title="Edit">
+            <span class="material-symbols-outlined text-sm">edit</span>
+          </button>
+          <button onclick="deleteCategory(${c.id})"
+            class="border border-[#54433a] text-[#54433a] hover:border-[#ffb4ab] hover:text-[#ffb4ab] transition-colors p-1.5"
+            title="Delete">
+            <span class="material-symbols-outlined text-sm">delete</span>
+          </button>
+        </div>
+      </div>
+    `).join('');
+
+  // Stats
+  document.getElementById('cat-count').textContent   = categories.length;
+  document.getElementById('stat-total').textContent   = categories.length;
+  document.getElementById('stat-linked').textContent  = categories.filter(c=>c.link).length;
+  document.getElementById('stat-unlinked').textContent= categories.filter(c=>!c.link).length;
+}
+
+function filterCategories() {
+  render(document.getElementById('search-cat').value);
+}
+
+/* ── Hinzufügen ──────────────────────────────────────────────── */
+function addCategory() {
+  const name = document.getElementById('new-cat-name').value.trim();
+  const icon = document.getElementById('new-cat-icon').value.trim();
+  const link = document.getElementById('new-cat-link').value.trim();
+
+  if (name.length < 1) { flash('Bitte einen Kategorienamen eingeben.', true); return; }
+  if (categories.find(c => c.name.toLowerCase() === name.toLowerCase())) {
+    flash('Diese Kategorie existiert bereits.', true); return;
+  }
+
+  categories.push({ id: nextId++, name, icon: icon || '📁', link: link || '' });
+  document.getElementById('new-cat-name').value = '';
+  document.getElementById('new-cat-icon').value = '';
+  document.getElementById('new-cat-link').value = '';
+  save();
+  flash(`✓ "${name}" hinzugefügt.`);
+}
+
+/* ── Löschen ─────────────────────────────────────────────────── */
+function deleteCategory(id) {
+  const cat = categories.find(c => c.id === id);
+  if (!cat) return;
+  if (!confirm(`Kategorie "${cat.name}" wirklich löschen?`)) return;
+  categories = categories.filter(c => c.id !== id);
+  save();
+  flash(`🗑 "${cat.name}" gelöscht.`);
+}
+
+/* ── Bearbeiten ──────────────────────────────────────────────── */
+function openEditCat(id) {
+  const cat = categories.find(c => c.id === id);
+  if (!cat) return;
+  document.getElementById('edit-cat-id').value       = id;
+  document.getElementById('edit-cat-name-inp').value = cat.name;
+  document.getElementById('edit-cat-icon-inp').value = cat.icon || '';
+  document.getElementById('edit-cat-link-inp').value = cat.link || '';
+  document.getElementById('edit-cat-modal').classList.remove('hidden');
+}
+
+function closeEditCat() {
+  document.getElementById('edit-cat-modal').classList.add('hidden');
+}
+
+function saveEditCat() {
+  const id   = parseInt(document.getElementById('edit-cat-id').value);
+  const name = document.getElementById('edit-cat-name-inp').value.trim();
+  const icon = document.getElementById('edit-cat-icon-inp').value.trim();
+  const link = document.getElementById('edit-cat-link-inp').value.trim();
+  if (name.length < 1) { flash('Name darf nicht leer sein.', true); return; }
+  const cat = categories.find(c => c.id === id);
+  if (cat) { cat.name = name; cat.icon = icon || '📁'; cat.link = link; }
+  closeEditCat();
+  save();
+  flash(`✓ "${name}" gespeichert.`);
+}
+
+/* ── Export ──────────────────────────────────────────────────── */
+function exportJSON() {
+  const blob = new Blob([JSON.stringify(categories, null, 2)], {type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'rr_categories.json';
+  a.click();
+  flash('✓ JSON exportiert.');
+}
+
+function copyNavHTML() {
+  const html = categories.map(c =>
+    `<a href="${c.link || '#'}" class="sidebar-link">${c.icon || ''} ${c.name}</a>`
+  ).join('\n');
+  navigator.clipboard.writeText(html).then(() => flash('✓ Nav-HTML in Zwischenablage kopiert.'));
+}
+
+/* ── Flash Toast ─────────────────────────────────────────────── */
+function flash(msg, isErr=false) {
+  const t = document.createElement('div');
+  t.textContent = msg;
+  t.style.cssText = `
+    position:fixed;bottom:2rem;right:2rem;z-index:99999;
+    background:${isErr?'#93000a':'#393431'};
+    border:1px solid ${isErr?'#ffb4ab':'#e9c176'};
+    color:${isErr?'#ffb4ab':'#e9c176'};
+    padding:.75rem 1.25rem;font-family:'Space Grotesk',sans-serif;
+    font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;
+    animation:fadeInUp .3s ease;
+  `;
+  document.body.appendChild(t);
+  setTimeout(()=>t.remove(), 3000);
+}
+
+/* ── Keyboard: Escape schließt Edit-Modal ────────────────────── */
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeEditCat();
+});
+
+/* ── Init ────────────────────────────────────────────────────── */
+render();
+</script>
+</body>
+</html>
