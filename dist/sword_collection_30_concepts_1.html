@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Relic &amp; Rune | The Armory</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,700;1,400;1,700&amp;family=Work+Sans:wght@300;400;600&amp;family=Space+Grotesk:wght@300;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-fixed-dim": "#dac3a2",
+                        "primary": "#e9c176",
+                        "surface-container-lowest": "#110d0c",
+                        "on-tertiary-fixed-variant": "#004f53",
+                        "on-tertiary": "#003739",
+                        "on-surface-variant": "#dac2b6",
+                        "surface": "#161311",
+                        "on-background": "#eae1dd",
+                        "inverse-on-surface": "#342f2d",
+                        "surface-container-high": "#2e2927",
+                        "on-surface": "#eae1dd",
+                        "on-secondary-fixed": "#251904",
+                        "tertiary": "#00dce5",
+                        "surface-container": "#231f1d",
+                        "on-tertiary-container": "#00e5ee",
+                        "inverse-primary": "#775a19",
+                        "on-secondary": "#3c2e16",
+                        "on-primary-container": "#f2c97e",
+                        "primary-fixed": "#ffdea5",
+                        "surface-container-low": "#1f1b19",
+                        "outline": "#a28c81",
+                        "surface-container-highest": "#393431",
+                        "outline-variant": "#54433a",
+                        "surface-variant": "#393431",
+                        "error": "#ffb4ab",
+                        "surface-dim": "#161311",
+                        "tertiary-container": "#006266",
+                        "on-primary-fixed": "#261900",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#002021",
+                        "background": "#161311",
+                        "on-secondary-container": "#ccb594",
+                        "primary-fixed-dim": "#e9c176",
+                        "tertiary-fixed-dim": "#00dce5",
+                        "secondary-container": "#57472d",
+                        "on-error": "#690005",
+                        "on-primary-fixed-variant": "#5d4201",
+                        "secondary-fixed": "#f7dfbc",
+                        "secondary": "#dac3a2",
+                        "on-primary": "#412d00",
+                        "primary-container": "#715313",
+                        "surface-tint": "#e9c176",
+                        "error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#54442b",
+                        "tertiary-fixed": "#63f7ff",
+                        "inverse-surface": "#eae1dd",
+                        "surface-bright": "#3d3836"
+                    },
+                    fontFamily: {
+                        "headline": ["Newsreader"],
+                        "body": ["Work Sans"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .parchment-texture {
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body parchment-texture min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-[#161311] dark:bg-[#161311] docked full-width top-0 border-b-0 sticky z-50">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-[1920px] mx-auto">
+<div class="text-2xl font-bold text-[#e9c176] uppercase tracking-tighter font-headline">Relic &amp; Rune</div>
+<nav class="hidden md:flex space-x-8">
+<a class="font-['Newsreader'] italic tracking-wide text-[#e9c176] border-b border-[#e9c176] pb-1" href="sword_management_interactive_prototype.html">Swords</a>
+<a class="font-['Newsreader'] italic tracking-wide text-[#dac3a2] hover:text-[#e9c176] transition-colors" href="two_handed_axes_collection_multi_tier_3d_1.html">Axes</a>
+<a class="font-['Newsreader'] italic tracking-wide text-[#dac3a2] hover:text-[#e9c176] transition-colors" href="plate_armor_management_interactive_prototype.html">Plate Armor</a>
+<a class="font-['Newsreader'] italic tracking-wide text-[#dac3a2] hover:text-[#e9c176] transition-colors" href="magic_wands_collection_interactive_prototype_1.html">Grimoires</a>
+</nav>
+<div class="flex items-center space-x-4">
+<button class="p-2 hover:bg-[#393431]/50 transition-all duration-300 active:scale-95">
+<span class="material-symbols-outlined text-[#e9c176]">menu_book</span>
+</button>
+<button class="p-2 hover:bg-[#393431]/50 transition-all duration-300 active:scale-95" onclick="window.location.href='settings_archivist_preferences.html'">
+<span class="material-symbols-outlined text-[#e9c176]">settings</span>
+</button>
+</div>
+</div>
+<div class="bg-gradient-to-r from-transparent via-[#54433a]/20 to-transparent h-[1px] w-full self-end"></div>
+</header>
+<div class="flex flex-1 overflow-hidden">
+<!-- SideNavBar -->
+<aside class="bg-[#231f1d] dark:bg-[#231f1d] h-screen w-64 border-r-0 hidden md:flex flex-col py-8 space-y-4 shadow-[12px_0_24px_rgba(0,0,0,0.5)]">
+<div class="px-6 mb-8">
+<div class="flex items-center space-x-3 mb-4">
+<img alt="Master Scholar" class="w-10 h-10 object-cover grayscale brightness-75 border border-outline-variant/30" data-alt="portrait of an elderly scholarly man with a grey beard wearing dark velvet medieval robes in a dimly lit library" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXFcc-sKzV4No-eJvEFoduY6J90qv2jUcBKzd_aIx674VQYFEAQnvoMoHGqwwOXQaySfI4Ef9YIHlqVuH7ex3zlPu8dRVb-WaBZSD_pUddLxSbLHaplLsFeQbJDsEXyYUINS70mWl_ENPrpqyH3ogencz6PswlRCxxMi7tDtQAJopN3DOyC6iLkJFLGu3vPHm417_In7pcp7_XghiuleIvS4TZVAvFsAYM6ql6E_-2KTMdvDg2s82cOWKKKyYqTHJ4stwvGdGL9OA"/>
+<div>
+<p class="text-[#e9c176] font-['Newsreader'] text-lg leading-none">The Master's Ledger</p>
+<p class="font-['Space_Grotesk'] uppercase tracking-widest text-[10px] text-on-surface-variant">Archivist Rank IV</p>
+</div>
+</div>
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary py-2 px-4 font-label font-bold uppercase tracking-widest text-xs active:brightness-125 transition-all" onclick="openUploadModal()">
+                    Enchant Item
+                </button>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center px-6 py-3 bg-[#393431] text-[#e9c176] border-l-2 border-[#e9c176] font-label text-xs tracking-widest uppercase transition-all duration-200" href="index.html">
+<span class="material-symbols-outlined mr-3" style="font-variation-settings: 'FILL' 1;">shield</span>
+                    The Armory
+                </a>
+<a class="flex items-center px-6 py-3 text-[#dac3a2] hover:bg-[#393431]/30 hover:pl-8 font-label text-xs tracking-widest uppercase transition-all duration-200" href="ancient_decree_scroll_draft.html">
+<span class="material-symbols-outlined mr-3">auto_fix_high</span>
+                    Ancient Runes
+                </a>
+<a class="flex items-center px-6 py-3 text-[#dac3a2] hover:bg-[#393431]/30 hover:pl-8 font-label text-xs tracking-widest uppercase transition-all duration-200" href="registry_of_imperial_decrees.html">
+<span class="material-symbols-outlined mr-3">history_edu</span>
+                    Quest Logs
+                </a>
+<a class="flex items-center px-6 py-3 text-[#dac3a2] hover:bg-[#393431]/30 hover:pl-8 font-label text-xs tracking-widest uppercase transition-all duration-200" href="pets_collection_interactive_prototype.html">
+<span class="material-symbols-outlined mr-3">pets</span>
+                    Bestiary
+                </a>
+<a class="flex items-center px-6 py-3 text-[#dac3a2] hover:bg-[#393431]/30 hover:pl-8 font-label text-xs tracking-widest uppercase transition-all duration-200" href="runic_laws_imperial_archives.html">
+<span class="material-symbols-outlined mr-3">lock</span>
+                    The Vault
+                </a>
+</nav>
+<div class="px-6 pt-8 space-y-1 mt-auto">
+<a class="flex items-center py-2 text-[#dac3a2] hover:text-[#e9c176] font-label text-[10px] tracking-widest uppercase transition-all" href="scholar_s_guide_support.html">
+<span class="material-symbols-outlined text-sm mr-2">help</span> Support
+                </a>
+<a class="flex items-center py-2 text-[#dac3a2] hover:text-[#e9c176] font-label text-[10px] tracking-widest uppercase transition-all" href="index.html">
+<span class="material-symbols-outlined text-sm mr-2">logout</span> Exit
+                </a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto p-8 md:p-12 scroll-smooth">
+<header class="mb-12">
+<h1 class="font-headline text-5xl md:text-6xl italic text-primary mb-2 opacity-90">The Sword Gallery</h1>
+<div class="h-px w-32 bg-gradient-to-r from-primary to-transparent mb-6"></div>
+<p class="max-w-2xl font-body text-on-surface-variant text-lg italic">
+                    "Each blade is a story forged in blood and tempered by the whispers of the ancients. From the common iron of the recruit to the soul-shattering steel of the gods."
+                </p>
+</header>
+<!-- Blade Grid (6 rows x 5 columns) -->
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-24">
+<!-- Item: Shattered Obsidian Blade -->
+<div class="group relative bg-surface-container border border-outline-variant/10 p-4 transition-all hover:bg-surface-container-high">
+<div class="aspect-[1/1] mb-4 bg-surface-container-lowest flex items-center justify-center relative overflow-hidden">
+<img class="w-full h-full object-contain mix-blend-lighten grayscale hover:grayscale-0 transition-all duration-500 scale-90 group-hover:scale-100" data-alt="a shattered fantasy sword made of dark volcanic obsidian with glowing purple cracks and floating fragments of glass" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEW8bUbIdacAhMvE-u9XD-KhCaDvAW0BwapjyOZjrn_KLSgfUxd-Lcb-rs0gW9s9hBdmGCMDkmGxDL9f4-4M6frkejW7Fy8nMIEiBncDusc42yTUgZO60Sa-9N9aMqM5XKaquq8cB1wN7fqtIDMMCF5KwUPmhBNAq9QWh3yCe4IFPUd0QHTL1ObiJbwlN3iO1e6qMEMhvZB6nHmxmpg9-8kxWiCevTiETd7bw1_nqlU2T5CC575yhg4UHT5ZKeQEnMuAKg49AtynU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 to-transparent"></div>
+</div>
+<h3 class="font-headline text-primary text-lg leading-tight mb-1">Shattered Obsidian Blade</h3>
+<p class="font-label text-[10px] text-tertiary tracking-widest uppercase">Legendary Tier</p>
+</div>
+<!-- Item: Holy Avenger -->
+<div class="group relative bg-surface-container border border-outline-variant/10 p-4 transition-all hover:bg-surface-container-high">
+<div class="aspect-[1/1] mb-4 bg-surface-container-lowest flex items-center justify-center relative overflow-hidden">
+<img class="w-full h-full object-contain grayscale brightness-125 hover:grayscale-0 transition-all duration-500 scale-90 group-hover:scale-100" data-alt="a majestic gold and silver broadsword with a cross-shaped hilt, glowing with divine white light and angelic wing motifs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDI5KmROXPFjm7odo54Izc8pqO3HfUtNQHNy-HG5laaEgt-NH_hwYg7Tm1xGRor6awS_Cy5aoJtI3p4eLi8b8dXbNleGPdp-TNeITD_7rOJVIdJJN0cHa5Co6RDaPmqieg5if-kyaqmhES6YeOIr3NdCnodIxbt73LL9ZcHYDtUaofdrDgECFZpgLK2mxCtDuaTjE0n5X77xf88-zS1nheFJefKAvf3O8SlrV3nJBzwQPCvGWg9GYkQ2xPL-2mdjKhZfUPoku4J0X8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 to-transparent"></div>
+</div>
+<h3 class="font-headline text-primary text-lg leading-tight mb-1">Holy Avenger</h3>
+<p class="font-label text-[10px] text-primary-fixed tracking-widest uppercase">Divine Relic</p>
+</div>
+<!-- Item: Ancient Runeblade -->
+<div class="group relative bg-surface-container border border-outline-variant/10 p-4 transition-all hover:bg-surface-container-high">
+<div class="aspect-[1/1] mb-4 bg-surface-container-lowest flex items-center justify-center relative overflow-hidden">
+<img class="w-full h-full object-contain grayscale brightness-75 hover:grayscale-0 transition-all duration-500 scale-90 group-hover:scale-100" data-alt="a longsword with glowing blue norse runes etched into the steel blade, leather wrapped hilt with a heavy iron pommel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgr67dlJYPsTDAkj74kum1BbQml-Ed0loYjheNljiyCNzsVsNGeQcW2ar9mnkhQT7pyx1FSo8aIH7hfSZhMF2-zJcae7JqAAGkrJQYXKfuv83dc3r9fKOYCKy3T-ITFoLOc2nYLkDozYe8_yXybw40VPpnZRI7j9STuGyTudnHy3l_en8php2cdkkJn0S2ofFQ47OwtzDfu0KgzoX2RIcjXhbvB1W1lQdx0rpsTKSvJtXIhi359QkV0CKZvfIADgtgm_1_u2etRr8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 to-transparent"></div>
+<div class="absolute bottom-2 right-2 h-2 w-2 bg-tertiary rounded-full shadow-[0_0_8px_#00dce5]"></div>
+</div>
+<h3 class="font-headline text-primary text-lg leading-tight mb-1">Ancient Runeblade</h3>
+<p class="font-label text-[10px] text-tertiary-fixed-dim tracking-widest uppercase">Magical Artifact</p>
+</div>
+<!-- Item: Rusty Iron Scimitar -->
+<div class="group relative bg-surface-container border border-outline-variant/10 p-4 transition-all hover:bg-surface-container-high">
+<div class="aspect-[1/1] mb-4 bg-surface-container-lowest flex items-center justify-center relative overflow-hidden">
+<img class="w-full h-full object-contain brightness-50 contrast-125 grayscale hover:grayscale-0 transition-all duration-500 scale-90 group-hover:scale-100" data-alt="a worn and rusted curved iron scimitar with a jagged blade and tattered cloth wrappings on the handle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwlBMWaNfxZ2-Arr-GjKd2mOPFj2xZOAlwLPAu7LSzE3jkXdVHzQAqAwZrXyU6NBFQh5DZzGNe--Rb0tss5c_pxs4bZGT4DNcccaQ2TBtmp2J1jZ7ezrvybI5DF9zb1Au-rj4jBbk8z5jE0lfWA_XOm2MjwzEtxctkkK6W2d6DgFPVPDP90slwyg_g5BF4oXrYBiJINGIEfizuV-ueCQacW27kUiYXnPf2RrTnB_eqsJfxKjtt5aHnwwlAgDJ9AQdfIeOqGcXMTGs"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 to-transparent"></div>
+</div>
+<h3 class="font-headline text-primary text-lg leading-tight mb-1">Rusty Iron Scimitar</h3>
+<p class="font-label text-[10px] text-on-surface-variant tracking-widest uppercase">Common Grade</p>
+</div>
+<!-- Grid Filler Logic - Generating representative slots for the 30 sword requirement -->
+<!-- Item 5: Damascus Steel Longsword -->
+<div class="group relative bg-surface-container border border-outline-variant/10 p-4 transition-all hover:bg-surface-container-high">
+<div class="aspect-[1/1] mb-4 bg-surface-container-lowest flex items-center justify-center relative overflow-hidden">
+<img class="w-full h-full object-contain mix-blend-screen brightness-90 grayscale hover:grayscale-0 transition-all duration-500" data-alt="a high-fidelity 2D illustration of a Damascus steel blade with intricate wavy patterns and a silver filigree crossguard" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARVAQhqPiGt7aCASHvB3Iz9Lm7CMV_pVjyEZI2_uW59LOgz15m-_U2bC9vC2Jb3lMixiFCA5vQB5s4N8bb7hMKkFEffFjlEPl1_E10vCkzw21AhLGuYQlTioF2tBMNvyID_dpjsctsbTtQB7t20vsOBNFBy85x2TYfIAQ8Du7rE0-z_6ZyNSFPuFFGU6z9dDIM34G-CiWIf-JSyTNAP_atQBxSUfKLELnB6Lzt5UWawvk4TJVDdvpOE09ByIuH9MojCaCSR2IVlYU"/>
+</div>
+<h3 class="font-headline text-primary text-lg leading-tight mb-1">Damascus Longsword</h3>
+<p class="font-label text-[10px] text-secondary tracking-widest uppercase">Masterwork</p>
+</div>
+<!-- Repeat Pattern for Row 2-6 (Simulated for visualization) -->
+<!-- We will populate the remaining slots with unique names/aesthetic variants -->
+<div class="group relative bg-surface-container border border-outline-variant/10 p-4 transition-all hover:bg-surface-container-high">
+<div class="aspect-[1/1] mb-4 bg-surface-container-lowest flex items-center justify-center overflow-hidden"><div class="text-on-tertiary/20 text-4xl material-symbols-outlined">swords</div></div>
+<h3 class="font-headline text-primary text-lg leading-tight mb-1">Dragon's Tooth</h3>
+<p class="font-label text-[10px] text-secondary tracking-widest uppercase">Rare</p>
+</div>
+<div class="group relative bg-surface-container border border-outline-variant/10 p-4 transition-all hover:bg-surface-container-high">
+<div class="aspect-[1/1] mb-4 bg-surface-container-lowest flex items-center justify-center overflow-hidden"><div class="text-on-tertiary/20 text-4xl material-symbols-outlined">swords</div></div>
+<h3 class="font-headline text-primary text-lg leading-tight mb-1">Moonlit Falchion</h3>
+<p class="font-label text-[10px] text-tertiary tracking-widest uppercase">Epic</p>
+</div>
+<div class="group relative bg-surface-container border border-outline-variant/10 p-4 transition-all hover:bg-surface-container-high">
+<div class="aspect-[1/1] mb-4 bg-surface-container-lowest flex items-center justify-center overflow-hidden"><div class="text-on-tertiary/20 text-4xl material-symbols-outlined">swords</div></div>
+<h3 class="font-headline text-primary text-lg leading-tight mb-1">Frostbite Needle</h3>
+<p class="font-label text-[10px] text-tertiary tracking-widest uppercase">Rare</p>
+</div>
+<div class="group relative bg-surface-container border border-outline-variant/10 p-4 transition-all hover:bg-surface-container-high">
+<div class="aspect-[1/1] mb-4 bg-surface-container-lowest flex items-center justify-center overflow-hidden"><div class="text-on-tertiary/20 text-4xl material-symbols-outlined">swords</div></div>
+<h3 class="font-headline text-primary text-lg leading-tight mb-1">Void Ripper</h3>
+<p class="font-label text-[10px] text-error tracking-widest uppercase">Cursed</p>
+</div>
+<div class="group relative bg-surface-container border border-outline-variant/10 p-4 transition-all hover:bg-surface-container-high">
+<div class="aspect-[1/1] mb-4 bg-surface-container-lowest flex items-center justify-center overflow-hidden"><div class="text-on-tertiary/20 text-4xl material-symbols-outlined">swords</div></div>
+<h3 class="font-headline text-primary text-lg leading-tight mb-1">Squire's Shortsword</h3>
+<p class="font-label text-[10px] text-on-surface-variant tracking-widest uppercase">Basic</p>
+</div>
+<!-- Row 3 -->
+<div class="group relative bg-surface-container border border-outline-variant/10 p-4 transition-all hover:bg-surface-container-high">
+<div class="aspect-[1/1] mb-4 bg-surface-container-lowest flex items-center justify-center overflow-hidden"><div class="text-on-tertiary/20 text-4xl material-symbols-outlined">swords</div></div>
+<h3 class="font-headline text-primary text-lg leading-tight mb-1">Sunflare Claymore</h3>
+<p class="font-label text-[10px] text-primary tracking-widest uppercase">Legendary</p>
+</div>
+<div class="group relative bg-surface-container border border-outline-variant/10 p-4 transition-all hover:bg-surface-container-high">
+<div class="aspect-[1/1] mb-4 bg-surface-container-lowest flex items-center justify-center overflow-hidden"><div class="text-on-tertiary/20 text-4xl material-symbols-outlined">swords</div></div>
+<h3 class="font-headline text-primary text-lg leading-tight mb-1">Veridian Estoc</h3>
+<p class="font-label text-[10px] text-secondary tracking-widest uppercase">Rare</p>
+</div>
+<div class="group relative bg-surface-container border border-outline-variant/10 p-4 transition-all hover:bg-surface-container-high">
+<div class="aspect-[1/1] mb-4 bg-surface-container-lowest flex items-center justify-center overflow-hidden"><div class="text-on-tertiary/20 text-4xl material-symbols-outlined">swords</div></div>
+<h3 class="font-headline text-primary text-lg leading-tight mb-1">Kingsbane</h3>
+<p class="font-label text-[10px] text-error tracking-widest uppercase">Unique</p>
+</div>
+<div class="group relative bg-surface-container border border-outline-variant/10 p-4 transition-all hover:bg-surface-container-high">
+<div class="aspect-[1/1] mb-4 bg-surface-container-lowest flex items-center justify-center overflow-hidden"><div class="text-on-tertiary/20 text-4xl material-symbols-outlined">swords</div></div>
+<h3 class="font-headline text-primary text-lg leading-tight mb-1">Oceanic Cutlass</h3>
+<p class="font-label text-[10px] text-tertiary tracking-widest uppercase">Rare</p>
+</div>
+<div class="group relative bg-surface-container border border-outline-variant/10 p-4 transition-all hover:bg-surface-container-high">
+<div class="aspect-[1/1] mb-4 bg-surface-container-lowest flex items-center justify-center overflow-hidden"><div class="text-on-tertiary/20 text-4xl material-symbols-outlined">swords</div></div>
+<h3 class="font-headline text-primary text-lg leading-tight mb-1">Wraith's Whisper</h3>
+<p class="font-label text-[10px] text-on-surface-variant tracking-widest uppercase">Spectral</p>
+</div>
+<!-- Row 4-6 Simulated for the remaining items to reach 30 count -->
+<!-- Repetition with modified labels for design density -->
+<div class="group relative bg-surface-container border border-outline-variant/10 p-4 transition-all hover:bg-surface-container-high">
+<div class="aspect-[1/1] mb-4 bg-surface-container-lowest flex items-center justify-center overflow-hidden"><div class="text-on-tertiary/20 text-4xl material-symbols-outlined">swords</div></div>
+<h3 class="font-headline text-primary text-lg leading-tight mb-1">Molten Zweihander</h3>
+<p class="font-label text-[10px] text-primary-fixed tracking-widest uppercase">Elite</p>
+</div>
+<div class="group relative bg-surface-container border border-outline-variant/10 p-4 transition-all hover:bg-surface-container-high">
+<div class="aspect-[1/1] mb-4 bg-surface-container-lowest flex items-center justify-center overflow-hidden"><div class="text-on-tertiary/20 text-4xl material-symbols-outlined">swords</div></div>
+<h3 class="font-headline text-primary text-lg leading-tight mb-1">Cobalt Rapier</h3>
+<p class="font-label text-[10px] text-secondary tracking-widest uppercase">Fine</p>
+</div>
+<div class="group relative bg-surface-container border border-outline-variant/10 p-4 transition-all hover:bg-surface-container-high">
+<div class="aspect-[1/1] mb-4 bg-surface-container-lowest flex items-center justify-center overflow-hidden"><div class="text-on-tertiary/20 text-4xl material-symbols-outlined">swords</div></div>
+<h3 class="font-headline text-primary text-lg leading-tight mb-1">Grave-Digger's Spade</h3>
+<p class="font-label text-[10px] text-on-surface-variant tracking-widest uppercase">Uncommon</p>
+</div>
+<div class="group relative bg-surface-container border border-outline-variant/10 p-4 transition-all hover:bg-surface-container-high">
+<div class="aspect-[1/1] mb-4 bg-surface-container-lowest flex items-center justify-center overflow-hidden"><div class="text-on-tertiary/20 text-4xl material-symbols-outlined">swords</div></div>
+<h3 class="font-headline text-primary text-lg leading-tight mb-1">Thundercracker</h3>
+<p class="font-label text-[10px] text-tertiary-fixed tracking-widest uppercase">Storm-Touched</p>
+</div>
+<div class="group relative bg-surface-container border border-outline-variant/10 p-4 transition-all hover:bg-surface-container-high">
+<div class="aspect-[1/1] mb-4 bg-surface-container-lowest flex items-center justify-center overflow-hidden"><div class="text-on-tertiary/20 text-4xl material-symbols-outlined">swords</div></div>
+<h3 class="font-headline text-primary text-lg leading-tight mb-1">Petrified Oak Blade</h3>
+<p class="font-label text-[10px] text-on-secondary-container tracking-widest uppercase">Ancient</p>
+</div>
+<!-- Final Rows -->
+<div class="group relative bg-surface-container border border-outline-variant/10 p-4 transition-all hover:bg-surface-container-high">
+<div class="aspect-[1/1] mb-4 bg-surface-container-lowest flex items-center justify-center overflow-hidden"><div class="text-on-tertiary/20 text-4xl material-symbols-outlined">swords</div></div>
+<h3 class="font-headline text-primary text-lg leading-tight mb-1">Ebony Dirk</h3>
+<p class="font-label text-[10px] text-secondary tracking-widest uppercase">Assassin</p>
+</div>
+<div class="group relative bg-surface-container border border-outline-variant/10 p-4 transition-all hover:bg-surface-container-high">
+<div class="aspect-[1/1] mb-4 bg-surface-container-lowest flex items-center justify-center overflow-hidden"><div class="text-on-tertiary/20 text-4xl material-symbols-outlined">swords</div></div>
+<h3 class="font-headline text-primary text-lg leading-tight mb-1">Titan's Toothpick</h3>
+<p class="font-label text-[10px] text-error tracking-widest uppercase">Mythic</p>
+</div>
+<div class="group relative bg-surface-container border border-outline-variant/10 p-4 transition-all hover:bg-surface-container-high">
+<div class="aspect-[1/1] mb-4 bg-surface-container-lowest flex items-center justify-center overflow-hidden"><div class="text-on-tertiary/20 text-4xl material-symbols-outlined">swords</div></div>
+<h3 class="font-headline text-primary text-lg leading-tight mb-1">Gilded Gladius</h3>
+<p class="font-label text-[10px] text-primary tracking-widest uppercase">Imperial</p>
+</div>
+<div class="group relative bg-surface-container border border-outline-variant/10 p-4 transition-all hover:bg-surface-container-high">
+<div class="aspect-[1/1] mb-4 bg-surface-container-lowest flex items-center justify-center overflow-hidden"><div class="text-on-tertiary/20 text-4xl material-symbols-outlined">swords</div></div>
+<h3 class="font-headline text-primary text-lg leading-tight mb-1">Blood-Letter</h3>
+<p class="font-label text-[10px] text-error tracking-widest uppercase">Cursed</p>
+</div>
+<div class="group relative bg-surface-container border border-outline-variant/10 p-4 transition-all hover:bg-surface-container-high">
+<div class="aspect-[1/1] mb-4 bg-surface-container-lowest flex items-center justify-center overflow-hidden"><div class="text-on-tertiary/20 text-4xl material-symbols-outlined">swords</div></div>
+<h3 class="font-headline text-primary text-lg leading-tight mb-1">Merchant's Edge</h3>
+<p class="font-label text-[10px] text-on-surface-variant tracking-widest uppercase">Basic</p>
+</div>
+<div class="group relative bg-surface-container border border-outline-variant/10 p-4 transition-all hover:bg-surface-container-high">
+<div class="aspect-[1/1] mb-4 bg-surface-container-lowest flex items-center justify-center overflow-hidden"><div class="text-on-tertiary/20 text-4xl material-symbols-outlined">swords</div></div>
+<h3 class="font-headline text-primary text-lg leading-tight mb-1">Starlight Slicer</h3>
+<p class="font-label text-[10px] text-tertiary tracking-widest uppercase">Ethereal</p>
+</div>
+<div class="group relative bg-surface-container border border-outline-variant/10 p-4 transition-all hover:bg-surface-container-high">
+<div class="aspect-[1/1] mb-4 bg-surface-container-lowest flex items-center justify-center overflow-hidden"><div class="text-on-tertiary/20 text-4xl material-symbols-outlined">swords</div></div>
+<h3 class="font-headline text-primary text-lg leading-tight mb-1">Obsidian Katana</h3>
+<p class="font-label text-[10px] text-secondary tracking-widest uppercase">Exotic</p>
+</div>
+<div class="group relative bg-surface-container border border-outline-variant/10 p-4 transition-all hover:bg-surface-container-high">
+<div class="aspect-[1/1] mb-4 bg-surface-container-lowest flex items-center justify-center overflow-hidden"><div class="text-on-tertiary/20 text-4xl material-symbols-outlined">swords</div></div>
+<h3 class="font-headline text-primary text-lg leading-tight mb-1">Heirloom Longsword</h3>
+<p class="font-label text-[10px] text-secondary tracking-widest uppercase">Legacy</p>
+</div>
+<div class="group relative bg-surface-container border border-outline-variant/10 p-4 transition-all hover:bg-surface-container-high">
+<div class="aspect-[1/1] mb-4 bg-surface-container-lowest flex items-center justify-center overflow-hidden"><div class="text-on-tertiary/20 text-4xl material-symbols-outlined">swords</div></div>
+<h3 class="font-headline text-primary text-lg leading-tight mb-1">Runic Claymore</h3>
+<p class="font-label text-[10px] text-tertiary tracking-widest uppercase">Magic</p>
+</div>
+<div class="group relative bg-surface-container border border-outline-variant/10 p-4 transition-all hover:bg-surface-container-high">
+<div class="aspect-[1/1] mb-4 bg-surface-container-lowest flex items-center justify-center overflow-hidden"><div class="text-on-tertiary/20 text-4xl material-symbols-outlined">swords</div></div>
+<h3 class="font-headline text-primary text-lg leading-tight mb-1">Broken Hero Blade</h3>
+<p class="font-label text-[10px] text-on-surface-variant tracking-widest uppercase">Quest Item</p>
+</div>
+</div>
+</main>
+</div>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center h-16 px-4 bg-[#161311]/95 backdrop-blur-md z-50 border-t border-[#54433a]/30 shadow-[0_-8px_20px_rgba(0,0,0,0.8)]">
+<button class="flex flex-col items-center justify-center text-[#e9c176] scale-110 active:scale-90 duration-150">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold">Collection</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#dac3a2]/60 hover:text-[#00dce5] transition-colors active:scale-90 duration-150">
+<span class="material-symbols-outlined">gavel</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold">Crafting</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#dac3a2]/60 hover:text-[#00dce5] transition-colors active:scale-90 duration-150">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold">Social</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#dac3a2]/60 hover:text-[#00dce5] transition-colors active:scale-90 duration-150" onclick="window.location.href='sell_asset.html'">
+<span class="material-symbols-outlined">storefront</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold">Market</span>
+</button>
+</nav>
+<script src="catalog.js"></script></body></html>

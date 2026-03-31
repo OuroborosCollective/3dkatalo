@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Relic &amp; Rune | List Asset for Sale</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,700;1,400;1,700&amp;family=Work+Sans:wght@300;400;600&amp;family=Space+Grotesk:wght@300;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode:"class",
+    theme:{extend:{
+      colors:{
+        "primary":"#e9c176","surface":"#161311","surface-container":"#231f1d",
+        "surface-container-high":"#2e2927","surface-container-highest":"#393431",
+        "on-surface":"#eae1dd","on-surface-variant":"#dac2b6","secondary":"#dac3a2",
+        "tertiary":"#00dce5","outline":"#a28c81","outline-variant":"#54433a",
+        "background":"#161311","error":"#ffb4ab","on-primary":"#412d00",
+      },
+      fontFamily:{"headline":["Newsreader"],"body":["Work Sans"],"label":["Space Grotesk"]},
+      borderRadius:{"DEFAULT":"0px","lg":"0px","xl":"0px","full":"9999px"},
+    }},
+  }
+</script>
+<style>
+  .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;}
+  ::-webkit-scrollbar{width:8px}
+  ::-webkit-scrollbar-track{background:#110d0c}
+  ::-webkit-scrollbar-thumb{background:#54433a}
+  ::-webkit-scrollbar-thumb:hover{background:#e9c176}
+  @keyframes fadeInUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+  .fade-in{animation:fadeInUp .3s ease}
+  .drop-zone{border:2px dashed #54433a;transition:border-color .2s,background .2s}
+  .drop-zone.drag-over{border-color:#e9c176;background:#231f1d}
+  input[type=file]{cursor:pointer}
+  input,textarea,select{outline:none}
+  input:focus,textarea:focus,select:focus{border-color:#e9c176!important}
+</style>
+</head>
+<body class="bg-background text-on-surface font-body min-h-screen flex flex-col">
+<!-- Header -->
+<header class="bg-[#161311] sticky top-0 z-50 border-b border-[#54433a]/30">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-5xl mx-auto">
+<a class="text-2xl font-bold text-[#e9c176] uppercase tracking-tighter font-headline" href="index.html">
+      Relic &amp; Rune
+    </a>
+<nav class="hidden md:flex space-x-6 items-center">
+<a class="font-label text-xs uppercase tracking-widest text-[#dac3a2] hover:text-[#e9c176] transition-colors" href="index.html">The Armory</a>
+<a class="font-label text-xs uppercase tracking-widest text-[#dac3a2] hover:text-[#e9c176] transition-colors" href="upload_asset.html">Upload</a>
+<a class="font-label text-xs uppercase tracking-widest text-[#e9c176] border-b border-[#e9c176] pb-0.5" href="sell_asset.html">Sell Asset</a>
+</nav>
+<a class="flex items-center gap-2 text-[#dac3a2] hover:text-[#e9c176] transition-colors font-label text-xs uppercase tracking-widest" href="index.html">
+<span class="material-symbols-outlined text-sm">arrow_back</span> Back
+    </a>
+</div>
+</header>
+<!-- Main -->
+<main class="flex-1 max-w-5xl mx-auto w-full px-6 py-12">
+<div class="mb-10">
+<h1 class="font-headline text-4xl italic text-primary mb-2">List Asset for Sale</h1>
+<div class="h-px w-24 bg-gradient-to-r from-primary to-transparent mb-4"></div>
+<p class="text-on-surface-variant font-body italic text-base max-w-xl">
+      Set your price, add a description, upload preview images and your 3D file — then list it with one click.
+    </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Left: Form -->
+<div class="lg:col-span-2 space-y-6">
+<!-- Asset Name & Category -->
+<div class="bg-surface-container p-6 border border-[#54433a]/30">
+<h2 class="font-label text-xs uppercase tracking-widest text-primary mb-4">Asset Details</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
+<label class="block font-label text-[10px] uppercase tracking-widest text-on-surface-variant mb-1">Asset Name *</label>
+<input class="w-full bg-[#393431] border border-[#54433a] text-on-surface px-3 py-2.5 font-body text-sm focus:border-primary" id="sell-name" placeholder="e.g. Dragon Fang Dagger" type="text"/>
+</div>
+<div>
+<label class="block font-label text-[10px] uppercase tracking-widest text-on-surface-variant mb-1">Category</label>
+<select class="w-full bg-[#393431] border border-[#54433a] text-on-surface px-3 py-2.5 font-body text-sm focus:border-primary" id="sell-cat">
+<option>Swords</option><option>Axes</option><option>Plate Armor</option>
+<option>Leather Armor</option><option>Cloth Armor</option><option>Daggers</option>
+<option>Spears</option><option>Magic Wands</option><option>NPCs</option>
+<option>Pets &amp; Companions</option><option>Other</option>
+</select>
+</div>
+<div>
+<label class="block font-label text-[10px] uppercase tracking-widest text-on-surface-variant mb-1">Tier / Rarity</label>
+<select class="w-full bg-[#393431] border border-[#54433a] text-on-surface px-3 py-2.5 font-body text-sm focus:border-primary" id="sell-tier">
+<option>Common Grade</option><option>Rare</option><option>Epic</option>
+<option>Legendary Tier</option><option>Divine Relic</option><option>Masterwork</option>
+</select>
+</div>
+<div>
+<label class="block font-label text-[10px] uppercase tracking-widest text-on-surface-variant mb-1">Price (€) *</label>
+<input class="w-full bg-[#393431] border border-[#54433a] text-on-surface px-3 py-2.5 font-body text-sm focus:border-primary" id="sell-price" min="0" placeholder="e.g. 9.99" step="0.01" type="number"/>
+</div>
+</div>
+<div class="mt-4">
+<label class="block font-label text-[10px] uppercase tracking-widest text-on-surface-variant mb-1">Description *</label>
+<textarea class="w-full bg-[#393431] border border-[#54433a] text-on-surface px-3 py-2.5 font-body text-sm resize-y focus:border-primary" id="sell-desc" placeholder="Describe your asset for potential buyers. Include polygon count, texture resolution, supported engines, etc." rows="5"></textarea>
+</div>
+</div>
+<!-- Preview Images -->
+<div class="bg-surface-container p-6 border border-[#54433a]/30">
+<h2 class="font-label text-xs uppercase tracking-widest text-primary mb-1">Preview Images</h2>
+<p class="text-on-surface-variant text-xs font-body mb-4">Upload up to 3 preview images. First image is the cover.</p>
+<div class="grid grid-cols-3 gap-3">
+<div class="drop-zone aspect-square flex flex-col items-center justify-center relative cursor-pointer bg-[#1f1b19]" id="img-slot-1" onclick="document.getElementById('file-img-1').click()">
+<span class="material-symbols-outlined text-3xl text-[#54433a]">add_photo_alternate</span>
+<span class="font-label text-[9px] uppercase tracking-widest text-[#54433a] mt-1">Cover</span>
+<input accept="image/*" class="hidden" id="file-img-1" onchange="previewImg(1,this)" type="file"/>
+</div>
+<div class="drop-zone aspect-square flex flex-col items-center justify-center relative cursor-pointer bg-[#1f1b19]" id="img-slot-2" onclick="document.getElementById('file-img-2').click()">
+<span class="material-symbols-outlined text-3xl text-[#54433a]">add_photo_alternate</span>
+<span class="font-label text-[9px] uppercase tracking-widest text-[#54433a] mt-1">Image 2</span>
+<input accept="image/*" class="hidden" id="file-img-2" onchange="previewImg(2,this)" type="file"/>
+</div>
+<div class="drop-zone aspect-square flex flex-col items-center justify-center relative cursor-pointer bg-[#1f1b19]" id="img-slot-3" onclick="document.getElementById('file-img-3').click()">
+<span class="material-symbols-outlined text-3xl text-[#54433a]">add_photo_alternate</span>
+<span class="font-label text-[9px] uppercase tracking-widest text-[#54433a] mt-1">Image 3</span>
+<input accept="image/*" class="hidden" id="file-img-3" onchange="previewImg(3,this)" type="file"/>
+</div>
+</div>
+</div>
+<!-- 3D File Upload -->
+<div class="bg-surface-container p-6 border border-[#54433a]/30">
+<h2 class="font-label text-xs uppercase tracking-widest text-primary mb-1">3D File</h2>
+<p class="text-on-surface-variant text-xs font-body mb-4">Supported: GLB, FBX, USD, USDZ, OBJ, BLEND, ZIP</p>
+<div class="drop-zone p-8 flex flex-col items-center justify-center cursor-pointer bg-[#1f1b19]" id="drop-3d" onclick="document.getElementById('file-3d').click()" ondragleave="this.classList.remove('drag-over')" ondragover="event.preventDefault();this.classList.add('drag-over')" ondrop="handle3dDrop(event)">
+<span class="material-symbols-outlined text-4xl text-[#54433a] mb-2">upload_file</span>
+<p class="font-label text-xs uppercase tracking-widest text-[#54433a]">Click or Drag &amp; Drop</p>
+<p class="font-body text-xs text-tertiary mt-2 hidden" id="file-3d-name"></p>
+<input accept=".glb,.fbx,.usd,.usdz,.obj,.blend,.zip" class="hidden" id="file-3d" onchange="show3dFile(this)" type="file"/>
+</div>
+<div class="mt-3 grid grid-cols-3 gap-2">
+<div class="bg-[#393431] border border-[#54433a]/30 p-2 text-center">
+<p class="font-label text-[9px] uppercase tracking-widest text-on-surface-variant">LOD</p>
+<select class="bg-transparent text-primary font-label text-xs uppercase w-full text-center mt-1 border-none" id="sell-lod">
+<option value="HI">HI</option><option value="MD">MD</option><option value="LO">LO</option>
+</select>
+</div>
+<div class="bg-[#393431] border border-[#54433a]/30 p-2 text-center">
+<p class="font-label text-[9px] uppercase tracking-widest text-on-surface-variant">Format</p>
+<select class="bg-transparent text-primary font-label text-xs uppercase w-full text-center mt-1 border-none" id="sell-fmt">
+<option>GLB</option><option>FBX</option><option>USD</option><option>OBJ</option><option>BLEND</option>
+</select>
+</div>
+<div class="bg-[#393431] border border-[#54433a]/30 p-2 text-center">
+<p class="font-label text-[9px] uppercase tracking-widest text-on-surface-variant">License</p>
+<select class="bg-transparent text-primary font-label text-xs uppercase w-full text-center mt-1 border-none" id="sell-lic">
+<option>Commercial</option><option>Personal</option><option>CC-BY</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Summary & Submit -->
+<div class="space-y-4">
+<!-- Live Preview Card -->
+<div class="bg-surface-container border border-[#54433a]/30 p-5">
+<h2 class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant mb-3">Listing Preview</h2>
+<div class="aspect-square bg-[#1f1b19] border border-[#54433a]/20 flex items-center justify-center mb-3 overflow-hidden" id="preview-cover">
+<span class="material-symbols-outlined text-4xl text-[#393431]">image</span>
+</div>
+<h3 class="font-headline text-primary text-lg italic leading-tight mb-1" id="preview-name">Asset Name</h3>
+<p class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant mb-2" id="preview-tier">Tier</p>
+<div class="h-px bg-[#54433a]/30 mb-2"></div>
+<p class="font-label text-xl text-tertiary font-bold" id="preview-price">€ —</p>
+<p class="font-body text-xs text-on-surface-variant mt-2 italic line-clamp-3" id="preview-desc">Description will appear here…</p>
+</div>
+<!-- Checklist -->
+<div class="bg-surface-container border border-[#54433a]/30 p-5">
+<h2 class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant mb-3">Checklist</h2>
+<ul class="space-y-2 text-xs font-label uppercase tracking-widest">
+<li class="flex items-center gap-2 text-[#54433a]" id="chk-name"><span class="material-symbols-outlined text-sm">radio_button_unchecked</span> Asset Name</li>
+<li class="flex items-center gap-2 text-[#54433a]" id="chk-price"><span class="material-symbols-outlined text-sm">radio_button_unchecked</span> Price</li>
+<li class="flex items-center gap-2 text-[#54433a]" id="chk-desc"><span class="material-symbols-outlined text-sm">radio_button_unchecked</span> Description</li>
+<li class="flex items-center gap-2 text-[#54433a]" id="chk-img"><span class="material-symbols-outlined text-sm">radio_button_unchecked</span> Cover Image</li>
+<li class="flex items-center gap-2 text-[#54433a]" id="chk-file"><span class="material-symbols-outlined text-sm">radio_button_unchecked</span> 3D File</li>
+</ul>
+</div>
+<!-- Submit -->
+<button class="w-full bg-primary text-on-primary font-label font-bold uppercase tracking-widest text-sm py-4 hover:brightness-110 transition-all active:scale-95 flex items-center justify-center gap-2" id="submit-btn" onclick="submitListing()">
+<span class="material-symbols-outlined">sell</span>
+        List Asset for Sale
+      </button>
+<p class="text-on-surface-variant text-[10px] font-label uppercase tracking-widest text-center">
+        Your listing will be reviewed before going live.
+      </p>
+</div>
+</div>
+</main>
+<!-- Success Banner (hidden) -->
+<div class="hidden fixed inset-0 z-50 bg-black/90 flex items-center justify-center" id="success-banner">
+<div class="bg-[#231f1d] border border-[#e9c176] p-10 max-w-md text-center fade-in">
+<span class="material-symbols-outlined text-5xl text-primary mb-4 block">check_circle</span>
+<h2 class="font-headline text-3xl italic text-primary mb-2">Asset Listed!</h2>
+<p class="font-body text-on-surface-variant mb-6" id="success-msg"></p>
+<div class="flex gap-3 justify-center">
+<a class="bg-primary text-on-primary font-label text-xs uppercase tracking-widest px-6 py-3 hover:brightness-110 transition-all" href="index.html">
+        Back to Armory
+      </a>
+<button class="border border-[#54433a] text-[#dac3a2] font-label text-xs uppercase tracking-widest px-6 py-3 hover:border-primary transition-all" onclick="document.getElementById('success-banner').classList.add('hidden')">
+        List Another
+      </button>
+</div>
+</div>
+</div>
+<script>
+function previewImg(n, input) {
+  if (!input.files[0]) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    const slot = document.getElementById(`img-slot-${n}`);
+    slot.innerHTML = `
+      <img src="${e.target.result}" class="w-full h-full object-cover absolute inset-0"/>
+      <button onclick="clearImg(${n},event)" class="absolute top-1 right-1 bg-black/60 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs z-10">✕</button>
+    `;
+    slot.style.position = 'relative';
+    if (n === 1) {
+      document.getElementById('preview-cover').innerHTML = `<img src="${e.target.result}" class="w-full h-full object-cover"/>`;
+    }
+    updateChecklist();
+  };
+  reader.readAsDataURL(input.files[0]);
+}
+
+function clearImg(n, e) {
+  e.stopPropagation();
+  const slot = document.getElementById(`img-slot-${n}`);
+  const icons = ['add_photo_alternate'];
+  const labels = ['Cover','Image 2','Image 3'];
+  slot.innerHTML = `
+    <span class="material-symbols-outlined text-3xl text-[#54433a]">add_photo_alternate</span>
+    <span class="font-label text-[9px] uppercase tracking-widest text-[#54433a] mt-1">${labels[n-1]}</span>
+    <input type="file" id="file-img-${n}" accept="image/*" class="hidden" onchange="previewImg(${n},this)"/>
+  `;
+  slot.onclick = () => document.getElementById(`file-img-${n}`).click();
+  if (n === 1) {
+    document.getElementById('preview-cover').innerHTML = `<span class="material-symbols-outlined text-4xl text-[#393431]">image</span>`;
+  }
+  updateChecklist();
+}
+
+function show3dFile(input) {
+  if (!input.files[0]) return;
+  const el = document.getElementById('file-3d-name');
+  const mb = (input.files[0].size / 1048576).toFixed(2);
+  el.textContent = `✓ ${input.files[0].name} (${mb} MB)`;
+  el.classList.remove('hidden');
+  document.getElementById('drop-3d').style.borderColor = '#e9c176';
+  updateChecklist();
+}
+
+function handle3dDrop(e) {
+  e.preventDefault();
+  document.getElementById('drop-3d').classList.remove('drag-over');
+  const file = e.dataTransfer.files[0];
+  if (file) {
+    const dt = new DataTransfer();
+    dt.items.add(file);
+    document.getElementById('file-3d').files = dt.files;
+    show3dFile(document.getElementById('file-3d'));
+  }
+}
+
+function updateChecklist() {
+  const name  = document.getElementById('sell-name').value.trim();
+  const price = parseFloat(document.getElementById('sell-price').value);
+  const desc  = document.getElementById('sell-desc').value.trim();
+  const img1  = document.getElementById('file-img-1').files[0];
+  const file3d= document.getElementById('file-3d').files[0];
+
+  const set = (id, ok) => {
+    const el = document.getElementById(id);
+    el.querySelector('.material-symbols-outlined').textContent = ok ? 'check_circle' : 'radio_button_unchecked';
+    el.style.color = ok ? '#e9c176' : '#54433a';
+  };
+  set('chk-name',  name.length >= 2);
+  set('chk-price', !isNaN(price) && price > 0);
+  set('chk-desc',  desc.length >= 5);
+  set('chk-img',   !!img1);
+  set('chk-file',  !!file3d);
+
+  // Live preview
+  document.getElementById('preview-name').textContent  = name  || 'Asset Name';
+  document.getElementById('preview-tier').textContent  = document.getElementById('sell-tier').value;
+  document.getElementById('preview-price').textContent = !isNaN(price) && price > 0 ? `€ ${price.toFixed(2)}` : '€ —';
+  document.getElementById('preview-desc').textContent  = desc  || 'Description will appear here…';
+}
+
+function submitListing() {
+  const name  = document.getElementById('sell-name').value.trim();
+  const price = parseFloat(document.getElementById('sell-price').value);
+  const desc  = document.getElementById('sell-desc').value.trim();
+
+  if (name.length < 2)       { flash('Please enter an asset name.');    return; }
+  if (isNaN(price)||price<=0){ flash('Please enter a valid price.');     return; }
+  if (desc.length < 5)       { flash('Please add a description.');       return; }
+
+  document.getElementById('success-msg').textContent =
+    `"${name}" has been submitted for €${price.toFixed(2)}. It will appear in the catalog after review.`;
+  document.getElementById('success-banner').classList.remove('hidden');
+}
+
+function flash(msg) {
+  const t = document.createElement('div');
+  t.textContent = msg;
+  t.style.cssText = `
+    position:fixed;bottom:2rem;right:2rem;z-index:99999;
+    background:#393431;border:1px solid #ffb4ab;color:#ffb4ab;
+    padding:.75rem 1.25rem;font-family:'Space Grotesk',sans-serif;
+    font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;
+    animation:fadeInUp .3s ease;
+  `;
+  document.body.appendChild(t);
+  setTimeout(()=>t.remove(), 3500);
+}
+
+// Live-update on input
+['sell-name','sell-price','sell-desc','sell-tier'].forEach(id => {
+  document.getElementById(id)?.addEventListener('input', updateChecklist);
+  document.getElementById(id)?.addEventListener('change', updateChecklist);
+});
+</script>
+<script src="catalog.js"></script></body>
+</html>

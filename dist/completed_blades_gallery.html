@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Relic &amp; Rune | Completed Blades</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,700;1,400&amp;family=Work+Sans:wght@400;500&amp;family=Space_Grotesk:wght@300;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-fixed": "#ffdea5",
+                        "on-secondary-container": "#ccb594",
+                        "outline": "#a28c81",
+                        "on-primary-fixed-variant": "#5d4201",
+                        "error-container": "#93000a",
+                        "outline-variant": "#54433a",
+                        "on-surface": "#eae1dd",
+                        "on-primary-fixed": "#261900",
+                        "on-tertiary": "#003739",
+                        "tertiary-fixed": "#63f7ff",
+                        "surface": "#161311",
+                        "on-tertiary-container": "#00e5ee",
+                        "on-secondary": "#3c2e16",
+                        "secondary-container": "#57472d",
+                        "secondary-fixed": "#f7dfbc",
+                        "on-tertiary-fixed": "#002021",
+                        "surface-tint": "#e9c176",
+                        "on-error": "#690005",
+                        "on-secondary-fixed": "#251904",
+                        "inverse-surface": "#eae1dd",
+                        "secondary-fixed-dim": "#dac3a2",
+                        "surface-variant": "#393431",
+                        "tertiary": "#00dce5",
+                        "tertiary-fixed-dim": "#00dce5",
+                        "surface-bright": "#3d3836",
+                        "secondary": "#dac3a2",
+                        "surface-dim": "#161311",
+                        "surface-container": "#231f1d",
+                        "on-secondary-fixed-variant": "#54442b",
+                        "inverse-on-surface": "#342f2d",
+                        "surface-container-high": "#2e2927",
+                        "primary-container": "#715313",
+                        "error": "#ffb4ab",
+                        "on-tertiary-fixed-variant": "#004f53",
+                        "surface-container-lowest": "#110d0c",
+                        "tertiary-container": "#006266",
+                        "on-error-container": "#ffdad6",
+                        "inverse-primary": "#775a19",
+                        "surface-container-low": "#1f1b19",
+                        "on-primary-container": "#f2c97e",
+                        "on-background": "#eae1dd",
+                        "surface-container-highest": "#393431",
+                        "primary": "#e9c176",
+                        "background": "#161311",
+                        "on-surface-variant": "#dac2b6",
+                        "on-primary": "#412d00",
+                        "primary-fixed-dim": "#e9c176"
+                    },
+                    fontFamily: {
+                        "headline": ["Newsreader"],
+                        "body": ["Work Sans"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .runic-header-underline {
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, #e9c176 50%, transparent 100%);
+        }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #161311; }
+        ::-webkit-scrollbar-thumb { background: #393431; border-radius: 0px; }
+        ::-webkit-scrollbar-thumb:hover { background: #e9c176; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation Anchor -->
+<header class="bg-[#161311] fixed top-0 z-50 w-full flex justify-between items-center px-6 py-4">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-bold text-[#e9c176] uppercase tracking-widest font-['Newsreader']">Relic &amp; Rune</span>
+<nav class="hidden md:flex gap-6">
+<a class="text-[#e9c176] border-b border-[#e9c176] font-['Newsreader'] tracking-tight hover:text-[#00dce5] transition-colors duration-300" href="runic_laws_imperial_archives.html">Vault</a>
+<a class="text-[#dac3a2] font-['Newsreader'] tracking-tight hover:text-[#00dce5] transition-colors duration-300" href="index.html">Journal</a>
+<a class="text-[#dac3a2] font-['Newsreader'] tracking-tight hover:text-[#00dce5] transition-colors duration-300" href="sell_asset.html">Exchange</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative flex items-center bg-surface-container-low px-4 py-2 ring-1 ring-outline-variant/20">
+<span class="material-symbols-outlined text-primary/50 text-sm">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm font-headline italic placeholder:text-on-surface-variant/40 w-48 md:w-64" placeholder="Search the ledger..." type="text"/>
+</div>
+<div class="flex gap-2">
+<button class="p-2 hover:text-[#00dce5] transition-colors duration-300">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+</button>
+<button class="p-2 hover:text-[#00dce5] transition-colors duration-300" onclick="window.location.href='settings_archivist_preferences.html'">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Side Navigation Anchor -->
+<aside class="h-screen w-64 fixed left-0 top-0 border-r border-[#393431]/20 bg-[#161311] flex flex-col py-8 z-40 pt-24">
+<div class="px-6 mb-8">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-10 h-10 bg-surface-container-highest border border-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="hammer" style="font-variation-settings: 'FILL' 1;">humerus</span>
+</div>
+<div>
+<h3 class="font-['Space_Grotesk'] uppercase tracking-tighter text-sm text-[#e9c176]">The Armory</h3>
+<p class="text-[10px] text-[#dac3a2]/60 uppercase tracking-widest">Master's Ledger</p>
+</div>
+</div>
+<!-- Machine Readout Accessibility -->
+<div class="mt-6 p-3 bg-surface-container-lowest border border-outline-variant/10 font-label text-[10px] space-y-1 opacity-80">
+<div class="flex justify-between"><span>CORE_STATUS:</span><span class="text-tertiary">STABLE</span></div>
+<div class="flex justify-between"><span>TEMP_GAUGE:</span><span>1450K</span></div>
+<div class="flex justify-between"><span>FORGE_SYNC:</span><span class="text-primary">ACTIVE</span></div>
+</div>
+</div>
+<nav class="flex-grow space-y-1">
+<a class="flex items-center gap-3 bg-[#231f1d] text-[#e9c176] border-l-2 border-[#e9c176] pl-6 py-3 font-['Space_Grotesk'] uppercase tracking-tighter text-sm transition-all hover:translate-x-1" href="index.html">
+<span class="material-symbols-outlined text-sm" data-icon="swords">swords</span>
+                All Blades
+            </a>
+<a class="flex items-center gap-3 text-[#dac3a2]/60 hover:text-[#dac3a2] hover:bg-[#231f1d] pl-6 py-3 font-['Space_Grotesk'] uppercase tracking-tighter text-sm transition-all hover:translate-x-1" href="index.html">
+<span class="material-symbols-outlined text-sm" data-icon="military_tech">military_tech</span>
+                Legendary
+            </a>
+<a class="flex items-center gap-3 text-[#dac3a2]/60 hover:text-[#dac3a2] hover:bg-[#231f1d] pl-6 py-3 font-['Space_Grotesk'] uppercase tracking-tighter text-sm transition-all hover:translate-x-1" href="index.html">
+<span class="material-symbols-outlined text-sm" data-icon="history_edu">history_edu</span>
+                Ancient
+            </a>
+<a class="flex items-center gap-3 text-[#dac3a2]/60 hover:text-[#dac3a2] hover:bg-[#231f1d] pl-6 py-3 font-['Space_Grotesk'] uppercase tracking-tighter text-sm transition-all hover:translate-x-1" href="index.html">
+<span class="material-symbols-outlined text-sm" data-icon="auto_fix_high">auto_fix_high</span>
+                Cursed
+            </a>
+</nav>
+<div class="mt-auto px-6 space-y-1 pb-4">
+<a class="flex items-center gap-3 text-[#dac3a2]/60 hover:text-[#dac3a2] py-2 font-['Space_Grotesk'] uppercase tracking-tighter text-xs" href="runic_laws_imperial_archives.html">
+<span class="material-symbols-outlined text-sm" data-icon="lock">lock</span>
+                Vault
+            </a>
+<a class="flex items-center gap-3 text-error/60 hover:text-error py-2 font-['Space_Grotesk'] uppercase tracking-tighter text-xs" href="index.html">
+<span class="material-symbols-outlined text-sm" data-icon="logout">logout</span>
+                Logout
+            </a>
+</div>
+</aside>
+<!-- Main Canvas Content -->
+<main class="ml-64 pt-24 px-8 pb-12 min-h-screen">
+<header class="mb-12 max-w-4xl">
+<h1 class="font-headline text-5xl text-on-surface mb-2 tracking-tight">Completed Blades</h1>
+<div class="runic-header-underline w-full opacity-30 mb-6"></div>
+<p class="font-body text-secondary max-w-2xl text-lg leading-relaxed italic opacity-80">
+                A historical ledger of the finest steel and soul-bound relics forged within these halls. Each entry represents a legacy carved in iron and magic.
+            </p>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+<!-- Blade Card 1 -->
+<div class="group bg-surface-container relative overflow-hidden ring-1 ring-outline-variant/10">
+<div class="aspect-[16/10] overflow-hidden bg-surface-container-lowest">
+<img class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 group-hover:scale-105" data-alt="close-up of a dark obsidian sword with jagged edges and purple glowing runes on the hilt, dark moody lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_Hm5wBthyt3dNkmdOg2mASY_n51P2mZ2l7pRAO7AIU7MxMZ0XGle4l5C27naSruCsBncwYIEv0HnvHJF0kDl1CP0-XFe-WxfGI5JnCJaNpa91cd61xrutkE9EdiG71G8AJi9a1kw_A8LByBgsNT_LgetAt3qXxs5jXrHl7J9XC6whyuYBhIS1riUwhUQokOH3yquprfRImO8-6T29pqxgD3b-bIgttzZMB0B_9i169V60rBqobwFty9PXY_AlSfbmgKwwVFLcrQE"/>
+<div class="absolute top-4 left-4">
+<span class="bg-surface-container-highest px-3 py-1 font-label text-[10px] uppercase tracking-widest text-tertiary ring-1 ring-tertiary/30 backdrop-blur-md">Mythic</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-headline text-2xl text-primary mb-1">Shattered Obsidian Blade</h3>
+<p class="font-label text-[10px] uppercase text-on-surface-variant tracking-[0.2em]">Forged in the Void Pits</p>
+</div>
+<span class="material-symbols-outlined text-tertiary" data-icon="auto_fix_high" style="font-variation-settings: 'FILL' 1;">auto_fix_high</span>
+</div>
+<div class="grid grid-cols-3 gap-2 mt-6 border-t border-outline-variant/10 pt-4">
+<div class="text-center">
+<span class="block font-label text-[10px] text-on-surface-variant/50 uppercase">Power</span>
+<span class="font-headline text-xl text-on-surface">942</span>
+</div>
+<div class="text-center">
+<span class="block font-label text-[10px] text-on-surface-variant/50 uppercase">Agility</span>
+<span class="font-headline text-xl text-on-surface">310</span>
+</div>
+<div class="text-center">
+<span class="block font-label text-[10px] text-on-surface-variant/50 uppercase">Soul</span>
+<span class="font-headline text-xl text-on-surface">88</span>
+</div>
+</div>
+</div>
+<!-- Glassmorphism Overlay on Hover -->
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+</div>
+<!-- Blade Card 2 -->
+<div class="group bg-surface-container relative overflow-hidden ring-1 ring-outline-variant/10">
+<div class="aspect-[16/10] overflow-hidden bg-surface-container-lowest">
+<img class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 group-hover:scale-105" data-alt="ancient knight sword with intricate golden crossguard and leather bound hilt on dark stone table, dramatic cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-KXcj8Fcunh5Mk9H1Ozst5Grc1HbOwjnvi-frcPMnnBRtS6mk0hX7ECjdfLoMl0lTYOYBe8N-3QUC1PgX03eXdBiGMFzeY2BRPb3X6NSQqb6PWburC0q7QE0eB5nlnEpl2qDpu0n-cA33G2w-Gv8JcQxPI5r76C6m3pb6T6_5K9JDttm-K-oA2dnTiVxhjgV_-3XjE-XLS_vEpoU9g1XAGUSmpe-7OuMkoDCirzgZ1WjkAJ697plzwhQEEJ0e-DV5oo3Hg0Jej6c"/>
+<div class="absolute top-4 left-4">
+<span class="bg-surface-container-highest px-3 py-1 font-label text-[10px] uppercase tracking-widest text-primary ring-1 ring-primary/30 backdrop-blur-md">Legendary</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-headline text-2xl text-primary mb-1">Holy Avenger</h3>
+<p class="font-label text-[10px] uppercase text-on-surface-variant tracking-[0.2em]">Blessed at High Sanctum</p>
+</div>
+<span class="material-symbols-outlined text-primary" data-icon="military_tech" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+</div>
+<div class="grid grid-cols-3 gap-2 mt-6 border-t border-outline-variant/10 pt-4">
+<div class="text-center">
+<span class="block font-label text-[10px] text-on-surface-variant/50 uppercase">Power</span>
+<span class="font-headline text-xl text-on-surface">815</span>
+</div>
+<div class="text-center">
+<span class="block font-label text-[10px] text-on-surface-variant/50 uppercase">Agility</span>
+<span class="font-headline text-xl text-on-surface">450</span>
+</div>
+<div class="text-center">
+<span class="block font-label text-[10px] text-on-surface-variant/50 uppercase">Soul</span>
+<span class="font-headline text-xl text-on-surface">120</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Blade Card 3 -->
+<div class="group bg-surface-container relative overflow-hidden ring-1 ring-outline-variant/10">
+<div class="aspect-[16/10] overflow-hidden bg-surface-container-lowest">
+<img class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 group-hover:scale-105" data-alt="close up of a rusted ancient sword blade with carved runic symbols along the fuller, dusty archive setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9fxPdI-kvhhuDzUFWMeJr68F9dU-cAG8TbvZRbSm5ptlBGecPmr9PpV3oSH-Ve9SmY4lahfHQ6yqhFi0E_Rbh59mNMSLLbc5i_PoPxQzSvfvm0iTVI192vPnAeyuFYvvob8a1OhChccEusZQ522f_PTm-h62J7kGJw80ZG-rLcFkltVvLJ1S01r_hUDGh45HF6VsCjuR_SygY_s-Y8GIEXU1z0Z9WnZ4QWXLt-FCvtOXqvBp4w_6qsoGn99Q644TbPFhmWldjL78"/>
+<div class="absolute top-4 left-4">
+<span class="bg-surface-container-highest px-3 py-1 font-label text-[10px] uppercase tracking-widest text-secondary ring-1 ring-secondary/30 backdrop-blur-md">Ancient</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-headline text-2xl text-primary mb-1">Crest of the First King</h3>
+<p class="font-label text-[10px] uppercase text-on-surface-variant tracking-[0.2em]">Exhumed from Iron Vale</p>
+</div>
+<span class="material-symbols-outlined text-secondary" data-icon="history_edu" style="font-variation-settings: 'FILL' 1;">history_edu</span>
+</div>
+<div class="grid grid-cols-3 gap-2 mt-6 border-t border-outline-variant/10 pt-4">
+<div class="text-center">
+<span class="block font-label text-[10px] text-on-surface-variant/50 uppercase">Power</span>
+<span class="font-headline text-xl text-on-surface">760</span>
+</div>
+<div class="text-center">
+<span class="block font-label text-[10px] text-on-surface-variant/50 uppercase">Agility</span>
+<span class="font-headline text-xl text-on-surface">280</span>
+</div>
+<div class="text-center">
+<span class="block font-label text-[10px] text-on-surface-variant/50 uppercase">Soul</span>
+<span class="font-headline text-xl text-on-surface">450</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Blade Card 4 (Asymmetric Large Feature) -->
+<div class="group md:col-span-2 bg-surface-container relative overflow-hidden ring-1 ring-outline-variant/10 flex flex-col md:flex-row">
+<div class="md:w-1/2 overflow-hidden bg-surface-container-lowest h-64 md:h-full">
+<img class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 group-hover:scale-110" data-alt="long shot of a majestic thin rapier with blue crystal pommel leaning against a velvet throne, cold moonlight lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDz2Dcu0x0OwftGkabkuFUbkWTQrwg8uJBAoKus_Hmpj3BD3427cjd6hEryfPy6BSHhoTlIKBjBiLDwmVY-91lRNdbpqFz6Z94_ofJMjqO82gA9cMB8CkdIHOwxrPVdedUpr_AUrdgl6XglSWehLuN7V7Pqcx7X3AsJZwk6EgpfYiv0gLCBlChJ8jRWNPW3yuueuUijl8p2aMhmofW-30nc58trW5a0ZG6du_ZYpyDrbiimCerfusgjYZJ47Kxk3p_EiSu6HMwywnk"/>
+<div class="absolute top-4 left-4">
+<span class="bg-tertiary/20 text-tertiary px-4 py-1 font-label text-[12px] uppercase tracking-widest ring-1 ring-tertiary/50 backdrop-blur-lg">Legendary Relic</span>
+</div>
+</div>
+<div class="p-8 md:w-1/2 flex flex-col justify-center">
+<div class="mb-6">
+<h3 class="font-headline text-4xl text-primary mb-2">Moonlit Whisper</h3>
+<p class="font-body text-secondary-fixed-dim leading-relaxed">Forged from a single shard of fallen lunar crystal. Its edge never dulls, and it vibrates in the presence of shadow creatures.</p>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-center font-label text-[12px] uppercase">
+<span class="text-on-surface-variant">Luminance Output</span>
+<div class="flex-grow mx-4 h-px bg-outline-variant/20"></div>
+<span class="text-tertiary">98.4%</span>
+</div>
+<div class="flex justify-between items-center font-label text-[12px] uppercase">
+<span class="text-on-surface-variant">Durability</span>
+<div class="flex-grow mx-4 h-px bg-outline-variant/20"></div>
+<span class="text-on-surface">UNBREAKABLE</span>
+</div>
+</div>
+<button class="mt-8 bg-primary text-on-primary font-label uppercase text-[12px] py-3 px-6 tracking-widest hover:opacity-90 transition-all active:scale-95 flex items-center justify-center gap-2 group/btn">
+                        Inspect Detail
+                        <span class="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Blade Card 5 -->
+<div class="group bg-surface-container relative overflow-hidden ring-1 ring-outline-variant/10">
+<div class="aspect-[16/10] overflow-hidden bg-surface-container-lowest">
+<img class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 group-hover:scale-105" data-alt="wide heavy claymore sword stuck into a burnt charred battlefield earth, embers and smoke in the background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcJmS2tUE96WHJZyozd7k7MmpZRGFP_6ZRlMa3tqx0ufME8ou90NPnG-OFmU7wF5xHIeuJw-mItCoKTJ3xdoRXleQBfIAXYrE3qWup5-T5FhQyMujuyPYGi8HbGcFCpRf_hdOERSErTAncbQsUgpsy-2I8znq2gAuQRdR45L2PDoEsY4nLBZcLC3KfNaAeJ3e3Lx4kCQGB0F0SWhTbMizJGWvw8CKq0CAN17tHXrRahmKZq7Qb7bjpQrmb5k6u-LUEe1iV1sli0OE"/>
+<div class="absolute top-4 left-4">
+<span class="bg-surface-container-highest px-3 py-1 font-label text-[10px] uppercase tracking-widest text-primary ring-1 ring-primary/30 backdrop-blur-md">Legendary</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-headline text-2xl text-primary mb-1">Cinderheart Greatsword</h3>
+<p class="font-label text-[10px] uppercase text-on-surface-variant tracking-[0.2em]">Quenched in Dragonfire</p>
+</div>
+<span class="material-symbols-outlined text-primary" data-icon="local_fire_department" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+<div class="grid grid-cols-3 gap-2 mt-6 border-t border-outline-variant/10 pt-4">
+<div class="text-center">
+<span class="block font-label text-[10px] text-on-surface-variant/50 uppercase">Power</span>
+<span class="font-headline text-xl text-on-surface">1120</span>
+</div>
+<div class="text-center">
+<span class="block font-label text-[10px] text-on-surface-variant/50 uppercase">Agility</span>
+<span class="font-headline text-xl text-on-surface">110</span>
+</div>
+<div class="text-center">
+<span class="block font-label text-[10px] text-on-surface-variant/50 uppercase">Soul</span>
+<span class="font-headline text-xl text-on-surface">25</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination / Load More Anchor -->
+<footer class="mt-20 flex flex-col items-center">
+<div class="runic-header-underline w-64 opacity-20 mb-8"></div>
+<button class="group bg-transparent border border-outline-variant/30 px-12 py-4 font-label uppercase text-[10px] tracking-[0.3em] hover:bg-primary/5 hover:border-primary/50 transition-all text-on-surface-variant">
+                Reveal More Records
+            </button>
+<p class="mt-8 font-label text-[10px] text-outline opacity-40 uppercase tracking-widest">End of Ledger Index — Page 1 of 14</p>
+</footer>
+</main>
+<!-- Floating Action Anchor (Suppressed for gallery focus as per guidelines, but if required by context for forging) -->
+<div class="fixed bottom-8 right-8 z-50">
+<button class="w-14 h-14 bg-primary text-on-primary flex items-center justify-center hover:scale-110 active:scale-95 transition-all shadow-xl group">
+<span class="material-symbols-outlined group-hover:rotate-90 transition-transform" data-icon="hammer">humerus</span>
+</button>
+</div>
+<script src="catalog.js"></script></body></html>

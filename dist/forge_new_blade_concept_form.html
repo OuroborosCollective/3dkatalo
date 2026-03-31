@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,700;1,400&amp;family=Work+Sans:wght@400;500&amp;family=Space+Grotesk:wght@300;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary": "#003739",
+              "tertiary-fixed": "#63f7ff",
+              "surface": "#161311",
+              "error-container": "#93000a",
+              "outline-variant": "#54433a",
+              "on-surface": "#eae1dd",
+              "on-primary-fixed": "#261900",
+              "primary-fixed": "#ffdea5",
+              "on-secondary-container": "#ccb594",
+              "outline": "#a28c81",
+              "on-primary-fixed-variant": "#5d4201",
+              "inverse-surface": "#eae1dd",
+              "secondary-fixed-dim": "#dac3a2",
+              "surface-tint": "#e9c176",
+              "on-error": "#690005",
+              "on-secondary-fixed": "#251904",
+              "on-tertiary-container": "#00e5ee",
+              "on-secondary": "#3c2e16",
+              "secondary-container": "#57472d",
+              "secondary-fixed": "#f7dfbc",
+              "on-tertiary-fixed": "#002021",
+              "primary-container": "#715313",
+              "error": "#ffb4ab",
+              "on-tertiary-fixed-variant": "#004f53",
+              "surface-container": "#231f1d",
+              "on-secondary-fixed-variant": "#54442b",
+              "inverse-on-surface": "#342f2d",
+              "surface-container-high": "#2e2927",
+              "tertiary-fixed-dim": "#00dce5",
+              "surface-bright": "#3d3836",
+              "secondary": "#dac3a2",
+              "surface-dim": "#161311",
+              "surface-variant": "#393431",
+              "tertiary": "#00dce5",
+              "on-surface-variant": "#dac2b6",
+              "on-primary": "#412d00",
+              "primary-fixed-dim": "#e9c176",
+              "on-primary-container": "#f2c97e",
+              "on-background": "#eae1dd",
+              "surface-container-highest": "#393431",
+              "primary": "#e9c176",
+              "background": "#161311",
+              "surface-container-lowest": "#110d0c",
+              "tertiary-container": "#006266",
+              "on-error-container": "#ffdad6",
+              "inverse-primary": "#775a19",
+              "surface-container-low": "#1f1b19"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Work Sans"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      ::-webkit-scrollbar { width: 4px; }
+      ::-webkit-scrollbar-track { background: #161311; }
+      ::-webkit-scrollbar-thumb { background: #393431; }
+      .metallic-shine {
+        background: linear-gradient(135deg, #e9c176 0%, #715313 100%);
+      }
+      .recessed-input {
+        box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
+      }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary/30">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-[#161311] flex justify-between items-center w-full px-6 py-4 max-w-full">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-bold text-[#e9c176] font-['Newsreader'] uppercase tracking-tighter">Relic &amp; Rune</span>
+<nav class="hidden md:flex gap-6 items-center">
+<a class="text-[#dac3a2] hover:text-[#e9c176] transition-colors font-['Newsreader'] italic tracking-wide" href="index.html">Catalog</a>
+<a class="text-[#e9c176] border-b border-[#e9c176]/50 pb-1 font-['Newsreader'] italic tracking-wide" href="index.html">Forge</a>
+<a class="text-[#dac3a2] hover:text-[#e9c176] transition-colors font-['Newsreader'] italic tracking-wide" href="runic_laws_imperial_archives.html">Vault</a>
+<a class="text-[#dac3a2] hover:text-[#e9c176] transition-colors font-['Newsreader'] italic tracking-wide" href="index.html">Archive</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex bg-[#231f1d] px-3 py-1.5 items-center gap-2">
+<span class="material-symbols-outlined text-[#dac3a2] text-sm">search</span>
+<span class="text-[#dac3a2] text-xs font-label">SEARCH ARCHIVES...</span>
+</div>
+<button class="material-symbols-outlined text-[#dac3a2] hover:bg-[#393431]/50 p-2 transition-all duration-300">notifications</button>
+<button class="material-symbols-outlined text-[#dac3a2] hover:bg-[#393431]/50 p-2 transition-all duration-300">gavel</button>
+<img alt="Scholar's Portrait" class="w-10 h-10 object-cover border border-[#393431]" data-alt="close-up portrait of an elderly scholar with a gray beard in a dimly lit library surrounded by ancient books" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBM1LiiMblXMQYH75xluh1Z9_zpXBq7AkIWjPJMTeH1y-itMGC3kV5ygpySihPBHe8uOlcUvcwkFBowplzo_Kevwb7Fv16ov17Ii-r0Tq8rWEhsH9i0t-mAN935ZbK9cqBnG5He5mj5OsQoJ-snMDAyd-SYQVvrfkhUSpEFHGPDmX2sP3ziDfaSbthuEeINIKY0AfoeHcMh1H_ZkWcIckCxC1Jcpnce-5N_HHvbybvDXy9VgG-4a9R-8Wfm5xshx7JIt5GqBcm_VhM"/>
+</div>
+<div class="absolute bottom-0 left-0 bg-[#231f1d] h-px w-full"></div>
+</header>
+<!-- SideNavBar -->
+<aside class="flex flex-col h-screen fixed left-0 top-0 z-40 bg-[#161311] w-64 shadow-[4px_0px_24px_rgba(0,0,0,0.5)] pt-20">
+<div class="px-6 py-8 border-b border-[#231f1d]">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-10 h-10 bg-surface-container-highest flex items-center justify-center border border-primary/20">
+<span class="material-symbols-outlined text-primary">skillet</span>
+</div>
+<div>
+<h3 class="text-[#e9c176] font-['Newsreader'] font-bold text-lg leading-tight">The Forge</h3>
+<p class="font-['Space_Grotesk'] uppercase tracking-widest text-[10px] text-secondary">Crafting Tier: Legendary</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 py-6 flex flex-col gap-1">
+<a class="flex items-center gap-4 px-4 py-3 text-[#dac3a2] hover:bg-[#231f1d] hover:text-[#e9c176] transition-all font-['Space_Grotesk'] uppercase tracking-widest text-xs" href="index.html">
+<span class="material-symbols-outlined" data-icon="swords">swords</span>
+<span>Armory</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-[#dac3a2] hover:bg-[#231f1d] hover:text-[#e9c176] transition-all font-['Space_Grotesk'] uppercase tracking-widest text-xs" href="index.html">
+<span class="material-symbols-outlined" data-icon="shield">shield</span>
+<span>Relics</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 bg-[#393431] text-[#e9c176] font-bold border-l-2 border-[#e9c176] font-['Space_Grotesk'] uppercase tracking-widest text-xs" href="index.html">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span>Runes</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-[#dac3a2] hover:bg-[#231f1d] hover:text-[#e9c176] transition-all font-['Space_Grotesk'] uppercase tracking-widest text-xs" href="pets_collection_interactive_prototype.html">
+<span class="material-symbols-outlined" data-icon="pest_control">pest_control</span>
+<span>Bestiary</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-[#dac3a2] hover:bg-[#231f1d] hover:text-[#e9c176] transition-all font-['Space_Grotesk'] uppercase tracking-widest text-xs" href="index.html">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span>Ledger</span>
+</a>
+</nav>
+<div class="mt-auto px-4 py-6 border-t border-[#231f1d] flex flex-col gap-1">
+<a class="flex items-center gap-4 px-4 py-2 text-[#dac3a2] hover:bg-[#231f1d] transition-all font-['Space_Grotesk'] uppercase tracking-widest text-xs" href="settings_archivist_preferences.html">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-2 text-[#dac3a2] hover:bg-[#231f1d] transition-all font-['Space_Grotesk'] uppercase tracking-widest text-xs" href="index.html">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="ml-64 pt-24 pb-12 px-8 min-h-screen">
+<div class="max-w-4xl mx-auto">
+<div class="mb-12 relative">
+<h1 class="font-headline text-5xl italic text-on-surface mb-2">Forge New Blade Concept</h1>
+<div class="h-px w-full bg-gradient-to-r from-primary to-transparent"></div>
+<p class="mt-4 font-body text-secondary text-lg max-w-2xl opacity-80">
+                    Commune with the ancient fires. Document the dimensions, soul-binding materials, and ethereal properties of your masterwork.
+                </p>
+</div>
+<form class="grid grid-cols-1 md:grid-cols-12 gap-10">
+<!-- Left Column: Basic Info -->
+<div class="md:col-span-7 space-y-8">
+<section class="space-y-6">
+<div class="space-y-2">
+<label class="font-label text-xs uppercase tracking-[0.2em] text-secondary-fixed-dim">Blade Name</label>
+<input class="w-full bg-surface-container-lowest border-0 p-4 font-headline text-xl text-primary placeholder:text-outline-variant focus:ring-1 focus:ring-primary transition-all recessed-input" placeholder="e.g. Whispering Fang of the Abyss" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label text-xs uppercase tracking-[0.2em] text-secondary-fixed-dim">Description</label>
+<textarea class="w-full bg-surface-container-lowest border-0 p-4 font-headline text-lg text-on-surface placeholder:text-outline-variant focus:ring-1 focus:ring-primary transition-all recessed-input resize-none" placeholder="Describe the weight, the balance, and the history this blade will forge..." rows="5"></textarea>
+</div>
+</section>
+<section class="grid grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label text-xs uppercase tracking-[0.2em] text-secondary-fixed-dim">Primary Material</label>
+<div class="relative">
+<select class="w-full appearance-none bg-surface-container-lowest border-0 p-4 font-headline text-lg text-on-surface focus:ring-1 focus:ring-primary transition-all recessed-input pr-10">
+<option>Sky-Iron</option>
+<option>Abyssal Steel</option>
+<option>Sun-Gold</option>
+<option>Star-Slivered Obsidian</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-primary pointer-events-none">expand_more</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label text-xs uppercase tracking-[0.2em] text-secondary-fixed-dim">Enchantment Type</label>
+<div class="relative">
+<select class="w-full appearance-none bg-surface-container-lowest border-0 p-4 font-headline text-lg text-on-surface focus:ring-1 focus:ring-primary transition-all recessed-input pr-10">
+<option>Fire</option>
+<option>Frost</option>
+<option>Void</option>
+<option>Divine</option>
+<option>Cursed Necrosis</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-tertiary pointer-events-none">auto_awesome</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Visual Upload & Actions -->
+<div class="md:col-span-5 space-y-8">
+<div class="space-y-2 h-full flex flex-col">
+<label class="font-label text-xs uppercase tracking-[0.2em] text-secondary-fixed-dim">Visual Concept Upload</label>
+<div class="flex-1 bg-surface-container-low border border-dashed border-outline-variant hover:border-primary/50 transition-colors group flex flex-col items-center justify-center p-8 relative overflow-hidden">
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="relative z-10 text-center space-y-4">
+<div class="w-16 h-16 mx-auto bg-[#393431] flex items-center justify-center border border-primary/20 shadow-xl group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-4xl">upload</span>
+</div>
+<div class="space-y-1">
+<p class="font-headline text-xl text-on-surface">Deposit Blueprint</p>
+<p class="font-label text-[10px] uppercase tracking-widest text-outline">PNG, JPG up to 10MB</p>
+</div>
+<button class="mt-4 px-6 py-2 border border-primary/30 font-label text-[10px] uppercase tracking-widest text-primary hover:bg-primary hover:text-on-primary transition-all" type="button">
+                                    Select Scroll
+                                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Actions -->
+<div class="md:col-span-12 pt-12 border-t border-[#231f1d] flex items-center justify-end gap-8">
+<button class="font-label text-xs uppercase tracking-[0.2em] text-outline hover:text-error transition-colors" type="button">
+                        Discard Draft
+                    </button>
+<button class="metallic-shine px-12 py-5 font-label text-sm font-bold uppercase tracking-[0.3em] text-on-primary shadow-[0_8px_16px_rgba(0,0,0,0.4)] active:scale-95 transition-all flex items-center gap-3 group" type="submit">
+                        Commence Forging
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">swords</span>
+</button>
+</div>
+</form>
+<!-- Decorative Element -->
+<div class="mt-24 grid grid-cols-3 gap-8 opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
+<div class="h-32 bg-surface-container-high relative overflow-hidden border border-outline-variant/20">
+<img alt="Reference 1" class="w-full h-full object-cover" data-alt="close-up of ancient hand-drawn blueprints of swords with intricate hilt details and weathered paper" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5dks3yUTb-Nvd3_G1GOAIuBpO7bzue0RzffJwm8P_N2sHWiPUJWuWnqc8EDmAqpmR1vA2RAx8JZCtahHwnx0DrwnSZUC5-5VHEYQHBqmS9c5XPJYxuK3PL4_OjPJJDX0QNyKCTyTnedMJKctFKu_xd86gKHtIV9LGC-gk2WNPtemfbUTGAb06kTmWNwy7ChmTy8n8w-tw6AkbK7YdWvjNIptpVgxa5F5gDW08frLdaa1L_vJ_-TEEnktUzIN6-F8NJXRpWKp-ZaQ"/>
+</div>
+<div class="h-32 bg-surface-container-high relative overflow-hidden border border-outline-variant/20">
+<img alt="Reference 2" class="w-full h-full object-cover" data-alt="molten metal being poured into a blade mold in a dark traditional blacksmith forge with glowing embers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-wGNmslA7WWEySHZ8FuBgHhfn8V4FXKR6R3v28VoY4jXY0_wUDnyPcKvzqo8EVfKR_v8WseYR1tyIgvCK9HSx_s_ITW2WKk1tYPiQK30zt5Dn3OGjOmOgIJkFSr0vbjEHSitMVHqhOF5_iew3s5ooJS1w7o73slRhZq0GuBSDOxdQUAlsw5nlZRscJ-e_qd7ANRcDo-9BBLntKP24o-r4LKPf1_mH4XlPpbAp5AKLlKneFHMJYd9zDlK6FhezI-H7x5Noul2_Dco"/>
+</div>
+<div class="h-32 bg-surface-container-high relative overflow-hidden border border-outline-variant/20">
+<img alt="Reference 3" class="w-full h-full object-cover" data-alt="macro photograph of Damascus steel ripples and pattern on a polished blade surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDykCcmiZUptK8hJuS2f_7h_ifrcQQVIizik_QEqF0BtjMBhvuoVioHPfOJog7nEz-YBsXJYeyQvm3Pj4MEsui10Nv4BlvqSWzIU8RaGjRStpxeTuvWq56GQcEf7OyIibS3qpPsEZ7NgzZ8ReJZFm3TJCnL3ruDUq3iU0wB0y6n0zlwhXftt11Ps-DNCJoUJ5JoCth5iFIbqO7sdoxpQFjWQBb1ViUUwbWtpS_jMKVKS4hwbn4rOUpaAJ0W5Afk6g_306sJ0JBwZEw"/>
+</div>
+</div>
+</div>
+</main>
+<!-- Background Ambience -->
+<div class="fixed inset-0 pointer-events-none z-[-1] overflow-hidden">
+<div class="absolute top-1/4 -right-1/4 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-1/4 -left-1/4 w-[500px] h-[500px] bg-tertiary/5 rounded-full blur-[100px]"></div>
+</div>
+<script src="catalog.js"></script></body></html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Relic &amp; Rune | The Armory Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,700;1,400;1,700&amp;family=Work+Sans:wght@300;400;600&amp;family=Space+Grotesk:wght@300;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-fixed-dim": "#dac3a2",
+                        "primary": "#e9c176",
+                        "surface-container-lowest": "#110d0c",
+                        "on-tertiary-fixed-variant": "#004f53",
+                        "on-tertiary": "#003739",
+                        "on-surface-variant": "#dac2b6",
+                        "surface": "#161311",
+                        "on-background": "#eae1dd",
+                        "inverse-on-surface": "#342f2d",
+                        "surface-container-high": "#2e2927",
+                        "on-surface": "#eae1dd",
+                        "on-secondary-fixed": "#251904",
+                        "tertiary": "#00dce5",
+                        "surface-container": "#231f1d",
+                        "on-tertiary-container": "#00e5ee",
+                        "inverse-primary": "#775a19",
+                        "on-secondary": "#3c2e16",
+                        "on-primary-container": "#f2c97e",
+                        "primary-fixed": "#ffdea5",
+                        "surface-container-low": "#1f1b19",
+                        "outline": "#a28c81",
+                        "surface-container-highest": "#393431",
+                        "outline-variant": "#54433a",
+                        "surface-variant": "#393431",
+                        "error": "#ffb4ab",
+                        "surface-dim": "#161311",
+                        "tertiary-container": "#006266",
+                        "on-primary-fixed": "#261900",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#002021",
+                        "background": "#161311",
+                        "on-secondary-container": "#ccb594",
+                        "primary-fixed-dim": "#e9c176",
+                        "tertiary-fixed-dim": "#00dce5",
+                        "secondary-container": "#57472d",
+                        "on-error": "#690005",
+                        "on-primary-fixed-variant": "#5d4201",
+                        "secondary-fixed": "#f7dfbc",
+                        "secondary": "#dac3a2",
+                        "on-primary": "#412d00",
+                        "primary-container": "#715313",
+                        "surface-tint": "#e9c176",
+                        "error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#54442b",
+                        "tertiary-fixed": "#63f7ff",
+                        "inverse-surface": "#eae1dd",
+                        "surface-bright": "#3d3836"
+                    },
+                    fontFamily: {
+                        "headline": ["Newsreader"],
+                        "body": ["Work Sans"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .parchment-texture {
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #110d0c;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #54433a;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #e9c176;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body parchment-texture min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-[#161311] dark:bg-[#161311] docked full-width top-0 border-b-0 sticky z-50">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-[1920px] mx-auto">
+<div class="text-2xl font-bold text-[#e9c176] uppercase tracking-tighter font-headline">Relic &amp; Rune</div>
+<nav class="hidden md:flex space-x-8 items-center">
+<a class="font-['Newsreader'] italic tracking-wide text-[#e9c176] border-b border-[#e9c176] pb-1" href="sword_management_interactive_prototype.html">Swords</a>
+<a class="font-['Newsreader'] italic tracking-wide text-[#dac3a2] hover:text-[#e9c176] transition-colors" href="two_handed_axes_collection_multi_tier_3d_1.html">Axes</a>
+<a class="font-['Newsreader'] italic tracking-wide text-[#dac3a2] hover:text-[#e9c176] transition-colors" href="plate_armor_management_interactive_prototype.html">Plate Armor</a>
+<a class="font-['Newsreader'] italic tracking-wide text-[#dac3a2] hover:text-[#e9c176] transition-colors" href="index.html">Heavy Armor</a>
+<a class="font-['Newsreader'] italic tracking-wide text-[#dac3a2] hover:text-[#e9c176] transition-colors" href="magic_wands_collection_interactive_prototype_1.html">Grimoires</a><a class="font-['Newsreader'] italic tracking-wide text-[#dac3a2] hover:text-[#e9c176] transition-colors" href="cloth_armor_multi_tier_3d_1.html">Cloth Armor (Stoffrüstung)</a>
+<a class="font-['Newsreader'] italic tracking-wide text-[#dac3a2] hover:text-[#e9c176] transition-colors" href="index.html">Bows</a>
+<button class="flex items-center space-x-2 text-[#e9c176] font-label text-[10px] uppercase tracking-widest border border-primary/30 px-3 py-1.5 hover:bg-primary hover:text-on-primary transition-all ml-4">
+<span class="material-symbols-outlined text-sm">add_circle</span>
+<span>Create New Category</span>
+</button>
+</nav>
+<div class="flex items-center space-x-4">
+<button class="p-2 hover:bg-[#393431]/50 transition-all duration-300 active:scale-95">
+<span class="material-symbols-outlined text-[#e9c176]">menu_book</span>
+</button>
+<button class="p-2 hover:bg-[#393431]/50 transition-all duration-300 active:scale-95" onclick="window.location.href='settings_archivist_preferences.html'">
+<span class="material-symbols-outlined text-[#e9c176]">settings</span>
+</button>
+</div>
+</div>
+<div class="bg-gradient-to-r from-transparent via-[#54433a]/20 to-transparent h-[1px] w-full self-end"></div>
+</header>
+<div class="flex flex-1 overflow-hidden">
+<!-- SideNavBar -->
+<aside class="bg-[#231f1d] dark:bg-[#231f1d] h-screen w-64 border-r-0 hidden md:flex flex-col py-8 space-y-4 shadow-[12px_0_24px_rgba(0,0,0,0.5)]">
+<div class="px-6 mb-8">
+<div class="flex items-center space-x-3 mb-4">
+<img alt="Master Scholar" class="w-10 h-10 object-cover grayscale brightness-75 border border-outline-variant/30" data-alt="portrait of an elderly scholarly man with a grey beard wearing dark velvet medieval robes in a dimly lit library" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXFcc-sKzV4No-eJvEFoduY6J90qv2jUcBKzd_aIx674VQYFEAQnvoMoHGqwwOXQaySfI4Ef9YIHlqVuH7ex3zlPu8dRVb-WaBZSD_pUddLxSbLHaplLsFeQbJDsEXyYUINS70mWl_ENPrpqyH3ogencz6PswlRCxxMi7tDtQAJopN3DOyC6iLkJFLGu3vPHm417_In7pcp7_XghiuleIvS4TZVAvFsAYM6ql6E_-2KTMdvDg2s82cOWKKKyYqTHJ4stwvGdGL9OA"/>
+<div>
+<p class="text-[#e9c176] font-['Newsreader'] text-lg leading-none">The Master's Ledger</p>
+<p class="font-['Space_Grotesk'] uppercase tracking-widest text-[10px] text-on-surface-variant">Archivist Rank IV</p>
+</div>
+</div>
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary py-2 px-4 font-label font-bold uppercase tracking-widest text-xs active:brightness-125 transition-all mb-2" onclick="openUploadModal()">
+                    Enchant Item
+                </button>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center px-6 py-3 bg-[#393431] text-[#e9c176] border-l-2 border-[#e9c176] font-label text-xs tracking-widest uppercase transition-all duration-200" href="index.html">
+<span class="material-symbols-outlined mr-3" style="font-variation-settings: 'FILL' 1;">shield</span>
+                    The Armory
+                </a>
+<a class="flex items-center px-6 py-3 text-[#dac3a2] hover:bg-[#393431]/30 hover:pl-8 font-label text-xs tracking-widest uppercase transition-all duration-200" href="ancient_decree_scroll_draft.html">
+<span class="material-symbols-outlined mr-3">auto_fix_high</span>
+                    Ancient Runes
+                </a>
+<a class="flex items-center px-6 py-3 text-[#dac3a2] hover:bg-[#393431]/30 hover:pl-8 font-label text-xs tracking-widest uppercase transition-all duration-200" href="registry_of_imperial_decrees.html">
+<span class="material-symbols-outlined mr-3">history_edu</span>
+                    Quest Logs
+                </a>
+<a class="flex items-center px-6 py-3 text-[#dac3a2] hover:bg-[#393431]/30 hover:pl-8 font-label text-xs tracking-widest uppercase transition-all duration-200" href="pets_collection_interactive_prototype.html">
+<span class="material-symbols-outlined mr-3">pets</span>
+                    Bestiary
+                </a>
+<a class="flex items-center px-6 py-3 text-[#dac3a2] hover:bg-[#393431]/30 hover:pl-8 font-label text-xs tracking-widest uppercase transition-all duration-200" href="index.html">
+<span class="material-symbols-outlined mr-3">view_in_ar</span>
+                    Pipeline Docs
+                </a>
+<a class="flex items-center px-6 py-3 text-[#dac3a2] hover:bg-[#393431]/30 hover:pl-8 font-label text-xs tracking-widest uppercase transition-all duration-200" href="runic_laws_imperial_archives.html">
+<span class="material-symbols-outlined mr-3">lock</span>
+                    The Vault
+                </a>
+</nav>
+<div class="px-6 pt-8 space-y-1 mt-auto">
+<a class="flex items-center py-2 text-[#dac3a2] hover:text-[#e9c176] font-label text-[10px] tracking-widest uppercase transition-all" href="scholar_s_guide_support.html">
+<span class="material-symbols-outlined text-sm mr-2">help</span> Support
+                </a>
+<a class="flex items-center py-2 text-[#dac3a2] hover:text-[#e9c176] font-label text-[10px] tracking-widest uppercase transition-all" href="index.html">
+<span class="material-symbols-outlined text-sm mr-2">logout</span> Exit
+                </a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto p-8 md:p-12 scroll-smooth">
+<header class="mb-12 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+<div>
+<div class="flex items-center space-x-2 mb-2">
+<span class="material-symbols-outlined text-primary/50 text-sm">precision_manufacturing</span>
+<p class="font-label text-[10px] uppercase tracking-widest text-primary/70">Tiered 3D Asset Pipeline Active</p>
+</div>
+<h1 class="font-headline text-5xl md:text-6xl italic text-primary mb-2 opacity-90">The Sword Gallery</h1>
+<div class="h-px w-32 bg-gradient-to-r from-primary to-transparent mb-6"></div>
+<p class="max-w-2xl font-body text-on-surface-variant text-lg italic">
+                        "Each blade, bow, and stitch of cloth armor is a story forged in blood and tempered by the whispers of the ancients. Manage the armory's legacy—from heavy plate to Stoffrüstung—with full LOD support."
+                    </p>
+</div>
+<div class="flex flex-col gap-3">
+<button class="flex-shrink-0 flex items-center justify-center space-x-3 bg-primary text-on-primary px-6 py-4 font-label font-bold uppercase tracking-widest text-sm hover:brightness-110 transition-all duration-300 group shadow-lg shadow-black/40">
+<span class="material-symbols-outlined text-xl group-hover:rotate-90 transition-transform duration-500">add_to_photos</span>
+<span>Bulk LOD Upload</span>
+</button>
+<p class="text-[9px] font-label text-on-surface-variant uppercase tracking-widest text-center">Accepts: GLB, FBX, USD, Unity</p>
+</div>
+</header>
+<!-- Pipeline Status Bar -->
+<div class="mb-8 p-4 bg-surface-container-low border border-outline-variant/20 flex flex-wrap items-center gap-8">
+<div class="flex items-center space-x-3">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-surface-container-highest flex items-center justify-center text-[10px] font-bold text-tertiary">HI</div>
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-surface-container-highest flex items-center justify-center text-[10px] font-bold text-primary">MD</div>
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-surface-container-highest flex items-center justify-center text-[10px] font-bold text-on-surface-variant">LO</div>
+</div>
+<p class="font-label text-xs uppercase tracking-widest">3-Tier LOD Management</p>
+</div>
+<div class="h-8 w-px bg-outline-variant/30 hidden md:block"></div>
+<div class="flex items-center space-x-4">
+<span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Formats:</span>
+<div class="flex gap-2">
+<span class="px-2 py-0.5 bg-surface-container text-[10px] font-bold border border-outline-variant/10">GLB</span>
+<span class="px-2 py-0.5 bg-surface-container text-[10px] font-bold border border-outline-variant/10">FBX</span>
+<span class="px-2 py-0.5 bg-surface-container text-[10px] font-bold border border-outline-variant/10">USD</span>
+<span class="px-2 py-0.5 bg-surface-container text-[10px] font-bold border border-outline-variant/10">Unity</span>
+</div>
+</div>
+</div>
+<!-- Blade Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6 mb-24">
+<!-- Item: Shattered Obsidian Blade -->
+<div class="group relative bg-surface-container border border-outline-variant/10 p-4 transition-all hover:bg-surface-container-high flex flex-col">
+<div class="aspect-[1/1] mb-4 bg-surface-container-lowest flex items-center justify-center relative overflow-hidden border border-outline-variant/5">
+<img class="w-full h-full object-contain mix-blend-lighten grayscale group-hover:grayscale-0 transition-all duration-500 scale-90 group-hover:scale-95" data-alt="a shattered fantasy sword made of dark volcanic obsidian with glowing purple cracks and floating fragments of glass" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEW8bUbIdacAhMvE-u9XD-KhCaDvAW0BwapjyOZjrn_KLSgfUxd-Lcb-rs0gW9s9hBdmGCMDkmGxDL9f4-4M6frkejW7Fy8nMIEiBncDusc42yTUgZO60Sa-9N9aMqM5XKaquq8cB1wN7fqtIDMMCF5KwUPmhBNAq9QWh3yCe4IFPUd0QHTL1ObiJbwlN3iO1e6qMEMhvZB6nHmxmpg9-8kxWiCevTiETd7bw1_nqlU2T5CC575yhg4UHT5ZKeQEnMuAKg49AtynU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 to-transparent"></div>
+<div class="absolute top-2 left-2 flex gap-1">
+<span class="w-2 h-2 rounded-full bg-tertiary" title="High LOD Ready"></span>
+<span class="w-2 h-2 rounded-full bg-primary" title="Med LOD Ready"></span>
+<span class="w-2 h-2 rounded-full bg-outline-variant" title="Low LOD Missing"></span>
+</div>
+</div>
+<div class="flex-1">
+<h3 class="font-headline text-primary text-lg leading-tight mb-1">Shattered Obsidian Blade</h3>
+<p class="font-label text-[10px] text-tertiary tracking-widest uppercase mb-4">Legendary Tier</p>
+</div>
+<div class="grid grid-cols-2 gap-2 mt-auto">
+<button class="flex items-center justify-center space-x-1 py-2 text-[10px] font-label uppercase tracking-widest bg-surface-container-highest border border-outline-variant/20 hover:border-primary transition-colors text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined text-sm">edit</span>
+<span>Manage Assets</span>
+</button>
+<button class="flex items-center justify-center space-x-1 py-2 text-[10px] font-label uppercase tracking-widest bg-surface-container-highest border border-outline-variant/20 hover:border-tertiary transition-colors text-on-surface-variant hover:text-tertiary">
+<span class="material-symbols-outlined text-sm">3d_rotation</span>
+<span>Export (GLB)</span>
+</button>
+</div>
+</div>
+<!-- Item: Holy Avenger -->
+<div class="group relative bg-surface-container border border-outline-variant/10 p-4 transition-all hover:bg-surface-container-high flex flex-col">
+<div class="aspect-[1/1] mb-4 bg-surface-container-lowest flex items-center justify-center relative overflow-hidden border border-outline-variant/5">
+<img class="w-full h-full object-contain grayscale brightness-125 group-hover:grayscale-0 transition-all duration-500 scale-90 group-hover:scale-95" data-alt="a majestic gold and silver broadsword with a cross-shaped hilt, glowing with divine white light and angelic wing motifs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDI5KmROXPFjm7odo54Izc8pqO3HfUtNQHNy-HG5laaEgt-NH_hwYg7Tm1xGRor6awS_Cy5aoJtI3p4eLi8b8dXbNleGPdp-TNeITD_7rOJVIdJJN0cHa5Co6RDaPmqieg5if-kyaqmhES6YeOIr3NdCnodIxbt73LL9ZcHYDtUaofdrDgECFZpgLK2mxCtDuaTjE0n5X77xf88-zS1nheFJefKAvf3O8SlrV3nJBzwQPCvGWg9GYkQ2xPL-2mdjKhZfUPoku4J0X8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 to-transparent"></div>
+<div class="absolute top-2 left-2 flex gap-1">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="w-2 h-2 rounded-full bg-on-surface-variant/40"></span>
+</div>
+</div>
+<div class="flex-1">
+<h3 class="font-headline text-primary text-lg leading-tight mb-1">Holy Avenger</h3>
+<p class="font-label text-[10px] text-primary-fixed tracking-widest uppercase mb-4">Divine Relic</p>
+</div>
+<div class="grid grid-cols-2 gap-2 mt-auto">
+<button class="flex items-center justify-center space-x-1 py-2 text-[10px] font-label uppercase tracking-widest bg-surface-container-highest border border-outline-variant/20 hover:border-primary transition-colors text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined text-sm">edit</span>
+<span>Manage Assets</span>
+</button>
+<button class="flex items-center justify-center space-x-1 py-2 text-[10px] font-label uppercase tracking-widest bg-surface-container-highest border border-outline-variant/20 hover:border-tertiary transition-colors text-on-surface-variant hover:text-tertiary">
+<span class="material-symbols-outlined text-sm">3d_rotation</span>
+<span>Export (USD)</span>
+</button>
+</div>
+</div>
+<!-- Item: Ancient Runeblade -->
+<div class="group relative bg-surface-container border border-outline-variant/10 p-4 transition-all hover:bg-surface-container-high flex flex-col">
+<div class="aspect-[1/1] mb-4 bg-surface-container-lowest flex items-center justify-center relative overflow-hidden border border-outline-variant/5">
+<img class="w-full h-full object-contain grayscale brightness-75 group-hover:grayscale-0 transition-all duration-500 scale-90 group-hover:scale-95" data-alt="a longsword with glowing blue norse runes etched into the steel blade, leather wrapped hilt with a heavy iron pommel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgr67dlJYPsTDAkj74kum1BbQml-Ed0loYjheNljiyCNzsVsNGeQcW2ar9mnkhQT7pyx1FSo8aIH7hfSZhMF2-zJcae7JqAAGkrJQYXKfuv83dc3r9fKOYCKy3T-ITFoLOc2nYLkDozYe8_yXybw40VPpnZRI7j9STuGyTudnHy3l_en8php2cdkkJn0S2ofFQ47OwtzDfu0KgzoX2RIcjXhbvB1W1lQdx0rpsTKSvJtXIhi359QkV0CKZvfIADgtgm_1_u2etRr8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 to-transparent"></div>
+<div class="absolute bottom-2 right-2 h-2 w-2 bg-tertiary rounded-full shadow-[0_0_8px_#00dce5]"></div>
+<div class="absolute top-2 left-2 flex gap-1">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="w-2 h-2 rounded-full bg-on-surface-variant/40"></span>
+</div>
+</div>
+<div class="flex-1">
+<h3 class="font-headline text-primary text-lg leading-tight mb-1">Ancient Runeblade</h3>
+<p class="font-label text-[10px] text-tertiary-fixed-dim tracking-widest uppercase mb-4">Magical Artifact</p>
+</div>
+<div class="grid grid-cols-2 gap-2 mt-auto">
+<button class="flex items-center justify-center space-x-1 py-2 text-[10px] font-label uppercase tracking-widest bg-surface-container-highest border border-outline-variant/20 hover:border-primary transition-colors text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined text-sm">edit</span>
+<span>Manage Assets</span>
+</button>
+<button class="flex items-center justify-center space-x-1 py-2 text-[10px] font-label uppercase tracking-widest bg-surface-container-highest border border-outline-variant/20 hover:border-tertiary transition-colors text-on-surface-variant hover:text-tertiary">
+<span class="material-symbols-outlined text-sm">3d_rotation</span>
+<span>Export (FBX)</span>
+</button>
+</div>
+</div>
+<!-- Item: Damascus Steel Longsword -->
+<div class="group relative bg-surface-container border border-outline-variant/10 p-4 transition-all hover:bg-surface-container-high flex flex-col">
+<div class="aspect-[1/1] mb-4 bg-surface-container-lowest flex items-center justify-center relative overflow-hidden border border-outline-variant/5">
+<img class="w-full h-full object-contain mix-blend-screen brightness-90 grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="a high-fidelity 2D illustration of a Damascus steel blade with intricate wavy patterns and a silver filigree crossguard" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARVAQhqPiGt7aCASHvB3Iz9Lm7CMV_pVjyEZI2_uW59LOgz15m-_U2bC9vC2Jb3lMixiFCA5vQB5s4N8bb7hMKkFEffFjlEPl1_E10vCkzw21AhLGuYQlTioF2tBMNvyID_dpjsctsbTtQB7t20vsOBNFBy85x2TYfIAQ8Du7rE0-z_6ZyNSFPuFFGU6z9dDIM34G-CiWIf-JSyTNAP_atQBxSUfKLELnB6Lzt5UWawvk4TJVDdvpOE09ByIuH9MojCaCSR2IVlYU"/>
+<div class="absolute top-2 left-2 flex gap-1">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="w-2 h-2 rounded-full bg-on-surface-variant/40"></span>
+</div>
+</div>
+<div class="flex-1">
+<h3 class="font-headline text-primary text-lg leading-tight mb-1">Damascus Longsword</h3>
+<p class="font-label text-[10px] text-secondary tracking-widest uppercase mb-4">Masterwork</p>
+</div>
+<div class="grid grid-cols-2 gap-2 mt-auto">
+<button class="flex items-center justify-center space-x-1 py-2 text-[10px] font-label uppercase tracking-widest bg-surface-container-highest border border-outline-variant/20 hover:border-primary transition-colors text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined text-sm">edit</span>
+<span>Manage Assets</span>
+</button>
+<button class="flex items-center justify-center space-x-1 py-2 text-[10px] font-label uppercase tracking-widest bg-surface-container-highest border border-outline-variant/20 hover:border-tertiary transition-colors text-on-surface-variant hover:text-tertiary">
+<span class="material-symbols-outlined text-sm">3d_rotation</span>
+<span>Export (GLB)</span>
+</button>
+</div>
+</div>
+<!-- Item: Rusty Iron Scimitar -->
+<div class="group relative bg-surface-container border border-outline-variant/10 p-4 transition-all hover:bg-surface-container-high flex flex-col">
+<div class="aspect-[1/1] mb-4 bg-surface-container-lowest flex items-center justify-center relative overflow-hidden border border-outline-variant/5">
+<img class="w-full h-full object-contain brightness-50 contrast-125 grayscale group-hover:grayscale-0 transition-all duration-500 scale-90 group-hover:scale-95" data-alt="a worn and rusted curved iron scimitar with a jagged blade and tattered cloth wrappings on the handle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwlBMWaNfxZ2-Arr-GjKd2mOPFj2xZOAlwLPAu7LSzE3jkXdVHzQAqAwZrXyU6NBFQh5DZzGNe--Rb0tss5c_pxs4bZGT4DNcccaQ2TBtmp2J1jZ7ezrvybI5DF9zb1Au-rj4jBbk8z5jE0lfWA_XOm2MjwzEtxctkkK6W2d6DgFPVPDP90slwyg_g5BF4oXrYBiJINGIEfizuV-ueCQacW27kUiYXnPf2RrTnB_eqsJfxKjtt5aHnwwlAgDJ9AQdfIeOqGcXMTGs"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 to-transparent"></div>
+<div class="absolute top-2 left-2 flex gap-1">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="w-2 h-2 rounded-full bg-on-surface-variant/40"></span>
+</div>
+</div>
+<div class="flex-1">
+<h3 class="font-headline text-primary text-lg leading-tight mb-1">Rusty Iron Scimitar</h3>
+<p class="font-label text-[10px] text-on-surface-variant tracking-widest uppercase mb-4">Common Grade</p>
+</div>
+<div class="grid grid-cols-2 gap-2 mt-auto">
+<button class="flex items-center justify-center space-x-1 py-2 text-[10px] font-label uppercase tracking-widest bg-surface-container-highest border border-outline-variant/20 hover:border-primary transition-colors text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined text-sm">edit</span>
+<span>Manage Assets</span>
+</button>
+<button class="flex items-center justify-center space-x-1 py-2 text-[10px] font-label uppercase tracking-widest bg-surface-container-highest border border-outline-variant/20 hover:border-tertiary transition-colors text-on-surface-variant hover:text-tertiary">
+<span class="material-symbols-outlined text-sm">3d_rotation</span>
+<span>Export (FBX)</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center h-16 px-4 bg-[#161311]/95 backdrop-blur-md z-50 border-t border-[#54433a]/30 shadow-[0_-8px_20px_rgba(0,0,0,0.8)]">
+<button class="flex flex-col items-center justify-center text-[#e9c176] scale-110 active:scale-90 duration-150" onclick="window.location.href='index.html'">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold">Manage</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#dac3a2]/60 hover:text-[#00dce5] transition-colors active:scale-90 duration-150">
+<span class="material-symbols-outlined">upload_file</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold">LOD Upload</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#dac3a2]/60 hover:text-[#00dce5] transition-colors active:scale-90 duration-150" onclick="window.location.href='sword_category_management.html'">
+<span class="material-symbols-outlined">category</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold">Category</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#dac3a2]/60 hover:text-[#00dce5] transition-colors active:scale-90 duration-150">
+<span class="material-symbols-outlined">view_in_ar</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold">Pipeline</span>
+</button>
+</nav>
+<script src="catalog.js"></script></body></html>

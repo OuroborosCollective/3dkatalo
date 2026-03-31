@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Master's Ledger | Two-Handed Axe Collection</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,700;1,400;1,700&amp;family=Work+Sans:wght@300;400;500&amp;family=Space+Grotesk:wght@300;400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-dim": "#161311",
+              "surface-container-low": "#1f1b19",
+              "on-primary-fixed-variant": "#5d4201",
+              "on-secondary-fixed-variant": "#54442b",
+              "on-tertiary-fixed": "#002021",
+              "inverse-surface": "#eae1dd",
+              "on-tertiary-fixed-variant": "#004f53",
+              "tertiary-fixed": "#63f7ff",
+              "on-secondary-fixed": "#251904",
+              "on-primary": "#412d00",
+              "tertiary-container": "#006266",
+              "surface-bright": "#3d3836",
+              "tertiary": "#00dce5",
+              "on-surface": "#eae1dd",
+              "outline": "#a28c81",
+              "surface-container-lowest": "#110d0c",
+              "surface": "#161311",
+              "secondary-fixed-dim": "#dac3a2",
+              "on-secondary-container": "#ccb594",
+              "tertiary-fixed-dim": "#00dce5",
+              "surface-container": "#231f1d",
+              "inverse-on-surface": "#342f2d",
+              "surface-container-high": "#2e2927",
+              "surface-container-highest": "#393431",
+              "secondary-fixed": "#f7dfbc",
+              "primary-fixed": "#ffdea5",
+              "on-surface-variant": "#dac2b6",
+              "primary-container": "#715313",
+              "outline-variant": "#54433a",
+              "error": "#ffb4ab",
+              "secondary": "#dac3a2",
+              "inverse-primary": "#775a19",
+              "surface-tint": "#e9c176",
+              "primary-fixed-dim": "#e9c176",
+              "on-error-container": "#ffdad6",
+              "on-tertiary-container": "#00e5ee",
+              "on-background": "#eae1dd",
+              "secondary-container": "#57472d",
+              "on-primary-container": "#f2c97e",
+              "on-secondary": "#3c2e16",
+              "error-container": "#93000a",
+              "surface-variant": "#393431",
+              "primary": "#e9c176",
+              "on-primary-fixed": "#261900",
+              "on-tertiary": "#003739",
+              "on-error": "#690005",
+              "background": "#161311",
+              "surface-container-high": "#2e2927"
+            },
+            fontFamily: {
+              "headline": ["Newsreader", "serif"],
+              "body": ["Work Sans", "sans-serif"],
+              "label": ["Space Grotesk", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        background-color: #161311;
+        color: #eae1dd;
+        font-family: 'Work Sans', sans-serif;
+      }
+      .runic-header::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(to right, #e9c176, transparent);
+        margin-top: 0.5rem;
+      }
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 4px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: #110d0c;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #393431;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: #e9c176;
+      }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary/30">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-20 bg-[#161311] border-none shadow-none">
+<div class="flex items-center gap-4">
+<span class="text-2xl font-serif italic text-[#e9c176] font-['Newsreader'] tracking-tight">The Master's Ledger</span>
+</div>
+<div class="flex items-center gap-8">
+<nav class="hidden md:flex items-center gap-6 font-label uppercase tracking-widest text-xs">
+<a class="text-[#e9c176] border-b-2 border-[#e9c176] py-1 transition-colors duration-300" href="index.html">Catalog</a>
+<a class="text-[#dac3a2] hover:text-[#00dce5] transition-colors duration-300 py-1" href="registry_of_imperial_decrees.html">Archives</a>
+<a class="text-[#dac3a2] hover:text-[#00dce5] transition-colors duration-300 py-1" href="index.html">Submissions</a>
+</nav>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary font-label px-6 py-2 uppercase tracking-widest text-xs font-bold active:scale-95 transition-transform">
+                Bulk LOD Upload
+            </button>
+</div>
+</header>
+<!-- Side Navigation Bar -->
+<aside class="fixed left-0 top-0 h-full w-72 flex flex-col py-8 bg-[#231f1d] z-40 pt-24 shadow-none">
+<div class="px-8 mb-10">
+<h2 class="font-['Newsreader'] text-[#e9c176] text-xl leading-none">Armory Archives</h2>
+<p class="font-label uppercase tracking-widest text-[10px] text-[#dac3a2] opacity-60 mt-2">High-Stakes Artifacts</p>
+</div>
+<nav class="flex-grow flex flex-col gap-1">
+<!-- Two-Handed Axes (Active) -->
+<div class="group relative bg-[#393431] text-[#e9c176] shadow-[inset_0_0_10px_rgba(0,220,229,0.1)] px-8 py-4 flex items-center gap-4 cursor-pointer transition-all duration-150 border-r-4 border-tertiary">
+<span class="material-symbols-outlined text-lg" data-icon="handyman">handyman</span>
+<span class="font-label uppercase tracking-widest text-xs">Two-Handed Axes</span>
+</div>
+<div class="group px-8 py-4 flex items-center gap-4 text-[#dac3a2] opacity-70 hover:bg-[#393431] hover:text-[#00dce5] hover:opacity-100 cursor-pointer transition-all duration-150">
+<span class="material-symbols-outlined text-lg" data-icon="swords">swords</span>
+<span class="font-label uppercase tracking-widest text-xs">One-Handed Swords</span>
+</div>
+<div class="group px-8 py-4 flex items-center gap-4 text-[#dac3a2] opacity-70 hover:bg-[#393431] hover:text-[#00dce5] hover:opacity-100 cursor-pointer transition-all duration-150">
+<span class="material-symbols-outlined text-lg" data-icon="architecture">architecture</span>
+<span class="font-label uppercase tracking-widest text-xs">Polearms</span>
+</div>
+<div class="group px-8 py-4 flex items-center gap-4 text-[#dac3a2] opacity-70 hover:bg-[#393431] hover:text-[#00dce5] hover:opacity-100 cursor-pointer transition-all duration-150">
+<span class="material-symbols-outlined text-lg" data-icon="shield">shield</span>
+<span class="font-label uppercase tracking-widest text-xs">Plate Armor</span>
+</div>
+<div class="group px-8 py-4 flex items-center gap-4 text-[#dac3a2] opacity-70 hover:bg-[#393431] hover:text-[#00dce5] hover:opacity-100 cursor-pointer transition-all duration-150">
+<span class="material-symbols-outlined text-lg" data-icon="apparel">apparel</span>
+<span class="font-label uppercase tracking-widest text-xs">Leather Garb</span>
+</div>
+</nav>
+<div class="px-8 mt-auto pt-8 border-t border-outline-variant/10">
+<div class="group py-4 flex items-center gap-4 text-[#dac3a2] opacity-70 hover:text-tertiary cursor-pointer transition-all duration-150">
+<span class="material-symbols-outlined text-lg" data-icon="terminal">terminal</span>
+<span class="font-label uppercase tracking-widest text-xs">Machine Readout</span>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-72 pt-28 px-10 pb-20 bg-surface min-h-screen">
+<!-- Header Section -->
+<header class="mb-12 max-w-5xl">
+<h1 class="font-headline text-5xl text-primary tracking-tight runic-header mb-4">Two-Handed Axes Collection (Multi-Tier 3D)</h1>
+<p class="font-body text-on-surface-variant text-lg max-w-2xl leading-relaxed">
+                A masterwork archive of 30 heavy-duty battleaxes and executioner blades, prepared for high-fidelity 3D pipelines.
+            </p>
+</header>
+<!-- Stats / Filter Bar (Asymmetric) -->
+<div class="flex flex-wrap items-end gap-8 mb-12 font-label uppercase text-[10px] tracking-widest border-l-2 border-primary-container pl-6 py-2">
+<div>
+<span class="text-on-surface-variant block mb-1">Total Artifacts</span>
+<span class="text-primary text-xl font-bold">30 / 150</span>
+</div>
+<div>
+<span class="text-on-surface-variant block mb-1">Pipeline Status</span>
+<span class="text-tertiary text-xl font-bold italic">OPTIMIZED</span>
+</div>
+<div>
+<span class="text-on-surface-variant block mb-1">Active Batch</span>
+<span class="text-on-surface text-xl font-bold">AXE-GOTHIC-Q4</span>
+</div>
+<div class="ml-auto flex gap-4">
+<button class="bg-surface-container-high px-4 py-2 hover:bg-surface-container-highest transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="filter_list">filter_list</span>
+                    Filter
+                </button>
+<button class="bg-surface-container-high px-4 py-2 hover:bg-surface-container-highest transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="sort">sort</span>
+                    Sort by Weight
+                </button>
+</div>
+</div>
+<!-- Inventory Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+<!-- Item Card 1 -->
+<div class="bg-surface-container group relative overflow-hidden flex flex-col transition-all duration-300 hover:translate-y-[-4px]">
+<div class="aspect-square bg-surface-container-low relative overflow-hidden p-6 group-hover:bg-surface-container-high transition-colors">
+<img alt="Blood-Caked Greataxe" class="w-full h-full object-contain filter drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)] transition-transform duration-500 group-hover:scale-110" data-alt="Intricately detailed 2D fantasy concept art of a blood-caked greataxe with heavy notches and dark iron textures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4O3nYnCIUB8W9a5dMJy8Evt6vxhj1uOmbZ38JKNLn0mU8M7Fi19eQ913o9ZJCuelnxGGN1-ilKDzx-6ML--hqDBia2ERVj6oyWe9qpCOuv7QPR45TGgGbahbSdKC9KBoDRUs0wb35niAghM6SocA_6N7YvRAgdDaDydqRI7e1VGe2ry-cj_taV_rj9IGq_UXDQIsU45NVfS8dKHh2PH39c_vkJtl7oQa3wY29imXHhrG9fQQv27euhqmIetozmpgSN2x8MwpU7Io"/>
+<div class="absolute top-4 right-4 bg-tertiary/10 border border-tertiary/20 px-2 py-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[10px] text-tertiary" data-icon="link" data-weight="fill">link</span>
+<span class="font-label text-[10px] text-tertiary tracking-widest uppercase">3D Model Linked</span>
+</div>
+</div>
+<div class="p-6 flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<h3 class="font-headline text-xl text-secondary">Blood-Caked Greataxe</h3>
+<span class="font-label text-[10px] text-on-surface-variant opacity-60">#AXE-001</span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-2">
+<span class="font-label text-[9px] uppercase tracking-widest text-on-surface-variant">LOD Control</span>
+<div class="flex bg-surface-container-lowest p-1">
+<button class="flex-1 text-[10px] py-1 bg-primary text-on-primary font-bold font-label">HI</button>
+<button class="flex-1 text-[10px] py-1 text-on-surface-variant font-label hover:text-primary transition-colors">MD</button>
+<button class="flex-1 text-[10px] py-1 text-on-surface-variant font-label hover:text-primary transition-colors">LO</button>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-label text-[9px] uppercase tracking-widest text-on-surface-variant">Export Core</span>
+<div class="grid grid-cols-2 gap-1">
+<button class="bg-surface-container-highest py-1 text-[9px] font-label hover:bg-tertiary/20 hover:text-tertiary transition-all">GLB</button>
+<button class="bg-surface-container-highest py-1 text-[9px] font-label hover:bg-tertiary/20 hover:text-tertiary transition-all">FBX</button>
+</div>
+</div>
+</div>
+<div class="flex gap-2 mt-2">
+<button class="flex-1 bg-surface-container-highest border border-outline-variant/20 py-2 font-label text-[10px] uppercase tracking-widest hover:border-primary/40 transition-all">Unity</button>
+<button class="flex-1 bg-surface-container-highest border border-outline-variant/20 py-2 font-label text-[10px] uppercase tracking-widest hover:border-primary/40 transition-all">USD</button>
+</div>
+</div>
+</div>
+<!-- Item Card 2 -->
+<div class="bg-surface-container group relative overflow-hidden flex flex-col transition-all duration-300 hover:translate-y-[-4px]">
+<div class="aspect-square bg-surface-container-low relative overflow-hidden p-6 group-hover:bg-surface-container-high transition-colors">
+<img alt="Runic Double-Head" class="w-full h-full object-contain filter drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)] transition-transform duration-500 group-hover:scale-110" data-alt="Fantasy two-headed battleaxe with glowing turquoise runes etched into dark obsidian steel, cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCa7OL0dihcT5A7krTnU59B_QW5_hRVoUKTJutUaR7gnpUNRVJSHVrB7KINYQxdkq82vUWxrEaHsg5bB1Ui-B3s3YwhpeMjTN6Jt_5q0IYYpIPmcqwYdzoiyIod31aw1_rinN5BXxVRRF_xQ2pyfSyIyyPKQ1Q5S4fO7Po5xRsUfrotI0I4GyRz9A9PiSthIh0BRHqjdL3IBFS9U0tZhrAQtYZR7YME44gESa6T0uiApCckZUXtPzHUNGnYC4qDf5wsg94veAnVJYg"/>
+<div class="absolute top-4 right-4 bg-tertiary/10 border border-tertiary/20 px-2 py-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[10px] text-tertiary" data-icon="link" data-weight="fill">link</span>
+<span class="font-label text-[10px] text-tertiary tracking-widest uppercase">3D Model Linked</span>
+</div>
+</div>
+<div class="p-6 flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<h3 class="font-headline text-xl text-secondary">Runic Double-Head</h3>
+<span class="font-label text-[10px] text-on-surface-variant opacity-60">#AXE-002</span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-2">
+<span class="font-label text-[9px] uppercase tracking-widest text-on-surface-variant">LOD Control</span>
+<div class="flex bg-surface-container-lowest p-1">
+<button class="flex-1 text-[10px] py-1 text-on-surface-variant font-label hover:text-primary transition-colors">HI</button>
+<button class="flex-1 text-[10px] py-1 bg-primary text-on-primary font-bold font-label">MD</button>
+<button class="flex-1 text-[10px] py-1 text-on-surface-variant font-label hover:text-primary transition-colors">LO</button>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-label text-[9px] uppercase tracking-widest text-on-surface-variant">Export Core</span>
+<div class="grid grid-cols-2 gap-1">
+<button class="bg-surface-container-highest py-1 text-[9px] font-label hover:bg-tertiary/20 hover:text-tertiary transition-all">GLB</button>
+<button class="bg-surface-container-highest py-1 text-[9px] font-label hover:bg-tertiary/20 hover:text-tertiary transition-all">FBX</button>
+</div>
+</div>
+</div>
+<div class="flex gap-2 mt-2">
+<button class="flex-1 bg-surface-container-highest border border-outline-variant/20 py-2 font-label text-[10px] uppercase tracking-widest hover:border-primary/40 transition-all">Unity</button>
+<button class="flex-1 bg-surface-container-highest border border-outline-variant/20 py-2 font-label text-[10px] uppercase tracking-widest hover:border-primary/40 transition-all">USD</button>
+</div>
+</div>
+</div>
+<!-- Item Card 3 -->
+<div class="bg-surface-container group relative overflow-hidden flex flex-col transition-all duration-300 hover:translate-y-[-4px]">
+<div class="aspect-square bg-surface-container-low relative overflow-hidden p-6 group-hover:bg-surface-container-high transition-colors">
+<img alt="Executioner's Mercy" class="w-full h-full object-contain filter drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)] transition-transform duration-500 group-hover:scale-110" data-alt="Clean, elegant but heavy executioner's axe with polished silver edge and dark leather wrapped handle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDu86ESjztOXudCDSbqun88lzwKf8FIQAvJbaCmtlLiM1qQtsxgBgBx_HBKaHIsEi_MXb8kItcqyGD-FoKgIhNXxgCEYVA8-h3dR5XfJR_EpEeIf78uqjDYv59jsRkggAWC-amKDWAp2yP7MkJnXR-MQhOSD5q8yIjqeIc_rM8sYyjzLsxtyUIacgiyoDGTIZxRk7m6HWKiHsOhD0UIafkbv1jBNq9lE2Y7qwlR73K-hVsSpBbKSWpkjOxSGRrJs0BGHp_Rp4N8FFc"/>
+<div class="absolute top-4 right-4 bg-primary-container/30 border border-primary/20 px-2 py-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[10px] text-primary" data-icon="pending">pending</span>
+<span class="font-label text-[10px] text-primary tracking-widest uppercase">Awaiting Bake</span>
+</div>
+</div>
+<div class="p-6 flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<h3 class="font-headline text-xl text-secondary">Executioner's Mercy</h3>
+<span class="font-label text-[10px] text-on-surface-variant opacity-60">#AXE-003</span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-2">
+<span class="font-label text-[9px] uppercase tracking-widest text-on-surface-variant">LOD Control</span>
+<div class="flex bg-surface-container-lowest p-1">
+<button class="flex-1 text-[10px] py-1 text-on-surface-variant font-label cursor-not-allowed opacity-30">HI</button>
+<button class="flex-1 text-[10px] py-1 text-on-surface-variant font-label cursor-not-allowed opacity-30">MD</button>
+<button class="flex-1 text-[10px] py-1 text-on-surface-variant font-label cursor-not-allowed opacity-30">LO</button>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-label text-[9px] uppercase tracking-widest text-on-surface-variant">Export Core</span>
+<div class="grid grid-cols-2 gap-1">
+<button class="bg-surface-container-highest py-1 text-[9px] font-label opacity-30 cursor-not-allowed">GLB</button>
+<button class="bg-surface-container-highest py-1 text-[9px] font-label opacity-30 cursor-not-allowed">FBX</button>
+</div>
+</div>
+</div>
+<div class="flex gap-2 mt-2">
+<button class="flex-1 bg-surface-container-highest border border-outline-variant/20 py-2 font-label text-[10px] uppercase tracking-widest hover:border-primary/40 transition-all">Unity</button>
+<button class="flex-1 bg-surface-container-highest border border-outline-variant/20 py-2 font-label text-[10px] uppercase tracking-widest hover:border-primary/40 transition-all">USD</button>
+</div>
+</div>
+</div>
+<!-- Repeat Pattern for items... generating more cards for density -->
+<!-- Placeholder Card 4 -->
+<div class="bg-surface-container group relative flex flex-col transition-all duration-300 hover:translate-y-[-4px]">
+<div class="aspect-square bg-surface-container-low relative overflow-hidden p-6 group-hover:bg-surface-container-high transition-colors">
+<img alt="Iron Thistle" class="w-full h-full object-contain filter drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)] transition-transform duration-500 group-hover:scale-110" data-alt="Ancient rusted axe head with iron spikes, discovered in a forest floor, high detail textures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwg2lbHKj6GZM93UeCMHEphWiSA5ms0qh7a3qXySYMo5DerkHs9Xl8TGcz_PiLm8OX8_uJck08y8JwK8OjkU_wksjTm-SH9UE6q2fn5I-4aAF2OEOeaySiUn2HSucFVMvkyw807AvI5NQE36uTKNi0AGmeVvPGzmG06u8GdSmsqTwDeiq0ssQ5gp6wtrw3MYHUzCyEJjwNOKJYfVEX8lZA_eHIa6xlnY4HJf23BIlQ5dwAuF9dDeHsdxeHlo3DEXVz0-ursRDIGvo"/>
+<div class="absolute top-4 right-4 bg-tertiary/10 border border-tertiary/20 px-2 py-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[10px] text-tertiary" data-icon="link" data-weight="fill">link</span>
+<span class="font-label text-[10px] text-tertiary tracking-widest uppercase">3D Model Linked</span>
+</div>
+</div>
+<div class="p-6 flex flex-col gap-4">
+<h3 class="font-headline text-xl text-secondary">Iron Thistle</h3>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex bg-surface-container-lowest p-1 col-span-2">
+<button class="flex-1 text-[10px] py-1 text-on-surface-variant font-label">HI</button>
+<button class="flex-1 text-[10px] py-1 text-on-surface-variant font-label">MD</button>
+<button class="flex-1 text-[10px] py-1 bg-primary text-on-primary font-bold font-label">LO</button>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 bg-surface-container-highest py-2 font-label text-[9px] uppercase hover:bg-tertiary/10 transition-colors">Export .FBX</button>
+</div>
+</div>
+</div>
+<!-- Placeholder Card 5 -->
+<div class="bg-surface-container group relative flex flex-col transition-all duration-300 hover:translate-y-[-4px]">
+<div class="aspect-square bg-surface-container-low relative p-6">
+<img alt="Sovereign Splitter" class="w-full h-full object-contain opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-700" data-alt="Broad-bladed executioner axe with gold filigree and dark handle, cinematic spotlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJ6XM56a9Gi8wufyWXbmEIER5YcbrjOmudIDnuMAnxMnoRASZFm8gT-VItHpZxDOjLWKCq7Hyp374Y--lPuGHNi2b6myvU1YKSemm-1-VnhJI6cNOdqtXv96C8Qy6_8GuMyXSsAMb2SrejEWT-juzbcC79AvDvl1KXHG1-QmLRKZiMtogfTQYFz28Xk9TWaKzjpJ2AvpDb7WVDUAHMwA5fsZNnwhtF6d28j2B_jTsvp-kB_5zDDTpyhMX13h4d8jOAoxG7BiI-J9Y"/>
+<div class="absolute inset-0 flex items-center justify-center bg-surface-dim/60">
+<span class="font-label text-[10px] uppercase tracking-[0.3em] text-primary bg-primary-container px-4 py-1">Concept Stage</span>
+</div>
+</div>
+<div class="p-6">
+<h3 class="font-headline text-xl text-secondary">Sovereign Splitter</h3>
+<p class="font-label text-[10px] text-on-surface-variant mt-2 uppercase tracking-widest">In Design Queue...</p>
+</div>
+</div>
+<!-- Placeholder Card 6 -->
+<div class="bg-surface-container group relative flex flex-col transition-all duration-300 hover:translate-y-[-4px]">
+<div class="aspect-square bg-surface-container-low relative overflow-hidden p-6 group-hover:bg-surface-container-high transition-colors">
+<img alt="Ethereal Cleaver" class="w-full h-full object-contain filter drop-shadow-[0_0_20px_rgba(0,220,229,0.3)]" data-alt="Axe with a blade made of glowing magical energy, ethereal trail, dark fantasy style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlELbLL9XjVx7nfOxV7trvnRxzqpiagljVP1bTERvNAKFTrtuZ8r666GpF9DgBwIVosYBe_DhxxAlBWXBkpss9kSn6GFdae61Gm2Y52fv1K_e_CruWkHzcor-XiTeK_oHkhEcrSpnosWH9-bmQF3XGMZX4TXbrkHWOEgkztUC58SBwJXCSYXJcetBLpa9Cs8c9JJp9LNG9jfH3Y6zap8NVZRzTM7LAtuK5Ph_qYCVWgYR1WtRkzfppXq2Cr3a9kK7K8fH_Hth74oU"/>
+<div class="absolute top-4 right-4 bg-tertiary/20 border border-tertiary px-2 py-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[10px] text-tertiary" data-icon="bolt" data-weight="fill">bolt</span>
+<span class="font-label text-[10px] text-tertiary tracking-widest uppercase">High Chroma FX</span>
+</div>
+</div>
+<div class="p-6 flex flex-col gap-4">
+<h3 class="font-headline text-xl text-secondary">Ethereal Cleaver</h3>
+<div class="flex gap-2">
+<button class="w-full bg-gradient-to-r from-tertiary/20 to-transparent border-l-2 border-tertiary py-2 px-4 font-label text-[10px] text-left uppercase tracking-widest">View Mesh Details</button>
+</div>
+</div>
+</div>
+<!-- Placeholder Card 7 to represent 30 items scale -->
+<div class="bg-surface-container flex flex-col p-6 items-center justify-center border-2 border-dashed border-outline-variant/10 min-h-[400px]">
+<span class="material-symbols-outlined text-4xl text-outline-variant/30 mb-4" data-icon="add_box">add_box</span>
+<span class="font-label text-xs uppercase tracking-[0.2em] text-outline-variant/50">Draft New Concept</span>
+</div>
+<!-- Generating many minimal grid items to show 30 item layout intent -->
+<div class="grid grid-cols-2 md:grid-cols-3 col-span-1 md:col-span-2 xl:col-span-2 gap-4">
+<div class="h-32 bg-surface-container-low flex items-center justify-center opacity-40 hover:opacity-100 transition-opacity">
+<span class="font-label text-[9px] uppercase tracking-widest">Axe-007</span>
+</div>
+<div class="h-32 bg-surface-container-low flex items-center justify-center opacity-40 hover:opacity-100 transition-opacity">
+<span class="font-label text-[9px] uppercase tracking-widest">Axe-008</span>
+</div>
+<div class="h-32 bg-surface-container-low flex items-center justify-center opacity-40 hover:opacity-100 transition-opacity">
+<span class="font-label text-[9px] uppercase tracking-widest">Axe-009</span>
+</div>
+<div class="h-32 bg-surface-container-low flex items-center justify-center opacity-40 hover:opacity-100 transition-opacity">
+<span class="font-label text-[9px] uppercase tracking-widest">Axe-010</span>
+</div>
+<div class="h-32 bg-surface-container-low flex items-center justify-center opacity-40 hover:opacity-100 transition-opacity">
+<span class="font-label text-[9px] uppercase tracking-widest">Axe-011</span>
+</div>
+<div class="h-32 bg-surface-container-low flex items-center justify-center opacity-40 hover:opacity-100 transition-opacity">
+<span class="font-label text-[9px] uppercase tracking-widest">Axe-012</span>
+</div>
+</div>
+</div>
+<!-- Footer / Machine Readout Display (Bento Section) -->
+<section class="mt-24 grid grid-cols-1 lg:grid-cols-4 gap-6">
+<div class="lg:col-span-3 bg-surface-container-lowest p-8 border-l border-primary/20">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-tertiary" data-icon="terminal">terminal</span>
+<h4 class="font-label text-xs uppercase tracking-widest text-secondary">Active Machine Readout : Session_774</h4>
+</div>
+<div class="font-label text-[11px] text-tertiary opacity-80 leading-relaxed font-mono space-y-1">
+<p>&gt; initializing artifact sync... [OK]</p>
+<p>&gt; scanning axecollection_main.db... found 30 entities.</p>
+<p>&gt; validating multi-tier 3D pipelines... HI/MD/LO detected for 12/30.</p>
+<p>&gt; sovereign_splitter.concept: pending master artist approval.</p>
+<p>&gt; bulk_lod_upload: standing by for payload...</p>
+<p class="animate-pulse">_</p>
+</div>
+</div>
+<div class="bg-surface-container p-8 flex flex-col justify-center items-center text-center">
+<span class="material-symbols-outlined text-4xl text-primary/20 mb-4" data-icon="model_training">model_training</span>
+<p class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Pipeline Training</p>
+<p class="font-headline text-2xl text-primary mt-2">88% Complete</p>
+</div>
+</section>
+</main>
+<!-- Floating Action Button (FAB) - Suppressed as per Task-Focused Page Intent -->
+<script src="catalog.js"></script></body></html>

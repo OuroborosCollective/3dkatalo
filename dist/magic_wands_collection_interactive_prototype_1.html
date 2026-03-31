@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Relics of Rune &amp; Iron | Magic Wands Collection</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,700;1,400&amp;family=Work+Sans:wght@400;500&amp;family=Space+Grotesk:wght@500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-container": "#ccb594",
+              "outline": "#a28c81",
+              "on-primary-fixed": "#261900",
+              "background": "#161311",
+              "surface-container": "#231f1d",
+              "error-container": "#93000a",
+              "surface": "#161311",
+              "on-tertiary-container": "#00e5ee",
+              "on-background": "#eae1dd",
+              "on-error-container": "#ffdad6",
+              "surface-bright": "#3d3836",
+              "secondary-container": "#57472d",
+              "primary-fixed-dim": "#e9c176",
+              "on-tertiary-fixed": "#002021",
+              "on-tertiary": "#003739",
+              "surface-container-low": "#1f1b19",
+              "on-secondary-fixed-variant": "#54442b",
+              "tertiary-container": "#006266",
+              "secondary-fixed": "#f7dfbc",
+              "inverse-primary": "#775a19",
+              "tertiary-fixed-dim": "#00dce5",
+              "surface-dim": "#161311",
+              "surface-variant": "#393431",
+              "surface-container-high": "#2e2927",
+              "primary-container": "#715313",
+              "on-primary-container": "#f2c97e",
+              "surface-container-highest": "#393431",
+              "surface-tint": "#e9c176",
+              "on-error": "#690005",
+              "primary": "#e9c176",
+              "on-surface-variant": "#dac2b6",
+              "tertiary-fixed": "#63f7ff",
+              "inverse-surface": "#eae1dd",
+              "secondary": "#dac3a2",
+              "on-secondary": "#3c2e16",
+              "inverse-on-surface": "#342f2d",
+              "error": "#ffb4ab",
+              "on-primary": "#412d00",
+              "surface-container-lowest": "#110d0c",
+              "on-tertiary-fixed-variant": "#004f53",
+              "primary-fixed": "#ffdea5",
+              "outline-variant": "#54433a",
+              "on-secondary-fixed": "#251904",
+              "on-primary-fixed-variant": "#5d4201",
+              "tertiary": "#00dce5",
+              "secondary-fixed-dim": "#dac3a2",
+              "on-surface": "#eae1dd"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Work Sans"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .runic-header-underline {
+            height: 2px;
+            background: linear-gradient(90deg, #e9c176 0%, transparent 100%);
+        }
+        body {
+            background-color: #161311;
+            color: #eae1dd;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #161311;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #393431;
+        }
+    </style>
+</head>
+<body class="font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- SideNavBar -->
+<aside class="flex flex-col fixed left-0 top-0 h-full z-40 bg-[#231f1d] dark:bg-stone-900 h-screen w-64 rounded-none shadow-none divide-y-0 bg-[#161311] border-r border-outline-variant/10">
+<div class="p-6">
+<h2 class="text-[#e9c176] font-bold uppercase tracking-widest font-label text-sm mb-1">The Master's Ledger</h2>
+<p class="text-secondary opacity-60 text-xs font-label">Catalog Management</p>
+</div>
+<nav class="flex-1 px-2 py-4 space-y-1 overflow-y-auto custom-scrollbar">
+<a class="flex items-center gap-3 bg-[#393431] text-[#e9c176] font-bold border-l-4 border-[#e9c176] px-4 py-3 transition-colors duration-200 active:translate-x-1" href="index.html">
+<span class="material-symbols-outlined" data-icon="swords">swords</span>
+<span class="font-headline text-lg">The Armory</span>
+</a>
+<a class="flex items-center gap-3 text-[#dac3a2] px-4 py-3 opacity-70 hover:bg-[#393431] hover:text-[#e9c176] transition-colors duration-200 active:translate-x-1" href="ancient_decree_scroll_draft.html">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-headline text-lg">Ancient Runes</span>
+</a>
+<a class="flex items-center gap-3 text-[#dac3a2] px-4 py-3 opacity-70 hover:bg-[#393431] hover:text-[#e9c176] transition-colors duration-200 active:translate-x-1" href="npc_collection_interactive_prototype.html">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+<span class="font-headline text-lg">NPCs</span>
+</a>
+<a class="flex items-center gap-3 text-[#dac3a2] px-4 py-3 opacity-70 hover:bg-[#393431] hover:text-[#e9c176] transition-colors duration-200 active:translate-x-1" href="pets_collection_interactive_prototype.html">
+<span class="material-symbols-outlined" data-icon="pets">pets</span>
+<span class="font-headline text-lg">Pets</span>
+</a>
+<a class="flex items-center gap-3 text-[#dac3a2] px-4 py-3 opacity-70 hover:bg-[#393431] hover:text-[#e9c176] transition-colors duration-200 active:translate-x-1" href="runic_laws_imperial_archives.html">
+<span class="material-symbols-outlined" data-icon="lock">lock</span>
+<span class="font-headline text-lg">The Vault</span>
+</a>
+<a class="flex items-center gap-3 text-[#dac3a2] px-4 py-3 opacity-70 hover:bg-[#393431] hover:text-[#e9c176] transition-colors duration-200 active:translate-x-1" href="index.html">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+<span class="font-headline text-lg">Machine Readout</span>
+</a>
+</nav>
+<div class="p-6 bg-[#161311] mt-auto">
+<div class="flex items-center gap-3 text-secondary-container">
+<div class="w-10 h-10 bg-surface-container-highest border border-outline-variant/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="account_circle">account_circle</span>
+</div>
+<div>
+<p class="text-xs font-label uppercase text-on-surface">The Grand Archivist</p>
+<p class="text-[10px] font-label text-secondary opacity-50">Level 99 Scribe</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Wrapper -->
+<div class="ml-64 flex flex-col min-h-screen">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-8 h-16 bg-[#161311] dark:bg-stone-950 sticky top-0 z-30 shadow-none border-b border-outline-variant/5">
+<div class="flex items-center gap-8">
+<h1 class="text-2xl font-serif italic text-[#e9c176] dark:text-amber-100 font-headline tracking-tighter">Relics of Rune &amp; Iron</h1>
+<nav class="hidden md:flex gap-6">
+<a class="text-[#e9c176] font-bold border-b-2 border-[#e9c176] py-1 transition-all font-headline" href="magic_wands_collection_interactive_prototype_1.html">Magic Wands</a>
+<a class="text-[#dac3a2] opacity-80 hover:text-[#e9c176] hover:bg-[#393431] px-2 py-1 transition-all font-headline" href="plate_armor_management_interactive_prototype.html">Plate Armor</a>
+<a class="text-[#dac3a2] opacity-80 hover:text-[#e9c176] hover:bg-[#393431] px-2 py-1 transition-all font-headline" href="index.html">Greatswords</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative group">
+<input class="bg-surface-container-lowest border-none text-on-surface placeholder:text-secondary/40 text-sm font-label focus:ring-1 focus:ring-primary w-64 px-4 py-2 transition-all" placeholder="Search the archives..." type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-2 text-secondary/40 text-sm" data-icon="search">search</span>
+</div>
+<button class="text-[#dac3a2] hover:text-[#e9c176] active:scale-95 duration-150 transition-all p-2" onclick="window.location.href='settings_archivist_preferences.html'">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<button class="text-[#dac3a2] hover:text-[#e9c176] active:scale-95 duration-150 transition-all p-2">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="p-8 flex-1">
+<div class="flex justify-between items-end mb-12">
+<div class="max-w-2xl">
+<h2 class="text-4xl md:text-5xl font-headline text-on-background mb-2">Magic Wands Gallery</h2>
+<div class="runic-header-underline mb-4"></div>
+<p class="text-secondary opacity-80 font-body text-lg leading-relaxed italic">
+                        A curated archive of 30 masterwork wand concepts, forged from gnarled elder wood, sentient crystals, and abyssal obsidian. Each relic hums with an ancient cadence of the long-lost Runic Era.
+                    </p>
+</div>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary font-label uppercase px-8 py-3 flex items-center gap-3 hover:brightness-110 active:scale-95 transition-all shadow-xl" onclick="openUploadModal()">
+<span class="material-symbols-outlined text-sm" data-icon="publish">publish</span>
+                    Upload New Concept
+                </button>
+</div>
+<!-- Grid of Wand Concept Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-8">
+<!-- Wand Card 1 -->
+<div class="bg-surface-container-low group relative border border-transparent hover:border-outline-variant/20 transition-all duration-300">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container-lowest relative">
+<img alt="Gnarled wand" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" data-alt="Intricate concept art of a gnarled elderberry wood magic wand wrapped in silver wire with a glowing amber tip, dark moody lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmLBE4r-kft1vf9RAdBhVqbRKeDwRv4hgNlhlCdx5Emun63YJgXbS-YGEMWWRcGNSKPHDnQN99zeejq2FX80fAIYus2uslDr_WrXDbegYnZEP8LWaTM2HxcxaJ888GIkregMSHPw92JuJD6uwfqCrLwRASeNxONXjZLoFywH5EXuw4chYh-IP8orcgjwHuOSrgibvaY2Yr7TkfZb3pdW18NhmaLKpemXFBGtDJw1Zc2Xdep1FlmlY-R6TI0cuhwdl234zxovuMA0U"/>
+<!-- Glassmorphism Overlay for Actions -->
+<div class="absolute inset-0 bg-surface-variant/20 backdrop-blur-[4px] opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary font-label text-xs uppercase py-3 mb-2 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="3d_rotation">3d_rotation</span>
+                                View 3D Model
+                            </button>
+<div class="flex gap-2">
+<button class="flex-1 bg-surface-container-highest text-secondary font-label text-[10px] uppercase py-2 flex items-center justify-center gap-1 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="edit">edit</span> Edit
+                                </button>
+<button class="flex-1 bg-surface-container-highest text-secondary font-label text-[10px] uppercase py-2 flex items-center justify-center gap-1 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="download">download</span> Export
+                                </button>
+</div>
+</div>
+</div>
+<div class="p-4 border-t border-outline-variant/10">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline text-lg text-primary tracking-tight">Whisper of the Elder</h3>
+<span class="font-label text-[10px] text-tertiary bg-tertiary-container/20 px-1">LEGENDARY</span>
+</div>
+<p class="font-label text-[10px] text-secondary/40 uppercase tracking-widest">Elderwood / Amber Core</p>
+</div>
+</div>
+<!-- Repeatable Wand Card Pattern (Cards 2-30 placeholder logic) -->
+<!-- Card 2: Obsidian -->
+<div class="bg-surface-container-low group relative border border-transparent hover:border-outline-variant/20 transition-all duration-300">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container-lowest relative">
+<img alt="Obsidian wand" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" data-alt="Sleek obsidian wand with glowing cyan runes carved into its surface, sharp edges, floating crystal shards around tip, cinematic fantasy art" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYZTNES5tBgvU8-22OBkAQfvLLuMW7KQ_cXAhmarJZl8IkW_Fxk_vr9P-o6cP3UHr1Rkvwsxgrxv1wlcf1nwT9JsvF05M0sr0CzYyE8l3QlrUzZH9o5_r_RCDlJPNdeR8Ud5dzz9YSEg_s5fC6YuuhtSGUgeihSVObRiqxnXafARSdTfKTueKjJuz0v0ETT8036paNubHO0EtYAi12q90yl03ZAmv1szLHfWbKb85lE_NjEAu9Bvks7EyvQSRjr7GKL5DOotgSnxI"/>
+<div class="absolute inset-0 bg-surface-variant/20 backdrop-blur-[4px] opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary font-label text-xs uppercase py-3 mb-2 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="3d_rotation">3d_rotation</span>
+                                View 3D Model
+                            </button>
+<div class="flex gap-2">
+<button class="flex-1 bg-surface-container-highest text-secondary font-label text-[10px] uppercase py-2 flex items-center justify-center gap-1 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="edit">edit</span> Edit
+                                </button>
+<button class="flex-1 bg-surface-container-highest text-secondary font-label text-[10px] uppercase py-2 flex items-center justify-center gap-1 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="download">download</span> Export
+                                </button>
+</div>
+</div>
+</div>
+<div class="p-4 border-t border-outline-variant/10">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline text-lg text-primary tracking-tight">Void-Glass Spire</h3>
+<span class="font-label text-[10px] text-tertiary bg-tertiary-container/20 px-1">MYTHIC</span>
+</div>
+<p class="font-label text-[10px] text-secondary/40 uppercase tracking-widest">Obsidian / Soul Fire Core</p>
+</div>
+</div>
+<!-- Card 3: Bone -->
+<div class="bg-surface-container-low group relative border border-transparent hover:border-outline-variant/20 transition-all duration-300">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container-lowest relative">
+<img alt="Bone wand" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" data-alt="Macabre magic wand made of bleached dragon bone, wrapped in tattered leather, emitting a faint green necrotic mist, dark fantasy style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNMBbFgB2t3pcEBSINrg370OjhnlT6eNBm6cSIHRdsSVIx3Nt0uAYMWxO4XrV9F6XO1QKaeWfS2AO8pszjqxAgnsXAA4RRNgI7I90AT0puFqpF8obnqEedpzvRYpHgm5WAin61d12p8iP_1GCu_pbzgS1YR9Rvs51kZo7KGFyb8ylfgBr4df6iSuqWrqRldcJr-zsKKb_fmel1RJ-3tAI8H0QdT_ZrulZAJ1K4lp-rWyIH8d1TxX8VEw-FkrQUQD2iVdss5Q-fWbE"/>
+<div class="absolute inset-0 bg-surface-variant/20 backdrop-blur-[4px] opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary font-label text-xs uppercase py-3 mb-2 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="3d_rotation">3d_rotation</span>
+                                View 3D Model
+                            </button>
+<div class="flex gap-2">
+<button class="flex-1 bg-surface-container-highest text-secondary font-label text-[10px] uppercase py-2 flex items-center justify-center gap-1 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="edit">edit</span> Edit
+                                </button>
+<button class="flex-1 bg-surface-container-highest text-secondary font-label text-[10px] uppercase py-2 flex items-center justify-center gap-1 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="download">download</span> Export
+                                </button>
+</div>
+</div>
+</div>
+<div class="p-4 border-t border-outline-variant/10">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline text-lg text-primary tracking-tight">The Carrion Reach</h3>
+<span class="font-label text-[10px] text-error bg-error-container/20 px-1">FORBIDDEN</span>
+</div>
+<p class="font-label text-[10px] text-secondary/40 uppercase tracking-widest">Dragon Bone / Necrotic Ash</p>
+</div>
+</div>
+<!-- Placeholder cards for the rest of 30 to demonstrate scale -->
+<!-- Use a mix of different themes for visual variety -->
+<div class="bg-surface-container-low group relative border border-transparent hover:border-outline-variant/20 transition-all duration-300">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container-lowest relative">
+<img alt="Crystal wand" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" data-alt="Pure white quartz crystal wand with floating gold rings around it, celestial glow, soft ethereal background, divine magic concept" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCehCruiE1UfPkUXe5XxsdmxSy0kn7GBfxlzh04WJAY8Rd8NIIPimk3MJJBqyoCdUD9tX4G-6n2u8Hq6vxVCLZ_4nE8yJRDxZrC_ArYmbiT611Zg0G02UwBUNzSmAa5vFvQNaK6U4xHiDqYRizDBDW1tdcwDr_7wtJwtHLZAk-cqbBZd1VNsXp3jD27fQrnAmiUkzr_Vk_BpX2_DQo9r-A_aGy1RX46tv883nUxq9anyV6luhY5tWJJEp6Sq0AdHq3HQPO5rRtVZpk"/>
+<div class="absolute inset-0 bg-surface-variant/20 backdrop-blur-[4px] opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary font-label text-xs uppercase py-3 mb-2 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="3d_rotation">3d_rotation</span>
+                                View 3D Model
+                            </button>
+<div class="flex gap-2">
+<button class="flex-1 bg-surface-container-highest text-secondary font-label text-[10px] uppercase py-2 flex items-center justify-center gap-1 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="edit">edit</span> Edit
+                                </button>
+<button class="flex-1 bg-surface-container-highest text-secondary font-label text-[10px] uppercase py-2 flex items-center justify-center gap-1 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="download">download</span> Export
+                                </button>
+</div>
+</div>
+</div>
+<div class="p-4 border-t border-outline-variant/10">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline text-lg text-primary tracking-tight">Astral Shard</h3>
+<span class="font-label text-[10px] text-secondary bg-secondary-container/20 px-1">RARE</span>
+</div>
+<p class="font-label text-[10px] text-secondary/40 uppercase tracking-widest">Pure Quartz / Starstone</p>
+</div>
+</div>
+<!-- Repeating generic pattern for demonstration (In a real app, these would be unique) -->
+<!-- Just showing 6 more to represent the grid layout -->
+<div class="bg-surface-container-low group relative border border-transparent hover:border-outline-variant/20 transition-all duration-300 opacity-80">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container-lowest relative">
+<div class="w-full h-full flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary opacity-20 text-6xl" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<div class="absolute inset-0 bg-surface-variant/20 backdrop-blur-[4px] opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary font-label text-xs uppercase py-3 mb-2">View 3D Model</button>
+</div>
+</div>
+<div class="p-4 border-t border-outline-variant/10">
+<h3 class="font-headline text-lg text-primary tracking-tight">Iron-Root Weaver</h3>
+<p class="font-label text-[10px] text-secondary/40 uppercase">Ironwood / Lodestone</p>
+</div>
+</div>
+<div class="bg-surface-container-low group relative border border-transparent hover:border-outline-variant/20 transition-all duration-300 opacity-80">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container-lowest relative">
+<div class="w-full h-full flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary opacity-20 text-6xl" data-icon="water_drop">water_drop</span>
+</div>
+<div class="absolute inset-0 bg-surface-variant/20 backdrop-blur-[4px] opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary font-label text-xs uppercase py-3 mb-2">View 3D Model</button>
+</div>
+</div>
+<div class="p-4 border-t border-outline-variant/10">
+<h3 class="font-headline text-lg text-primary tracking-tight">Serpent's Coil</h3>
+<p class="font-label text-[10px] text-secondary/40 uppercase">Coral / Pearl Core</p>
+</div>
+</div>
+<div class="bg-surface-container-low group relative border border-transparent hover:border-outline-variant/20 transition-all duration-300 opacity-80">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container-lowest relative">
+<div class="w-full h-full flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary opacity-20 text-6xl" data-icon="local_fire_department">local_fire_department</span>
+</div>
+<div class="absolute inset-0 bg-surface-variant/20 backdrop-blur-[4px] opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary font-label text-xs uppercase py-3 mb-2">View 3D Model</button>
+</div>
+</div>
+<div class="p-4 border-t border-outline-variant/10">
+<h3 class="font-headline text-lg text-primary tracking-tight">Ember Flare</h3>
+<p class="font-label text-[10px] text-secondary/40 uppercase">Cured Oak / Fire Opal</p>
+</div>
+</div>
+<!-- Add more cards to fill grid visually -->
+<div class="bg-surface-container-low group relative border border-transparent hover:border-outline-variant/20 transition-all duration-300 opacity-80">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container-lowest relative">
+<div class="w-full h-full flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary opacity-20 text-6xl" data-icon="diamond">diamond</span>
+</div>
+<div class="absolute inset-0 bg-surface-variant/20 backdrop-blur-[4px] opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary font-label text-xs uppercase py-3 mb-2">View 3D Model</button>
+</div>
+</div>
+<div class="p-4 border-t border-outline-variant/10">
+<h3 class="font-headline text-lg text-primary tracking-tight">Frost-Byte Wand</h3>
+<p class="font-label text-[10px] text-secondary/40 uppercase">Glace-wood / Sapphire</p>
+</div>
+</div>
+<div class="bg-surface-container-low group relative border border-transparent hover:border-outline-variant/20 transition-all duration-300 opacity-80">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container-lowest relative">
+<div class="w-full h-full flex items-center justify-center text-primary/20">
+<span class="material-symbols-outlined text-6xl" data-icon="eco">eco</span>
+</div>
+<div class="absolute inset-0 bg-surface-variant/20 backdrop-blur-[4px] opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary font-label text-xs uppercase py-3 mb-2">View 3D Model</button>
+</div>
+</div>
+<div class="p-4 border-t border-outline-variant/10">
+<h3 class="font-headline text-lg text-primary tracking-tight">Nature's Conduit</h3>
+<p class="font-label text-[10px] text-secondary/40 uppercase">Living Ivy / Jade</p>
+</div>
+</div>
+<div class="bg-surface-container-low group relative border border-transparent hover:border-outline-variant/20 transition-all duration-300 opacity-80">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container-lowest relative">
+<div class="w-full h-full flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary opacity-20 text-6xl" data-icon="storm">storm</span>
+</div>
+<div class="absolute inset-0 bg-surface-variant/20 backdrop-blur-[4px] opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary font-label text-xs uppercase py-3 mb-2">View 3D Model</button>
+</div>
+</div>
+<div class="p-4 border-t border-outline-variant/10">
+<h3 class="font-headline text-lg text-primary tracking-tight">Storm Weaver</h3>
+<p class="font-label text-[10px] text-secondary/40 uppercase">Conductive Brass / Thunderstone</p>
+</div>
+</div>
+</div>
+<!-- Pagination / Footer Info -->
+<div class="mt-16 flex flex-col items-center gap-4">
+<div class="h-[1px] w-64 bg-gradient-to-r from-transparent via-outline-variant/30 to-transparent"></div>
+<p class="font-label text-xs text-secondary opacity-40 uppercase tracking-[0.2em]">Viewing 10 of 30 Manifestations</p>
+<button class="text-primary font-label uppercase text-sm border-b border-primary/20 hover:border-primary transition-all pb-1">Summon More Relics</button>
+</div>
+</main>
+</div>
+<script src="catalog.js"></script></body></html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Master's Ledger - Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Work+Sans:wght@300;400;500;600&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-container": "#57472d",
+                        "primary-fixed": "#ffdea5",
+                        "on-surface": "#eae1dd",
+                        "surface-tint": "#e9c176",
+                        "primary-container": "#715313",
+                        "outline": "#a28c81",
+                        "inverse-on-surface": "#342f2d",
+                        "tertiary": "#00dce5",
+                        "on-error": "#690005",
+                        "on-tertiary-container": "#00e5ee",
+                        "on-secondary": "#3c2e16",
+                        "inverse-surface": "#eae1dd",
+                        "surface-dim": "#161311",
+                        "on-secondary-fixed-variant": "#54442b",
+                        "surface-container-low": "#1f1b19",
+                        "surface-container-highest": "#393431",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#004f53",
+                        "on-primary-container": "#f2c97e",
+                        "on-tertiary-fixed": "#002021",
+                        "error-container": "#93000a",
+                        "on-secondary-fixed": "#251904",
+                        "inverse-primary": "#775a19",
+                        "on-primary": "#412d00",
+                        "surface": "#161311",
+                        "on-surface-variant": "#dac2b6",
+                        "outline-variant": "#54433a",
+                        "background": "#161311",
+                        "primary": "#e9c176",
+                        "secondary": "#dac3a2"
+                    },
+                    fontFamily: {
+                        "headline": ["Newsreader"],
+                        "body": ["Work Sans"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            background-color: #161311;
+            color: #eae1dd;
+            font-family: 'Work Sans', sans-serif;
+        }
+        .runic-underline {
+            position: relative;
+        }
+        .runic-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, #e9c176 0%, transparent 100%);
+        }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #161311; }
+        ::-webkit-scrollbar-thumb { background: #393431; }
+    </style>
+</head>
+<body class="flex overflow-hidden h-screen">
+<!-- SideNavBar (Shared Component) -->
+<aside class="fixed left-0 top-0 h-full flex flex-col py-8 overflow-y-auto h-screen w-64 border-r-0 bg-[#161311] dark:bg-[#161311] z-40">
+<div class="px-6 mb-10">
+<h1 class="font-['Newsreader'] italic text-[#e9c176] text-2xl">The Master's Ledger</h1>
+<p class="font-['Space_Grotesk'] uppercase tracking-widest text-[10px] text-[#dac3a2] opacity-50 mt-1">Asset Catalog v1.0</p>
+</div>
+<nav class="flex-1 space-y-1">
+<!-- Display (Active State) -->
+<a class="text-[#e9c176] bg-[#393431] font-bold border-l-2 border-[#e9c176] px-6 py-3 flex items-center gap-3 transition-all" href="index.html">
+<span class="material-symbols-outlined" data-icon="desktop_windows">desktop_windows</span>
+<span class="font-['Space_Grotesk'] uppercase tracking-widest text-xs">Display</span>
+</a>
+<!-- Account -->
+<a class="text-[#dac3a2] opacity-70 hover:opacity-100 hover:bg-[#231f1d] hover:text-[#e9c176] px-6 py-3 flex items-center gap-3 transition-all duration-300" href="index.html">
+<span class="material-symbols-outlined" data-icon="manage_accounts">manage_accounts</span>
+<span class="font-['Space_Grotesk'] uppercase tracking-widest text-xs">Account</span>
+</a>
+<!-- Notifications -->
+<a class="text-[#dac3a2] opacity-70 hover:opacity-100 hover:bg-[#231f1d] hover:text-[#e9c176] px-6 py-3 flex items-center gap-3 transition-all duration-300" href="index.html">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="font-['Space_Grotesk'] uppercase tracking-widest text-xs">Notifications</span>
+</a>
+<!-- Security -->
+<a class="text-[#dac3a2] opacity-70 hover:opacity-100 hover:bg-[#231f1d] hover:text-[#e9c176] px-6 py-3 flex items-center gap-3 transition-all duration-300" href="index.html">
+<span class="material-symbols-outlined" data-icon="security">security</span>
+<span class="font-['Space_Grotesk'] uppercase tracking-widest text-xs">Security</span>
+</a>
+</nav>
+<div class="px-6 mt-auto pt-8 flex items-center gap-4">
+<div class="w-10 h-10 bg-surface-container-high ring-1 ring-outline-variant/30 flex items-center justify-center">
+<img alt="Scholar's Portrait" class="w-full h-full object-cover opacity-80 grayscale hover:grayscale-0 transition-all" data-alt="Portrait of an elderly fantasy scholar with a gray beard wearing dark velvet robes in a dimly lit library" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLYeWWCYDsz4tYuFNddisnGu1VyhhXicP8cvm9bjtGDyNcXFJuzfIAAIAeZdWy-WynnrmivPnw5fzbNKL4s4xBUq_Lkpkr1VrTZKFwj645F7_MRE4L_aCo6_4X7FCKR-3pFyQNSzJR1uMI7QOKJYbG1AI9n-A7uYCarMOOU5Jc6r4BeWLlcgV3uUyJ57Gy8UE436wMseEl25WWrzHlBLdVZkfx5qbJhTctEJ4_UJwkOp8KWatkVOhfwc_5kp1iqFwgIJh8wloCfoI"/>
+</div>
+<div>
+<p class="font-headline text-sm text-on-surface">Master Archivist</p>
+<p class="font-label text-[10px] uppercase text-primary tracking-tighter">Level 84 Seeker</p>
+</div>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="flex-1 ml-64 overflow-y-auto bg-surface relative">
+<!-- TopAppBar (Shared Component) -->
+<header class="flex justify-between items-center px-10 w-full sticky top-0 z-50 backdrop-blur-md w-full h-16 bg-transparent">
+<div class="flex items-center gap-8">
+<span class="font-['Newsreader'] text-[#e9c176] font-medium tracking-tighter text-xl">Relic &amp; Rune</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-primary/40 text-sm" data-icon="search">search</span>
+<input class="bg-surface-container-lowest border-none text-xs font-label tracking-wide pl-10 pr-4 py-2 w-64 focus:ring-1 focus:ring-primary transition-all" placeholder="Search Archives..." type="text"/>
+</div>
+<button class="text-[#dac3a2] hover:text-[#e9c176] transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+</button>
+<button class="text-[#dac3a2] hover:text-[#e9c176] transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="auto_fix_high">auto_fix_high</span>
+</button>
+</div>
+<div class="bg-gradient-to-r from-[#e9c176] to-transparent h-[1px] absolute bottom-0 left-10 right-10 opacity-30"></div>
+</header>
+<!-- Settings Content -->
+<div class="max-w-5xl mx-auto px-10 py-12">
+<header class="mb-12">
+<h2 class="font-headline text-4xl text-on-surface mb-2 runic-underline inline-block">Visual &amp; Technical Attunement</h2>
+<p class="font-body text-on-surface-variant/60 max-w-xl mt-4">Calibrate the ledger's interface to match your archival needs. Changes are recorded in the permanent chronicle.</p>
+</header>
+<div class="grid grid-cols-12 gap-10 items-start">
+<!-- Left Column: Display & Account -->
+<div class="col-span-12 lg:col-span-7 space-y-12">
+<!-- Display Section -->
+<section class="space-y-6">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="visibility">visibility</span>
+<h3 class="font-label uppercase tracking-[0.2em] text-sm text-primary">Display Configuration</h3>
+</div>
+<div class="space-y-1">
+<!-- High Contrast Mode Toggle -->
+<div class="flex items-center justify-between p-4 bg-surface-container-low hover:bg-surface-container transition-colors group">
+<div>
+<p class="font-label text-sm uppercase text-on-surface">High Contrast Mode</p>
+<p class="text-xs text-on-surface-variant/50 font-body">Enhanced legibility for ancient scripts.</p>
+</div>
+<button class="w-12 h-6 bg-surface-container-highest relative flex items-center px-1 group-active:scale-95 transition-transform">
+<div class="w-4 h-4 bg-primary shadow-[0_0_8px_rgba(233,193,118,0.4)]"></div>
+</button>
+</div>
+<!-- Show 3D Previews Toggle -->
+<div class="flex items-center justify-between p-4 bg-surface-container-low hover:bg-surface-container transition-colors group">
+<div>
+<p class="font-label text-sm uppercase text-on-surface">Show 3D Previews</p>
+<p class="text-xs text-on-surface-variant/50 font-body">Render volumetric projections of assets.</p>
+</div>
+<button class="w-12 h-6 bg-primary relative flex items-center justify-end px-1 group-active:scale-95 transition-transform">
+<div class="w-4 h-4 bg-on-primary"></div>
+</button>
+</div>
+<!-- Real-time Pipeline Alerts Toggle -->
+<div class="flex items-center justify-between p-4 bg-surface-container-low hover:bg-surface-container transition-colors group">
+<div>
+<p class="font-label text-sm uppercase text-tertiary">Real-time Pipeline Alerts</p>
+<p class="text-xs text-on-surface-variant/50 font-body">Direct psychic link to asset forge updates.</p>
+</div>
+<button class="w-12 h-6 bg-tertiary/20 relative flex items-center px-1 border border-tertiary/30 group-active:scale-95 transition-transform">
+<div class="w-4 h-4 bg-tertiary shadow-[0_0_12px_#00dce5]"></div>
+</button>
+</div>
+</div>
+</section>
+<!-- Account Section -->
+<section class="space-y-6">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="fingerprint">fingerprint</span>
+<h3 class="font-label uppercase tracking-[0.2em] text-sm text-primary">Archivist Credentials</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="space-y-2">
+<label class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant/70">Archivist Name</label>
+<input class="w-full bg-surface-container-lowest border-none text-on-surface font-body p-3 focus:ring-1 focus:ring-primary text-sm" type="text" value="Alaric the Unspoken"/>
+</div>
+<div class="space-y-2">
+<label class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant/70">Guild Association</label>
+<input class="w-full bg-surface-container-lowest border-none text-on-surface font-body p-3 focus:ring-1 focus:ring-primary text-sm" type="text" value="The Crimson Cipher"/>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Technical & Formats -->
+<div class="col-span-12 lg:col-span-5 space-y-12">
+<!-- Export Settings -->
+<section class="p-8 bg-surface-container border-l-2 border-primary/20 relative">
+<div class="absolute -top-3 -right-3 w-16 h-16 opacity-5 pointer-events-none">
+<span class="material-symbols-outlined text-6xl text-primary" data-icon="architecture">architecture</span>
+</div>
+<div class="flex items-center gap-3 mb-8">
+<h3 class="font-label uppercase tracking-[0.2em] text-sm text-primary">Forge Protocols</h3>
+</div>
+<div class="space-y-8">
+<!-- Default 3D Export Format -->
+<div class="space-y-4">
+<p class="font-label text-xs uppercase tracking-widest text-on-surface">Default 3D Export Format</p>
+<div class="grid grid-cols-3 gap-2">
+<button class="py-3 px-2 border border-outline-variant/30 font-label text-[10px] uppercase tracking-tighter hover:bg-primary/10 hover:border-primary/50 transition-all">GLB</button>
+<button class="py-3 px-2 border border-primary font-label text-[10px] uppercase tracking-tighter bg-primary/10 text-primary">FBX</button>
+<button class="py-3 px-2 border border-outline-variant/30 font-label text-[10px] uppercase tracking-tighter hover:bg-primary/10 hover:border-primary/50 transition-all">USD</button>
+</div>
+</div>
+<!-- LOD Default Level -->
+<div class="space-y-4">
+<div class="flex justify-between items-end">
+<p class="font-label text-xs uppercase tracking-widest text-on-surface">LOD Default Level</p>
+<p class="font-label text-tertiary text-[10px]">ULTRA DETAIL</p>
+</div>
+<div class="relative h-1 bg-surface-container-highest">
+<div class="absolute top-0 left-0 h-full w-3/4 bg-tertiary shadow-[0_0_8px_#00dce5]"></div>
+<div class="absolute top-1/2 -translate-y-1/2 left-3/4 w-3 h-3 bg-tertiary border-2 border-surface rotate-45"></div>
+</div>
+<div class="flex justify-between font-label text-[8px] text-on-surface-variant/40 tracking-widest uppercase pt-2">
+<span>LOD 4</span>
+<span>LOD 3</span>
+<span>LOD 2</span>
+<span>LOD 1</span>
+<span>LOD 0</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Tactical Info Card -->
+<div class="bg-[#231f1d] p-6 relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 -mr-16 -mt-16 rotate-45 pointer-events-none"></div>
+<p class="font-label text-[10px] uppercase tracking-[0.3em] text-primary/40 mb-4">System Integrity</p>
+<div class="flex items-center justify-between mb-2">
+<span class="font-body text-xs text-on-surface/80">Database Latency</span>
+<span class="font-label text-xs text-tertiary">14ms</span>
+</div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-body text-xs text-on-surface/80">Archival Sync</span>
+<span class="font-label text-xs text-primary">Stable</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-body text-xs text-on-surface/80">Ember Storage</span>
+<span class="font-label text-xs text-on-surface">84.2 GB</span>
+</div>
+</div>
+<!-- Actions -->
+<div class="pt-6 space-y-3">
+<button class="w-full py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary font-label uppercase tracking-[0.3em] text-xs font-bold shadow-xl active:scale-[0.98] transition-all">
+                            Commit All Changes
+                        </button>
+<button class="w-full py-4 border border-outline-variant/20 text-on-surface-variant/60 font-label uppercase tracking-[0.3em] text-[10px] hover:text-primary transition-colors">
+                            Revert to Ancient Defaults
+                        </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Background Aesthetic Element -->
+<div class="fixed bottom-0 right-0 p-12 pointer-events-none opacity-10">
+<span class="material-symbols-outlined text-[12rem]" data-icon="book_5" style="font-variation-settings: 'FILL' 0;">book_5</span>
+</div>
+</main>
+<script src="catalog.js"></script></body></html>

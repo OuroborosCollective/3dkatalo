@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,700;1,400;1,700&amp;family=Work+Sans:wght@300;400;600&amp;family=Space+Grotesk:wght@300;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary": "#00dce5",
+              "on-secondary-container": "#ccb594",
+              "surface-tint": "#e9c176",
+              "surface-container-high": "#2e2927",
+              "outline-variant": "#54433a",
+              "on-primary-container": "#f2c97e",
+              "inverse-surface": "#eae1dd",
+              "error-container": "#93000a",
+              "secondary-fixed": "#f7dfbc",
+              "error": "#ffb4ab",
+              "on-error": "#690005",
+              "inverse-primary": "#775a19",
+              "surface-container-highest": "#393431",
+              "on-background": "#eae1dd",
+              "on-secondary-fixed": "#251904",
+              "on-primary-fixed": "#261900",
+              "primary": "#e9c176",
+              "secondary": "#dac3a2",
+              "on-primary-fixed-variant": "#5d4201",
+              "inverse-on-surface": "#342f2d",
+              "on-primary": "#412d00",
+              "surface-bright": "#3d3836",
+              "primary-fixed": "#ffdea5",
+              "tertiary-fixed": "#63f7ff",
+              "on-tertiary-fixed-variant": "#004f53",
+              "on-tertiary-container": "#00e5ee",
+              "on-tertiary": "#003739",
+              "on-secondary-fixed-variant": "#54442b",
+              "surface-container-low": "#1f1b19",
+              "on-tertiary-fixed": "#002021",
+              "on-error-container": "#ffdad6",
+              "background": "#161311",
+              "surface-container-lowest": "#110d0c",
+              "secondary-container": "#57472d",
+              "tertiary-fixed-dim": "#00dce5",
+              "surface-container": "#231f1d",
+              "on-secondary": "#3c2e16",
+              "primary-fixed-dim": "#e9c176",
+              "surface-dim": "#161311",
+              "secondary-fixed-dim": "#dac3a2",
+              "on-surface-variant": "#dac2b6",
+              "on-surface": "#eae1dd",
+              "tertiary-container": "#006266",
+              "outline": "#a28c81",
+              "primary-container": "#715313",
+              "surface-variant": "#393431",
+              "surface": "#161311"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Work Sans"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .scrollbar-hide::-webkit-scrollbar { display: none; }
+      .scroll-paper {
+        background-image: linear-gradient(to bottom right, #dac3a2, #bda686);
+        box-shadow: inset 0 0 40px rgba(0,0,0,0.1), 5px 5px 15px rgba(0,0,0,0.4);
+      }
+      .seal-effect {
+        background: radial-gradient(circle, #711313 0%, #410a0a 100%);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.5), inset 0 0 4px rgba(255,255,255,0.2);
+      }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary/30 scrollbar-hide">
+<!-- TopAppBar -->
+<header class="bg-[#161311] docked full-width top-0 z-50 border-b border-[#54433a]/15 flex justify-between items-center w-full px-6 py-4 max-w-none">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-bold text-[#e9c176] uppercase tracking-widest font-['Newsreader']">Runic Laws</span>
+<nav class="hidden md:flex gap-6 items-center">
+<a class="font-['Newsreader'] tracking-tight text-[#eae1dd] opacity-70 hover:text-[#00dce5] hover:opacity-100 transition-colors duration-300" href="registry_of_imperial_decrees.html">Archives</a>
+<a class="font-['Newsreader'] tracking-tight text-[#eae1dd] opacity-70 hover:text-[#00dce5] hover:opacity-100 transition-colors duration-300" href="pets_collection_interactive_prototype.html">Bestiary</a>
+<a class="font-['Newsreader'] tracking-tight text-[#e9c176] border-b-2 border-[#e9c176] pb-1 hover:text-[#00dce5] hover:opacity-100 transition-colors duration-300" href="index.html">Scholar's Guide</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-[#e9c176] hover:text-[#00dce5] transition-colors">menu_book</button>
+<button class="material-symbols-outlined text-[#e9c176] hover:text-[#00dce5] transition-colors">history_edu</button>
+</div>
+</header>
+<!-- SideNavBar (Grand Scholar Ledger) -->
+<aside class="fixed left-0 top-0 h-full flex flex-col pt-20 bg-[#231f1d] text-[#e9c176] h-full w-64 border-r border-[#54433a]/15 shadow-[24px_0_24px_rgba(0,0,0,0.3)] z-40 hidden lg:flex">
+<div class="px-6 py-8 border-b border-outline-variant/15">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 border border-primary/50 flex items-center justify-center">
+<img alt="Seal" class="w-6 h-6" data-alt="close-up of a dark wax seal on parchment with gold leaf runic engraving" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcEE-eSznn3x8nrqzOjlYY0hXbgGtpMFd3GP4zGkYNdnZ4LooQYWuus_fDZxti6WcCjwzBp-3WITwVHDh7T2EN31XNhf4F4cc_UANjNAFWf11BNn9k3IN_oi9X8XGB12sdoDRg8n81pscxOhcaQ3Xw7SaLm0dTuH7gYHe71oDp4m_hfb2BKKWeQV7n-xHoXcGdqMwssycUu6Yc_LkzTSgBRulmXcQENQlVz4AnE0tVcGFYGBBl8Lp53sO6_ab9nAiYZfQz7TVeGQQ"/>
+</div>
+<div>
+<h3 class="font-['Newsreader'] text-[#e9c176] italic text-lg leading-tight">The Master's Ledger</h3>
+<p class="font-['Space_Grotesk'] uppercase text-[10px] tracking-tighter opacity-60">Imperial Law Archives</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 py-6">
+<a class="flex items-center gap-3 font-['Space_Grotesk'] uppercase text-xs tracking-tighter text-[#dac3a2] opacity-60 px-4 py-3 hover:bg-[#393431] hover:text-[#00dce5] hover:translate-x-1 transition-all duration-200" href="index.html">
+<span class="material-symbols-outlined">payments</span> Trade
+            </a>
+<a class="flex items-center gap-3 font-['Space_Grotesk'] uppercase text-xs tracking-tighter text-[#dac3a2] opacity-60 px-4 py-3 hover:bg-[#393431] hover:text-[#00dce5] hover:translate-x-1 transition-all duration-200" href="index.html">
+<span class="material-symbols-outlined">swords</span> Combat
+            </a>
+<a class="flex items-center gap-3 font-['Space_Grotesk'] uppercase text-xs tracking-tighter bg-[#393431] text-[#e9c176] border-l-4 border-[#e9c176] px-4 py-3 hover:translate-x-1 transition-all duration-200" href="index.html">
+<span class="material-symbols-outlined">gavel</span> Property
+            </a>
+<a class="flex items-center gap-3 font-['Space_Grotesk'] uppercase text-xs tracking-tighter text-[#dac3a2] opacity-60 px-4 py-3 hover:bg-[#393431] hover:text-[#00dce5] hover:translate-x-1 transition-all duration-200" href="index.html">
+<span class="material-symbols-outlined">edit_note</span> Amendments
+            </a>
+</nav>
+<div class="p-4 mt-auto">
+<button class="w-full py-3 border border-primary text-primary font-label text-[10px] uppercase tracking-widest hover:bg-primary/10 transition-colors">
+                Report Infraction
+            </button>
+</div>
+<div class="border-t border-outline-variant/15 py-4">
+<a class="flex items-center gap-3 font-['Space_Grotesk'] uppercase text-[10px] tracking-tighter text-[#dac3a2] opacity-60 px-4 py-2 hover:text-tertiary" href="settings_archivist_preferences.html">
+<span class="material-symbols-outlined text-sm">settings</span> Settings
+            </a>
+<a class="flex items-center gap-3 font-['Space_Grotesk'] uppercase text-[10px] tracking-tighter text-[#dac3a2] opacity-60 px-4 py-2 hover:text-error" href="index.html">
+<span class="material-symbols-outlined text-sm">logout</span> Log Out
+            </a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="lg:ml-64 pt-20 pb-24 lg:pb-12 px-6 max-w-7xl mx-auto">
+<!-- Law Search Header -->
+<section class="mt-8 mb-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="flex-1 max-w-2xl">
+<h1 class="font-headline text-4xl text-on-background mb-4 italic">Registry of Runic Statutes</h1>
+<div class="relative group">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-primary/50 group-focus-within:text-tertiary">search</span>
+</div>
+<input class="w-full bg-surface-container-lowest border-0 py-5 pl-12 pr-6 text-on-surface font-body focus:ring-1 focus:ring-primary/40 placeholder:text-outline-variant/60" placeholder="Search the Ledger for ancient edicts..." type="text"/>
+<div class="absolute bottom-0 left-0 w-0 h-[1px] bg-primary group-focus-within:w-full transition-all duration-500"></div>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="px-4 py-2 bg-surface-container-high border border-outline-variant/20 font-label text-[10px] uppercase tracking-tighter text-on-surface hover:border-primary transition-all">Criminal</button>
+<button class="px-4 py-2 bg-surface-container-high border border-outline-variant/20 font-label text-[10px] uppercase tracking-tighter text-on-surface hover:border-primary transition-all">Taxation</button>
+<button class="px-4 py-2 bg-surface-container-high border border-outline-variant/20 font-label text-[10px] uppercase tracking-tighter text-on-surface hover:border-primary transition-all">Magical Use</button>
+</div>
+</div>
+</section>
+<!-- Categories of Law Grid (Scroll Style) -->
+<section class="mb-16">
+<div class="flex items-center gap-4 mb-8">
+<h2 class="font-headline text-2xl text-on-surface">Categories of Law</h2>
+<div class="flex-1 h-[1px] bg-gradient-to-r from-outline-variant/40 to-transparent"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Scroll Card 1 -->
+<div class="scroll-paper p-1 relative min-h-[180px] flex flex-col justify-between group overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-2 bg-black/10"></div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<span class="material-symbols-outlined text-on-primary/80">balance</span>
+<span class="font-label text-[10px] text-on-primary/60">IV-II</span>
+</div>
+<h3 class="font-headline text-xl text-on-primary font-bold">Trade &amp; Barter</h3>
+<p class="font-body text-xs text-on-primary/70 mt-2 leading-relaxed">Regulation of coin weight and magical exchange rates.</p>
+</div>
+<div class="p-4 bg-black/5 flex justify-end group-hover:bg-black/10 transition-colors">
+<span class="material-symbols-outlined text-on-primary/60 group-hover:text-on-primary">arrow_right_alt</span>
+</div>
+</div>
+<!-- Scroll Card 2 -->
+<div class="scroll-paper p-1 relative min-h-[180px] flex flex-col justify-between group overflow-hidden">
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<span class="material-symbols-outlined text-on-primary/80">swords</span>
+<span class="font-label text-[10px] text-on-primary/60">VI-IX</span>
+</div>
+<h3 class="font-headline text-xl text-on-primary font-bold">Combat Codes</h3>
+<p class="font-body text-xs text-on-primary/70 mt-2 leading-relaxed">The Duelist’s Accord and laws of open battlefield engagement.</p>
+</div>
+<div class="p-4 bg-black/5 flex justify-end">
+<span class="material-symbols-outlined text-on-primary/60">arrow_right_alt</span>
+</div>
+</div>
+<!-- Scroll Card 3 -->
+<div class="scroll-paper p-1 relative min-h-[180px] flex flex-col justify-between group overflow-hidden">
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<span class="material-symbols-outlined text-on-primary/80">auto_fix_high</span>
+<span class="font-label text-[10px] text-on-primary/60">I-O</span>
+</div>
+<h3 class="font-headline text-xl text-on-primary font-bold">Magical Ethics</h3>
+<p class="font-body text-xs text-on-primary/70 mt-2 leading-relaxed">Forbidden runes and soul-binding restrictions across provinces.</p>
+</div>
+<div class="p-4 bg-black/5 flex justify-end">
+<span class="material-symbols-outlined text-on-primary/60">arrow_right_alt</span>
+</div>
+</div>
+<!-- Scroll Card 4 -->
+<div class="scroll-paper p-1 relative min-h-[180px] flex flex-col justify-between group overflow-hidden">
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<span class="material-symbols-outlined text-on-primary/80">foundation</span>
+<span class="font-label text-[10px] text-on-primary/60">XI-IV</span>
+</div>
+<h3 class="font-headline text-xl text-on-primary font-bold">Property Rights</h3>
+<p class="font-body text-xs text-on-primary/70 mt-2 leading-relaxed">Dungeon ownership and land deeds for fallen keeps.</p>
+</div>
+<div class="p-4 bg-black/5 flex justify-end">
+<span class="material-symbols-outlined text-on-primary/60">arrow_right_alt</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Content Area: Amendments Bento Grid -->
+<section class="mb-16">
+<div class="flex items-center gap-4 mb-8">
+<h2 class="font-headline text-2xl text-on-surface italic">Recent Amendments &amp; Interpretations</h2>
+<div class="flex-1 h-[1px] bg-gradient-to-r from-outline-variant/40 to-transparent"></div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Large Highlight Entry -->
+<div class="lg:col-span-2 bg-surface-container border-0 relative p-8 flex flex-col justify-center overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 opacity-10">
+<img alt="Decorative" class="w-full h-full grayscale invert" data-alt="a large translucent watermark of a balanced scale on ancient parchment texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_Hjl_tLyLQbbD0Z9KQZpEPebuZIVP4YF6bdz-UcvmRLuHTF3zB7u0jtbbhWG7KXlMwfpYF1Mx_t8ok9wM_f4-rXSnjnLvZ0g5_pXZrK6lQVa0ykYB_GBbc-h98-vGTh_eZvVREXVhV1b8z8gFCMUfncj3rKjLGmCpPxYEqUnPROAp7_AZ5-ZNOc5pWqQB4bWnOdHhdxjOxtpiKBcfWVQqwGy7MZRcO67-AOn6M6cRzjsIzILxJ9xkHhDTGAk2H8mFfEhPi4ufH9s"/>
+</div>
+<div class="flex items-center gap-4 mb-6">
+<div class="seal-effect w-16 h-16 rounded-full flex items-center justify-center border-2 border-black/40">
+<span class="material-symbols-outlined text-white text-2xl">verified</span>
+</div>
+<div>
+<span class="font-label text-tertiary text-xs uppercase tracking-widest">Amendment #882-C</span>
+<h3 class="font-headline text-3xl font-bold text-on-surface">The Soul-Bound Tax Decree</h3>
+</div>
+</div>
+<p class="font-body text-on-surface/80 max-w-xl leading-relaxed mb-6">
+                        Grand Scholar Valerius has officially decreed that all soul-bound weaponry exceeding 'Epic' rarity is subject to a 5% monthly mana-tithe. Failure to pay will result in temporary runic suppression of the artifact's primary enchantments.
+                    </p>
+<div class="flex gap-4">
+<button class="bg-gradient-to-br from-primary to-primary-container px-6 py-3 font-label text-[10px] font-bold text-on-primary uppercase tracking-widest">Read Full Decree</button>
+<button class="border border-outline-variant/30 px-6 py-3 font-label text-[10px] text-on-surface/60 uppercase tracking-widest hover:border-primary hover:text-primary transition-all">Archive Notes</button>
+</div>
+</div>
+<!-- Machine Readout Accessibility Section -->
+<div class="bg-surface-container-lowest border border-tertiary/20 p-6 flex flex-col font-['Space_Grotesk']">
+<div class="flex justify-between items-center mb-4 border-b border-tertiary/10 pb-2">
+<span class="text-tertiary text-[10px] uppercase tracking-widest">Neural Link Readout</span>
+<div class="flex gap-1">
+<div class="w-1 h-1 bg-tertiary"></div>
+<div class="w-1 h-1 bg-tertiary/40"></div>
+<div class="w-1 h-1 bg-tertiary/10"></div>
+</div>
+</div>
+<div class="flex-1 space-y-4 text-[11px] leading-tight">
+<div class="flex justify-between opacity-70">
+<span>TOTAL_LAWS:</span>
+<span class="text-primary">12,482</span>
+</div>
+<div class="flex justify-between opacity-70">
+<span>ACTIVE_ENACTMENTS:</span>
+<span class="text-primary">84</span>
+</div>
+<div class="flex justify-between opacity-70">
+<span>PENDING_VOTES:</span>
+<span class="text-primary">03</span>
+</div>
+<div class="pt-4 border-t border-outline-variant/10">
+<p class="text-tertiary/60 mb-2">QUICK_ACCESSIBILITY:</p>
+<ul class="space-y-2">
+<li class="flex items-center gap-2 hover:text-tertiary cursor-pointer">
+<span class="material-symbols-outlined text-[14px]">volume_up</span> Voice Translation
+                                </li>
+<li class="flex items-center gap-2 hover:text-tertiary cursor-pointer">
+<span class="material-symbols-outlined text-[14px]">visibility</span> High Contrast Runes
+                                </li>
+<li class="flex items-center gap-2 hover:text-tertiary cursor-pointer">
+<span class="material-symbols-outlined text-[14px]">text_increase</span> Scholar's Magnifier
+                                </li>
+</ul>
+</div>
+</div>
+<div class="mt-6 text-[10px] text-on-surface/30 italic">
+                        SYNC_STATUS: STABLE_ARCHIVE
+                    </div>
+</div>
+<!-- Secondary Entries -->
+<div class="bg-surface-container-low p-6 flex flex-col justify-between border-t border-outline-variant/10">
+<div>
+<div class="seal-effect w-10 h-10 rounded-full flex items-center justify-center mb-4 transform scale-75 origin-left">
+<span class="material-symbols-outlined text-white text-lg">gavel</span>
+</div>
+<h4 class="font-headline text-lg text-secondary mb-2">Interpretation of Squatter's Rights</h4>
+<p class="font-body text-xs text-on-surface/60">Clarification on ownership of cleared dungeons after 48 cycles of vacancy.</p>
+</div>
+<a class="text-tertiary font-label text-[10px] uppercase tracking-widest mt-4 hover:underline" href="index.html">View Transcript</a>
+</div>
+<div class="bg-surface-container-low p-6 flex flex-col justify-between border-t border-outline-variant/10">
+<div>
+<div class="seal-effect w-10 h-10 rounded-full flex items-center justify-center mb-4 transform scale-75 origin-left opacity-80">
+<span class="material-symbols-outlined text-white text-lg">history_edu</span>
+</div>
+<h4 class="font-headline text-lg text-secondary mb-2">Forbidden Rune Registry</h4>
+<p class="font-body text-xs text-on-surface/60">Updated list of black-listed runes for public marketplaces.</p>
+</div>
+<a class="text-tertiary font-label text-[10px] uppercase tracking-widest mt-4 hover:underline" href="index.html">View Transcript</a>
+</div>
+<div class="bg-surface-container-low p-6 flex flex-col justify-between border-t border-outline-variant/10">
+<div>
+<div class="seal-effect w-10 h-10 rounded-full flex items-center justify-center mb-4 transform scale-75 origin-left opacity-60">
+<span class="material-symbols-outlined text-white text-lg">priority_high</span>
+</div>
+<h4 class="font-headline text-lg text-secondary mb-2">Guild Conflict Resolution</h4>
+<p class="font-body text-xs text-on-surface/60">New protocols for neutral-zone skirmishes and financial reparations.</p>
+</div>
+<a class="text-tertiary font-label text-[10px] uppercase tracking-widest mt-4 hover:underline" href="index.html">View Transcript</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Navigation Overlay (Back Links) -->
+<footer class="fixed bottom-0 left-0 w-full z-40 bg-background border-t border-outline-variant/10 hidden md:block">
+<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+<div class="flex gap-8">
+<a class="group flex items-center gap-2" href="index.html">
+<span class="material-symbols-outlined text-primary group-hover:text-tertiary transition-colors">shield</span>
+<span class="font-label text-[10px] uppercase tracking-widest text-on-surface/60 group-hover:text-on-surface">The Armory</span>
+</a>
+<a class="group flex items-center gap-2" href="runic_laws_imperial_archives.html">
+<span class="material-symbols-outlined text-primary group-hover:text-tertiary transition-colors">account_balance</span>
+<span class="font-label text-[10px] uppercase tracking-widest text-on-surface/60 group-hover:text-on-surface">The Vault</span>
+</a>
+<a class="group flex items-center gap-2 border-b border-primary/40" href="index.html">
+<span class="material-symbols-outlined text-primary group-hover:text-tertiary transition-colors">menu_book</span>
+<span class="font-label text-[10px] uppercase tracking-widest text-on-surface group-hover:text-on-surface">Scholar's Guide</span>
+</a>
+</div>
+<div class="text-[10px] font-label text-outline-variant uppercase tracking-[0.2em]">
+                Imperial Archivist System // v4.2.0
+            </div>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center py-3 bg-[#161311] border-t border-[#54433a]/15 z-50 shadow-[0_-4px_12px_rgba(0,0,0,0.5)]">
+<a class="flex flex-col items-center justify-center text-[#dac3a2] opacity-50 hover:text-[#00dce5]" href="registry_of_imperial_decrees.html">
+<span class="material-symbols-outlined">folder_special</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase">Archives</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#e9c176] scale-110 active:ring-1 ring-[#00dce5]/30" href="index.html">
+<span class="material-symbols-outlined">balance</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase">Laws</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#dac3a2] opacity-50 hover:text-[#00dce5]" href="index.html">
+<span class="material-symbols-outlined">history</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase">Amendments</span>
+</a>
+</nav>
+<script src="catalog.js"></script></body></html>

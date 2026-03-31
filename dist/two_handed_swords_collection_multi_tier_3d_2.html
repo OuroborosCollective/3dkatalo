@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Relic &amp; Rune Ledger | The Armoury</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,700;1,400;1,700&amp;family=Work+Sans:wght@400;500;600&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-high": "#2e2927",
+                        "on-background": "#eae1dd",
+                        "on-secondary": "#3c2e16",
+                        "on-primary-container": "#f2c97e",
+                        "surface-dim": "#161311",
+                        "background": "#161311",
+                        "surface-container-low": "#1f1b19",
+                        "inverse-primary": "#775a19",
+                        "secondary-fixed-dim": "#dac3a2",
+                        "on-tertiary-container": "#00e5ee",
+                        "on-secondary-fixed-variant": "#54442b",
+                        "surface-variant": "#393431",
+                        "surface-bright": "#3d3836",
+                        "error-container": "#93000a",
+                        "tertiary-fixed": "#63f7ff",
+                        "inverse-surface": "#eae1dd",
+                        "surface": "#161311",
+                        "secondary-fixed": "#f7dfbc",
+                        "primary-fixed-dim": "#e9c176",
+                        "surface-container": "#231f1d",
+                        "on-secondary-fixed": "#251904",
+                        "primary-container": "#715313",
+                        "on-primary": "#412d00",
+                        "error": "#ffb4ab",
+                        "surface-container-highest": "#393431",
+                        "primary-fixed": "#ffdea5",
+                        "on-surface-variant": "#dac2b6",
+                        "surface-tint": "#e9c176",
+                        "on-tertiary": "#003739",
+                        "on-error-container": "#ffdad6",
+                        "secondary-container": "#57472d",
+                        "tertiary-container": "#006266",
+                        "outline": "#a28c81",
+                        "on-primary-fixed": "#261900",
+                        "primary": "#e9c176",
+                        "on-tertiary-fixed": "#002021",
+                        "on-error": "#690005",
+                        "inverse-on-surface": "#342f2d",
+                        "surface-container-lowest": "#110d0c",
+                        "on-tertiary-fixed-variant": "#004f53",
+                        "on-secondary-container": "#ccb594",
+                        "on-primary-fixed-variant": "#5d4201",
+                        "tertiary": "#00dce5",
+                        "outline-variant": "#54433a",
+                        "on-surface": "#eae1dd",
+                        "secondary": "#dac3a2",
+                        "tertiary-fixed-dim": "#00dce5"
+                    },
+                    fontFamily: {
+                        "headline": ["Newsreader"],
+                        "body": ["Work Sans"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .runic-glow:hover {
+            text-shadow: 0 0 8px #00dce5;
+        }
+        .item-inset {
+            box-shadow: inset 0 0 15px rgba(0,0,0,0.8), 0 0 1px rgba(233, 193, 118, 0.2);
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #161311; }
+        ::-webkit-scrollbar-thumb { background: #393431; }
+        ::-webkit-scrollbar-thumb:hover { background: #e9c176; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary/30 selection:text-primary">
+<!-- Top Navigation Bar -->
+<header class="bg-[#161311] fixed top-0 left-0 right-0 h-20 px-8 flex justify-between items-center z-50 border-b border-[#393431]/20">
+<div class="flex items-center gap-12">
+<h1 class="text-3xl font-headline text-primary italic font-bold tracking-widest uppercase">Relic &amp; Rune Ledger</h1>
+<nav class="hidden md:flex gap-8 font-headline uppercase tracking-widest text-sm">
+<a class="text-primary border-b-2 border-primary pb-1 transition-colors duration-300" href="sword_management_interactive_prototype.html">Swords</a>
+<a class="text-secondary opacity-70 hover:text-tertiary transition-colors duration-300" href="two_handed_axes_collection_multi_tier_3d_1.html">Axes</a>
+<a class="text-secondary opacity-70 hover:text-tertiary transition-colors duration-300" href="plate_armor_management_interactive_prototype.html">Plate Armor</a>
+<a class="text-secondary opacity-70 hover:text-tertiary transition-colors duration-300" href="index.html">Heavy Armor</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<button class="bg-primary-container text-on-primary-container px-6 py-2 font-label text-xs font-bold uppercase tracking-tighter active:scale-95 transition-all">
+                Bulk LOD Upload
+            </button>
+<div class="flex gap-4 text-primary">
+<span class="material-symbols-outlined cursor-pointer hover:text-tertiary">settings_accessibility</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-tertiary">publish</span>
+</div>
+</div>
+</header>
+<!-- Side Navigation -->
+<aside class="fixed left-0 top-0 pt-20 flex flex-col h-full w-72 bg-surface-container border-r border-[#393431]/30 z-40 divide-y divide-[#393431]/10 shadow-[10px_0_30px_rgba(0,0,0,0.5)]">
+<div class="p-6">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-10 h-10 bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">shield</span>
+</div>
+<div>
+<h2 class="font-headline text-xl text-primary leading-none">The Armoury</h2>
+<p class="font-label text-[10px] uppercase tracking-widest text-secondary/60">Two-Handed Blade Collection</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 py-4 overflow-y-auto font-label text-sm tracking-tight">
+<a class="flex items-center gap-4 py-3 bg-surface-variant text-primary border-l-4 border-primary pl-6" href="index.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">swords</span>
+                Greatswords
+            </a>
+<a class="flex items-center gap-4 py-3 text-secondary opacity-60 hover:opacity-100 hover:bg-surface-variant/50 hover:text-tertiary pl-7 transition-all" href="index.html">
+<span class="material-symbols-outlined">history_edu</span>
+                Claymores
+            </a>
+<a class="flex items-center gap-4 py-3 text-secondary opacity-60 hover:opacity-100 hover:bg-surface-variant/50 hover:text-tertiary pl-7 transition-all" href="index.html">
+<span class="material-symbols-outlined">architecture</span>
+                Zweihanders
+            </a>
+<a class="flex items-center gap-4 py-3 text-secondary opacity-60 hover:opacity-100 hover:bg-surface-variant/50 hover:text-tertiary pl-7 transition-all" href="index.html">
+<span class="material-symbols-outlined">auto_awesome</span>
+                Flamberges
+            </a>
+<a class="flex items-center gap-4 py-3 text-secondary opacity-60 hover:opacity-100 hover:bg-surface-variant/50 hover:text-tertiary pl-7 transition-all" href="index.html">
+<span class="material-symbols-outlined">gavel</span>
+                Executioners
+            </a>
+</nav>
+<div class="p-4 space-y-2">
+<a class="flex items-center gap-3 text-xs text-secondary/60 hover:text-tertiary py-2 px-3" href="settings_archivist_preferences.html">
+<span class="material-symbols-outlined text-sm">settings</span> Settings
+            </a>
+<a class="flex items-center gap-3 text-xs text-secondary/60 hover:text-tertiary py-2 px-3" href="index.html">
+<span class="material-symbols-outlined text-sm">logout</span> Logout
+            </a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="ml-72 mt-20 p-12 min-h-screen">
+<!-- Gallery Header -->
+<div class="mb-16 max-w-4xl relative">
+<div class="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-primary to-transparent opacity-50"></div>
+<h2 class="text-5xl font-headline text-on-background mb-4 italic">The Armoury: Two-Handed Blade Collection</h2>
+<p class="text-secondary max-w-2xl font-body leading-relaxed opacity-80">
+                A definitive catalog of heavy steel and enchanted alloys. These artifacts represent the pinnacle of 2D concept craftsmanship, prepared for high-fidelity 3D pipelines. Each blade carries the weight of fallen empires and the sharpness of runic focus.
+            </p>
+<div class="mt-8 flex gap-4 font-label text-[10px] tracking-widest uppercase">
+<span class="bg-surface-container-high px-3 py-1 border border-outline-variant/20">30 Assets Logged</span>
+<span class="bg-surface-container-high px-3 py-1 border border-outline-variant/20">Sync Status: Optimal</span>
+</div>
+</div>
+<!-- Bento Grid Gallery -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-5 gap-8">
+<!-- Item Card Loop Placeholder (Simulating 30 cards) -->
+<!-- Card 1 -->
+<div class="bg-surface-container-low group border-b-2 border-transparent hover:border-primary transition-all duration-300">
+<div class="aspect-[3/4] bg-surface-container-lowest overflow-hidden relative item-inset">
+<img class="w-full h-full object-contain p-8 group-hover:scale-110 transition-transform duration-700" data-alt="Intricate dark obsidian zweihander with glowing purple runes and a leather wrapped hilt on a black background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtY3arccpJ0FiyvvUMX2ZYWHXmCO0lMRySkSmC0fnTXCNm30YLLMT7zfip5j8q5vrjS4IwrjqyIdHHfzUkfJ7ErGDBT1lWLbgnimYLZzMMAQmBoVTtE9p2DYkTwem2Qjjvy5w_TVa_2chs1LKjjISrUoctbd1XcQSkxf6NKlBfUc7u9_A2zaf0y8qVTINLHrpwEDoyMeBTCsEUjPDClq-tkUbxX2Au9g1HpUQ-4A2iDiMyRc8N3rY74tr3sgtRMZedCcBIY7yFkJI"/>
+<div class="absolute bottom-4 left-4 flex gap-1">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="w-2 h-2 rounded-full bg-tertiary/40"></span>
+</div>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline text-lg text-on-background leading-tight">Shattered Obsidian Zweihander</h3>
+<span class="font-label text-[10px] text-tertiary">LVL 85</span>
+</div>
+<!-- LOD Toggles -->
+<div class="flex gap-2 mb-6">
+<button class="flex-1 py-1 text-[10px] font-label bg-surface-container-highest border border-primary text-primary">HI</button>
+<button class="flex-1 py-1 text-[10px] font-label bg-surface-container-highest border border-outline-variant/20 text-secondary opacity-50 hover:opacity-100">MD</button>
+<button class="flex-1 py-1 text-[10px] font-label bg-surface-container-highest border border-outline-variant/20 text-secondary opacity-50 hover:opacity-100">LO</button>
+</div>
+<!-- Meta & Actions -->
+<div class="flex justify-between items-center border-t border-outline-variant/10 pt-4">
+<div class="flex gap-2 opacity-60 group-hover:opacity-100 transition-opacity">
+<span class="text-[10px] font-label">GLB</span>
+<span class="text-[10px] font-label">FBX</span>
+<span class="text-[10px] font-label text-tertiary">UNITY</span>
+</div>
+<div class="flex gap-3">
+<button class="text-secondary hover:text-primary active:scale-90 transition-all" title="Manage Assets">
+<span class="material-symbols-outlined text-sm">inventory_2</span>
+</button>
+<button class="text-secondary hover:text-tertiary active:scale-90 transition-all" title="Export">
+<span class="material-symbols-outlined text-sm">download</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-low group border-b-2 border-transparent hover:border-primary transition-all duration-300">
+<div class="aspect-[3/4] bg-surface-container-lowest overflow-hidden relative item-inset">
+<img class="w-full h-full object-contain p-8 group-hover:scale-110 transition-transform duration-700" data-alt="Massive holy avenger greatsword with gold filigree and glowing blue crystal core on dark stone surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUCF5ThtdlxvtMWJtuFF-xw4L1axEqGhAP2YdyycA9cYCUe15DJNkUrmvm711bTSRV68C_USRBLOknwA3mGxsvl11ed3TfKVBT9RqstS5zV5ML1-ofBRPPsLvCnOqoterSC0eEuWgOKwUnP-dWhqMsXO3xkONwP2rcngkGzynDS-a0i9dP6W2STTXNz_aIuzUZldHSUjGNghCM-rLkE4JZ0U6Oy05jDXFvhzUvz9jF_wLTIXC3wT1T0uN3qS9uGBVnEnnvcWyY5DM"/>
+<div class="absolute top-4 right-4 bg-primary text-on-primary px-2 py-0.5 text-[9px] font-label font-bold uppercase">Legendary</div>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline text-lg text-on-background leading-tight">Holy Avenger Greatsword</h3>
+<span class="font-label text-[10px] text-tertiary">LVL 99</span>
+</div>
+<div class="flex gap-2 mb-6">
+<button class="flex-1 py-1 text-[10px] font-label bg-surface-container-highest border border-primary text-primary">HI</button>
+<button class="flex-1 py-1 text-[10px] font-label bg-surface-container-highest border border-outline-variant/20 text-secondary opacity-50 hover:opacity-100">MD</button>
+<button class="flex-1 py-1 text-[10px] font-label bg-surface-container-highest border border-outline-variant/20 text-secondary opacity-50 hover:opacity-100">LO</button>
+</div>
+<div class="flex justify-between items-center border-t border-outline-variant/10 pt-4">
+<div class="flex gap-2 opacity-60">
+<span class="text-[10px] font-label">FBX</span>
+<span class="text-[10px] font-label">USD</span>
+</div>
+<div class="flex gap-3">
+<button class="text-secondary hover:text-primary transition-all" title="Manage Assets"><span class="material-symbols-outlined text-sm">inventory_2</span></button>
+<button class="text-secondary hover:text-tertiary transition-all" title="Export"><span class="material-symbols-outlined text-sm">download</span></button>
+</div>
+</div>
+</div>
+</div>
+<!-- Repeated Card structure for variety in the UI mockup -->
+<!-- Card 3 -->
+<div class="bg-surface-container-low group border-b-2 border-transparent hover:border-primary transition-all duration-300">
+<div class="aspect-[3/4] bg-surface-container-lowest overflow-hidden relative item-inset">
+<img class="w-full h-full object-contain p-8 group-hover:scale-110 transition-transform duration-700" data-alt="Heavy rusted iron flamberge with jagged edges and demonic skull pommel on black background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCtS0iMVk1rh2GIpljQWYTvTZvAcMbqo-qHy5TT7j_3_NKILQH_xNfDS5d4Q31SsDBrnepNG1D4Iq3TNqu1V92L0oSc-8l1Lz1bp6v2IT9Y_Y8oFMxJMg24IoGs1PfCWds8LctoJoUzdMgzHtVVo_nXjkeRFRRaexZlD0LOO_de-ak9lUjKsRuMzfqJHi-yAa0UXuiHxchzsd0CSkHFOy_LQCiVMrDxxvprkNQN3bhn-SEQp2tQtb7ZuWp73XgyqKLOvyy-3zYMTI"/>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline text-lg text-on-background leading-tight">Cursed Iron Flamberge</h3>
+<span class="font-label text-[10px] text-tertiary">LVL 42</span>
+</div>
+<div class="flex gap-2 mb-6">
+<button class="flex-1 py-1 text-[10px] font-label bg-surface-container-highest border border-outline-variant/20 text-secondary opacity-50 hover:opacity-100">HI</button>
+<button class="flex-1 py-1 text-[10px] font-label bg-surface-container-highest border border-primary text-primary">MD</button>
+<button class="flex-1 py-1 text-[10px] font-label bg-surface-container-highest border border-outline-variant/20 text-secondary opacity-50 hover:opacity-100">LO</button>
+</div>
+<div class="flex justify-between items-center border-t border-outline-variant/10 pt-4">
+<div class="flex gap-2 opacity-60"><span class="text-[10px] font-label">GLB</span></div>
+<div class="flex gap-3">
+<button class="text-secondary hover:text-primary transition-all" title="Manage Assets"><span class="material-symbols-outlined text-sm">inventory_2</span></button>
+<button class="text-secondary hover:text-tertiary transition-all" title="Export"><span class="material-symbols-outlined text-sm">download</span></button>
+</div>
+</div>
+</div>
+</div>
+<!-- [Cards 4-30 would follow same structure...] -->
+<!-- Repeating similar styles to demonstrate density -->
+<div class="bg-surface-container-low group border-b-2 border-transparent hover:border-primary transition-all duration-300">
+<div class="aspect-[3/4] bg-surface-container-lowest overflow-hidden relative item-inset">
+<img class="w-full h-full object-contain p-8 group-hover:scale-110 transition-transform duration-700" data-alt="Ethereal ghostly claymore shimmering with blue light and translucent blade on a dark void background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMm2XQmDZNYkl7KPLMXLx1FIneAosdtRKLk-IzX_SvdzZBkkHyPnEVVrzNrVctMKElLRd3EnXyPwGMHkofRE3-NBe65ARHoijag6PTEzgNXggO84dFDigr_ithAvSJ9Q68VMkqFip23_r41bTTGTHos8hBcHz8YquYy5d2hFIBpWNq13WjTyoj22FCreHLqhg0NR3RHBPjO0MD_N0ZbzdqUdyZB8KREKDmhbEZMTgmmvWQVA8mv01Qi3qOvG3QPQlVXws8FjRKRIo"/>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline text-lg text-on-background leading-tight">Wraith-Bound Claymore</h3>
+<span class="font-label text-[10px] text-tertiary">LVL 60</span>
+</div>
+<div class="flex gap-2 mb-6">
+<button class="flex-1 py-1 text-[10px] font-label bg-surface-container-highest border border-primary text-primary">HI</button>
+<button class="flex-1 py-1 text-[10px] font-label bg-surface-container-highest border border-outline-variant/20 text-secondary opacity-50 hover:opacity-100">MD</button>
+<button class="flex-1 py-1 text-[10px] font-label bg-surface-container-highest border border-outline-variant/20 text-secondary opacity-50 hover:opacity-100">LO</button>
+</div>
+<div class="flex justify-between items-center border-t border-outline-variant/10 pt-4">
+<div class="flex gap-2 opacity-60"><span class="text-[10px] font-label">USD</span></div>
+<div class="flex gap-3">
+<button class="text-secondary hover:text-primary transition-all" title="Manage Assets"><span class="material-symbols-outlined text-sm">inventory_2</span></button>
+<button class="text-secondary hover:text-tertiary transition-all" title="Export"><span class="material-symbols-outlined text-sm">download</span></button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="bg-surface-container-low group border-b-2 border-transparent hover:border-primary transition-all duration-300">
+<div class="aspect-[3/4] bg-surface-container-lowest overflow-hidden relative item-inset">
+<img class="w-full h-full object-contain p-8 group-hover:scale-110 transition-transform duration-700" data-alt="Antique brass and copper steam-powered mechanical greatsword with rotating gears on dark wooden desk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDO27nHHzLJEahvNkDA_VRkqkWHdteRHeazoNEYaLOtmyPSo4qutS6nJ3YNOY0PXEyslZdnr6uobBVzfWRFxjS8uTguG86oYBpRn0ynkH2o3XXHJ8CqccTtZkS48t5gAHik4X0OFoD4McwHkqUrKk-E1TntvC_-VldPEs8erXTRxfMUf8vUW2Dq2C6c04E72aBzKayZ-QPkqHynZHzBlV1mDTc1-mp-v7Ee1BV_2U_N0WbTY0xtU6e9waVZOf8wGm5ofxPNpwXtbBM"/>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline text-lg text-on-background leading-tight">Clockwork Decimator</h3>
+<span class="font-label text-[10px] text-tertiary">LVL 72</span>
+</div>
+<div class="flex gap-2 mb-6">
+<button class="flex-1 py-1 text-[10px] font-label bg-surface-container-highest border border-outline-variant/20 text-secondary opacity-50 hover:opacity-100">HI</button>
+<button class="flex-1 py-1 text-[10px] font-label bg-surface-container-highest border border-outline-variant/20 text-secondary opacity-50 hover:opacity-100">MD</button>
+<button class="flex-1 py-1 text-[10px] font-label bg-surface-container-highest border border-primary text-primary">LO</button>
+</div>
+<div class="flex justify-between items-center border-t border-outline-variant/10 pt-4">
+<div class="flex gap-2 opacity-60"><span class="text-[10px] font-label">FBX</span></div>
+<div class="flex gap-3">
+<button class="text-secondary hover:text-primary transition-all" title="Manage Assets"><span class="material-symbols-outlined text-sm">inventory_2</span></button>
+<button class="text-secondary hover:text-tertiary transition-all" title="Export"><span class="material-symbols-outlined text-sm">download</span></button>
+</div>
+</div>
+</div>
+</div>
+<!-- Replicating for layout density as requested (30 total) -->
+<!-- Note: In a real app this would be a map loop -->
+<div class="bg-surface-container-low border border-outline-variant/10 p-8 flex items-center justify-center aspect-[3/4] opacity-30 hover:opacity-100 transition-opacity cursor-pointer">
+<div class="text-center">
+<span class="material-symbols-outlined text-4xl text-primary mb-2">add_circle</span>
+<p class="font-label text-[10px] uppercase tracking-widest">Add New Concept</p>
+</div>
+</div>
+<!-- Filling the grid visually for the concept -->
+<div class="bg-surface-container-low aspect-[3/4] border border-outline-variant/5"></div>
+<div class="bg-surface-container-low aspect-[3/4] border border-outline-variant/5"></div>
+<div class="bg-surface-container-low aspect-[3/4] border border-outline-variant/5"></div>
+<div class="bg-surface-container-low aspect-[3/4] border border-outline-variant/5"></div>
+<div class="bg-surface-container-low aspect-[3/4] border border-outline-variant/5"></div>
+<div class="bg-surface-container-low aspect-[3/4] border border-outline-variant/5"></div>
+<div class="bg-surface-container-low aspect-[3/4] border border-outline-variant/5"></div>
+<div class="bg-surface-container-low aspect-[3/4] border border-outline-variant/5"></div>
+<div class="bg-surface-container-low aspect-[3/4] border border-outline-variant/5"></div>
+<div class="bg-surface-container-low aspect-[3/4] border border-outline-variant/5"></div>
+</div>
+</main>
+<!-- Footer / Status Bar -->
+<footer class="fixed bottom-0 left-72 right-0 h-12 bg-surface-container-lowest border-t border-[#393431]/30 flex items-center justify-between px-8 z-50">
+<div class="flex items-center gap-6 font-label text-[10px] uppercase tracking-widest">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+<span class="text-secondary/60">Archivist Status:</span>
+<span class="text-primary">Authenticated</span>
+</div>
+<div class="flex items-center gap-2 border-l border-outline-variant/20 pl-6">
+<span class="text-secondary/60">Pipeline Active:</span>
+<span class="text-tertiary">Rendering Zweihander LODs...</span>
+</div>
+</div>
+<div class="flex items-center gap-6 font-label text-[10px] uppercase tracking-widest">
+<span class="text-secondary/40">V. 2.4.08_RUNIC</span>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-xs">database</span>
+                Vault Sync 100%
+            </div>
+</div>
+</footer>
+<script src="catalog.js"></script></body></html>

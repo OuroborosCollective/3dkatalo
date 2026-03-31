@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="de"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Häuser &amp; Gebäude Collection - Relics of Rune &amp; Iron</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,700;1,400&amp;family=Space+Grotesk:wght@300;400;700&amp;family=Work+Sans:wght@300;400;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary": "#3c2e16",
+              "on-secondary-fixed-variant": "#54442b",
+              "inverse-primary": "#775a19",
+              "outline": "#a28c81",
+              "tertiary-container": "#006266",
+              "surface-container-low": "#1f1b19",
+              "surface-dim": "#161311",
+              "surface-container-high": "#2e2927",
+              "on-primary": "#412d00",
+              "inverse-on-surface": "#342f2d",
+              "on-surface": "#eae1dd",
+              "on-primary-fixed": "#261900",
+              "primary": "#e9c176",
+              "on-tertiary-fixed": "#002021",
+              "surface-bright": "#3d3836",
+              "primary-fixed-dim": "#e9c176",
+              "on-error-container": "#ffdad6",
+              "on-tertiary-container": "#00e5ee",
+              "on-primary-container": "#f2c97e",
+              "background": "#161311",
+              "error-container": "#93000a",
+              "error": "#ffb4ab",
+              "tertiary": "#00dce5",
+              "surface-container-highest": "#393431",
+              "tertiary-fixed-dim": "#00dce5",
+              "on-tertiary-fixed-variant": "#004f53",
+              "surface-container": "#231f1d",
+              "on-secondary-container": "#ccb594",
+              "secondary-fixed": "#f7dfbc",
+              "primary-container": "#715313",
+              "inverse-surface": "#eae1dd",
+              "surface-container-lowest": "#110d0c",
+              "surface": "#161311",
+              "surface-tint": "#e9c176",
+              "on-background": "#eae1dd",
+              "primary-fixed": "#ffdea5",
+              "outline-variant": "#54433a",
+              "tertiary-fixed": "#63f7ff",
+              "secondary": "#dac3a2",
+              "on-surface-variant": "#dac2b6",
+              "surface-variant": "#393431",
+              "secondary-fixed-dim": "#dac3a2",
+              "on-error": "#690005",
+              "on-tertiary": "#003739",
+              "secondary-container": "#57472d",
+              "on-primary-fixed-variant": "#5d4201",
+              "on-secondary-fixed": "#251904"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Work Sans"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+body {
+    background-color: #161311;
+    background-image: radial-gradient(circle at 50% 50%, rgba(35, 31, 29, 0.5) 0%, rgba(22, 19, 17, 1) 100%)
+    }
+.grit-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.03;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAPVYy2WRuqA-x9nn7YjTmOj3JKJ-i1R1PcJ8zYXpLWi2mYvPnhfyJ24W0Bj04LkiAD1f6TplGhILHWO-_mic3VbbwCT2nIXj5WskfruKEKAknhM31WKIoLcb5Vp59zuBcGOL3bVI8NyyZVXUzb152pdEgFuwDdYrELkV3dMlq-bf1X97q30RSdhiJn9gbZhssaSAOVD5OGjhOZvF0UKvSQkn2m_ppjV0MwqsuR3cuvOl0wfk3bbydg1f7Pyt68KXsv_5if1PrK1Ts);
+    z-index: 999
+    }</style>
+</head>
+<body class="font-body text-on-surface selection:bg-primary selection:text-on-primary">
+<div class="grit-overlay"></div>
+<div class="flex h-screen overflow-hidden">
+<!-- Side Navigation (Web) -->
+<aside class="hidden md:flex flex-col h-full py-8 px-4 w-64 bg-[#161311] border-r border-outline-variant/10">
+<div class="mb-10 px-2">
+<h2 class="font-headline text-xl text-[#e9c176]">The Master's Ledger</h2>
+<p class="font-label text-[10px] uppercase tracking-widest opacity-60">Catalog Archive</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-3 py-3 transition-transform text-[#dac3a2] opacity-60 hover:bg-[#231f1d] hover:text-[#00dce5]" href="index.html">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-label text-sm uppercase tracking-wider">Catalog</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 bg-[#393431] text-[#e9c176] border-l-4 border-[#e9c176] transition-transform" href="index.html">
+<span class="material-symbols-outlined">castle</span>
+<span class="font-label text-sm uppercase tracking-wider">Häuser &amp; Gebäude</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 transition-transform text-[#dac3a2] opacity-60 hover:bg-[#231f1d] hover:text-[#00dce5]" href="index.html">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-label text-sm uppercase tracking-wider">Relics</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 transition-transform text-[#dac3a2] opacity-60 hover:bg-[#231f1d] hover:text-[#00dce5]" href="index.html">
+<span class="material-symbols-outlined">pentagon</span>
+<span class="font-label text-sm uppercase tracking-wider">Runes</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 transition-transform text-[#dac3a2] opacity-60 hover:bg-[#231f1d] hover:text-[#00dce5]" href="index.html">
+<span class="material-symbols-outlined">hardware</span>
+<span class="font-label text-sm uppercase tracking-wider">Iron Works</span>
+</a>
+</nav>
+<button class="mt-auto w-full py-3 bg-primary-container text-primary font-label text-xs uppercase tracking-tighter hover:bg-surface-container-highest transition-colors active:scale-95">
+                New Entry
+            </button>
+</aside>
+<main class="flex-1 flex flex-col min-w-0 bg-background overflow-hidden">
+<!-- Top App Bar -->
+<header class="flex justify-between items-center w-full px-6 py-4 bg-[#231f1d] z-10">
+<div class="flex items-center gap-4">
+<h1 class="text-2xl font-bold text-[#e9c176] uppercase tracking-widest font-headline">Relics of Rune &amp; Iron</h1>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden lg:flex items-center gap-4">
+<span class="material-symbols-outlined text-[#dac3a2] opacity-70 hover:text-[#00dce5] cursor-pointer">view_in_ar</span>
+<span class="material-symbols-outlined text-[#dac3a2] opacity-70 hover:text-[#00dce5] cursor-pointer">link</span>
+<span class="material-symbols-outlined text-[#dac3a2] opacity-70 hover:text-[#00dce5] cursor-pointer">edit</span>
+<span class="material-symbols-outlined text-[#dac3a2] opacity-70 hover:text-[#00dce5] cursor-pointer">ios_share</span>
+</div>
+<div class="h-8 w-px bg-outline-variant/20 hidden lg:block"></div>
+<div class="relative flex items-center bg-surface-container-lowest px-3 py-1.5 border-b border-primary/30">
+<input class="bg-transparent border-none text-xs focus:ring-0 w-48 font-label text-on-surface-variant placeholder:opacity-50" placeholder="Search archives..." type="text"/>
+<span class="material-symbols-outlined text-sm text-primary">search</span>
+</div>
+</div>
+</header>
+<!-- Content Area -->
+<section class="flex-1 overflow-y-auto p-6 md:p-10 space-y-10 custom-scrollbar">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-outline-variant/10 pb-6">
+<div>
+<nav class="flex gap-2 text-[10px] font-label uppercase tracking-widest text-primary mb-2">
+<span>Archives</span>
+<span class="opacity-30">/</span>
+<span>Architecture</span>
+</nav>
+<h2 class="font-headline text-4xl md:text-5xl text-on-surface tracking-tight">Häuser &amp; Gebäude Collection</h2>
+<p class="text-secondary opacity-70 mt-2 max-w-2xl font-body italic">30 Concepts of iron-bound masonry and runic timber, forged in the fires of the Old World.</p>
+</div>
+<div class="flex gap-4">
+<button class="px-6 py-2 border border-outline-variant/30 font-label text-xs uppercase tracking-widest hover:bg-surface-container-highest transition-colors">Filter Tags</button>
+<button class="px-6 py-2 bg-primary text-on-primary font-label text-xs uppercase font-bold tracking-widest hover:bg-primary-fixed transition-colors">Export All</button>
+</div>
+</div>
+<!-- Architectural Grid (Bentoish) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+<!-- Repeating Cards with varying types -->
+<!-- Card 1: Fortified Keep -->
+<div class="group bg-surface-container border border-outline-variant/10 relative hover:shadow-[0_0_30px_rgba(0,220,229,0.05)] transition-all">
+<div class="relative h-64 overflow-hidden bg-surface-container-lowest">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 opacity-60 group-hover:opacity-100 scale-105 group-hover:scale-100" data-alt="Dark gothic fortified stone keep with sharp iron spikes, glowing blue rune windows, atmospheric misty landscape" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwoyHjiS0VhhmyTIsH9oL-KBz9pURZtD5g1vcIdgjplTpi_XOqcSMblLky9dfpM8Jr34_W8WGrwQPn3AqTQtesWYXMYHPbdV8MhfFp94YtA7IASnFqrIUxqAtgto9quthVyUfu1UffFqp2Gk8hJdosPH_3hUw0Tx4i9WH8MdHP2zKLg7nkgNBQL7t633SKfcP9tVbPtM-ia7DRmiMH8jec58zyys6tu0QvJL0ktz3bM_ez2d0B6YQUKODm8TfvWhqhTDTZm-kxAyI"/>
+<div class="absolute top-0 right-0 p-3">
+<span class="bg-surface-container-highest/90 backdrop-blur px-2 py-1 font-label text-[10px] text-tertiary tracking-tighter uppercase border border-tertiary/20">Defensive</span>
+</div>
+</div>
+<div class="p-5 space-y-4">
+<div>
+<h3 class="font-headline text-xl text-secondary group-hover:text-primary transition-colors">Iron-Fist Bastion</h3>
+<p class="text-xs font-label text-on-surface-variant/60 uppercase mt-1">Concept ID: ARCH-001</p>
+</div>
+<div class="grid grid-cols-2 gap-2 pt-2">
+<button class="flex items-center justify-center gap-2 py-2 border border-outline-variant/20 font-label text-[10px] uppercase hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-sm">edit</span> EDIT
+                                </button>
+<button class="flex items-center justify-center gap-2 py-2 border border-outline-variant/20 font-label text-[10px] uppercase hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-sm">ios_share</span> EXPORT
+                                </button>
+<button class="col-span-2 flex items-center justify-center gap-2 py-3 bg-surface-container-highest border-t border-primary/20 font-label text-[10px] uppercase text-primary hover:bg-primary-container hover:text-on-primary transition-all">
+<span class="material-symbols-outlined text-sm">view_in_ar</span> VIEW 3D MODEL
+                                </button>
+</div>
+</div>
+</div>
+<!-- Card 2: Arcane Tower -->
+<div class="group bg-surface-container border border-outline-variant/10 relative hover:shadow-[0_0_30px_rgba(0,220,229,0.05)] transition-all">
+<div class="relative h-64 overflow-hidden bg-surface-container-lowest">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 opacity-60 group-hover:opacity-100 scale-105 group-hover:scale-100" data-alt="Tall slender arcane tower made of obsidian and glowing cyan rune-etched rings, floating crystals, dark stormy sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7OjU4Pe72702PcXG8XswHHJ4y2Gjr7wDmO9ceJIsQCn0FZy9o8dmkv2rkqFWU5brlp85oZilpYL1aPzFDEwkofp4_zQz5Jnz3HQgNI_5emSK280ciQio_SuuIyNR5a7nzJzGUC_t2YMTOo91JcTSI5o1MLdgs9Ua9DEpxVsMXk8kiIO91rzyEoxQCv9-QMqiEaKoi-yeOE_uO3b40v4Zo3VOrA8lyDLs5_5lNIMMJ-idhmR_4xsdOMitu5mTxQ1uHO6KVlBPVLXs"/>
+<div class="absolute top-0 right-0 p-3">
+<span class="bg-surface-container-highest/90 backdrop-blur px-2 py-1 font-label text-[10px] text-tertiary tracking-tighter uppercase border border-tertiary/20">Magical</span>
+</div>
+</div>
+<div class="p-5 space-y-4">
+<div>
+<h3 class="font-headline text-xl text-secondary group-hover:text-primary transition-colors">Soul-Fire Spire</h3>
+<p class="text-xs font-label text-on-surface-variant/60 uppercase mt-1">Concept ID: ARCH-002</p>
+</div>
+<div class="grid grid-cols-2 gap-2 pt-2">
+<button class="flex items-center justify-center gap-2 py-2 border border-outline-variant/20 font-label text-[10px] uppercase hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-sm">edit</span> EDIT
+                                </button>
+<button class="flex items-center justify-center gap-2 py-2 border border-outline-variant/20 font-label text-[10px] uppercase hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-sm">ios_share</span> EXPORT
+                                </button>
+<button class="col-span-2 flex items-center justify-center gap-2 py-3 bg-surface-container-highest border-t border-primary/20 font-label text-[10px] uppercase text-primary hover:bg-primary-container hover:text-on-primary transition-all">
+<span class="material-symbols-outlined text-sm">view_in_ar</span> VIEW 3D MODEL
+                                </button>
+</div>
+</div>
+</div>
+<!-- Card 3: Weathered Inn -->
+<div class="group bg-surface-container border border-outline-variant/10 relative hover:shadow-[0_0_30_rgba(0,220,229,0.05)] transition-all">
+<div class="relative h-64 overflow-hidden bg-surface-container-lowest">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 opacity-60 group-hover:opacity-100 scale-105 group-hover:scale-100" data-alt="Rustic crooked fantasy inn with thatched roof, glowing warm orange windows, heavy wooden timber framing, rain-soaked cobblestones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhTQZTeaCpvk4TORVwVfjYQcpHetBpYEJWttfnhTMQaLyivF6dmUsLv56vZCC1sbEkgwlSJ5LytTo1YP4jq_QX8yq39wu5z9s8rdPz_AsqQnMUL_2xkq_N9XmzpnRSzRkz4u2spFIqZEoHamqC8hVA0QuPDA6ERHZXv2-Q-gTw1BIGvgrPUEzdJSm94SpdzuE4sZswJgvKDdyuMsQt3u0NnZAG_nVydwyksbVGI5GMRgetA65nLDongFklNTHzc3KrJaKDgteTmvs"/>
+<div class="absolute top-0 right-0 p-3">
+<span class="bg-surface-container-highest/90 backdrop-blur px-2 py-1 font-label text-[10px] text-tertiary tracking-tighter uppercase border border-tertiary/20">Civic</span>
+</div>
+</div>
+<div class="p-5 space-y-4">
+<div>
+<h3 class="font-headline text-xl text-secondary group-hover:text-primary transition-colors">The Crow's Rest</h3>
+<p class="text-xs font-label text-on-surface-variant/60 uppercase mt-1">Concept ID: ARCH-003</p>
+</div>
+<div class="grid grid-cols-2 gap-2 pt-2">
+<button class="flex items-center justify-center gap-2 py-2 border border-outline-variant/20 font-label text-[10px] uppercase hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-sm">edit</span> EDIT
+                                </button>
+<button class="flex items-center justify-center gap-2 py-2 border border-outline-variant/20 font-label text-[10px] uppercase hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-sm">ios_share</span> EXPORT
+                                </button>
+<button class="col-span-2 flex items-center justify-center gap-2 py-3 bg-surface-container-highest border-t border-primary/20 font-label text-[10px] uppercase text-primary hover:bg-primary-container hover:text-on-primary transition-all">
+<span class="material-symbols-outlined text-sm">view_in_ar</span> VIEW 3D MODEL
+                                </button>
+</div>
+</div>
+</div>
+<!-- Card 4: Blacksmith Workshop -->
+<div class="group bg-surface-container border border-outline-variant/10 relative hover:shadow-[0_0_30px_rgba(0,220,229,0.05)] transition-all">
+<div class="relative h-64 overflow-hidden bg-surface-container-lowest">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 opacity-60 group-hover:opacity-100 scale-105 group-hover:scale-100" data-alt="Industrial blacksmith workshop with massive iron bellows, sparks flying, dark stone forge, rugged industrial fantasy style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMZoA2x0LsEHS_SG2EL579RliznTcQjKvfJVctGzAaW_B87xVdDP2p46P5k89AYtbVcwyc3oiUW4r08eGOGuPz4xKK9uCdK4lLBCfmZQmfBT2xGqO1juUp1tEL8XVK0YnX-JUC59NSfPvgzoOcpFPe-gVhMHpobzQ3j6yk8CAsTMUXktz7IOE96sx49Hldt_QRnZH28x6iBX4gNJ_xeYlUVkthPIKsmqZRTbP4IfSn1oBsVT9CUOmUE1GrT83fJNHjcoMvmWMyszI"/>
+<div class="absolute top-0 right-0 p-3">
+<span class="bg-surface-container-highest/90 backdrop-blur px-2 py-1 font-label text-[10px] text-tertiary tracking-tighter uppercase border border-tertiary/20">Industrial</span>
+</div>
+</div>
+<div class="p-5 space-y-4">
+<div>
+<h3 class="font-headline text-xl text-secondary group-hover:text-primary transition-colors">Embersmith Hall</h3>
+<p class="text-xs font-label text-on-surface-variant/60 uppercase mt-1">Concept ID: ARCH-004</p>
+</div>
+<div class="grid grid-cols-2 gap-2 pt-2">
+<button class="flex items-center justify-center gap-2 py-2 border border-outline-variant/20 font-label text-[10px] uppercase hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-sm">edit</span> EDIT
+                                </button>
+<button class="flex items-center justify-center gap-2 py-2 border border-outline-variant/20 font-label text-[10px] uppercase hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-sm">ios_share</span> EXPORT
+                                </button>
+<button class="col-span-2 flex items-center justify-center gap-2 py-3 bg-surface-container-highest border-t border-primary/20 font-label text-[10px] uppercase text-primary hover:bg-primary-container hover:text-on-primary transition-all">
+<span class="material-symbols-outlined text-sm">view_in_ar</span> VIEW 3D MODEL
+                                </button>
+</div>
+</div>
+</div>
+<!-- Additional Grid Items (Simulation for 30) -->
+<!-- Item 5-8 placeholder... -->
+<div class="group bg-surface-container border border-outline-variant/10 relative opacity-80">
+<div class="relative h-64 overflow-hidden bg-surface-container-lowest grayscale flex items-center justify-center">
+<span class="material-symbols-outlined text-5xl opacity-20">castle</span>
+</div>
+<div class="p-5 space-y-4">
+<div class="h-6 bg-surface-container-high w-3/4 mb-2"></div>
+<div class="h-3 bg-surface-container-high w-1/2"></div>
+<div class="grid grid-cols-2 gap-2 pt-2">
+<div class="h-8 bg-surface-container-high"></div>
+<div class="h-8 bg-surface-container-high"></div>
+<div class="h-10 col-span-2 bg-surface-container-high"></div>
+</div>
+</div>
+</div>
+<!-- Repeated for 30 total conceptually in the layout -->
+<div class="hidden xl:block group bg-surface-container border border-outline-variant/10 relative opacity-80">
+<div class="relative h-64 overflow-hidden bg-surface-container-lowest grayscale flex items-center justify-center">
+<span class="material-symbols-outlined text-5xl opacity-20">home</span>
+</div>
+<div class="p-5 space-y-4">
+<div class="h-6 bg-surface-container-high w-3/4 mb-2"></div>
+<div class="h-3 bg-surface-container-high w-1/2"></div>
+<div class="grid grid-cols-2 gap-2 pt-2">
+<div class="h-8 bg-surface-container-high"></div>
+<div class="h-8 bg-surface-container-high"></div>
+<div class="h-10 col-span-2 bg-surface-container-high"></div>
+</div>
+</div>
+</div>
+<div class="hidden lg:block group bg-surface-container border border-outline-variant/10 relative opacity-80">
+<div class="relative h-64 overflow-hidden bg-surface-container-lowest grayscale flex items-center justify-center">
+<span class="material-symbols-outlined text-5xl opacity-20">gite</span>
+</div>
+<div class="p-5 space-y-4">
+<div class="h-6 bg-surface-container-high w-3/4 mb-2"></div>
+<div class="h-3 bg-surface-container-high w-1/2"></div>
+<div class="grid grid-cols-2 gap-2 pt-2">
+<div class="h-8 bg-surface-container-high"></div>
+<div class="h-8 bg-surface-container-high"></div>
+<div class="h-10 col-span-2 bg-surface-container-high"></div>
+</div>
+</div>
+</div>
+<div class="hidden xl:block group bg-surface-container border border-outline-variant/10 relative opacity-80">
+<div class="relative h-64 overflow-hidden bg-surface-container-lowest grayscale flex items-center justify-center">
+<span class="material-symbols-outlined text-5xl opacity-20">fort</span>
+</div>
+<div class="p-5 space-y-4">
+<div class="h-6 bg-surface-container-high w-3/4 mb-2"></div>
+<div class="h-3 bg-surface-container-high w-1/2"></div>
+<div class="grid grid-cols-2 gap-2 pt-2">
+<div class="h-8 bg-surface-container-high"></div>
+<div class="h-8 bg-surface-container-high"></div>
+<div class="h-10 col-span-2 bg-surface-container-high"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Load More / Stats footer -->
+<div class="flex flex-col items-center justify-center py-10 space-y-4">
+<div class="w-full h-px bg-gradient-to-r from-transparent via-outline-variant/30 to-transparent"></div>
+<p class="font-label text-xs uppercase text-primary/60">Displaying 8 of 30 concept designs</p>
+<button class="px-10 py-4 bg-surface-container-high border border-primary/20 hover:border-primary/60 transition-all font-label text-sm uppercase tracking-[0.2em]">Load More Entries</button>
+</div>
+</section>
+</main>
+</div>
+<!-- Mobile Navigation Shell -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-3 bg-[#161311] z-50 border-t border-primary/10 shadow-[0_-4px_24px_rgba(0,0,0,0.5)]">
+<a class="flex flex-col items-center justify-center text-[#dac3a2] opacity-50" href="index.html">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label text-[10px] uppercase mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#e9c176] scale-110" href="index.html">
+<span class="material-symbols-outlined">castle</span>
+<span class="font-label text-[10px] uppercase mt-1">Häuser</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#dac3a2] opacity-50" href="index.html">
+<span class="material-symbols-outlined">search</span>
+<span class="font-label text-[10px] uppercase mt-1">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#dac3a2] opacity-50" href="settings_archivist_preferences.html">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label text-[10px] uppercase mt-1">Settings</span>
+</a>
+</nav>
+<script src="catalog.js"></script></body></html>

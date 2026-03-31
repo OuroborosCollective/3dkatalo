@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Relic &amp; Rune | Upload Asset</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,700;1,400;1,700&amp;family=Work+Sans:wght@300;400;600&amp;family=Space+Grotesk:wght@300;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+  tailwind.config = {
+    darkMode:"class",
+    theme:{extend:{
+      colors:{
+        "primary":"#e9c176","surface":"#161311","surface-container":"#231f1d",
+        "surface-container-high":"#2e2927","surface-container-highest":"#393431",
+        "on-surface":"#eae1dd","on-surface-variant":"#dac2b6","secondary":"#dac3a2",
+        "tertiary":"#00dce5","outline":"#a28c81","outline-variant":"#54433a",
+        "background":"#161311","error":"#ffb4ab","on-primary":"#412d00",
+      },
+      fontFamily:{"headline":["Newsreader"],"body":["Work Sans"],"label":["Space Grotesk"]},
+      borderRadius:{"DEFAULT":"0px","lg":"0px","xl":"0px","full":"9999px"},
+    }},
+  }
+</script>
+<style>
+  .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;}
+  ::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:#110d0c}
+  ::-webkit-scrollbar-thumb{background:#54433a}::-webkit-scrollbar-thumb:hover{background:#e9c176}
+  @keyframes fadeInUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+  .fade-in{animation:fadeInUp .3s ease}
+  .drop-zone{border:2px dashed #54433a;transition:border-color .2s,background .2s}
+  .drop-zone.drag-over,.drop-zone:hover{border-color:#e9c176}
+  input:focus,textarea:focus,select:focus{outline:none;border-color:#e9c176!important}
+</style>
+</head>
+<body class="bg-background text-on-surface font-body min-h-screen flex flex-col">
+<header class="bg-[#161311] sticky top-0 z-50 border-b border-[#54433a]/30">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-4xl mx-auto">
+<a class="text-2xl font-bold text-[#e9c176] uppercase tracking-tighter font-headline" href="index.html">Relic &amp; Rune</a>
+<nav class="hidden md:flex space-x-6">
+<a class="font-label text-xs uppercase tracking-widest text-[#dac3a2] hover:text-[#e9c176] transition-colors" href="index.html">The Armory</a>
+<a class="font-label text-xs uppercase tracking-widest text-[#e9c176] border-b border-[#e9c176] pb-0.5" href="upload_asset.html">Upload</a>
+<a class="font-label text-xs uppercase tracking-widest text-[#dac3a2] hover:text-[#e9c176] transition-colors" href="sell_asset.html">Sell Asset</a>
+</nav>
+<a class="flex items-center gap-2 text-[#dac3a2] hover:text-[#e9c176] transition-colors font-label text-xs uppercase tracking-widest" href="index.html">
+<span class="material-symbols-outlined text-sm">arrow_back</span> Back
+    </a>
+</div>
+</header>
+<main class="flex-1 max-w-4xl mx-auto w-full px-6 py-12">
+<div class="mb-10">
+<h1 class="font-headline text-4xl italic text-primary mb-2">Upload New Concept</h1>
+<div class="h-px w-24 bg-gradient-to-r from-primary to-transparent mb-4"></div>
+<p class="text-on-surface-variant font-body italic text-base max-w-xl">
+      Add a new 3D asset or concept art to the catalog. Fill in the details below.
+    </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<div class="space-y-6">
+<!-- Basic Info -->
+<div class="bg-surface-container p-6 border border-[#54433a]/30">
+<h2 class="font-label text-xs uppercase tracking-widest text-primary mb-4">Basic Information</h2>
+<div class="space-y-4">
+<div>
+<label class="block font-label text-[10px] uppercase tracking-widest text-on-surface-variant mb-1">Asset Name *</label>
+<input class="w-full bg-[#393431] border border-[#54433a] text-on-surface px-3 py-2.5 font-body text-sm" id="up-name" placeholder="e.g. Obsidian War Axe" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div>
+<label class="block font-label text-[10px] uppercase tracking-widest text-on-surface-variant mb-1">Category *</label>
+<select class="w-full bg-[#393431] border border-[#54433a] text-on-surface px-3 py-2.5 font-body text-sm" id="up-cat">
+<option>Swords</option><option>Axes</option><option>Plate Armor</option>
+<option>Leather Armor</option><option>Cloth Armor</option><option>Daggers</option>
+<option>Spears</option><option>Magic Wands</option><option>NPCs</option>
+<option>Pets &amp; Companions</option><option>Other</option>
+</select>
+</div>
+<div>
+<label class="block font-label text-[10px] uppercase tracking-widest text-on-surface-variant mb-1">Tier</label>
+<select class="w-full bg-[#393431] border border-[#54433a] text-on-surface px-3 py-2.5 font-body text-sm" id="up-tier">
+<option>Common Grade</option><option>Rare</option><option>Epic</option>
+<option>Legendary Tier</option><option>Divine Relic</option><option>Masterwork</option>
+</select>
+</div>
+</div>
+<div>
+<label class="block font-label text-[10px] uppercase tracking-widest text-on-surface-variant mb-1">Notes / Description</label>
+<textarea class="w-full bg-[#393431] border border-[#54433a] text-on-surface px-3 py-2.5 font-body text-sm resize-y" id="up-notes" placeholder="Internal notes, poly count, texture info…" rows="3"></textarea>
+</div>
+</div>
+</div>
+<!-- Concept Image -->
+<div class="bg-surface-container p-6 border border-[#54433a]/30">
+<h2 class="font-label text-xs uppercase tracking-widest text-primary mb-3">Concept Image *</h2>
+<div class="drop-zone aspect-video flex flex-col items-center justify-center cursor-pointer bg-[#1f1b19] relative overflow-hidden" id="img-drop" onclick="document.getElementById('up-img').click()" ondragleave="this.classList.remove('drag-over')" ondragover="event.preventDefault();this.classList.add('drag-over')" ondrop="handleImgDrop(event)">
+<span class="material-symbols-outlined text-4xl text-[#54433a]" id="img-icon">image</span>
+<p class="font-label text-[10px] uppercase tracking-widest text-[#54433a] mt-2" id="img-hint">Click or drag image here</p>
+<input accept="image/*" class="hidden" id="up-img" onchange="previewConceptImg(this)" type="file"/>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<!-- 3D File -->
+<div class="bg-surface-container p-6 border border-[#54433a]/30">
+<h2 class="font-label text-xs uppercase tracking-widest text-primary mb-1">3D File (Optional)</h2>
+<p class="text-on-surface-variant text-xs font-body mb-4">GLB, FBX, USD, USDZ, OBJ, BLEND, ZIP</p>
+<div class="drop-zone p-8 flex flex-col items-center justify-center cursor-pointer bg-[#1f1b19]" id="file-drop" onclick="document.getElementById('up-3d').click()" ondragleave="this.classList.remove('drag-over')" ondragover="event.preventDefault();this.classList.add('drag-over')" ondrop="handle3dDrop(event)">
+<span class="material-symbols-outlined text-4xl text-[#54433a] mb-2">upload_file</span>
+<p class="font-label text-[10px] uppercase tracking-widest text-[#54433a]">Click or Drag &amp; Drop</p>
+<p class="font-body text-xs text-tertiary mt-2 hidden" id="up-3d-name"></p>
+<input accept=".glb,.fbx,.usd,.usdz,.obj,.blend,.zip" class="hidden" id="up-3d" onchange="show3dInfo(this)" type="file"/>
+</div>
+<div class="grid grid-cols-2 gap-2 mt-3">
+<div>
+<label class="block font-label text-[10px] uppercase tracking-widest text-on-surface-variant mb-1">LOD Tier</label>
+<select class="w-full bg-[#393431] border border-[#54433a] text-on-surface px-3 py-2 font-body text-sm" id="up-lod">
+<option>HI – High Detail</option><option>MD – Medium</option><option>LO – Mobile</option>
+</select>
+</div>
+<div>
+<label class="block font-label text-[10px] uppercase tracking-widest text-on-surface-variant mb-1">Format</label>
+<select class="w-full bg-[#393431] border border-[#54433a] text-on-surface px-3 py-2 font-body text-sm" id="up-fmt">
+<option>GLB</option><option>FBX</option><option>USD</option><option>OBJ</option><option>BLEND</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Tags -->
+<div class="bg-surface-container p-6 border border-[#54433a]/30">
+<h2 class="font-label text-xs uppercase tracking-widest text-primary mb-3">Tags</h2>
+<input class="w-full bg-[#393431] border border-[#54433a] text-on-surface px-3 py-2.5 font-body text-sm" id="up-tags" placeholder="e.g. fantasy, weapon, dark, runic" type="text"/>
+<p class="text-on-surface-variant text-[10px] font-label uppercase tracking-widest mt-1">Separate with commas</p>
+</div>
+<!-- Submit -->
+<button class="w-full bg-primary text-on-primary font-label font-bold uppercase tracking-widest text-sm py-4 hover:brightness-110 transition-all active:scale-95 flex items-center justify-center gap-2" onclick="submitUpload()">
+<span class="material-symbols-outlined">cloud_upload</span>
+        Upload to Catalog
+      </button>
+<div class="flex gap-3">
+<a class="flex-1 border border-[#54433a] text-[#dac3a2] font-label text-xs uppercase tracking-widest py-3 text-center hover:border-primary hover:text-primary transition-all flex items-center justify-center gap-2" href="sell_asset.html">
+<span class="material-symbols-outlined text-sm">sell</span> List for Sale
+        </a>
+<a class="flex-1 border border-[#54433a] text-[#dac3a2] font-label text-xs uppercase tracking-widest py-3 text-center hover:border-primary hover:text-primary transition-all flex items-center justify-center gap-2" href="index.html">
+<span class="material-symbols-outlined text-sm">arrow_back</span> Cancel
+        </a>
+</div>
+</div>
+</div>
+</main>
+<!-- Success -->
+<div class="hidden fixed inset-0 z-50 bg-black/90 flex items-center justify-center" id="success-banner">
+<div class="bg-[#231f1d] border border-[#e9c176] p-10 max-w-md text-center fade-in">
+<span class="material-symbols-outlined text-5xl text-primary mb-4 block">check_circle</span>
+<h2 class="font-headline text-3xl italic text-primary mb-2">Uploaded!</h2>
+<p class="font-body text-on-surface-variant mb-6" id="success-msg"></p>
+<div class="flex gap-3 justify-center">
+<a class="bg-primary text-on-primary font-label text-xs uppercase tracking-widest px-6 py-3 hover:brightness-110 transition-all" href="index.html">Back to Armory</a>
+<a class="border border-[#54433a] text-[#dac3a2] font-label text-xs uppercase tracking-widest px-6 py-3 hover:border-primary transition-all" href="sell_asset.html">List for Sale</a>
+</div>
+</div>
+</div>
+<script>
+function previewConceptImg(input) {
+  if (!input.files[0]) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    const drop = document.getElementById('img-drop');
+    drop.innerHTML = `
+      <img src="${e.target.result}" class="w-full h-full object-contain absolute inset-0"/>
+      <button onclick="clearConceptImg(event)" class="absolute top-2 right-2 bg-black/70 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs z-10">✕</button>
+    `;
+    drop.style.position = 'relative';
+  };
+  reader.readAsDataURL(input.files[0]);
+}
+function clearConceptImg(e) {
+  e.stopPropagation();
+  const drop = document.getElementById('img-drop');
+  drop.innerHTML = `
+    <span class="material-symbols-outlined text-4xl text-[#54433a]" id="img-icon">image</span>
+    <p class="font-label text-[10px] uppercase tracking-widest text-[#54433a] mt-2" id="img-hint">Click or drag image here</p>
+    <input type="file" id="up-img" accept="image/*" class="hidden" onchange="previewConceptImg(this)"/>
+  `;
+  drop.onclick = () => document.getElementById('up-img').click();
+}
+function handleImgDrop(e) {
+  e.preventDefault();
+  document.getElementById('img-drop').classList.remove('drag-over');
+  const f = e.dataTransfer.files[0];
+  if (f && f.type.startsWith('image/')) {
+    const dt = new DataTransfer(); dt.items.add(f);
+    document.getElementById('up-img').files = dt.files;
+    previewConceptImg(document.getElementById('up-img'));
+  }
+}
+function show3dInfo(input) {
+  if (!input.files[0]) return;
+  const el = document.getElementById('up-3d-name');
+  const mb = (input.files[0].size/1048576).toFixed(2);
+  el.textContent = `✓ ${input.files[0].name} (${mb} MB)`;
+  el.classList.remove('hidden');
+  document.getElementById('file-drop').style.borderColor = '#e9c176';
+}
+function handle3dDrop(e) {
+  e.preventDefault();
+  document.getElementById('file-drop').classList.remove('drag-over');
+  const f = e.dataTransfer.files[0];
+  if (f) {
+    const dt = new DataTransfer(); dt.items.add(f);
+    document.getElementById('up-3d').files = dt.files;
+    show3dInfo(document.getElementById('up-3d'));
+  }
+}
+function submitUpload() {
+  const name = document.getElementById('up-name').value.trim();
+  const cat  = document.getElementById('up-cat').value;
+  if (name.length < 2) { flash('Please enter an asset name.'); return; }
+  document.getElementById('success-msg').textContent = `"${name}" (${cat}) has been added to the catalog.`;
+  document.getElementById('success-banner').classList.remove('hidden');
+}
+function flash(msg) {
+  const t = document.createElement('div');
+  t.textContent = msg;
+  t.style.cssText = `position:fixed;bottom:2rem;right:2rem;z-index:99999;background:#393431;border:1px solid #ffb4ab;color:#ffb4ab;padding:.75rem 1.25rem;font-family:'Space Grotesk',sans-serif;font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;`;
+  document.body.appendChild(t);
+  setTimeout(()=>t.remove(),3500);
+}
+</script>
+<script src="catalog.js"></script></body>
+</html>

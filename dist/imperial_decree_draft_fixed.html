@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Imperial Archive - Draft Decree</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Work+Sans:ital,wght@0,100..900;1,100..900&amp;family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface": "#161311",
+              "secondary-fixed": "#f7dfbc",
+              "primary-fixed-dim": "#e9c176",
+              "surface-container": "#231f1d",
+              "on-secondary-fixed": "#251904",
+              "primary-container": "#715313",
+              "on-primary": "#412d00",
+              "error": "#ffb4ab",
+              "surface-variant": "#393431",
+              "surface-bright": "#3d3836",
+              "error-container": "#93000a",
+              "tertiary-fixed": "#63f7ff",
+              "inverse-surface": "#eae1dd",
+              "inverse-primary": "#775a19",
+              "secondary-fixed-dim": "#dac3a2",
+              "on-tertiary-container": "#00e5ee",
+              "on-secondary-fixed-variant": "#54442b",
+              "surface-container-high": "#2e2927",
+              "on-background": "#eae1dd",
+              "on-secondary": "#3c2e16",
+              "on-primary-container": "#f2c97e",
+              "surface-dim": "#161311",
+              "background": "#161311",
+              "surface-container-low": "#1f1b19",
+              "tertiary": "#00dce5",
+              "outline-variant": "#54433a",
+              "on-surface": "#eae1dd",
+              "secondary": "#dac3a2",
+              "tertiary-fixed-dim": "#00dce5",
+              "tertiary-container": "#006266",
+              "outline": "#a28c81",
+              "on-primary-fixed": "#261900",
+              "primary": "#e9c176",
+              "on-tertiary-fixed": "#002021",
+              "on-error": "#690005",
+              "inverse-on-surface": "#342f2d",
+              "surface-container-lowest": "#110d0c",
+              "on-tertiary-fixed-variant": "#004f53",
+              "on-secondary-container": "#ccb594",
+              "on-primary-fixed-variant": "#5d4201",
+              "on-tertiary": "#003739",
+              "on-error-container": "#ffdad6",
+              "secondary-container": "#57472d",
+              "surface-container-highest": "#393431",
+              "primary-fixed": "#ffdea5",
+              "on-surface-variant": "#dac2b6",
+              "surface-tint": "#e9c176"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Work Sans"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+.runic-header-underline {
+    height: 2px;
+    background: linear-gradient(90deg, #e9c176 0%, transparent 100%);
+    width: 100%;
+    margin-top: 0.5rem
+    }
+.parchment-texture {
+    background-color: #d4c4a8;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuA3v6_Y0e5bWY4zmBZdlixHS4Xk2UKcEg2WVxwnzT6OHX4De_-PVWj-6kdfaPErnU2kwncBuCC-8T8rvv2g_o3y357iZgXdmI6nX37cOTIhu85fX57sBRV6U_JF2KabLYficBdU30vgeYp7KK9gSCjGMIhUxIyeWUUFgU0tGCt3vlYdcI7f4qjrvnh5DZaoMzliEhf70jAaE7WI8FOXspFnM94O-I_9obtSdZ-NTofhBWSHN3PzV1PNGVb2Qe0rxehHluUObP-Noug);
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.2), 0 20px 50px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden
+    }
+.parchment-texture::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 20px solid transparent;
+    border-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 10L90 10M90 10L90 90M90 90L10 90M10 90L10 10' stroke='%238B4513' stroke-width='1' stroke-dasharray='4 2'/%3E%3C/svg%3E") 30 stretch;
+    opacity: 0.2;
+    pointer-events: none
+    }
+.mystical-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(233, 193, 118, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0
+    }</style>
+</head>
+<body class="bg-surface text-on-surface font-body min-h-screen flex flex-col">
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center w-full px-6 py-4 bg-[#161311] border-b-0">
+<div class="flex items-center gap-8">
+<h1 class="text-2xl font-bold uppercase tracking-widest text-[#e9c176] font-headline">Imperial Archive</h1>
+<nav class="hidden md:flex gap-6 font-headline tracking-tight text-[#eae1dd]">
+<a class="text-[#e9c176] border-b-2 border-[#e9c176] pb-1" href="registry_of_imperial_decrees.html">Decrees</a>
+<a class="text-[#dac3a2] hover:text-[#e9c176] transition-colors" href="runic_laws_imperial_archives.html">Codex</a>
+<a class="text-[#dac3a2] hover:text-[#e9c176] transition-colors" href="npc_collection_interactive_prototype.html">Lineage</a>
+<a class="text-[#dac3a2] hover:text-[#e9c176] transition-colors" href="runic_laws_imperial_archives.html">Vault</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-[#dac3a2] hover:bg-[#393431] p-2 transition-all">notifications</button>
+<button class="material-symbols-outlined text-[#dac3a2] hover:bg-[#393431] p-2 transition-all">history</button>
+<div class="w-10 h-10 bg-surface-container-highest overflow-hidden">
+<img alt="Grand Archivist Seal" class="w-full h-full object-cover grayscale opacity-80 hover:grayscale-0 transition-all" data-alt="Intricate wax seal impression on old parchment with a circular coat of arms, cinematic macro lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfxu4Cc6zv-Ua6-eV4ponM0Qt95ei0Ncf7E1qflniVBBEfSq3OIQRNyoo9WSWwCZ_I8haolSxHLXLBLoaBWujOxqoyqRYml1fu14Lz62Sg-DD3RzvkP6MWUfydp0F0qhAzFiGXZut-1XJy6zYz8srq5mT_UJz0Kk4Xz9uDFVaoT3AApgWVF3VW2OYXiId2rTshuNZl5TMAqFP5DLWrj_Rl5oWOp8pmb01rxAFIxBq88XrDRRDnTUYa9EtHd8yxMaX6he4PZY3_ako"/>
+</div>
+</div>
+</header>
+<div class="flex flex-1 pt-16">
+<!-- SideNavBar Shell -->
+<aside class="fixed left-0 top-0 h-full flex flex-col pt-20 bg-[#231f1d] w-64 shadow-[24px_0_24px_rgba(234,225,221,0.08)]">
+<div class="px-6 mb-8">
+<h2 class="font-label uppercase tracking-tighter text-sm text-[#e9c176] font-black">Legislative Tools</h2>
+<p class="text-[10px] font-label text-[#dac3a2] opacity-60">Registry v4.12</p>
+</div>
+<nav class="space-y-4 px-2 flex-1">
+<div class="flex items-center gap-3 bg-[#393431] text-[#00dce5] border-l-4 border-[#00dce5] px-4 py-3 ml-[-8px] cursor-pointer font-label uppercase tracking-tighter text-sm">
+<span class="material-symbols-outlined">edit_note</span>
+<span>New Decree</span>
+</div>
+<div class="flex items-center gap-3 text-[#dac3a2] px-4 py-3 hover:bg-[#161311] hover:translate-x-1 transition-transform duration-200 cursor-pointer font-label uppercase tracking-tighter text-sm">
+<span class="material-symbols-outlined">gavel</span>
+<span>Active Laws</span>
+</div>
+<div class="flex items-center gap-3 text-[#dac3a2] px-4 py-3 hover:bg-[#161311] hover:translate-x-1 transition-transform duration-200 cursor-pointer font-label uppercase tracking-tighter text-sm">
+<span class="material-symbols-outlined">description</span>
+<span>Drafts</span>
+</div>
+<div class="flex items-center gap-3 text-[#dac3a2] px-4 py-3 hover:bg-[#161311] hover:translate-x-1 transition-transform duration-200 cursor-pointer font-label uppercase tracking-tighter text-sm">
+<span class="material-symbols-outlined">person</span>
+<span>Signatories</span>
+</div>
+<div class="flex items-center gap-3 text-[#dac3a2] px-4 py-3 hover:bg-[#161311] hover:translate-x-1 transition-transform duration-200 cursor-pointer font-label uppercase tracking-tighter text-sm">
+<span class="material-symbols-outlined">inventory_2</span>
+<span>Archive</span>
+</div>
+</nav>
+<div class="p-4 bg-surface-container-lowest">
+<button class="w-full bg-[#e9c176] text-[#412d00] font-label font-bold uppercase py-3 active:scale-95 duration-150 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">verified</span>
+                    Seal &amp; Publish
+                </button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 flex-1 p-8 bg-surface">
+<div class="max-w-5xl mx-auto">
+<div class="mb-12">
+<h2 class="font-headline text-5xl italic text-on-surface mb-2">Drafting New Decree</h2>
+<div class="runic-header-underline"></div>
+</div>
+<div class="grid grid-cols-12 gap-8">
+<!-- Left Column: Primary Draft Area -->
+<div class="col-span-12 lg:col-span-8 parchment-texture p-12 text-[#2b1e16] shadow-2xl relative border-2 border-[#8B4513]/20"><div class="mystical-glow"></div>
+<!-- Recessed Iron Decorative Corner -->
+<div class="absolute top-0 right-0 w-16 h-16 border-t-4 border-r-4 border-surface opacity-10"></div>
+<form class="space-y-8 relative z-10">
+<div class="space-y-2">
+<label class="font-label uppercase text-xs font-bold tracking-widest opacity-60">Decree Title</label>
+<input class="w-full bg-transparent border-0 border-b border-[#8B4513]/30 focus:ring-0 focus:border-[#8B4513] text-3xl font-headline italic placeholder:text-[#2b1e16]/30 px-0 mb-4" placeholder="e.g. The Edict of Silent Stone" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label uppercase text-xs font-bold tracking-widest opacity-60">Decree Content</label>
+<textarea class="w-full bg-transparent border-0 focus:ring-0 text-xl leading-relaxed font-headline text-[#2b1e16] placeholder:text-[#2b1e16]/40 p-0 resize-none italic" placeholder="By the grace of the Eternal Throne, be it known..." rows="16"></textarea>
+</div>
+<div class="pt-8 border-t border-surface/10 flex justify-between items-center">
+<div class="flex items-center gap-4">
+<button class="bg-primary text-on-primary font-label font-bold uppercase px-8 py-3 hover:brightness-110 active:scale-95 transition-all" type="button">
+                                        Seal &amp; Publish
+                                    </button>
+<button class="text-error font-label font-bold uppercase px-4 py-3 hover:bg-error/10 transition-all" type="button">
+                                        Discard Draft
+                                    </button>
+</div>
+<span class="material-symbols-outlined opacity-30 text-4xl">history_edu</span>
+</div>
+</form>
+</div>
+<!-- Right Column: Technical Metadata -->
+<div class="col-span-12 lg:col-span-4 space-y-6">
+<!-- ID & Registry Card -->
+<div class="bg-surface-container p-6 space-y-6 border-l-2 border-primary/30">
+<div class="space-y-2">
+<label class="font-label uppercase text-[10px] tracking-widest text-primary font-bold">Registry Number</label>
+<div class="bg-surface-container-lowest p-3 font-label text-xl text-tertiary flex items-center justify-between">
+<span>#ARC-882-9</span>
+<span class="material-symbols-outlined text-sm opacity-50">fingerprint</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label uppercase text-[10px] tracking-widest text-secondary font-bold">Current Status</label>
+<select class="w-full bg-surface-container-lowest border-0 text-on-surface font-label uppercase tracking-tighter text-sm focus:ring-1 focus:ring-primary py-3">
+<option>Draft</option>
+<option>Pending Ratification</option>
+<option>Ratified</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label uppercase text-[10px] tracking-widest text-secondary font-bold">Author / High Scribe</label>
+<div class="flex items-center gap-3 bg-surface-container-lowest p-2 border border-outline-variant/20">
+<img alt="Author Portrait" class="w-10 h-10 grayscale" data-alt="Close up of an elderly scholar with heavy robes and magnifying monocle in a dimly lit library" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaDcsQtWyr5QOIW1_7Dge32LR7lbf8WDxJhjZmsYkGJg_kgxk_qlTFhu7k-duDucd_A-ipPO5tWHb0GjLTeyw9vGsTsnUneZIENdZgPOMdj4EjT31b4bKp8IIfvyBN35f0CXvrWoCmJHD01tBi3QVDxZaEQbhLazSuEtfJpRLM97s-vsdR9xQG_Er3GiH-7T7GTLwEITSyPg2l192uuNjgr54Xdayh5ER-qBr2Cy82FO8hmcwM8NUwumUoBXUthsap08nqASkCo30"/>
+<div>
+<p class="text-sm font-bold">Vaelen Kross</p>
+<p class="text-[9px] uppercase tracking-widest opacity-50">Master of Archives</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Categories Multi-select -->
+<div class="bg-surface-container p-6 space-y-4">
+<label class="font-label uppercase text-[10px] tracking-widest text-secondary font-bold">Decree Categories</label>
+<div class="flex flex-wrap gap-2">
+<span class="bg-tertiary/10 text-tertiary px-3 py-1 text-[10px] font-label uppercase font-bold border border-tertiary/30 cursor-pointer hover:bg-tertiary hover:text-on-tertiary transition-colors">Trade Laws</span>
+<span class="bg-surface-container-highest text-secondary px-3 py-1 text-[10px] font-label uppercase font-bold border border-outline-variant/30 cursor-pointer hover:border-primary transition-colors">Eldritch Safety</span>
+<span class="bg-surface-container-highest text-secondary px-3 py-1 text-[10px] font-label uppercase font-bold border border-outline-variant/30 cursor-pointer hover:border-primary transition-colors">Taxation</span>
+<span class="bg-surface-container-highest text-secondary px-3 py-1 text-[10px] font-label uppercase font-bold border border-outline-variant/30 cursor-pointer hover:border-primary transition-colors">Military</span>
+<button class="px-2 py-1 text-[10px] font-label uppercase font-bold text-primary flex items-center gap-1 hover:underline">
+<span class="material-symbols-outlined text-xs">add</span> Add Category
+                                </button>
+</div>
+</div>
+<!-- Audit Log / Footnotes -->
+<div class="bg-surface-container-low p-6 space-y-4 opacity-70">
+<h3 class="font-label uppercase text-[10px] tracking-widest font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">history</span> Revision History
+                            </h3>
+<div class="space-y-3 text-[11px] font-body">
+<div class="flex justify-between border-b border-outline-variant/10 pb-2">
+<span class="text-secondary">Draft created</span>
+<span class="opacity-50 italic">2 hours ago</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/10 pb-2">
+<span class="text-secondary">Content edited by V. Kross</span>
+<span class="opacity-50 italic">45 mins ago</span>
+</div>
+<div class="flex justify-between">
+<span class="text-secondary">Signature pending</span>
+<span class="text-tertiary">Current</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Mobile Navigation Shell (Suppressed as per rules for desktop layout, but included for logic) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-[#161311] flex justify-around py-4 z-50">
+<div class="flex flex-col items-center gap-1 text-[#e9c176]">
+<span class="material-symbols-outlined">edit_note</span>
+<span class="text-[10px] font-label">New</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-[#dac3a2]">
+<span class="material-symbols-outlined">gavel</span>
+<span class="text-[10px] font-label">Laws</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-[#dac3a2]">
+<span class="material-symbols-outlined">description</span>
+<span class="text-[10px] font-label">Drafts</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-[#dac3a2]">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-[10px] font-label">Vault</span>
+</div>
+</nav>
+<script src="catalog.js"></script></body></html>
